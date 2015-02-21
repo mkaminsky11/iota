@@ -37,4 +37,4 @@ compare
 ```
 most langauges are supported.
 
-> note: for html, use <code class="language-markup"></code>
+> note: for html, use `<code class="language-markup"></code>`
