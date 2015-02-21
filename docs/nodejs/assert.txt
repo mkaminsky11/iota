@@ -1,0 +1,73 @@
+assert.fail
+<h2>assert.fail(actual, expected, message, operator)</h2>
+Throws an exception that displays the values for actual and expected separated by the provided operator.
+==
+assert
+<h2>assert(value[, message]), assert.ok(value[, message])</h2>
+Tests if value is truthy, it is equivalent to assert.equal(true, !!value, message);
+==
+assert.equal
+<h2>assert.equal(actual, expected[, message])</h2>
+Tests shallow, coercive equality with the equal comparison operator ( == ).
+==
+assert.notEqual
+<h2>assert.notEqual(actual, expected[, message])</h2>
+Tests shallow, coercive non-equality with the not equal comparison operator ( != ).
+==
+assert.deepEqual
+<h2>assert.deepEqual(actual, expected[, message])</h2>
+Tests for deep equality.
+==
+assert.notDeepEqual
+<h2>assert.notDeepEqual(actual, expected[, message])</h2>
+Tests for any deep inequality.
+==
+assert.strictEqual
+<h2>assert.strictEqual(actual, expected[, message])</h2>
+Tests strict equality, as determined by the strict equality operator ( === )
+==
+assert.notStrictEqual
+<h2>assert.notStrictEqual(actual, expected[, message])</h2>
+Tests strict non-equality, as determined by the strict not equal operator ( !== )
+==
+assert.throws
+<h2>assert.throws(block[, error][, message])</h2>
+Expects block to throw an error. error can be constructor, RegExp or validation function.
+
+Validate instanceof using constructor:
+
+<pre><code class="language-javascript">assert.throws(
+  function() {
+    throw new Error("Wrong value");
+  },
+  Error
+);</code></pre>
+Validate error message using RegExp:
+
+<pre><code class="language-javascript">assert.throws(
+  function() {
+    throw new Error("Wrong value");
+  },
+  /value/
+);</code></pre>
+Custom error validation:
+
+<pre><code class="language-javascript">assert.throws(
+  function() {
+    throw new Error("Wrong value");
+  },
+  function(err) {
+    if ( (err instanceof Error) && /value/.test(err) ) {
+      return true;
+    }
+  },
+  "unexpected error"
+);</code></pre>
+==
+assert
+<h2>assert.doesNotThrow(block[, message])</h2>
+Expects block not to throw an error, see assert.throws for details.
+==
+assert
+<h2>assert.ifError(value)</h2>
+Tests if value is not a false value, throws if it is a true value. Useful when testing the first argument, error in callbacks.

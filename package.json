@@ -1,0 +1,22 @@
+{
+  "main": "index.html",
+  "name": "folder",
+  "node-main": "js/main.js",
+  "window": {
+    "title": "iota",
+    "icon": "icon.png",
+    "toolbar": false,
+    "frame": false,
+    "width": 800,
+    "height": 120,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 120,
+    "transparent": true,
+    "frame": false,
+    "toolbar": false
+  },
+  "webkit": {
+    "plugin": true
+  }
+}

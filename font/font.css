@@ -1,0 +1,23 @@
+@font-face{
+  font-family: "Ubuntu";
+  font-weight: 500;
+  src: url("Ubuntu-B.ttf");
+}
+
+@font-face{
+  font-family: "Ubuntu";
+  font-weight: 400;
+  src: url("Ubuntu-C.ttf");
+}
+
+@font-face{
+  font-family: "Ubuntu";
+  font-weight: 300;
+  src: url("Ubuntu-R.ttf");
+}
+
+@font-face{
+  font-family: "Ubuntu";
+  font-weight: 200;
+  src: url("Ubuntu-L.ttf");
+}
