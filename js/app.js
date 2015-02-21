@@ -77,7 +77,11 @@ $("#type").keyup(function(e){
     $("#results").html("");
     for(var c = 0; c < fin.length; c++){
       if(fin[c] !== null){
-        var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><h6>" + fin[c].name + "</h6></div>";
+        var img_path = fin[c].path.split("/");
+        img_path[img_path.length - 1] = "icon.png";
+        img_path = img_path.join("/");
+
+        var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><img src=\""+img_path+"\"><h6>" + fin[c].name + "</h6></div>";
         $("#results").append(base);
       }
     }
@@ -86,6 +90,12 @@ $("#type").keyup(function(e){
   }
   else{
     closeResults();
+  }
+});
+
+$(document).keyup(function(e) {
+  if (e.keyCode == 27) {
+    closePath();
   }
 });
 

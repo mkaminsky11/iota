@@ -1,6 +1,7 @@
 #IOTA
 
 A documentation viewer built with node-webkit.
+![demo](demo.gif)
 
 ###Features
 + searching

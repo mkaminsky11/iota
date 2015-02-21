@@ -5,10 +5,14 @@ Throws an exception that displays the values for actual and expected separated b
 assert
 <h2>assert(value[, message]), assert.ok(value[, message])</h2>
 Tests if value is truthy, it is equivalent to assert.equal(true, !!value, message);
+<pre><code class="language-javascript">// test 'string' type
+assert(typeof 'foobar' == 'string');</code></pre>
 ==
 assert.equal
 <h2>assert.equal(actual, expected[, message])</h2>
 Tests shallow, coercive equality with the equal comparison operator ( == ).
+<pre><code class="language-javascript">// then that actual value '==' expected value
+assert.equal('foobar', 'foobar');</code></pre>
 ==
 assert.notEqual
 <h2>assert.notEqual(actual, expected[, message])</h2>
@@ -64,10 +68,10 @@ Custom error validation:
   "unexpected error"
 );</code></pre>
 ==
-assert
+assert.doesNotThrow
 <h2>assert.doesNotThrow(block[, message])</h2>
 Expects block not to throw an error, see assert.throws for details.
 ==
-assert
+assert.ifError
 <h2>assert.ifError(value)</h2>
 Tests if value is not a false value, throws if it is a true value. Useful when testing the first argument, error in callbacks.
