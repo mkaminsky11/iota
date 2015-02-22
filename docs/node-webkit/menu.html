@@ -1,0 +1,88 @@
+<h2>Menu</h2>
+<p><code class="language-javascript">Menu</code> represents a native menu, it can be used as window menu or context menu.</p>
+<pre><code class="language-javascript">// Load native UI library
+var gui = require('nw.gui');
+
+// Create an empty menu
+var menu = new gui.Menu();
+
+// Add some items
+menu.append(new gui.MenuItem({ label: 'Item A' }));
+menu.append(new gui.MenuItem({ label: 'Item B' }));
+menu.append(new gui.MenuItem({ type: 'separator' }));
+menu.append(new gui.MenuItem({ label: 'Item C' }));
+
+// Remove one item
+menu.removeAt(1);
+
+// Popup as context menu
+menu.popup(10, 10);
+
+// Iterate menu's items
+for (var i = 0; i &lt; menu.items.length; ++i) {
+  console.log(menu.items[i]);
+}
+</code></pre>
+
+<!--next-->
+<h2>new Menu([option])</h2>
+<p>Create a new <code class="language-javascript">Menu</code>.</p>
+<p>If no <code class="language-javascript">option</code> is specified, a normal context menu will be created. To create a menu to be used as window's menu, you need to explicitly specify <code class="language-javascript">'type': 'menubar'</code> in the <code class="language-javascript">option</code>, e.g. <code class="language-javascript">new Menu({ 'type': 'menubar' })</code>.</p>
+<!--next-->
+<h2>Menu.items</h2>
+<p><strong>Get</strong> an array that contains all items of a menu.</p>
+<!--next-->
+<h2>Menu.items.length</h2>
+<p><strong>Get</strong> how many items this <code class="language-javascript">Menu</code> has.</p>
+<!--next-->
+<h2>Menu.items[i]</h2>
+<p><strong>Get</strong> the <code class="language-javascript">i</code>th menu item of the <code class="language-javascript">Menu</code>. It will return a <code class="language-javascript">MenuItem</code> object.</p>
+<!--next-->
+<h2>Menu.append(MenuItem item)</h2>
+<p>Append <code class="language-javascript">item</code> of <code class="language-javascript">MenuItem</code> type to the tail of the <code class="language-javascript">Menu</code>.</p>
+<!--next-->
+<h2>Menu.insert(MenuItem item, int i)</h2>
+<p>Insert <code class="language-javascript">item</code> of <code class="language-javascript">MenuItem</code> type to the <code class="language-javascript">i</code>th position of the <code class="language-javascript">Menu</code>, <code class="language-javascript">Menu</code> is 0-indexed.</p>
+<!--next-->
+<h2>Menu.remove(MenuItem item)</h2>
+<p>Remove <code class="language-javascript">item</code> from <code class="language-javascript">Menu</code>. This method requires you to keep the <code class="language-javascript">MenuItem</code> outside the <code class="language-javascript">Menu</code>.</p>
+<!--next-->
+<h2>Menu.removeAt(int i)</h2>
+<p>Remove the <code class="language-javascript">i</code>th item form <code class="language-javascript">Menu</code></p>
+<!--next-->
+<h2>Menu.items[x].click</h2>
+<p>Reference: x is the index of the menu object.</p>
+<pre><code class="language-javascript">  menu.items[x].click = function() { 
+      console.log('clicked');
+  };
+</code></pre>
+
+<!--next-->
+<h2>Menu.popup(int x, int y)</h2>
+<p>Popup the <code class="language-javascript">Menu</code> at position (<code class="language-javascript">x</code>, <code class="language-javascript">y</code>) in current window. Usually you would listen to <code class="language-javascript">contextmenu</code> event of DOM elements and manually popup the menu:</p>
+<pre><code class="language-javascript">document.body.addEventListener('contextmenu', function(ev) { 
+  ev.preventDefault();
+  menu.popup(ev.x, ev.y);
+  return false;
+});
+</code></pre>
+
+<p>In this way, you can precisely choose which menu to show for different elements, and you can update menu elements just before popuping it.</p>
+<!--next-->
+<h2>Menu.createMacBuiltin(appname)</h2>
+<p><em>since v0.10.0-rc1</em><br />
+OSX only. Creates the default menus (App, Edit and Window). The items can be manipulated with the <code class="language-javascript">items</code> property. The argument <code class="language-javascript">appname</code> is used for the title of App menu.<br />
+Example:</p>
+<pre><code class="language-javascript">var gui = require('nw.gui');
+var win = gui.Window.get();
+var nativeMenuBar = new gui.Menu({ type: &quot;menubar&quot; });
+nativeMenuBar.createMacBuiltin(&quot;My App&quot;);
+win.menu = nativeMenuBar;
+</code></pre>
+
+<p>Since v0.10.1, if desired, you can also hide the "Edit" and "Window" menus when invoking <code class="language-javascript">createMacBuiltin</code> like so:</p>
+<pre><code class="language-javascript">nativeMenuBar.createMacBuiltin(&quot;My App&quot;, {
+  hideEdit: true,
+  hideWindow: true
+});
+</code></pre>

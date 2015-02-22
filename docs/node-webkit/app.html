@@ -1,0 +1,74 @@
+<h2>App</h2>
+<pre><code class="language-javascript">// Load native UI library
+var gui = require('nw.gui');
+
+// Print arguments
+console.log(gui.App.argv);
+
+// Quit current app
+gui.App.quit();
+
+// Get the name field in manifest
+gui.App.manifest.name
+</code></pre>
+
+<!--next-->
+<h2>App.argv</h2>
+<p><strong>Get</strong> the command line arguments when starting the app.</p>
+<!--next-->
+<h2>App.fullArgv</h2>
+<p><strong>Get</strong> all the command line arguments when starting the app. Because node-webkit itself used switches like <code class="language-javascript">--no-sandbox</code> and <code class="language-javascript">--process-per-tab</code>, it would confuse the app when the switches were meant to be given to node-webkit, so <code class="language-javascript">App.argv</code> just filtered such switches (arguments' precedence were kept). You can get the switches to be filtered with <code class="language-javascript">App.filteredArgv</code>.</p>
+<!--next-->
+<h2>App.dataPath</h2>
+<p><strong>Get</strong> the application's data path in user's directory. Windows: <code class="language-javascript">%LOCALAPPDATA%/&lt;name&gt;</code>; Linux: <code class="language-javascript">~/.config/&lt;name&gt;</code>; OSX: <code class="language-javascript">~/Library/Application Support/&lt;name&gt;</code> where <code class="language-javascript">&lt;name&gt;</code> is the field in the manifest.</p>
+<!--next-->
+<h2>App.manifest</h2>
+<p><strong>Get</strong> the JSON object of the manifest file.</p>
+<!--next-->
+<h2>App.clearCache()</h2>
+<p>Clear the HTTP cache in memory and the one on disk. This method call is synchronized.</p>
+<!--next-->
+<h2>App.closeAllWindows()</h2>
+<p>Send the <code class="language-javascript">close</code> event to all windows of current app, if no window is blocking the <code class="language-javascript">close</code> event, then the app will quit after all windows have done shutdown. Use this method to quit an app will give windows a chance to save data.</p>
+<!--next-->
+<h2>App.crashBrowser(), App.crashRenderer()</h2>
+<p>These 2 functions crashes the browser process and the renderer process respectively, to test the [[Crash dump]] feature.</p>
+<!--next-->
+<h2>App.getProxyForURL(url)</h2>
+<p><em>since v0.6.3</em><br />
+Query the proxy to be used for loading <code class="language-javascript">url</code> in DOM. The return value is in the same format used in PAC (e.g. "DIRECT", "PROXY localhost:8080").</p>
+<!--next-->
+<h2>App.setProxyConfig(config)</h2>
+<p>Set the proxy config which the web engine will be used to request network resources.</p>
+
+<!--next-->
+<h2>App.quit()</h2>
+<p>Quit current app. This method will <strong>not</strong> send <code class="language-javascript">close</code> event to windows and app will just quit quietly.</p>
+<!--next-->
+<h2>App.setCrashDumpDir(dir)</h2>
+<p>Set the directory where the minidump file will be saved on crash. For more information, see [[Crash dump]] </p>
+<!--next-->
+<h2>App.addOriginAccessWhitelistEntry(sourceOrigin, destinationProtocol, destinationHost, allowDestinationSubdomains)</h2>
+<p>Add an entry to the whitelist used for controlling cross-origin access. Suppose you want to allow HTTP redirecting from <code class="language-javascript">github.com</code> to the page of your app, use something like this with the [[App-protocol]]: </p>
+<pre><code class="language-javascript">App.addOriginAccessWhitelistEntry('http://github.com/', 'app', 'myapp', true);
+</code></pre>
+
+<p>Use <code class="language-javascript">App.removeOriginAccessWhitelistEntry</code> with exactly the same arguments to do the contrary.</p>
+<!--next-->
+<h2>App.removeOriginAccessWhitelistEntry(sourceOrigin, destinationProtocol, destinationHost, allowDestinationSubdomains)</h2>
+<p>Remove an entry from the whitelist used for controlling cross-origin access. See <code class="language-javascript">addOriginAccessWhitelistEntry</code> above.</p>
+<!--next-->
+<h2>App.registerGlobalHotKey(shortcut);</h2>
+<p>Register a global keyboard shortcut (also known as system-wide hot key) to the system.</p>
+<p>For more information, please see [[Shortcut]].</p>
+<!--next-->
+<h2>App.unregisterGlobalHotKey(shortcut);</h2>
+<p>Unregisters a global keyboard shortcut.</p>
+<p>For more information, please see [[Shortcut]].</p>
+<!--next-->
+<h2>App.Events</h2>
+<p>Following events can be listened by using <code class="language-javascript">App.on()</code> function.</p>
+<h3 id="open">open</h3>
+<p>Emitted when users opened a file with your app. There is a single parameter of this event callback: Since v0.7.0, it is the full command line of the program; before that it's the argument in the command line and the event is sent multiple times for each of the arguments. For more on this, see [[Handling files and arguments]].</p>
+<h3 id="reopen">reopen</h3>
+<p>This is a Mac specific feature. This event is sent when the user clicks the dock icon for an already running application.</p>

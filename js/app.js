@@ -6,9 +6,11 @@ var fs = require('fs');
 **/
 var win = gui.Window.get();
 var nativeMenuBar = new gui.Menu({ type: "menubar" });
-nativeMenuBar.createMacBuiltin("iota");
-win.menu = nativeMenuBar;
-//win.showDevTools();
+if (typeof nativeMenuBar.createMacBuiltin === "function"){
+  nativeMenuBar.createMacBuiltin("iota");
+  win.menu = nativeMenuBar;
+}
+win.showDevTools();
 
 /**
 * GET DOCS
@@ -25,7 +27,7 @@ function init(){
         if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1){
           var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("<!--next-->");
           for(var k = 0; k < text.length; k++){
-            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","").split("(")[0];
+            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","");
             var section = {
               name: name,
               html: text[k].trim(),
@@ -72,16 +74,12 @@ $("#type").keyup(function(e){
     }
     var fin = res.sort(compare);
 
-    for( var i=0; i < fin.length; i++ ) {
-      for(var j = 0; j < fin.length; j++){
-        if(fin[i] !== null && fin[j] !== null && i !== j && fin[i].path === fin[j].path){
-          fin[i] = null;
-        }
-      }
-    }
-
     $("#results").html("");
-    for(var c = 0; c < fin.length; c++){
+    var length = 21;
+    if(fin.length < 20){
+      length = fin.length;
+    }
+    for(var c = 0; c < length; c++){
       if(fin[c] !== null){
         var img_path_arr = fin[c].path.split("/");
         var img_path = "docs/" + img_path_arr[1] + "/icon.png";

@@ -943,14 +943,6 @@ class which you will likely want to derive from.</p>
 When compiling your module, you don&#39;t need to worry about linking to
 any of these libraries.
 
-</p>
-<p>All of the following examples are available for
-<a>download</a> and may be
-used as a starting-point for your own Addon.
-
-</p>
-<!--next-->
-<h2>Hello world</h2>
 <p>To get started let&#39;s make a small Addon which is the C++ equivalent of
 the following JavaScript code:
 
@@ -959,7 +951,7 @@ the following JavaScript code:
 <p>First we create a file <code class="language-javascript">hello.cc</code>:
 
 </p>
-<pre><code class="language-javascript">// hello.cc
+<pre><code class="language-c">// hello.cc
 #include &lt;node.h&gt;
 
 using namespace v8;
@@ -12345,8 +12337,6 @@ represent a key sequence; available if the terminal is a TTY.
 // Simulate ctrl+u to delete the line written previously
 rl.write(null, {ctrl: true, name: &#39;u&#39;});</code></pre>
 <!--next-->
-<h2>Events</h2>
-<!--next-->
 <h2>Event: &#39;line&#39;</h2>
 <p><code class="language-javascript">function (line) {}</code>
 
@@ -14912,71 +14902,6 @@ Please try it out and provide feedback.
 </p>
 <p>Also note that, on Windows, it is not yet possible to set up a named pipe
 server in a worker.
-
-</p>
-<!--next-->
-<h2>How It Works</h2>
-<p>The worker processes are spawned using the <code class="language-javascript">child_process.fork</code> method,
-so that they can communicate with the parent via IPC and pass server
-handles back and forth.
-
-</p>
-<p>The cluster module supports two methods of distributing incoming
-connections.
-
-</p>
-<p>The first one (and the default one on all platforms except Windows),
-is the round-robin approach, where the master process listens on a
-port, accepts new connections and distributes them across the workers
-in a round-robin fashion, with some built-in smarts to avoid
-overloading a worker process.
-
-</p>
-<p>The second approach is where the master process creates the listen
-socket and sends it to interested workers. The workers then accept
-incoming connections directly.
-
-</p>
-<p>The second approach should, in theory, give the best performance.
-In practice however, distribution tends to be very unbalanced due
-to operating system scheduler vagaries. Loads have been observed
-where over 70% of all connections ended up in just two processes,
-out of a total of eight.
-
-</p>
-<p>Because <code class="language-javascript">server.listen()</code> hands off most of the work to the master
-process, there are three cases where the behavior between a normal
-node.js process and a cluster worker differs:
-
-</p>
-<ol>
-<li><code class="language-javascript">server.listen({fd: 7})</code> Because the message is passed to the master,
-file descriptor 7 <strong>in the parent</strong> will be listened on, and the
-handle passed to the worker, rather than listening to the worker&#39;s
-idea of what the number 7 file descriptor references.</li>
-<li><code class="language-javascript">server.listen(handle)</code> Listening on handles explicitly will cause
-the worker to use the supplied handle, rather than talk to the master
-process.  If the worker already has the handle, then it&#39;s presumed
-that you know what you are doing.</li>
-<li><code class="language-javascript">server.listen(0)</code> Normally, this will cause servers to listen on a
-random port.  However, in a cluster, each worker will receive the
-same &quot;random&quot; port each time they do <code class="language-javascript">listen(0)</code>.  In essence, the
-port is random the first time, but predictable thereafter.  If you
-want to listen on a unique port, generate a port number based on the
-cluster worker ID.</li>
-</ol>
-<p>There is no routing logic in Node.js, or in your program, and no shared
-state between the workers.  Therefore, it is important to design your
-program such that it does not rely too heavily on in-memory data objects
-for things like sessions and login.
-
-</p>
-<p>Because workers are all separate processes, they can be killed or
-re-spawned depending on your program&#39;s needs, without affecting other
-workers.  As long as there are some workers still alive, the server will
-continue to accept connections.  Node does not automatically manage the
-number of workers for you, however.  It is your responsibility to manage
-the worker pool for your application&#39;s needs.
 
 </p>
 <!--next-->

@@ -1,0 +1,69 @@
+<h2>Tray</h2>
+<p><code class="language-javascript">Tray</code> is an abstraction of different controls on different platforms, usually it's a small icon shown on the OS's notification area. On Mac OS X it's called <code class="language-javascript">Status Item</code>, on GTK it's <code class="language-javascript">Status Icon</code>, and on Windows it's <code class="language-javascript">System Tray Icon</code>.</p>
+<pre><code class="language-javascript">// Load native UI library
+var gui = require('nw.gui');
+
+// Create a tray icon
+var tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' });
+
+// Give it a menu
+var menu = new gui.Menu();
+menu.append(new gui.MenuItem({ type: 'checkbox', label: 'box1' }));
+tray.menu = menu;
+
+// Remove the tray
+tray.remove();
+tray = null;
+</code></pre>
+
+<!--next-->
+<h2>new Tray(option)</h2>
+<p>Create a new <code class="language-javascript">Tray</code>, <code class="language-javascript">option</code> is an object contains initial settings for the <code class="language-javascript">Tray</code>. <code class="language-javascript">option</code> can have following fields: <code class="language-javascript">title</code>, <code class="language-javascript">tooltip</code>, <code class="language-javascript">icon</code> and <code class="language-javascript">menu</code>.</p>
+<p>Every field has its own property in the <code class="language-javascript">Tray</code>, see documentation of each property for details.</p>
+<p>When you assign <code class="language-javascript">new Tray(option)</code> to a variable/property take care about visibility and GC. </p>
+<pre><code class="language-javascript">function init(){
+ var tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' });
+ // In this case tray will be collected by GC after some time and icon will disappear
+}
+</code></pre>
+
+<p>here is correct variant</p>
+<pre><code class="language-javascript">var tray;
+function init(){
+ tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' });
+}
+</code></pre>
+
+<!--next-->
+<h2>Tray.title</h2>
+<p><strong>Get</strong> or <strong>Set</strong> the <code class="language-javascript">title</code> of <code class="language-javascript">Tray</code>.</p>
+<p>On Mac OS X <code class="language-javascript">title</code> will be showed on status bar along with its <code class="language-javascript">icon</code>, but it doesn't have effects on GTK and Windows, since the latter two platforms only support tray to be showed as icons.</p>
+<!--next-->
+<h2>Tray.tooltip</h2>
+<p><strong>Get</strong> or <strong>Set</strong> the <code class="language-javascript">tooltip</code> of <code class="language-javascript">Tray</code>. <code class="language-javascript">tooltip</code> shows when you hover the <code class="language-javascript">Tray</code> with mouse.</p>
+<p><code class="language-javascript">tooltip</code> is showed on all three platforms. Should be set as <code class="language-javascript">Tray</code> property rather from <code class="language-javascript">option</code> object constructor. See issue <a href="https://github.com/rogerwang/node-webkit/issues/1903">#1903</a> for more information. </p>
+<!--next-->
+<h2>Tray.icon</h2>
+<p><strong>Get</strong> or <strong>Set</strong> the <code class="language-javascript">icon</code> of <code class="language-javascript">Tray</code>, <code class="language-javascript">icon</code> must a path to your icon file. It can be a relative path which points to an icon in your app, or an absolute path pointing to a file in user's system.</p>
+<p>Mac OS X caveat: when used in notification context, (png) icon is not sized down like in windows notification area, it is rather displayed in 1:1 ratio.</p>
+<!--next-->
+<h2>Tray.alticon</h2>
+<p>Mac OS X Only. <strong>Get</strong> or <strong>Set</strong> the alternate (active) tray icon. It has no effects on Linux and Windows.</p>
+<!--next-->
+<h2>Tray.iconsAreTemplates</h2>
+<p>Mac OS X Only. <strong>Get</strong> or <strong>Set</strong> whether <code class="language-javascript">icon</code> and <code class="language-javascript">alticon</code> images are treated as "templates" (<code class="language-javascript">true</code> by default). When the property is set to <code class="language-javascript">true</code> the images are treated as "templates" and the system automatically ensures proper styling according to the various states of the status item (e.g. dark menu, light menu, etc.). Template images should consist only of black and clear colours and can use the alpha channel in the image to adjust the opacity of black content. It has no effects on Linux and Windows.</p>
+<!--next-->
+<h2>Tray.menu</h2>
+<p><strong>Get</strong> or <strong>Set</strong> the <code class="language-javascript">menu</code> of <code class="language-javascript">Tray</code>, <code class="language-javascript">menu</code> will be showed when you click on the <code class="language-javascript">Tray</code> icon.</p>
+<p>On Mac OS X the menu will be showed when you click on the tray (which is the only action available for tray icons on Mac OS X). On Windows and Linux, the menu will be showed when you single click on the tray with right mouse button, clicking with left mouse button sends the <code class="language-javascript">click</code> event and does not show a menu.</p>
+<p>In order to reduce differences from different platforms, setting <code class="language-javascript">menu</code> property is the only way to bind a menu to tray, there's no way to popup a menu with left mouse button click on Linux and Windows.</p>
+<!--next-->
+<h2>Tray.remove()</h2>
+<p>Remove the tray.</p>
+<p>Once removed, you will not be able to show it again and you should set your tray variable to <code class="language-javascript">null</code>. There is no way temporarily hide a tray icon.</p>
+<!--next-->
+<h2>Tray.Events</h2>
+<p>Following events can be listened by using <code class="language-javascript">Tray.on()</code> function.</p>
+<h3 id="click">click</h3>
+<p>Emitted when user clicks the menu item with left mouse button.</p>
+<p>And you cannot catch click with right mouse button, because it is used to show menu. Even if you're not binding a menu to a tray, you still can not listen to it. Double click events are also ignored.</p>

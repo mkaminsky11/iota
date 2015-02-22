@@ -1,0 +1,448 @@
+<h2>Window</h2>
+<p><code class="language-javascript">Window</code> is a wrapper of DOM's <code class="language-javascript">window</code> object, it has extended operations and can receive various window events.</p>
+<p>Every <code class="language-javascript">Window</code> is an instance of <code class="language-javascript">EventEmitter</code> object, and you're able to use <code class="language-javascript">Window.on(...)</code> to respond to native window's events.</p>
+
+<pre><code class="language-javascript">// Load native UI library
+var gui = require('nw.gui'); 
+//or global.window.nwDispatcher.requireNwGui() (see https://github.com/rogerwang/node-webkit/issues/707)
+
+// Get the current window
+var win = gui.Window.get();
+
+// Listen to the minimize event
+win.on('minimize', function() {
+  console.log('Window is minimized');
+});
+
+// Minimize the window
+win.minimize();
+
+// Unlisten the minimize event
+win.removeAllListeners('minimize');
+
+// Create a new window and get it
+var new_win = gui.Window.open('https://github.com');
+
+// And listen to new window's focus event
+new_win.on('focus', function() {
+  console.log('New window is focused');
+});
+
+</code></pre>
+
+<!--next-->
+<h2>Window.get([window_object])</h2>
+<p>If <code class="language-javascript">window_object</code> is not specifed, then return current window's <code class="language-javascript">Window</code> object, otherwise return <code class="language-javascript">window_object</code>'s <code class="language-javascript">Window</code> object.</p>
+<pre><code class="language-javascript">// Get the current window
+var win = gui.Window.get();
+
+// Create a new window and get it
+var new_win = gui.Window.open('https://github.com');
+</code></pre>
+
+<!--next-->
+<h2>Window.open(url[, options])</h2>
+<p>Open a new window and load <code class="language-javascript">url</code> in it, you can specify extra <code class="language-javascript">options</code> with the window. All window subfields in [[Manifest format]] can be used. Since v0.4.0, a boolean field <code class="language-javascript">new-instance</code> can be used to start a new Node instance (webkit process). Since v0.9.0 and 0.8.5, <code class="language-javascript">inject-js-start</code> and <code class="language-javascript">inject-js-end</code> field can be used to inject a javascript file, see [[Manifest format]] .</p>
+<p>Since v0.7.3 the opened window is not focused by default. It's a result of unifying behavior across platforms. If you want it to be focused by default, you can set <code class="language-javascript">focus</code> to <code class="language-javascript">true</code> in <code class="language-javascript">options</code>.</p>
+<pre><code class="language-javascript">var win = gui.Window.open('https://github.com', {
+  position: 'center',
+  width: 901,
+  height: 127
+});
+</code></pre>
+
+<!--next-->
+<h2>Window.window</h2>
+<p><strong>Get</strong> DOM's <code class="language-javascript">window</code> object in the native window.</p>
+
+<!--next-->
+<h2>Window.x/Window.y</h2>
+<p><strong>Get</strong> or <strong>Set</strong> left/top offset from window to screen.</p>
+
+<!--next-->
+<h2>Window.width/Window.height</h2>
+<p><strong>Get</strong> or <strong>Set</strong> window's size.</p>
+
+<!--next-->
+<h2>Window.title</h2>
+<p><strong>Get</strong> or <strong>Set</strong> window's title.</p>
+
+<!--next-->
+<h2>Window.menu</h2>
+<p><strong>Get</strong> or <strong>Set</strong> window's menubar. Set with a Menu with type <code class="language-javascript">menubar</code>. See [[Menu]].</p>
+
+<!--next-->
+<h2>Window.isFullscreen</h2>
+<p></p>
+<p><strong>Get</strong> or <strong>Set</strong> whether we're in fullscreen mode.</p>
+
+<!--next-->
+<h2>Window.isTransparent</h2>
+<p><br />
+<strong>Get</strong> whether transparency is turned on</p>
+
+<!--next-->
+<h2>Window.isKioskMode</h2>
+<p></p>
+<p><strong>Get</strong> or <strong>Set</strong> whether we're in kiosk mode.</p>
+
+<!--next-->
+<h2>Window.zoomLevel</h2>
+<p></p>
+<p><strong>Get</strong> or <strong>Set</strong> the page zoom. <code class="language-javascript">0</code> for normal size; positive value for zooming in; negative value for zooming out.</p>
+
+<!--next-->
+<h2>Window.moveTo(x, y)</h2>
+<p>Moves a window's left and top edge to the specified coordinates.</p>
+
+<!--next-->
+<h2>Window.moveBy(x, y)</h2>
+<p>Moves a window a specified number of pixels relative to its current coordinates.</p>
+
+<!--next-->
+<h2>Window.resizeTo(width, height)</h2>
+<p>Resizes a window to the specified <code class="language-javascript">width</code> and <code class="language-javascript">height</code>.</p>
+
+<!--next-->
+<h2>Window.resizeBy(width, height)</h2>
+<p>Resizes a window by the specified amount.</p>
+
+<!--next-->
+<h2>Window.focus()</h2>
+<p>Focus on the window.</p>
+
+<!--next-->
+<h2>Window.blur()</h2>
+<p>Move focus away. Usually it will move focus to other windows of your app, since on some platforms there is no concept of blur.</p>
+
+<!--next-->
+<h2>Window.show()</h2>
+<p>Show the window if it's not shown, <code class="language-javascript">show</code> will not focus on the window on some platforms, so you need to call <code class="language-javascript">focus</code> if you want to.</p>
+<p><code class="language-javascript">show(false)</code> has the same effect with <code class="language-javascript">hide()</code>.</p>
+
+<!--next-->
+<h2>Window.hide()</h2>
+<p>Hide the window. Users will not be able to find the window if it's hidden.</p>
+
+<!--next-->
+<h2>Window.close([force])</h2>
+<p>Close current window, you can catch the <code class="language-javascript">close</code> event to prevent the closing. If <code class="language-javascript">force</code> is specified and equals to <code class="language-javascript">true</code>, then the <code class="language-javascript">close</code> event will be ignored.</p>
+<p>Usually you would like to listen to the <code class="language-javascript">close</code> event and do some shutdown work and then do a <code class="language-javascript">close(true)</code> to really close the window.</p>
+<pre><code class="language-javascript">win.on('close', function() {
+  this.hide(); // Pretend to be closed already
+  console.log(&quot;We're closing...&quot;);
+  this.close(true);
+});
+
+win.close();
+</code></pre>
+
+<!--next-->
+<h2>Window.reload()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Reloads the current window.</p>
+
+<!--next-->
+<h2>Window.reloadDev()</h2>
+<p><br />
+Reloads the current page by starting a new renderer process from scratch. This is the same as pressing the "reload" button in the right side of the toolbar.</p>
+
+<!--next-->
+<h2>Window.reloadIgnoringCache()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Like reload(), but don't use caches (aka "shift-reload").</p>
+
+<!--next-->
+<h2>Window.maximize()</h2>
+<p>Maximize the window on GTK and Windows, zoom the window on Mac OS X.</p>
+
+<!--next-->
+<h2>Window.unmaximize()</h2>
+<p>Unmaximize the window, e.g. the reverse of <code class="language-javascript">maximize()</code>.</p>
+<!--next-->
+<h2>Window.minimize()</h2>
+<p>Minimize the window to task bar on Windows, iconify the window on GTK, and miniaturize the window on Mac OS X.</p>
+
+<!--next-->
+<h2>Window.restore()</h2>
+<p>Restore window to previous state after the window is minimized, e.g. the reverse of <code class="language-javascript">minimize()</code>. It's not named <code class="language-javascript">unminimize</code> since <code class="language-javascript">restore</code> is already used commonly on Window.</p>
+
+<!--next-->
+<h2>Window.enterFullscreen()</h2>
+<p>Make the window fullscreen. This function is different with HTML5 FullScreen API, which can make part of the page fullscreen, <code class="language-javascript">Window.enterFullscreen()</code> will only fullscreen the whole window.</p>
+
+<!--next-->
+<h2>Window.leaveFullscreen()</h2>
+<p>Leave the fullscreen mode.</p>
+
+<!--next-->
+<h2>Window.toggleFullscreen()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Toggle the fullscreen mode.</p>
+
+<!--next-->
+<h2>Window.enterKioskMode()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.1</em></p>
+<p>Enter the Kiosk mode. In Kiosk mode, the app will be fullscreen and try to prevent users from leaving the app, so you should remember to provide a way in app to leave Kiosk mode. This mode is mainly used for presentation on public displays.</p>
+
+<!--next-->
+<h2>Window.leaveKioskMode()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.1</em></p>
+<p>Leave the Kiosk mode.</p>
+
+<!--next-->
+<h2>Window.toggleKioskMode()</h2>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Toggle the kiosk mode.</p>
+
+<!--next-->
+<h2>Window.setTransparent(transparent)</h2>
+<p><br />
+turn on/off the transparency support, more info https://github.com/rogerwang/node-webkit/wiki/Transparency</p>
+
+<!--next-->
+<h2>Window.showDevTools([id | iframe, headless])</h2>
+<p>Open the devtools to inspect the window.</p>
+<p>The optional <code class="language-javascript">id</code> argument is supported since v0.6.0. It should be the value of <code class="language-javascript">id</code> attribute of any <code class="language-javascript">iframe</code> element in the window. It can be used to limit the devtools window to inspect only the iframe. If <code class="language-javascript">id</code> is empty string, this feature is not effective.</p>
+<p>The optional <code class="language-javascript">headless</code> argument is supported since v0.6.0. When it is <code class="language-javascript">true</code>, the Devtools window will not be opened. Instead, a <code class="language-javascript">devtools-opened</code> will be sent to the <code class="language-javascript">Window</code> object after Devtools is ready.</p>
+<p>The optional <code class="language-javascript">iframe</code> argument is supported since v0.7.2. It should be the iframe object. And it serves the same purpose with the <code class="language-javascript">id</code> argument.</p>
+<p>For more information, please read [[Devtools Jail Feature]].</p>
+<p>Since v0.8.1, this function returns a <code class="language-javascript">Window</code> object when <code class="language-javascript">headless</code> is <code class="language-javascript">false</code>, so the devtools Window can be manipulated. Note that the events on this object is not working yet.</p>
+
+<!--next-->
+<h2>Window.closeDevTools()</h2>
+<p></p>
+<p>Close the devtools window.</p>
+
+<!--next-->
+<h2>Window.isDevToolsOpen()</h2>
+<p></p>
+<p>Query the status of devtools window</p>
+
+<!--next-->
+<h2>Window.setMaximumSize(width, height)</h2>
+<p>Set window's maximum size.</p>
+
+<!--next-->
+<h2>Window.setMinimumSize(width, height)</h2>
+<p>Set window's minimum size.</p>
+
+<!--next-->
+<h2>Window.setResizable(Boolean resizable)</h2>
+<p>Set whether window is resizable.</p>
+
+<!--next-->
+<h2>Window.setAlwaysOnTop(Boolean top)</h2>
+<p><em>Requires node-webkit &gt;= v0.3.4</em></p>
+<p>Sets the widget to be on top of all other windows in the windowing system.</p>
+
+<!--next-->
+<h2>Window.setVisibleOnAllWorkspaces(Boolean)</h2>
+<p></p>
+<p>For platforms that support multiple workspaces (currently Mac OS X and Linux), this allows node-webkit windows to be visible on all workspaces simultaneously.</p>
+<p>For further information see https://github.com/rogerwang/node-webkit/issues/2523.</p>
+
+<!--next-->
+<h2>Window.canSetVisibleOnAllWorkspaces()</h2>
+<p></p>
+<p>Returns a a boolean indicating if the platform (currently Mac OS X and Linux) support Window API object method <code class="language-javascript">setVisibleOnAllWorkspace(Boolean)</code>.</p>
+
+<!--next-->
+<h2>Window.setPosition(String position)</h2>
+<p>Shortcut to move window to specified <code class="language-javascript">position</code>. Currently only <code class="language-javascript">center</code> is supported on all platforms, which will put window in the middle of the screen.</p>
+
+<!--next-->
+<h2>Window.setShowInTaskbar(Boolean show)</h2>
+<p><br />
+Control whether to show window in taskbar or dock. See also <code class="language-javascript">show_in_taskbar</code> in [[Manifest-format]].</p>
+
+<!--next-->
+<h2>Window.requestAttention(Boolean attention)</h2>
+<p>Pass <code class="language-javascript">true</code> to indicate that the window needs user's action, pass <code class="language-javascript">false</code> to cancel it. The final behaviour depends on the platform.</p>
+
+<!--next-->
+<h2>Window.requestAttention(Integer count)</h2>
+<p><br />
+Similar with the boolean version, on Windows platform you can specify number of times the frame flash(es)<br>
+on OSX value &lt; 0 will trigger <code class="language-javascript">NSInformationalRequest</code> while value &gt; 0 will trigger <code class="language-javascript">NSCriticalRequest</code><br>
+on Linux the Integer value will be casted to Boolean</p>
+
+<!--next-->
+<h2>Window.capturePage(callback [, image_format | config_object ])</h2>
+<p></p>
+<p>Captures the visible area of the window. Note: a simple demo usage can be found here: https://gist.github.com/zhchbin/4749217 </p>
+<p><code class="language-javascript">callback</code> should be a function that will be called when the the image data is ready. It looks like this:</p>
+<pre><code class="language-javascript">function(dataUrl) {...};
+</code></pre>
+
+<p>A <code class="language-javascript">dataURL(string)</code> which encodes an image of the visible area of the captured
+window. May be assigned to the 'src' property of an HTML Image element for display.</p>
+<p><code class="language-javascript">image_format</code> is enumerated string ["jpeg", "png"]. Default is 'jpeg'.</p>
+<p></p>
+<p>It is now possible to define the <code class="language-javascript">datatype</code> of the returned image by using an <code class="language-javascript">config_object</code> as the second parameter.</p>
+<p>This object should be like: </p>
+<pre><code class="language-javascript">{ 
+ format : &quot;[jpeg|png]&quot;, 
+ datatype : &quot;[raw|buffer|datauri]&quot; 
+}
+</code></pre>
+
+<p>Where:<br />
+<code class="language-javascript">format</code> defaults to <code class="language-javascript">jpeg</code><br />
+<code class="language-javascript">datatype</code> defaults to <code class="language-javascript">datauri</code><br />
+</p>
+<p>Example usage:</p>
+<pre><code class="language-javascript">// png as base64string
+win.capturePage(function(base64string){
+ // do something with the base64string
+}, { format : 'png', datatype : 'raw'} );
+
+// png as node buffer
+win.capturePage(function(buffer){
+ // do something with the buffer
+}, { format : 'png', datatype : 'buffer'} );
+</code></pre>
+
+<!--next-->
+<h2>setProgressBar(progress)</h2>
+<p><br />
+valid values are 0 to 1 <br>
+val &lt; 0 means remove the progress bar <br>
+val &gt; 1 means indeterminate <br>
+on linux, only Ubuntu is supported, you'll need to specify the application <code class="language-javascript">.desktop</code> file through <code class="language-javascript">NW_DESKTOP</code> env. if <code class="language-javascript">NW_DESKTOP</code> env variable is not found, it will assume <code class="language-javascript">nw.desktop</code></p>
+<!--next-->
+<h2>setBadgeLabel(label)</h2>
+<p><br />
+Windows and OSX only. Set the badge label on the window icon in taskbar or dock.<br>
+ the linux Ubuntu is supported, however the label is restricted to a string number only. You'll also need to specify the <code class="language-javascript">.desktop</code> file for your application (see the note on <code class="language-javascript">setProgressBar</code>)</p>
+<!--next-->
+<h2>Window.cookies.*</h2>
+<p></p>
+<p>This includes multiple functions to manipulate the cookies. The API is defined in the same way as Chrome Extensions'. node-webkit supports the <code class="language-javascript">get</code>, <code class="language-javascript">getAll</code>, <code class="language-javascript">remove</code> and <code class="language-javascript">set</code> methods; <code class="language-javascript">onChanged</code> event (supporting both <code class="language-javascript">addListener</code> and <code class="language-javascript">removeListener</code> function on this event).</p>
+<p>And anything related to <code class="language-javascript">CookieStore</code> in the Chrome extension API is not supported, because there is only one global cookie store in node-webkit apps.</p>
+<!--next-->
+<h2>Window.eval(frame, script)</h2>
+<p><br />
+Execute a piece of JavaScript in the window, if <code class="language-javascript">frame</code> argument is null, or in the context of an iframe, if <code class="language-javascript">frame</code> is an iframe object. The <code class="language-javascript">script</code> argument is the content of the JavaScript source code.</p>
+
+<!--next-->
+<h2>Window.Events</h2>
+<p>Following events can be listened by using <code class="language-javascript">Window.on()</code> function.
+
+<h3>close</h3>
+<p>The <code class="language-javascript">close</code> event is a special event that will affect the result of the <code class="language-javascript">Window.close()</code> function. If developer is listening to the <code class="language-javascript">close</code> event of a window, the <code class="language-javascript">Window.close()</code> call to that window will not close the window but send the <code class="language-javascript">close</code> event.</p>
+<p>Usually you would do some shutdown work in the callback of <code class="language-javascript">close</code> event, and then call <code class="language-javascript">this.close(true)</code> to really close the window, which will not be caught again. Forgetting to add <code class="language-javascript">true</code> when calling <code class="language-javascript">this.close()</code> in the callback will result in infinite loop.</p>
+<p>And if the shutdown work takes some time, users may feel that the app is exiting slowly, which is bad experience, so you could just hide the window in the <code class="language-javascript">close</code> event before really closing it to make a smooth user experience.</p>
+<p>For use case you can see demo code of <code class="language-javascript">Window.close()</code> above.</p>
+<p>Since v0.8.4 on OSX, there is a parameter on the callback of this event. Its value will be set to 'quit' if the window is being closed by pressing 'Cmd-Q' (intent to quit application). Otherwise the value is undefined. See https://github.com/rogerwang/node-webkit/issues/430</p>
+
+<h3>closed</h3>
+<p>The <code class="language-javascript">closed</code> event is emitted <strong>after</strong> corresponding window is closed. Normally you'll not be able to get this event since after the window is closed all js objects will be released. But it's useful if you're listening this window's events in another window, whose objects will not be released.</p>
+<pre><code class="language-javascript">&lt;script&gt;
+  var gui = require('nw.gui');
+
+  // Open a new window.
+  var win = gui.Window.open('popup.html');
+
+  // Release the 'win' object here after the new window is closed.
+  win.on('closed', function() {
+    win = null;
+  });
+
+  // Listen to main window's close event
+  gui.Window.get().on('close', function() {
+    // Hide the window to give user the feeling of closing immediately
+    this.hide();
+
+    // If the new window is still open then close it.
+    if (win != null)
+      win.close(true);
+
+    // After closing the new window, close the main window.
+    this.close(true);
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h3>loading</h3>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Emitted when the window starts to reload, normally you cannot catch this event because usually it's emitted before you actually setup the callback.</p>
+<p>The only situation that you can catch this event is when you refresh the window and listen to this event in another window.</p>
+
+<h3>loaded</h3>
+<p><em>Requires node-webkit &gt;= v0.3.5</em></p>
+<p>Emitted when the window is fully loaded, this event behaves the same with <code class="language-javascript">window.onload</code>, but doesn't rely on the DOM.</p>
+
+<h3>document-start</h3>
+<p> </p>
+<p><code class="language-javascript">function (frame) {}</code><br />
+Emitted when the document object in this window or a child iframe is available, after any files from css, but before any other DOM is constructed or any other script is run; 
+* <strong>frame</strong> is the iframe object, or <code class="language-javascript">null</code> if the event is for the window.<br />
+</p>
+<p>See also: <code class="language-javascript">inject-js-start</code> in [[Manifest-format]]</p>
+
+<h3>document-end</h3>
+<p></p>
+<p><code class="language-javascript">function (frame) {}</code>  <br />
+Emitted when the document object in this window or a child iframe is loaded, before the <code class="language-javascript">onload</code> event is emitted. 
+* <strong>frame</strong> is the iframe object, or <code class="language-javascript">null</code> if the event is for the window.<br />
+</p>
+<p>See also: <code class="language-javascript">inject-js-end</code> in [[Manifest-format]]</p>
+
+<h3>focus</h3>
+<p>Emitted when window gets focus.</p>
+
+<h3>blur</h3>
+<p>Emitted when window loses focus.</p>
+
+<h3>minimize</h3>
+<p>Emitted when window is minimized.</p>
+
+<h3>restore</h3>
+<p>Emitted when window is restored from minimize state.</p>
+
+<h3>maximize</h3>
+<p>Emitted when window is maximized.</p>
+
+<h3>unmaximize</h3>
+<p>Emitted when window is restored from maximize state. Note that on some platforms window can be resized even when maximized, so the <code class="language-javascript">unmaximize</code> may not be emitted when a maximized window is resized instead of being unmaximized</p>
+
+<h3>move</h3>
+<p><br />
+Emitted after window is moved. The callback is called with 2 arguments: <code class="language-javascript">(x, y)</code> for the new location of the upper-left corner of the window.</p>
+
+<h3>resize</h3>
+<p><br />
+Emitted after window is resized. The callback is called with 2 arguments: <code class="language-javascript">(width, height)</code> for the new size of the window.</p>
+
+<h3>enter-fullscreen</h3>
+<p>Emitted when window enters fullscreen state.</p>
+
+<h3>leave-fullscreen</h3>
+<p>Emitted when window leaves fullscreen state.</p>
+
+<h3>zoom</h3>
+<p>Emitted when window zooming changed. It has a parameter indicating the new zoom level. See <code class="language-javascript">Window.zoom</code> for the parameter's value definition.</p>
+
+<h3>capturepagedone</h3>
+<p>Emitted after the capturePage method is called and image data is ready. See <code class="language-javascript">Window.capturePage's</code> callback function for the parameter's value definition. </p>
+
+<h3>devtools-opened</h3>
+<p>Emitted after Devtools is opened by any means (since v0.8.0), or ready after calling <code class="language-javascript">Window.showDevTools(id, headless)</code> with <code class="language-javascript">headless</code> = <code class="language-javascript">true</code>. The event callback has an <code class="language-javascript">url</code> argument, which is the URL to load Devtools UI. See [[Devtools jail feature]] and [[Window]] for more information.</p>
+<h3>devtools-closed</h3>
+<p></p>
+<p>Emitted after Devtools is closed.</p>
+
+<h3>new-win-policy</h3>
+<p></p>
+<p><code class="language-javascript">function (frame, url, policy) {}</code>  <br />
+Emitted when a new window is requested from this window or a child iframe, e.g. user clicks a link with <code class="language-javascript">_blank</code> target.
+<em> <strong>frame</strong> is the object of the child iframe where the request is from, or <code class="language-javascript">null</code> if it's from the top window.
+</em> <strong>url</strong> is the address of the requested link
+* <strong>policy</strong> is an object with the following methods:
+ * <code class="language-javascript">ignore()</code> : ignore the request, navigation won't happen.
+ * <code class="language-javascript">forceCurrent()</code> : force the link to be opened in the same frame
+ * <code class="language-javascript">forceDownload()</code> : force the link to be a downloadable, or open by external program
+ * <code class="language-javascript">forceNewWindow()</code> : force the link to be opened in a new window
+ * <code class="language-javascript">forceNewPopup()</code> : force the link to be opened in a new popup window
+ * <code class="language-javascript">setNewWindowManifest(m)</code> : control the options for the new popup window. The object <code class="language-javascript">m</code> is in the same format as the <code class="language-javascript">window</code> subfield in [[Manifest format]] (e.g. <code class="language-javascript">{"frame" : false}</code>). </p>

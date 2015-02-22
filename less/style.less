@@ -10,15 +10,14 @@
 #input{
   background: rgba(255,255,255,0.7);
   padding: 20px;
-  width: ~"calc(100% - 40px)";
+  width: ~"calc(100% - 44px)";
   height: 40px;
   position: relative;
   background: inherit;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.3);
   border-radius: 6px;
-  //box-shadow: 0 8px 16px rgba(0,0,0,0.25);
   overflow: hidden;
-  background: rgba(255,255,255,0.7);
+  background: rgba(225,225,225,0.8);
 
   .blur {
     position: absolute;
@@ -49,7 +48,7 @@
     font-size: 30px;
     color: #151718;
 
-    font-family: "Ubuntu";
+    font-family: "Lato";
     font-weight: 200;
   }
 }
@@ -70,10 +69,12 @@ body, html{
   z-index: 1;
   background: rgba(235,235,235,0.85);
   max-height: ~"calc(100% - 80px)";
+  width: ~"calc(100% - 4px)";
   overflow-y: auto;
   overflow-x: hidden;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.3);
 
   &>div{
     padding: 20px;
@@ -96,7 +97,7 @@ body, html{
     &>h6{
       margin: 0;
       font-size: 20px;
-      font-family: "Ubuntu";
+      font-family: "Lato";
       font-weight: 300;
       color: #262B2F;
       width: ~"calc(100% - 100px)";
@@ -110,18 +111,19 @@ body, html{
 
 #display{
   display: none;
-  background: rgba(235,235,235,0.6);
+  background: rgba(235,235,235,0.9);
   z-index: 2;
   height: ~"calc(100% - 130px)";
   padding: 20px;
-  width: ~"calc(100% - 56px)";
+  width: ~"calc(100% - 60px)";
   position: absolute;
   top: 88px;
   left: 8px;
-
-  font-family: "Ubuntu";
+  color: rgb(47, 45, 45);
+  font-family: "Lato";
   overflow-y: auto;
   overflow-x: hidden;
+  border: 1px solid rgba(0,0,0,0.2);
 }
 
 pre, code{
@@ -140,4 +142,8 @@ pre > code{
   * {
     background-color: transparent !important;
   }
+}
+
+code[class*="language-"], pre[class*="language-"] {
+  font-size: 13px !important;
 }

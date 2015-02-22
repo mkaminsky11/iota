@@ -38,6 +38,6 @@ Of course, you'll probably need to add code. Do it like this:
   alert("hi");
 }
 ```
-most langauges are supported.
+most languages are supported. Although HTML is ok, **try to stick to conventions, and avoid links**.
 
 > note: for html, use `<code class="language-markup"></code>`
