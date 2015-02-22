@@ -110,9 +110,9 @@ body, html{
 
 #display{
   display: none;
-  background-color: rgb(220,220,220);
+  background: rgba(235,235,235,0.6);
   z-index: 2;
-  height: ~"calc(100% - 120px)";
+  height: ~"calc(100% - 130px)";
   padding: 20px;
   width: ~"calc(100% - 56px)";
   position: absolute;
@@ -122,27 +122,16 @@ body, html{
   font-family: "Ubuntu";
   overflow-y: auto;
   overflow-x: hidden;
-
-  &>pre{
-    font-size: 10px;
-    width: 100%;
-    white-space: pre-wrap; /* CSS3 */
-    white-space: -moz-pre-wrap; /* Mozilla, post millennium */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
-    overflow-x: hidden !important;
-    font-family: "Ubuntu";
-    font-size: 17px;
-  }
 }
 
-pre{
+pre, code{
     margin: 0;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     background-color: transparent !important;
     overflow: auto !important;
+
+    background-color: transparent !important;
 }
 
 pre > code{

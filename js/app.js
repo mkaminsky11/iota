@@ -8,6 +8,7 @@ var win = gui.Window.get();
 var nativeMenuBar = new gui.Menu({ type: "menubar" });
 nativeMenuBar.createMacBuiltin("iota");
 win.menu = nativeMenuBar;
+//win.showDevTools();
 
 /**
 * GET DOCS
@@ -18,18 +19,23 @@ var fuzzy = [];
 function init(){
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
-    var doc = fs.readdirSync("docs/" + folders[i]);
-    for(var j = 0; j < doc.length; j++){
-      var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("\n==\n");
-      for(var k = 0; k < text.length; k++){
-        var section = {
-          name: text[k].split("\n")[0],
-          html: text[k].split("\n").slice(1).join("\n"),
-          path: "docs/" + folders[i] + "/" + text[k].split("\n")[0],
-          icon: "docs/" + folders[i] + "/icon.png"
-        };
+    if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
+      var doc = fs.readdirSync("docs/" + folders[i]);
+      for(var j = 0; j < doc.length; j++){
+        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1){
+          var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("<!--next-->");
+          for(var k = 0; k < text.length; k++){
+            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","").split("(")[0];
+            var section = {
+              name: name,
+              html: text[k].trim(),
+              path: "docs/" + folders[i] + "/" + name,
+              icon: "docs/" + folders[i] + "/icon.png"
+            };
 
-        docs.push(section);
+            docs.push(section);
+          }
+        }
       }
     }
   }
@@ -77,9 +83,8 @@ $("#type").keyup(function(e){
     $("#results").html("");
     for(var c = 0; c < fin.length; c++){
       if(fin[c] !== null){
-        var img_path = fin[c].path.split("/");
-        img_path[img_path.length - 1] = "icon.png";
-        img_path = img_path.join("/");
+        var img_path_arr = fin[c].path.split("/");
+        var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
         var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><img src=\""+img_path+"\"><h6>" + fin[c].name + "</h6></div>";
         $("#results").append(base);
@@ -128,15 +133,27 @@ function closeResults(){
 function openPath(path){
   for(var i = 0; i < docs.length; i++){
     if(docs[i].path === path){
-      $("#display").html("<pre>" + docs[i].html + "</pre>");
+      $("#display").html(docs[i].html);
 
       Prism.highlightAll();
     }
   }
+  $(".result").velocity({
+    opacity: 0
+  },{
+    duration: 500,
+    queue: false
+  });
   $("#display").slideDown();
 }
 
 function closePath(){
+  $(".result").velocity({
+    opacity: 1
+  },{
+    duration: 500,
+    queue: false
+  });
   $("#display").slideUp();
 }
 
