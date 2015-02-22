@@ -128,7 +128,7 @@ function closeResults(){
 function openPath(path){
   for(var i = 0; i < docs.length; i++){
     if(docs[i].path === path){
-      $("#display").html(docs[i].html);
+      $("#display").html("<pre>" + docs[i].html + "</pre>");
 
       Prism.highlightAll();
     }

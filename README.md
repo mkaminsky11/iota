@@ -12,6 +12,44 @@ A documentation viewer built with node-webkit.
 + keyboard shortcut (duh)
 + icons
 
+###Docsets Todo
++ node webkit
++ javascript
+  + es6!
++ nodejs
+  + Cluster
+  + Console
+  + Crypto
+  + Debugger
+  + DNS
+  + Domain
+  + Events
+  + File System
+  + Globals
+  + HTTP
+  + HTTPS
+  + Modules
+  + Net
+  + OS
+  + Path
+  + Process
+  + Punycode
+  + Query Strings
+  + Readline
+  + REPL
+  + Smalloc
+  + Stream
+  + String Decoder
+  + Timers
+  + TLS/SSL
+  + Tracing
+  + TTY
+  + UDP/Datagram
+  + URL
+  + Utilities
+  + VM
+  + ZLIB
+
 ###Contributing
 Go into `docs`, and you'll find a bunch of folder for each language (when this was last updated, just node.js). The name of the folder doesn't really matter, but you should add a nice icon named `icon.png` with a transparent background.
 
