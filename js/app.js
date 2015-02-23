@@ -10,7 +10,7 @@ if (typeof nativeMenuBar.createMacBuiltin === "function"){
   nativeMenuBar.createMacBuiltin("iota");
   win.menu = nativeMenuBar;
 }
-win.showDevTools();
+//win.showDevTools();
 
 /**
 * GET DOCS

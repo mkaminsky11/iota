@@ -1,6 +1,6 @@
 #IOTA
 
-A documentation viewer built with node-webkit.
+A documentation viewer built with [nw.js](http://nwjs.io/).
 ![demo](demo.gif)
 
 ###Features
@@ -12,11 +12,14 @@ A documentation viewer built with node-webkit.
 + keyboard shortcut (duh)
 + icons
 
-###Docsets Todo
-+ node webkit
+###Docsets Done
++ nw (node webkit)
++ node.js/io.js
 + javascript
-  + es6!
+  + es6
 
+###Docsets Todo
++ css
 ###Contributing
 Go into `docs`, and you'll find a bunch of folders for each language (when this was last updated, just node.js). The name of the folder doesn't really matter, but you should add a nice icon named `icon.png` with a transparent background.
 
