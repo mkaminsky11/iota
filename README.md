@@ -26,7 +26,7 @@ A documentation viewer built with [nw.js](http://nwjs.io/).
 ####Versions
 Keep track of the versions of each docset in [VERSIONS.md](VERSIONS.md). For example, if you have made the node.js docset accurate to version 0.12, say so!
 
-###Useful Links
+####Useful Links
 + [Dash docsets](http://kapeli.com/docset_links) (on Mac, do `right click + show packaged contents`)
 + [Mozilla Developer Network](https://developer.mozilla.org/en-US/)
 

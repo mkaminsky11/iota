@@ -21,7 +21,7 @@ var fuzzy = [];
 function init(){
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
-    if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
+    if(folders[i] !== "script.js" && folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
       var doc = fs.readdirSync("docs/" + folders[i]);
       for(var j = 0; j < doc.length; j++){
         if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1){

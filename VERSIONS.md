@@ -12,5 +12,5 @@
 **Version**: 0.12.0-alpha3
 **Changelog**: [here](https://github.com/nwjs/nw.js/blob/master/CHANGELOG.md)
 
-##Javascript
+###Javascript
 **Version**: ES6
