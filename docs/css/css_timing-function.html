@@ -1,0 +1,276 @@
+<h2>timing-function</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">&lt;timing-function&gt;</code> <a >CSS</a> data type denotes a mathematical function that describes how fast one-dimensional values change during transitions or animations. This in essence lets you establish an acceleration curve, so that the speed of the animation can vary over its duration. These functions are often called <em>easing functions<code class="language-markup">.</code></em></p>
+<p>It is a function linking the time with a ratio of the output value, expressed as a <a  title=""><code class="language-markup">&lt;number&gt;</code></a>, with <code class="language-markup">0.0</code> representing the initial state, <code class="language-markup">1.0</code> the final state.</p>
+<p><img src="/files/3434/TF_with_output_gt_than_1.png"><img src="/files/3435/TF_with_output_gt_than_1_clipped.png" style="margin-right: 5px;"></p>
+<p>The output ratio can be greater than 1.0 (or smaller than 0.0). This causes the animation to go farther than the final state, then come back, in a kind of <em>bouncing</em> effect.</p>
+<p>Nevertheless, if the output value goes outside of its possible range, such as a component of a color going greater than <code class="language-markup">255</code> or smaller than <code class="language-markup">0</code>, the value is clipped to its closest allowed value (in the case of a color-component <code class="language-markup">255</code> and <code class="language-markup">0</code> respectively. Some <code class="language-markup">cubic-bezier()</code> curves exhibit this property.</p>
+<h3>Values</h3>
+<div style="width: 100%;">
+ <p>CSS supports two kinds of timing functions: the subset of the cubic Bézier curves that are functions and staircase functions. The most useful of these functions are given a <em>keyword</em> that allows to easily describe them.</p>
+ <h3 >The <code class="language-markup">cubic-bezier()</code> class of timing-functions</h3>
+ <table >
+  <tbody>
+   <tr>
+    <td><img src="/files/3433/cubic-bezier,%20example.png" style="float: left;"></td>
+    <td>
+     <p>The <code class="language-markup">cubic-bezier()</code> functional notation defines a <a  >cubic Bézier curve</a>. As these curves are continuous, they are often used to smooth down the start and end of the animation and are therefore sometimes called <em>easing functions</em>.</p>
+     <p>A cubic Bézier curve is defined by four points P<sub>0</sub>, P<sub>1</sub>, P<sub>2</sub>, and P<sub>3</sub>. P<sub>0</sub> and P<sub>3</sub> are the start and the end of the curve and, in CSS these points are fixed as the coordinates are ratios (the abscissa the ratio of time, the ordinate the ratio of the output range). P<sub>0</sub> is <code class="language-markup">(0, 0)</code> and represents the initial time and the initial state, P<sub>3</sub> is <code class="language-markup">(1, 1)</code> and represents the final time and the final state.</p>
+     <p>Not all cubic Bézier curves are suitable as timing functions as not all are <a  >mathematical functions</a>, i.e. curves that for a given abscissa have zero or one value. With P<sub>0</sub> and P<sub>3</sub> fixed as defined by CSS, a cubic Bézier curve is a function, and is therefore valid, if and only if the abscissas of P<sub>1</sub> and P<sub>2</sub> are both in the <code class="language-markup">[0, 1]</code> range.</p>
+     <p>Cubic Bézier curves with the P<sub>1</sub> or P<sub>2</sub> ordinate outside the <code class="language-markup">[0, 1]</code> range may generate <em>bouncing</em> effects.</p>
+     <p>When you specify an invalid <code class="language-markup">cubic-bezier</code> curve, CSS ignores the whole property.</p>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h4 >Syntax</h4>
+<pre><code class="language-markup">cubic-bezier(<em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em>)</code>
+</code></pre>
+<p>where :</p>
+<dl>
+ <dt>
+  <strong><em>x<sub>1</sub></em>, <em>y<sub>1</sub></em>, <em>x<sub>2</sub></em>, <em>y<sub>2</sub></em></strong></dt>
+ <dd>
+  Are <a  title=""><code class="language-markup">&lt;number&gt;</code></a> values representing the abscissas and ordinates of the P<sub>1</sub> and P<sub>2</sub> points defining the cubic Bézier curve. x<sub>1</sub> and x<sub>2</sub> must be in the range [0, 1] or the value is invalid.</dd>
+</dl>
+<h4 >Examples</h4>
+<p>These cubic Bézier curves are valid for use in CSS :</p>
+<pre>cubic-bezier(0.1, 0.7, 1.0, 0.1)   The canonical Bézier curve with four &lt;number&gt; in the [0,1] range.
+cubic-bezier(0, 0, 1, 1)           Using &lt;integer&gt; is valid as any &lt;integer&gt; is also a &lt;number&gt;.
+cubic-bezier(0.1, -0.6, 0.2, 0)    Negative values for ordinates are valid, leading to bouncing effects.
+cubic-bezier(0, 1.1, 0.8, 4)       Values &gt; 1.0 for ordinates are also valid.</code></pre>
+<p>These cubic Bézier curves definitions are invalid :</p>
+<pre>cubic-bezier(0.1, red, 1.0, green) Though the animated output type may be a color, Bézier curves work w/ numerical ratios.
+cubic-bezier(2.45, 0.6, 4, 0.1)    Abscissas must be in the [0, 1] range or the curve is not a function of time.
+cubic-bezier(0.3, 2.1)             The two points must be defined, there is no default value.
+cubic-bezier(-1.9, 0.3, -0.2, 2.1) Abscissas must be in the [0, 1] range or the curve is not a function of time.
+</code></pre>
+<h3 >The <code class="language-markup">steps()</code> class of timing-functions</h3>
+<table >
+ <tbody>
+  <tr>
+   <td><img height="332" src="/files/3436/steps(2,start).png" width="248"></td>
+   <td><img height="332" src="/files/3437/steps(4,end).png" width="248"></td>
+   <td rowspan="2">The <code class="language-markup">steps()</code> functional notation defines a <a  >step function</a> dividing the domain of output values in equidistant steps. This subclass of step functions are sometimes also called staircase functions.</td>
+  </tr>
+  <tr style="text-align: center;">
+   <td style="white-space: nowrap;"><code class="language-markup">steps(2, start)</code></td>
+   <td><code class="language-markup">steps(4, end)</code></td>
+  </tr>
+ </tbody>
+</table>
+<h4 >Syntax</h4>
+<pre><code class="language-markup">steps(<em>number_of_steps</em>, <em>direction</em>)</code>
+</code></pre>
+<p>where :</p>
+<dl>
+ <dt>
+  <strong><em>number_of_steps</em></strong></dt>
+ <dd>
+  Is a strictly positive <a  title=""><code class="language-markup">&lt;integer&gt;</code></a> representing the amount of equidistant treads composing the stepping function.</dd>
+ <dt>
+  <strong><em>direction</em></strong></dt>
+ <dd>
+  Is a keyword indicating if it the function is <a  >left- or right-continuous</a>:
+  <ul>
+   <li><code class="language-markup">start</code> denotes a left-continuous function, so that the first step happens when the animation begins;</li>
+   <li><code class="language-markup">end</code> denotes a right-continuous function, so that the last step happens when the animation ends.</li>
+  </ul>
+  <code class="language-markup">end</code> is the default.</dd>
+</dl>
+<h4 >Examples</h4>
+<p>These timing functions are valid :</p>
+<pre>steps(5, end)          There is 5 treads, the last one happens right before the end of the animation.
+steps(2, start)        A two-step staircase, the first one happening at the start of the animation.
+steps(2)               The second parameter is optional.
+</code></pre>
+<p>These timing function are invalid :</p>
+<pre>steps(2.0, end)        The first parameter must be an <a >&lt;integer&gt;</a> and cannot be a real value, even if it is equal to one.
+steps(-3, start)       The amount of steps must be non-negative.
+steps(0, end)          There must be at least one step.
+steps(start, 3)        Though of different types, the order of parameter is important.
+step(1, end)           Even if there is one step, the function name is steps, with the plural 's'
+steps(3 end)           The two parameters must be separated with a comma; one or several spaces is not enough.
+</code></pre>
+<h3 >Keywords for common timing-functions</h3>
+<h4 ><code class="language-markup">linear</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3425/cubic-bezier,linear.png" width="249"></td>
+   <td>This keyword represents the timing function <code class="language-markup">cubic-bezier(</code><code class="language-markup">0.0, 0.0, 1.0, 1.0</code><code class="language-markup">)</code>. Using this timing function, the animation goes from its initial state to its final one regularly, with a constant speed.</td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">ease</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3429/cubic-bezier,ease.png" width="244"></td>
+   <td>This keyword represents the timing function <code class="language-markup">cubic-bezier(0.25, 0.1, 0.25, 1.0)</code>. This function is similar to <a ><code class="language-markup">ease-in-out</code></a>, though it accelerates more sharply at the beginning and the acceleration already starts to slow down near the middle of it.</td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">ease-in</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3426/cubic-bezier,ease-in.png" width="249"></td>
+   <td>This keyword represents the timing function <code class="language-markup">cubic-bezier(0.42, 0.0, 1.0, 1.0)</code>. The animation begins slowly, then progressively accelerates until the final state is reached and the animation stops abruptly.</td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">ease-in-out</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3428/cubic-bezier,ease-in-out.png" width="244"></td>
+   <td>This keyword represents the timing function <code class="language-markup">cubic-bezier(</code><code class="language-markup">0.42, 0.0, 0.58, 1.0</code><code class="language-markup">)</code>. With this timing function, the animation starts slowly, accelerates then slows down when approaching its final state. At the beginning, it behaves similarly to the <a ><code class="language-markup">ease-in</code></a> function; at the end, it is similar to the <a ><code class="language-markup">ease-out</code></a> function.</td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">ease-out</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3427/cubic-bezer,ease-out.png" width="249"></td>
+   <td>This keyword represents the timing function <code class="language-markup">cubic-bezier(</code><code class="language-markup">0.0, 0.0, 0.58, 1.0</code><code class="language-markup">)</code>. The animation starts quickly then slow progressively down when approaching to its final state.</td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">step-start</code></h4>
+<table >
+ <tbody>
+  <tr>
+   <td><img height="332" src="/files/3423/steps(1,start).png" width="248">This keyword represents the timing function <code class="language-markup">steps(1, start)</code>. Using this timing function, the animation jumps immediately to the end state and stay in that position until the end of the animation.</td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+<h4 ><code class="language-markup">step-end</code></h4>
+<table >
+ <tbody>
+  <tr style="vertical-align: top;">
+   <td><img height="332" src="/files/3424/steps(1,end).png" width="248"></td>
+   <td>This keyword represents the timing function <code class="language-markup">steps(1, end)</code>. Using this timing function, the animation stays in its initial state until the end, where it directly jumps to its final position.</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   lang="en" title="The definition of '&lt;timing-function>' in that specification.">CSS Transitions</a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defined anonymously</td>
+  </tr>
+  <tr>
+   <td><a   lang="en" title="The definition of '&lt;timing-function>' in that specification.">CSS Animations</a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defined anonymously, says to see definition in the CSS Transitions Module</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Firefox (Gecko)</th>
+    <th>Chrome</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>4.0 (2.0)</td>
+    <td>4.0</td>
+    <td>10</td>
+    <td>10.5</td>
+    <td>3.1</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">cubic-bezier()</code> w/ ordinate ∉ [0,1]</td>
+    <td>4.0 (2.0)</td>
+    <td>16.0</td>
+    <td>10</td>
+    <td>12.1</td>
+    <td>Nightly</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">steps()</code></td>
+    <td>4.0 (2.0)</td>
+    <td>8.0</td>
+    <td>10</td>
+    <td>12.1</td>
+    <td>5.1</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>Android</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>4.0 (2.0)</td>
+    <td>4.0</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>10</td>
+    <td>2.0</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">cubic-bezier()</code> w/ ordinate ∉ [0,1]</td>
+    <td>4.0 (2.0)</td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">steps()</code></td>
+    <td>4.0 (2.0)</td>
+    <td>4.0</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>5.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li>The <a  title=""><code class="language-markup">transition-timing-function</code></a> and <a  title=""><code class="language-markup">animation-timing-function</code></a> needing a <code class="language-markup">&lt;timing-function&gt;</code> value.</li>
+ <li><a >CSS Reference</a></li>
+ <li>CSS Data Types : <code class="language-markup"><a >&lt;angle&gt;</a></code>, <code class="language-markup"><a  >&lt;blend-mode&gt;</a></code>, <code class="language-markup"><a >&lt;color&gt;</a></code>, <code class="language-markup"><a >&lt;frequency&gt;</a></code>, <code class="language-markup"><a >&lt;gradient&gt;</a></code>, <code class="language-markup"><a >&lt;image&gt;</a></code>, <code class="language-markup"><a >&lt;length&gt;</a></code>, <code class="language-markup"><a >&lt;number&gt;</a></code>, <code class="language-markup"><a >&lt;percentage&gt;</a></code>, <code class="language-markup"><a >&lt;position&gt;</a></code>, <code class="language-markup"><a >&lt;ratio&gt;</a></code>, <code class="language-markup"><a >&lt;resolution&gt;</a></code>, <code class="language-markup"><a >&lt;shape&gt;</a></code>, <code class="language-markup"><a >&lt;string&gt;</a></code>, <code class="language-markup"><a >&lt;time&gt;</a></code>, <code class="language-markup"><a >&lt;timing-function&gt;</a></code>, <code class="language-markup"><a >&lt;uri&gt;</a></code>, <code class="language-markup"><a >&lt;user-ident&gt;</a></code></li>
+</ul>
+                                                

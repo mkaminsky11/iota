@@ -1,0 +1,30 @@
+<h2>color</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <a >CSS</a> <code class="language-markup">color</code> property sets the foreground <a >color</a> of an element's text content, and its <a >decorations</a>. It doesn't affect any other characteristic of the element; it should really be called <code class="language-markup">text-color</code> and would have been named so, save for historical reasons and its appearance in CSS Level 1.</p>
+<p>Note that the color value must be a uniform color, which may include a transparency value from CSS3 onwards. It can't be a <a  title=""><code class="language-markup">&lt;gradient&gt;</code></a> which is an <a  title=""><code class="language-markup">&lt;image&gt;</code></a> in CSS.</p>
+<div>
+ <ul > 
+  <li><dfn><a >Initial value</a></dfn> Varies from one browser to another</li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> If the value is translucent, the computed value will be the <code class="language-markup">rgba()</code> corresponding one. If it isn't, it will be the <code class="language-markup">rgb()</code> corresponding one. The <code class="language-markup">transparent</code> keyword maps to <code class="language-markup">rgba(0,0,0,0)</code>.</li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;color> CSS data type are interpolated on each of their red, green, blue components, each handled as a real, floating-point number. Note that interpolation of colors happens in the alpha-premultiplied sRGBA color space to prevent unexpected grey colors to appear.">color</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul></div>
+<h3>Syntax</h3>
+<pre ><a >Formal syntax</a>: <code class="language-markup"><a  title="">&lt;color&gt;</a></code></code></pre>
+<pre>color: red;                     // A CSS Level 1 color.
+color: <code class="language-markup">orange;</code>                  // The only color added in CSS Level 2 (Revision 1).
+color: <code class="language-markup">antiquewhite;</code>            // A CSS Level 3 color, sometimes called a SVG or X11 color.
+color: #0f0;                    // The color 'lime' defined using the 3-character <em>dash</em> notation.
+color: #00ff00;                 // The color 'lime' defined using the 6-character <em>dash</em> notation.
+color: rgba( 34, 12, 64, 0.3);  // A color defined using the available functional notations.
+color: currentcolor;            // The special keyword representing the color's value of its direct ancestor.
+
+color: inherit;
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;color&gt;</code></dt>
+ <dd>
+  Is a <a  title=""><code class="language-markup">&lt;color&gt;</code></a> value giving the color of the textual elements of the element.</dd>
+</dl>

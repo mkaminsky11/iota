@@ -1,0 +1,91 @@
+<h2>font-variant-east-asian</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-variant-east-asian</code></strong> CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn> order of appearance in the formal grammar of the values<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> [ <a  title="Tooltip not found in DB.">&lt;east-asian-variant-values&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> <a  title="Tooltip not found in DB.">&lt;east-asian-width-values&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> ruby ] </code></code></pre>
+<pre>font-variant-east-asian: normal
+font-variant-east-asian: ruby
+font-variant-east-asian: jis78              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis83              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis90              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: jis04              /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: simplified         /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: traditional        /* &lt;east-asian-variant-values&gt; */
+font-variant-east-asian: full-width         /* &lt;east-asian-width-values&gt; */
+font-variant-east-asian: proportional-width /* &lt;east-asian-width-values&gt; */
+font-variant-east-asian: ruby full-width jis83
+
+font-variant-east-asian: initial
+font-variant-east-asian: inherit
+font-variant-east-asian: unset
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+ <dt>
+  <code class="language-markup">ruby</code></dt>
+ <dd>
+  This keyword forces the use of special glyphs for ruby characters. As these are usually smaller, font creators often designs specific forms, usually slightly bolder to improve the contrast. This keyword corresponds to the OpenType values <code class="language-markup">ruby</code>.</dd>
+ <dt>
+  <em>&lt;east-asian-variant-values</em>&gt;</dt>
+ <dd>
+  These values activates the figures defined in specific standard. Possible values are:
+  <table >
+   <tbody>
+    <tr>
+     <th>Keyword</th>
+     <th>Standard defining the glyphs</th>
+     <th>OpenType equivalent</th>
+    </tr>
+    <tr>
+     <td><code class="language-markup">jis78</code></td>
+     <td><a  >JIS X 208 version 1978</a></td>
+     <td><code class="language-markup">jp78</code></td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">jis83</code></td>
+     <td><a  >JIS X 208 version 1983</a></td>
+     <td><code class="language-markup">jp83</code></td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">jis90</code></td>
+     <td><a  >JIS X 208 version 1990</a></td>
+     <td><code class="language-markup">jp90</code></td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">jis04</code></td>
+     <td><a  >JIS X 208 version 2004</a></td>
+     <td><code class="language-markup">jp04</code></td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">simplified</code></td>
+     <td>None, use the simplified Chinese glyphs</td>
+     <td><code class="language-markup">smpl</code></td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">traditional</code></td>
+     <td>None, use the traditional Chinese glyphs</td>
+     <td><code class="language-markup">trad</code></td>
+    </tr>
+   </tbody>
+  </table>
+ </dd>
+ <dt>
+  <em>&lt;<em>east-asian-width-values</em></em>&gt;</dt>
+ <dd>
+  These values controls the sizing of figures used for East Asian characters. Two values are possible:
+  <ul>
+   <li><code class="language-markup">proportional-width</code> activating the set of figures where numbers are not all of the same size. It corresponds to the OpenType values <code class="language-markup">pwid</code>.</li>
+   <li><code class="language-markup">full-width</code> activating the set of figures where numbers are all of the same size, allowing them to be easily aligned like in tables. It corresponds to the OpenType values <code class="language-markup">fwid</code>.</li>
+  </ul>
+ </dd>
+</dl>

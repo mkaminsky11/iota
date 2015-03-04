@@ -1,0 +1,42 @@
+<h2>font-feature-settings</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">font-feature-settings</code> CSS property allows control over advanced typographic features in OpenType fonts.</p>
+
+<div ><strong>Note:</strong> Whenever possible, Web authors should use the <a  title="The font-variant CSS property selects a normal, or small-caps face from a font family. Setting the CSS Level 2 (Revision 1) values of the  font-variant property, that is normal or small-caps, is also possible by using the font shorthand."><code class="language-markup">font-variant</code></a> shorthand property or an associated longhand property, <a  title="The font-variant-ligatures CSS property controls which ligatures and contextual forms are used in textual content of the elements it applies to. This leads to more harmonized forms in the resulting text."><code class="language-markup">font-variant-ligatures</code></a>, <a  title="The font-variant-caps CSS property controls the usage of alternate glyphs for capital letters. Scripts can have capital letter glyphs of different sizes, the normal uppercase glyphs, small capital glyphs, and petite capital glyphs. This property controls which alternate glyphs to use."><code class="language-markup">font-variant-caps</code></a>, <a  title="The font-variant-east-asian CSS property controls the usage of alternate glyphs for East Asian scripts, like Japanese and Chinese."><code class="language-markup">font-variant-east-asian</code></a>, <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>, <a  title="The font-variant-numeric CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers."><code class="language-markup">font-variant-numeric</code></a> or <a  title="The font-variant-position CSS property controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font, which is set unchanged. These glyphs are likely to be used in &lt;sub> and &lt;sup> elements."><code class="language-markup">font-variant-position</code></a>.<br>
+<br>
+This property is a low-level feature designed to handle special cases where no other way to enable or access an OpenType font feature exists.<br>
+<br>
+In particular, this CSS property shouldn't be used to enable small caps.</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="&lt;string> [ &lt;integer> | on | off ]?">&lt;feature-tag-value&gt;</a><a  title="Hash mark multiplier: The previous entity may appear 0, 1 or several times, each occurrence being separated from the previous one by a comma.">#</a></code>
+</code></pre>
+
+<pre>font-feature-settings: normal
+font-feature-settings: "smcp"
+font-feature-settings: "smcp" on
+font-feature-settings: "swsh" 2
+font-feature-settings: "smcp", "swsh" 2
+
+font-feature-settings: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">normal</code></dt>
+ <dd>Text is laid out using default settings.</dd>
+ <dt><code class="language-markup">&lt;feature-tag-value&gt;</code></dt>
+ <dd>When rendering text, the list of OpenType feature tag value is passed to the text layout engine to enable or disable font features. The tag is always a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;string&gt;</code></a> of 4 ASCII characters. If it has more or less characters or contains characters outside the U+20 - U+7E codepoint range, the whole property is invalid.<br>
+ The value is an positive integer. The two keywords <code class="language-markup">on</code> and <code class="language-markup">off</code> are synonyms for <code class="language-markup">1</code> and <code class="language-markup">0</code> respectively. If no value is set, the default is <code class="language-markup">1</code>. For non-Boolean OpenType features (e.g. <a   title="http://www.microsoft.com/typography/otspec/features_pt.htm#salt">stylistic alternates</a>), the value implies a particular glyph to be selected; for Boolean values, it is a switch.</dd>
+</dl>
+

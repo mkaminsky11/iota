@@ -1,0 +1,40 @@
+<h2>border-spacing</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">border-spacing</code> CSS property specifies the distance between the borders of adjacent cells (only for the <a  title="en/CSS/border-collapse">separated borders model</a>). This is equivalent to the <code class="language-markup">cellspacing</code> attribute in presentational HTML, but an optional second value can be used to set different horizontal and vertical spacing.</p>
+
+<p>The <code class="language-markup">border-spacing</code> value is also used along the outside edge of the table, where the distance between the table's border and the cells in the first/last column or row is the sum of the relevant (horizontal or vertical) border-spacing and the relevant (top, right, bottom, or left) padding on the table.</p>
+
+<p>This property applies only when <a  title="The border-collapse CSS property selects a table's border model. This has a big influence on the look and style of the table cells."><code class="language-markup">border-collapse</code></a> is <code class="language-markup">separate</code>.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> table and inline-table elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> two absolute lengths<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a><a  title="Question mark multiplier: The previous entity is optional (it may be used once, or not at all).">?</a></code>
+</code></pre>
+
+<pre>border-spacing: <em>length</em>              <em>/* one-value syntax */</em>
+border-spacing: <em>horizontal vertical</em> <em>/* two-value syntax */</em>
+
+border-spacing: inherit 
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><em>length</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> value that describes both the horizontal and vertical spacings between cells. It is used only in the one-value syntax.</dd>
+ <dt><em>horizontal</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> value that describes the horizontal spacing between cells, that is the space between cells in adjacent columns. It is used only in the two-value syntax.</dd>
+ <dt><em>vertical</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> value that describes the vertical spacing between cells, that is the space between cells in adjacent rows. It is used only in the two-value syntax.</dd>
+ <dt><code class="language-markup">inherit</code></dt>
+ <dd>Is a keyword indicating that the calculated value of <code class="language-markup">border-spacing</code> of the parent's element must be used.</dd>
+</dl>
+

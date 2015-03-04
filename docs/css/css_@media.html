@@ -1,0 +1,276 @@
+<h2>@media</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">@media</code> <a  title="CSS">CSS</a> <a  title="en/CSS/At-rule">at-rule</a> associates a set of nested statements, in a CSS block that is delimited by curly braces, with a condition defined by a <a  title="CSS media queries">media query</a>. The <code class="language-markup">@media</code> at-rule may be used not only at the top level of a CSS, but also inside any <a  title="en/CSS/At-rule#Conditional_Group_Rules">CSS conditional-group at-rule</a>.</p>
+
+<p>The <code class="language-markup">@media</code> at-rule can be accessed via the CSS object model interface <a  title="The CSSMediaRule is an interface representing a single CSS @media rule. It implements the CSSConditionRule interface, and therefore the CSSGroupingRule and the CSSRule interface with a type value of 4 (CSSRule.MEDIA_RULE)."><code class="language-markup">CSSMediaRule</code></a>.</p>
+
+<h3>Syntax</h3>
+
+<pre >@media <em>&lt;media-query&gt;</em> {
+  /* media-specific rules */
+}
+</code></pre>
+
+<p>A <code class="language-markup">&lt;media-query&gt;</code> is composed of a media type and/or a number of media features.</p>
+
+<h3>Media types</h3>
+
+<div ><strong>Note:</strong> Firefox currently only implements the <code class="language-markup">print</code> and <code class="language-markup">screen</code> media types.  The <a   title="https://addons.mozilla.org/en-US/firefox/addon/4650">FullerScreen</a> extension enables support for the <code class="language-markup">projection</code> media type.</div>
+
+<dl>
+ <dt>all</dt>
+ <dd>Suitable for all devices.</dd>
+ <dt>print</dt>
+ <dd>Intended for paged material and for documents viewed on screen in print preview mode. Please consult the section on <a  title="https://developer.mozilla.org/en/CSS/Paged_Media">paged media</a>, and the <a  title="https://developer.mozilla.org/en/CSS/Getting_Started/Media">media section of the Getting Started tutorial</a> for information about formatting issues that are specific to paged media.</dd>
+ <dt>screen</dt>
+ <dd>Intended primarily for color computer screens.</dd>
+ <dt>speech</dt>
+ <dd>Intended for speech synthesizers. Note: CSS2 had a similar media type called 'aural' for this purpose. See the appendix on aural style sheets for details.</dd>
+</dl>
+
+<div ><strong>Note:</strong> CSS2.1 and Media Queries 3 defined several additional media types (<code class="language-markup">tty</code>, <code class="language-markup">tv</code>, <code class="language-markup">projection</code>, <code class="language-markup">handheld</code>, <code class="language-markup">braille</code>, <code class="language-markup">embossed</code>, <code class="language-markup">aural</code>), but they were deprecated in <a  >Media Queries 4</a> and shouldn't be used.</div>
+
+<h3>Media Features</h3>
+
+<p><a  >Definition</a>. This section needs to be expanded to explain media conditions in more depth.</p>
+
+<table>
+ <thead>
+  <tr>
+   <th>Name</th>
+   <th>Summary</th>
+   <th>Notes</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a ><code class="language-markup">width</code></a></td>
+   <td>Viewport width</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">height</code></a></td>
+   <td>Viewport height</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">aspect-ratio</code></a></td>
+   <td>Width-to-height aspect ratio of the viewport</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">orientation</code></a></td>
+   <td>Orientation of the viewport</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">resolution</code></a></td>
+   <td>Pixel density of the output device</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">scan</code></a></td>
+   <td>Scanning process of the output device</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">grid</code></a></td>
+   <td>Is the device a grid or bitmap?</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">update-frequency</code></a></td>
+   <td>How quickly (if at all) can the output device modify the appearance of the content</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">overflow-block</code></a></td>
+   <td>How does the output device handle that overflows the viewport along the block axis?</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">overflow-inline</code></a></td>
+   <td>Can content that overflows the viewport along the inline axis be scrolled?</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">color</code></a></td>
+   <td>Number of bits per color component of the output device, or zero if the device isn't color.</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">color-index</code></a></td>
+   <td>Number of entries in the output device's color lookup table, or zero if the device does not use such a table.</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">monochrome</code></a></td>
+   <td>Bits per pixel in the output device's monochrome frame buffer, or 0 if the device is not monochrome.</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">inverted-colors</code></a></td>
+   <td>Is the user agent or underlying OS inverting colors?</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">pointer</code></a></td>
+   <td>Is the primary input mechanism a pointing device, and if so, how accurate is it?</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">hover</code></a></td>
+   <td>Does the primary input mechanism allow the user to hover over elements?</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">any-pointer</code></a></td>
+   <td>Is any available input mechanism a pointing device, and if so, how accurate is it?</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">any-hover</code></a></td>
+   <td>Does any available input mechanism allow the user to hover over elements?</td>
+   <td> </td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">light-level</code></a></td>
+   <td>Current ambient light level</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">scripting</code></a></td>
+   <td>Is scripting (e.g. JavaScript) available?</td>
+   <td>Added in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">device-width</code></a> <span title="This is an obsolete API and is no longer guaranteed to work."><i > </i></span></td>
+   <td>Width of the rendering surface of the output device</td>
+   <td>Deprecated in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">device-height</code></a> <span title="This is an obsolete API and is no longer guaranteed to work."><i > </i></span></td>
+   <td>Height of the rendering surface of the output device</td>
+   <td>Deprecated in Media Queries Level 4</td>
+  </tr>
+  <tr>
+   <td><a ><code class="language-markup">device-aspect-ratio</code></a> <span title="This is an obsolete API and is no longer guaranteed to work."><i > </i></span></td>
+   <td>Width-to-height aspect ratio of the output device</td>
+   <td>Deprecated in Media Queries Level 4</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Examples</h3>
+
+<pre >@media print {
+  body { font-size: 10pt }
+}
+@media screen {
+  body { font-size: 13px }
+}
+@media screen, print {
+  body { line-height: 1.2 }
+}
+</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Media Queries Level 4<br><small lang="en-US">The definition of '@media' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>
+    <p>Added <code class="language-markup">scripting</code>, <code class="language-markup">pointer</code>, <code class="language-markup">hover</code>, <code class="language-markup">light-level</code>, <code class="language-markup">update-frequency</code>, <code class="language-markup">overflow-block</code>, and <code class="language-markup">overflow-inline</code> media features.<br>
+     Deprecated all media types except for <code class="language-markup">screen</code>, <code class="language-markup">print</code>, <code class="language-markup">speech</code>, and <code class="language-markup">all</code>.</p>
+   </td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Media Queries<br><small lang="en-US">The definition of '@media' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of '@media' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>9.0</td>
+   <td>9.2</td>
+   <td>1.3</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7)</td>
+   <td>9.0</td>
+   <td>9.0</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a   title="En/CSS/Media queries">Media queries</a></li>
+ <li>CSS at-rules: <code class="language-markup"><a >@charset</a></code>, <code class="language-markup"><a >@document</a></code>, <code class="language-markup"><a >@font-face</a></code>, <code class="language-markup"><a >@import</a></code>, <code class="language-markup"><a >@keyframes</a></code>, <code class="language-markup"><a >@media</a></code>, <code class="language-markup"><a >@page</a></code>, <code class="language-markup"><a >@supports</a></code></li>
+ <li>The CSSOM <a  title="The CSSMediaRule is an interface representing a single CSS @media rule. It implements the CSSConditionRule interface, and therefore the CSSGroupingRule and the CSSRule interface with a type value of 4 (CSSRule.MEDIA_RULE)."><code class="language-markup">CSSMediaRule</code></a> associated with this at-rule.</li>
+</ul>
+                                                

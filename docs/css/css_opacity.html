@@ -1,0 +1,193 @@
+<h2>opacity</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">opacity</code> CSS property specifies the transparency of an element, that is, the degree to which the background behind the element is overlaid.</p>
+<p>The value applies to the element as a whole, including its contents, even though the value is not inherited by child elements. Thus, an element and its contained children all have the same opacity relative to the element's background, even if the element and its children have different opacities relative to one another.</p>
+<p>Using this property with a value different than <code class="language-markup">1</code> places the element in a new <a  title="CSS/Understanding_z-index/The_stacking_context">stacking context</a>.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">1.0</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the specified value, clipped in the range <code class="language-markup">[0,1]</code></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;number> CSS data type are interpolated as real, floating-point, numbers.">number</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="">&lt;number&gt;</a></code></code></pre>
+<pre>opacity: 1
+opacity: 1.0
+opacity: 0.6
+opacity: 0.0
+opacity: 0
+
+opacity: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;number&gt;</code></dt>
+ <dd>
+  Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a> in the range <code class="language-markup">0.0</code> to <code class="language-markup">1.0</code>, both included, representing the opacity of the channel, that is the value of its alpha channel. Any value outside the interval, though valid, is clamped to the nearest limit in the range.
+  <table >
+   <tbody>
+    <tr>
+     <th>Value</th>
+     <th>Meaning</th>
+    </tr>
+    <tr>
+     <td><code class="language-markup">0</code></td>
+     <td>The element is fully transparent (that is, invisible).</td>
+    </tr>
+    <tr>
+     <td>Any <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a> strictly between <code class="language-markup">0</code> and <code class="language-markup">1</code></td>
+     <td>The element is translucent (that is, background can be seen).</td>
+    </tr>
+    <tr>
+     <td><code class="language-markup">1</code></td>
+     <td>The element is fully opaque (solid).</td>
+    </tr>
+   </tbody>
+  </table>
+ </dd>
+</dl>
+<h3>Examples</h3>
+<h3  name="Basic_example">Basic example</h3>
+<pre >div { background-color: yellow; }
+.light {
+  opacity: 0.2; /* Barely see the text over the background */
+}
+.medium {
+  opacity: 0.5; /* See the text more clearly over the background */
+}
+.heavy {
+  opacity: 0.9; /* See the text very clearly over the background */
+}
+</code></pre>
+<pre >&lt;div &gt;You can barely see this.&lt;/div&gt;
+&lt;div &gt;This is easier to see.&lt;/div&gt;
+&lt;div &gt;This is very easy to see.&lt;/div&gt;
+</code></pre>
+<pre ><iframe  frameborder="0" height="64" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/opacity$samples/Basic_example?revision=691959" width="640"></iframe></code></pre>
+<h3  name="Different_opacity_with_.3Ahover">Different opacity with :hover</h3>
+<pre >img.opacity {
+  opacity: 1;
+  filter: alpha(opacity=100); /* IE8 and lower */
+  zoom: 1; /* Triggers "hasLayout" in IE 7 and lower */
+}
+ 
+img.opacity:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  zoom: 1;
+}</code></pre>
+<pre >&lt;img src="//developer.mozilla.org/media/img/mdn-logo.png"
+     alt="MDN logo" width="128" height="146"
+     &gt;
+</code></pre>
+<pre ><iframe  frameborder="0" height="175" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/opacity$samples/Different_opacity_with_.3Ahover?revision=691959" width="150"></iframe></code></pre>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small>The definition of 'opacity' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">opacity</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Color Module Level 3<br><small>The definition of 'opacity' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari (WebKit)</th>
+   </tr>
+   <tr>
+    <td rowspan="3">Basic support</td>
+    <td rowspan="3">1.0</td>
+    <td rowspan="3">1.0 (1.7 or earlier)</td>
+    <td>9.0</td>
+    <td rowspan="3">9.0</td>
+    <td rowspan="3">1.2 (125)</td>
+   </tr>
+   <tr>
+    <td>8.0<br>
+     <code class="language-markup">filter: alpha(opacity=xx)<br>
+     filter: "alpha(opacity=xx)" </code><br>
+     (both are synonymous)</td>
+   </tr>
+   <tr>
+    <td>4.0<br>
+     <code class="language-markup">filter: alpha(opacity=xx)</code></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table  style="width: 827px; height: 156px;">
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Mobile</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td rowspan="3">Basic support</td>
+    <td rowspan="3">1.0</td>
+    <td rowspan="3">1.0 (1.7)</td>
+    <td>9.0</td>
+    <td rowspan="3">9.0</td>
+    <td rowspan="3">3.2</td>
+   </tr>
+   <tr>
+    <td>8.0<br>
+     <code class="language-markup">filter: alpha(opacity=xx)<br>
+     filter: "alpha(opacity=xx)" </code><br>
+     (both are synonymous)</td>
+   </tr>
+   <tr>
+    <td>4.0<br>
+     <code class="language-markup">filter: alpha(opacity=xx)</code></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<ul>
+ <li><strong>History:</strong> Prior to Mozilla 1.7 (Firefox 0.9) the<code class="language-markup"> -moz-opacity </code>property was implemented in a non-standard (inherited) way. With Firefox 0.9 the behavior changed and the property was renamed to<code class="language-markup"> opacity</code>. Since then<code class="language-markup"> -moz-opacity </code>was supported just as an alias for<code class="language-markup"> opacity</code>.</li>
+ <li>Gecko 1.9.1 (Firefox 3.5) and later do not support<code class="language-markup"> -moz-opacity</code> and support for <code class="language-markup">MozOpacity</code> in javascript was <a   title="https://bugzilla.mozilla.org/show_bug.cgi?id=730532">removed</a> in Gecko 13. By now, you should be using simply<code class="language-markup"> opacity</code>.</li>
+ <li>Prior to version 9, Internet Explorer does not support <code class="language-markup">opacity</code>, rather it supports <code class="language-markup">filter</code> instead.</li>
+ <li>IE4 to IE9 supported the extended form <code class="language-markup">progid:DXImageTransform.Microsoft.Alpha(Opacity=xx)</code>.</li>
+ <li>IE8 introduced <code class="language-markup">-ms-filter</code>, which is synonymous with <code class="language-markup">filter</code>. Both are gone in IE10</li>
+ <li>Similar to <code class="language-markup">-moz-opacity</code>, <code class="language-markup">-khtml-opacity</code> has been dead since early 2004 (release of Safari 1.2).<br>
+  Konqueror never had support for <code class="language-markup">-khtml-opacity</code> and had been supporting <code class="language-markup">opacity</code> since version 4.0.</li>
+</ul>
+<h3>See also</h3>
+<ul>
+ <li><a   title="http://msdn.microsoft.com/en-us/library/ms532910(VS.85).aspx">MSDN Microsoft's filter:alpha(opacity=xx)</a></li>
+</ul>
+                                                

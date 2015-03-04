@@ -1,0 +1,64 @@
+<h2>font-variant-alternates#stylistic()</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-variant-alternates</code></strong> CSS property controls the usage of alternate glyphs associated to alternative names defined in <a   title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">@font-feature-values</code></a>.</p>
+<p>The at-rules defines names, for a given kind of alternative glyphs (<code class="language-markup">stylistic</code>, <code class="language-markup">styleset</code>, <code class="language-markup">character-variant</code>, <code class="language-markup">swash</code>, <code class="language-markup">ornament</code> or <code class="language-markup">annotation</code>), associating it to a given OpenType values. This property allows to use these user-friendly names in the stylesheet.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn> order of appearance in the formal grammar of the values<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> [ stylistic(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a>) <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> historical-forms <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> styleset(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a> <a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a>) <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> character-variant(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a> <a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a>) <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> swash(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a>) <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> ornaments(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a>) <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> annotation(<a  title="Tooltip not found in DB.">&lt;feature-value-name&gt;</a>) ] </code></code></pre>
+<pre>font-variant-alternates: normal
+font-variant-alternates: historical-forms
+font-variant-alternates: stylistic(user-defined-ident)
+font-variant-alternates: styleset(user-defined-ident)
+font-variant-alternates: character-variant(user-defined-ident)
+font-variant-alternates: swash(user-defined-ident)
+font-variant-alternates: ornaments(user-defined-ident)
+font-variant-alternates: annotation(user-defined-ident)
+font-variant-alternates: swash(ident1) annotation(ident2)
+
+font-variant-alternates: initial
+font-variant-alternates: inherit
+font-variant-alternates: unset
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+ <dt>
+  <code class="language-markup">historical-forms</code></dt>
+ <dd>
+  This keyword enables the display of historical forms, that is glyphs that were common in the past but no more today. It corresponds to the OpentType value <code class="language-markup">hist</code>.</dd>
+ <dt>
+  <code class="language-markup"><a name="stylistic()"></a>stylistic()</code></dt>
+ <dd>
+  This function enables the display of a stylistic alternates. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">salt</code> like <code class="language-markup">salt 2</code>.</dd>
+ <dt>
+  <code class="language-markup"><a name="styleset()"></a>styleset()</code></dt>
+ <dd>
+  This function enables the usage of a set of stylistic alternatives for characters. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">ssXY</code> like <code class="language-markup">ss02</code>.</dd>
+ <dt>
+  <code class="language-markup"><a name="character-variant()"></a>character-variant()</code></dt>
+ <dd>
+  This function enables the usage of a set of stylistic alternatives for characters. It is very similar to <code class="language-markup">styleset()</code> though the variant here doesn't create coherent glyphs for a set of characters; individual characters will have independant and not necessary coherent styles. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">cvXY</code> like <code class="language-markup">cv02</code>.</dd>
+ <dt>
+  <code class="language-markup"><a name="swash()"></a>swash()</code></dt>
+ <dd>
+  This function enables the display of <a  >swash</a> glyphs. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">swsh</code> and <code class="language-markup">cswh</code> like <code class="language-markup">swsh 2</code> and <code class="language-markup">cswh 2</code>.</dd>
+ <dt>
+  <code class="language-markup"><a name="ornaments()"></a>ornaments()</code></dt>
+ <dd>
+  This function enables the display of ornaments, that are <a  >fleurons</a> and other dingbats-like glyphs. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">ornm</code> like <code class="language-markup">ornm 2</code>.
+  <div >
+   <strong>Note: </strong>in order to preserve the semantic of the font, font designer are invited to include ornaments that doesn't match a Unicode zingbat character as ornaments variant of the bullet character (U+2022). Well-formed fonts will do that, though a lot of other fonts won't.</div>
+ </dd>
+ <dt>
+  <code class="language-markup"><a name="annotation()"></a>annotation()</code></dt>
+ <dd>
+  This function enables the display of annotations, like circled digits or inverterd characters. The parameter is a font-specific names mapped to a number. It corresponds to the OpenType value <code class="language-markup">nalt</code> like <code class="language-markup">nalt 2</code>.</dd>
+</dl>

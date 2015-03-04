@@ -1,0 +1,194 @@
+<h2>height</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">height</code> CSS property specifies the height of the content area of an element. The <a  title="CSS/Box_model#content">content area</a> is <em>inside</em> the padding, border, and margin of the element.</p>
+<p>The <a  title="The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height."><code class="language-markup">min-height</code></a> and <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a> properties override <a  title="The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">height</code></a>.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> all elements but non-replaced inline elements, table columns, and column groups</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> The percentage is calculated with respect to the height of the generated box's containing block. If the height of the containing block is not specified explicitly (i.e., it depends on content height), and this element is not absolutely positioned, the value computes to <code class="language-markup">auto</code>. A percentage height on the root element is relative to the initial containing block.</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> a percentage or <code class="language-markup">auto</code> or the absolute length</li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[<span ><span ><span >&lt;</span>length</span><span >&gt;</span></span> | <span ><span ><span >&lt;</span>percentage</span><span >&gt;</span></span>] &amp;&amp; [border-box | content-box]? | available | min-content | max-content | fit-content | complex | auto</code>
+</code></pre>
+<pre>height: auto     /* auto keyword */
+
+height: 120px    /* &lt;length&gt; values */
+height: 10em
+
+height: 75%      /* &lt;percentage&gt; values */
+
+height: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>
+  See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> for possible units.</dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  Specified as a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of containing block's <span style="line-height: 21px;">height</span>.</dd>
+ <dt>
+  <code class="language-markup">border-box </code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  If present, the preceding <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> is applied to the element's border box.</dd>
+ <dt>
+  <code class="language-markup">content-box</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  If present, the preceding <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> is applied to the element's content box.</dd>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  The browser will calculate and select a height for the specified element.</dd>
+ <dt>
+  <code class="language-markup">max-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The intrinsic preferred <span style="line-height: 21px;">height</span>.</dd>
+ <dt>
+  <code class="language-markup">min-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The intrinsic minimum <span style="line-height: 21px;">height</span>.</dd>
+ <dt>
+  <code class="language-markup">available</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The containing block height minus vertical margin, border and padding.</dd>
+ <dt>
+  <code class="language-markup">fit-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The larger of:
+  <ul>
+   <li>the intrinsic minimum height</li>
+   <li>the smaller of the intrinsic preferred height and the available height</li>
+  </ul>
+ </dd>
+</dl>
+<h3>Example</h3>
+<h3 >HTML</h3>
+<pre >&lt;div &gt;
+  &lt;span&gt;I'm 50 pixels tall.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div &gt;
+  &lt;span&gt;I'm 25 pixels tall.&lt;/span&gt;
+&lt;/div&gt;
+&lt;div &gt;
+  &lt;div &gt;
+    &lt;span&gt;I'm half the height of my parent.&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 >CSS</h3>
+<pre >div {
+  width: 250px;
+  margin-bottom: 5px;
+  border: 3px solid #999999;
+}
+
+#red {
+  height: 50px;
+}
+
+#green {
+  height: 25px;
+}
+
+#parent {
+  height: 100px;
+}
+
+#child {
+  height: 50%;
+  width: 75%;
+}
+</code></pre>
+<p><iframe  frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/height$samples/Live_sample?revision=711009"></iframe></p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic Box Model<br><small lang="en-US">The definition of 'height' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Added the <code class="language-markup">max-content</code>, <code class="language-markup">min-content</code>, <code class="language-markup">available</code>, <code class="language-markup">fit-content</code>, <code class="language-markup">border-box</code>, <code class="language-markup">content-box</code> keywords.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'height' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Lists <code class="language-markup">height</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'height' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Adds support for the <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> values and precises on which element it applies to.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of 'height' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial specification.</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>4.0</td>
+    <td>7.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1)</td>
+    <td>6.0</td>
+    <td>6.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li><a  title="CSS/box_model">box model</a>, <a  title="The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">width</code></a>, <a  title="The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification."><code class="language-markup">box-sizing</code></a>, <a  title="The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height."><code class="language-markup">min-height</code></a>, <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a></li>
+</ul>
+                                                

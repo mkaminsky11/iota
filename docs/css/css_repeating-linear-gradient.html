@@ -1,0 +1,41 @@
+<h2>repeating-linear-gradient</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<p>The CSS <code class="language-markup">repeating-linear-gradient</code> function creates an <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;image&gt;</code></a> of a repeating gradients. It works similarly, and takes the same arguments, to the basic linear gradients, as described by <a  title="{{ CSSRef() }}"><code class="language-markup">linear-gradient()</code></a>, but it automatically repeats the color stops infinitely in both directions, with their positions shifted by multiples of the length of a basic linear gradient (the difference between the last color stop's position and the first one's position).</p>
+
+<p>The consequence is that an end color of a gradient always coincide with a start color. If both are not identical, this will result in a sharp transition.</p>
+
+<p>Like any other gradient, a repeating CSS linear gradient is not a CSS <span ><code class="language-markup"><a  rel="custom">&lt;color&gt;</a></code> </span> but an image with <a  title="en/CSS/image#no_intrinsic">no intrinsic dimensions</a>; that is, it has no natural or preferred size, nor ratio. Its concrete size will match the one of the element it applies to.</p>
+
+<h3>Syntax</h3>
+
+<pre >repeating-linear-gradient(  [ <a  title="angle">&lt;angle&gt;</a> | to &lt;side-or-corner&gt; ,]? &lt;color-stop&gt; [, &lt;color-stop&gt;]+ )
+                            \---------------------------------/ \----------------------------/
+                              Definition of the gradient line         List of color stops  
+
+where <code class="language-markup">&lt;side-or-corner&gt; = [left | right] || [top | bottom]</code>
+   and <code class="language-markup">&lt;color-stop&gt;     = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</code>
+</code></pre>
+
+<pre>repeating-linear-gradient( 45deg, blue, red );           /* A repeating gradient on 45deg axe starting blue and finishing red */
+repeating-linear-gradient( to left top, blue, red);      /* A repeating gradient going from the bottom right to the top left 
+                                                            starting blue and finishing red */
+
+repeating-linear-gradient( 0deg, blue, green 40%, red ); /* A repeating gradient going from the bottom to top, starting blue, 
+                                                            being green after 40% and finishing red */ 
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;side-or-corner&gt;</code></dt>
+ <dd>Represents the position of the starting-point of the gradient line. It consists of two keywords: the first one indicates the horizontal side, <code class="language-markup">left</code> or <code class="language-markup">right</code>, and the second one the vertical side, <code class="language-markup">top</code> or <code class="language-markup">bottom</code>. The order is not relevant and each of the keyword is optional.<br>
+ The values <code class="language-markup">to top</code>, <code class="language-markup">to bottom</code>, <code class="language-markup">to left</code> and <code class="language-markup">to right</code> are translated into the angles <code class="language-markup">0deg</code>, <code class="language-markup">180deg</code>, <code class="language-markup">270deg</code>, <code class="language-markup">90deg</code> respectively. The others are translated into an angle that causes the starting-point to be in the same quadrant as the described corner so that the line defined by the starting-point and the corner is perpendicular to the gradient line. That way, the color described by the <code class="language-markup">&lt;color-stop&gt;</code> will exactly apply to the corner point. This is sometimes called the "<em>magic corner</em>" property. The end-point of the gradient line is the symmetrical point of the starting-point on the other direction of the center box.</dd>
+ <dt><code class="language-markup">&lt;angle&gt;</code></dt>
+ <dd>An angle of direction for the gradient. See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;angle&gt;</code></a>.</dd>
+ <dt><code class="language-markup">&lt;color-stop&gt;</code></dt>
+ <dd>This value is comprised of a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;color&gt;</code></a> value, followed by an optional stop position (either a percentage between 0% and 100% or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> along the gradient axis).<br>
+ Rendering of color-stops in CSS gradients follows the same rules as color-stops in SVG gradients.</dd>
+</dl>
+

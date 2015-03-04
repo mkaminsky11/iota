@@ -1,0 +1,49 @@
+<h2>border-bottom-left-radius</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">border-bottom-left-radius</code> CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is <code class="language-markup">0</code> no rounding is done and the corner is square.</p>
+<div style="text-align: center;">
+ <img alt="border-bottom-left-radius.png"  src="/@api/deki/files/6136/=border-bottom-left-radius.png" style=""></div>
+<p>A background, being an image or a color, is clipped at the border, even a rounded one; the exact location of the clipping is defined by the value of the <a  title=""><code class="language-markup">background-clip</code></a> property.</p>
+<div >
+ If the value of this property is not set in a <a  title=""><code class="language-markup">border-radius</code></a> shorthand property that is applied to the element after the <code class="language-markup">border-bottom-left-radius</code> CSS property, the value of this property is then reset to its initial value by the <a  title="en/CSS/Shorthand_properties">shorthand property</a>.</div>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> all elements; but UA are not required to apply to <code class="language-markup">table</code> and <code class="language-markup">inline-table</code> elements when <a  title=""><code class="language-markup">border-collapse</code></a> is <code class="language-markup">collapse</code>. The behavior on internal table elements is undefined for the moment.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the corresponding dimension of the border box<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> two absolute length or percentages<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="Possible value: a number followed by 'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc', 'px', like 3px, 1.5cm, -0.5em, 0.">&lt;length&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> ]{1,2}</code> </code></pre>
+<pre>border-bottom-left-radius: <em>radius</em>               /* the corner is a circle    */  E.g. border-bottom-left-radius: 3px
+border-bottom-left-radius: <em>horizontal</em> <em>vertical</em>  /* the corner is an ellipsis */  E.g. border-bottom-left-radius: 0.5em 1em
+
+border-bottom-left-radius: inherit
+</code></pre>
+<div style="font-size: 0.9em;">
+ <p style="">where:</p>
+ <dl style="padding-left: 6em;">
+  <dt style="float: left; width: 7.5em;">
+   <em>radius</em></dt>
+  <dd style="padding-left: 7.5em;">
+   Is a <a  title=""><code class="language-markup">&lt;length&gt;</code></a> or a <a  title=""><code class="language-markup">&lt;percentage&gt;</code></a> denoting the radius of the circle to use for the border in that corner.</dd>
+  <dt style="float: left; width: 7.5em;">
+   <em>horizontal</em></dt>
+  <dd style="padding-left: 7.5em;">
+   Is a <a  title=""><code class="language-markup">&lt;length&gt;</code></a> or a <a  title=""><code class="language-markup">&lt;percentage&gt;</code></a> denoting the horizontal semi-major axis of the ellipsis to use for the border in that corner.</dd>
+  <dt style="float: left; width: 7.5em;">
+   <em>vertical</em></dt>
+  <dd style="padding-left: 7.5em;">
+   Is a <a  title=""><code class="language-markup">&lt;length&gt;</code></a> or a <a  title=""><code class="language-markup">&lt;percentage&gt;</code></a> denoting the vertical semi-major axis of the ellipsis to use for the border in that corner.</dd>
+ </dl>
+</div>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>
+  Denotes the size of the circle radius or the semi-major and semi-minor axes of the ellipsis. It can be expressed in any unit allowed by the CSS <a  title=""><code class="language-markup">&lt;length&gt;</code></a> data types. Negative values are invalid.</dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  Denotes the size of the circle radius, or the semi-major and semi-minor axes of the ellipsis, using percentage values. Percentages for the horizontal axe refer to the width of the box, percentages for the vertical axe refer to the height of the box. Negative values are invalid.</dd>
+</dl>

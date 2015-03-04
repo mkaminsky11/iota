@@ -1,0 +1,411 @@
+<h2>cursor</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">cursor</code> CSS property specifies the mouse cursor displayed when the mouse pointer is over an element.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual, interactive</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified, but with relative URI converted into absolute URI<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ [ <a  title="Tooltip not found in DB.">&lt;uri&gt;</a> [<a  title="Tooltip not found in DB.">&lt;x&gt;</a> <a  title="Tooltip not found in DB.">&lt;y&gt;</a>]<a  title="Question mark multiplier: The previous entity is optional (it may be used once, or not at all).">?</a>,]<a  title="Asterisk multiplier: The previous entity may appear 0, 1 or several times.">*</a> [ auto <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> default <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> none <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> context-menu <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> help <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> pointer <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> progress <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> wait <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> cell <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> crosshair <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> text <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> vertical-text <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> alias <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> copy <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> move <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> no-drop <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> not-allowed <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> e-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> n-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> ne-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> nw-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> s-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> se-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> sw-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> w-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> ew-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> ns-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> nesw-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> nwse-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> col-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> row-resize <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> all-scroll <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> zoom-in <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> zoom-out <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> grab <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> grabbing ] ]</code>
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt>&lt;<code class="language-markup">uri</code>&gt;</dt>
+ <dd>A <code class="language-markup">url(…)</code> or a comma separated list <code class="language-markup">url(…), url(…), …</code>, pointing to an image file. More than one <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;uri&gt;</code></a> may be provided as fallback, in case some cursor image types are not supported. A non-URL fallback (one ore more of the other values) <strong>must</strong> be at the end of the fallback list. See <a  title="Using_URL_values_for_the_cursor_property">Using URL values for the cursor property</a> for more details.</dd>
+ <dt><code class="language-markup">&lt;x&gt;</code> <code class="language-markup">&lt;y&gt;</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>Optional x- and y-coordinates. Two unit-less non-negative numbers less than 32.</dd>
+ <dt>Keyword values</dt>
+ <dd>
+ <p><strong style="font-size: big; color: red;">Move mouse over value for testing:</strong></p>
+
+ <table >
+  <tbody>
+   <tr>
+    <th>Category</th>
+    <th>CSS value</th>
+    <th> </th>
+    <th>Description</th>
+   </tr>
+   <tr style="cursor: auto;">
+    <td rowspan="3">General</td>
+    <td><code class="language-markup">auto</code></td>
+    <td> </td>
+    <td>The browser determines the cursor to display based on the current context.<br>
+     E.g. equivalent to <code class="language-markup">text</code> when hovering text.</td>
+   </tr>
+   <tr style="cursor: default;">
+    <td><code class="language-markup">default</code></td>
+    <td><img alt="default.gif" src="/@api/deki/files/3438/=default.gif" style="width: 26px; height: 26px;"></td>
+    <td>Default cursor, typically an arrow.</td>
+   </tr>
+   <tr style="cursor: none;">
+    <td><code class="language-markup">none</code></td>
+    <td> </td>
+    <td>No cursor is rendered.</td>
+   </tr>
+   <tr style="cursor: context-menu;">
+    <td rowspan="5" style="cursor: auto;">Links &amp; status</td>
+    <td><code class="language-markup">context-menu</code></td>
+    <td><img alt="context-menu.png" src="/@api/deki/files/3461/=context-menu.png" style="width: 26px; height: 26px;"></td>
+    <td>A context menu is available under the cursor.<br>
+     Only IE 10 and up have implemented this on Windows: <a   title="'context-menu' cursor glyph missing for Windows">bug 258960</a>.</td>
+   </tr>
+   <tr style="cursor: help;">
+    <td><code class="language-markup">help</code></td>
+    <td><img alt="help.gif" src="/@api/deki/files/3442/=help.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating help is available.</td>
+   </tr>
+   <tr style="cursor: pointer;">
+    <td><code class="language-markup">pointer</code></td>
+    <td><img alt="pointer.gif" src="/@api/deki/files/3449/=pointer.gif" style="width: 26px; height: 26px;"></td>
+    <td>E.g. used when hovering over links, typically a hand.</td>
+   </tr>
+   <tr style="cursor: progress;">
+    <td><code class="language-markup">progress</code></td>
+    <td><img alt="progress.gif" src="/@api/deki/files/3450/=progress.gif" style="width: 26px; height: 26px;"></td>
+    <td>The program is busy in the background but the user can still interact with the interface (unlike for <code class="language-markup">wait</code>).</td>
+   </tr>
+   <tr style="cursor: wait;">
+    <td><code class="language-markup">wait</code></td>
+    <td><img alt="wait.gif" src="/@api/deki/files/3457/=wait.gif" style="width: 26px; height: 26px;"></td>
+    <td>The program is busy (sometimes an hourglass or a watch).</td>
+   </tr>
+   <tr style="cursor: cell;">
+    <td rowspan="4" style="cursor: auto;">Selection</td>
+    <td><code class="language-markup">cell</code></td>
+    <td><img alt="cell.gif" src="/@api/deki/files/3434/=cell.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating that cells can be selected.</td>
+   </tr>
+   <tr style="cursor: crosshair;">
+    <td><code class="language-markup">crosshair</code></td>
+    <td><img alt="crosshair.gif" src="/@api/deki/files/3437/=crosshair.gif" style="width: 26px; height: 26px;"></td>
+    <td>Cross cursor, often used to indicate selection in a bitmap.</td>
+   </tr>
+   <tr style="cursor: text;">
+    <td><code class="language-markup">text</code></td>
+    <td><img alt="text.gif"  src="/files/3809/text.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating text can be selected, typically an I-beam.</td>
+   </tr>
+   <tr style="cursor: vertical-text;">
+    <td><code class="language-markup">vertical-text</code></td>
+    <td><img alt="vertical-text.gif" src="/@api/deki/files/3456/=vertical-text.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating that vertical text can be selected, typically a sideways I-beam.</td>
+   </tr>
+   <tr style="cursor: alias;">
+    <td rowspan="5" style="cursor: auto;">Drag and drop</td>
+    <td><code class="language-markup">alias</code></td>
+    <td><img alt="alias.gif" src="/@api/deki/files/3432/=alias.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating an alias or shortcut is to be created.</td>
+   </tr>
+   <tr style="cursor: copy;">
+    <td><code class="language-markup">copy</code></td>
+    <td><img alt="copy.gif"  src="/@api/deki/files/3436/=copy.gif" style="width: 26px; height: 26px;"></td>
+    <td>Indicating that something can be copied.</td>
+   </tr>
+   <tr style="cursor: move;">
+    <td><code class="language-markup">move</code></td>
+    <td><img alt="move.gif" src="/@api/deki/files/3443/=move.gif" style="width: 26px; height: 26px;"></td>
+    <td>The hovered object may be moved.</td>
+   </tr>
+   <tr style="cursor: no-drop;">
+    <td><code class="language-markup">no-drop</code></td>
+    <td><img align="left" alt="no-drop.gif"  src="/@api/deki/files/3445/=no-drop.gif" style="width: 33px; height: 26px;"></td>
+    <td>Cursor showing that a drop is not allowed at the current location.<br>
+     <a   title="Cursor glyph for CSS3 'no-drop' is the same as for 'not-allowed'">bug 275173</a> on Windows and Mac OS X, "no-drop is the same as not-allowed".</td>
+   </tr>
+   <tr style="cursor: not-allowed;">
+    <td><code class="language-markup">not-allowed</code></td>
+    <td><img alt="not-allowed.gif" src="/@api/deki/files/3446/=not-allowed.gif" style="width: 26px; height: 26px;"></td>
+    <td>Cursor showing that something cannot be done.</td>
+   </tr>
+   <tr style="cursor: all-scroll;">
+    <td rowspan="15" style="cursor: auto;">Resize &amp; scrolling</td>
+    <td><code class="language-markup">all-scroll</code></td>
+    <td><img alt="all-scroll.gif" src="/@api/deki/files/3433/=all-scroll.gif" style="width: 26px; height: 26px;"></td>
+    <td>Cursor showing that something can be scrolled in any direction (panned).<br>
+     <a   title="Cursor glyph for CSS3 'all-scroll' is the same as for 'move'">bug 275174</a> on Windows, "<em>all-scroll</em> is the same as <em>move</em>".</td>
+   </tr>
+   <tr style="cursor: col-resize;">
+    <td><code class="language-markup">col-resize</code></td>
+    <td><img alt="col-resize.gif" src="/@api/deki/files/3435/=col-resize.gif" style="width: 26px; height: 26px;"></td>
+    <td>The item/column can be resized horizontally. Often rendered as arrows pointing left and right with a vertical bar separating.</td>
+   </tr>
+   <tr style="cursor: row-resize;">
+    <td><code class="language-markup">row-resize</code></td>
+    <td><img alt="row-resize.gif" src="/@api/deki/files/3451/=row-resize.gif" style="width: 26px; height: 26px;"></td>
+    <td>The item/row can be resized vertically. Often rendered as arrows pointing up and down with a horizontal bar separating them.</td>
+   </tr>
+   <tr style="cursor: n-resize;">
+    <td><code class="language-markup">n-resize</code></td>
+    <td><img alt="Example of a resize towards the top cursor" src="/files/4083/n-resize.gif" style="width: 26px; height: 26px; border-width: 0px; border-style: solid;"></td>
+    <td rowspan="8" style="cursor: auto;">Some edge is to be moved. For example, the <code class="language-markup">se-resize</code> cursor is used when the movement starts from the <em>south-east</em> corner of the box.</td>
+   </tr>
+   <tr style="cursor: e-resize;">
+    <td><code class="language-markup">e-resize</code></td>
+    <td><img alt="Example of a resize towards the right cursor" src="/files/4085/e-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: s-resize;">
+    <td><code class="language-markup">s-resize</code></td>
+    <td><img alt="Example of a resize towards the bottom cursor " src="/files/4087/s-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: w-resize;">
+    <td><code class="language-markup">w-resize</code></td>
+    <td><img alt="Example of a resize towards the left cursor" src="/files/4089/w-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: ne-resize;">
+    <td><code class="language-markup">ne-resize</code></td>
+    <td><img alt="Example of a resize towards the top-right corner cursor" src="/files/4091/ne-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: nw-resize;">
+    <td><code class="language-markup">nw-resize</code></td>
+    <td><img alt="Example of a resize towards the top-left corner cursor" src="/files/4093/nw-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: se-resize;">
+    <td><code class="language-markup">se-resize</code></td>
+    <td><img alt="Example of a resize towards the bottom-right corner cursor" src="/files/4097/se-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: sw-resize;">
+    <td><code class="language-markup">sw-resize</code></td>
+    <td><img alt="Example of a resize towards the bottom-left corner cursor" src="/files/4095/sw-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: ew-resize;">
+    <td><code class="language-markup">ew-resize</code></td>
+    <td><img alt="3-resize.gif"  src="/files/3806/3-resize.gif" style="width: 26px; height: 26px;"></td>
+    <td rowspan="4" style="cursor: auto;">Indicates a bidirectional resize cursor.</td>
+   </tr>
+   <tr style="cursor: ns-resize;">
+    <td><code class="language-markup">ns-resize</code></td>
+    <td><img alt="6-resize.gif"  src="/files/3808/6-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: nesw-resize;">
+    <td><code class="language-markup">nesw-resize</code></td>
+    <td><img alt="1-resize.gif"  src="/files/3805/1-resize.gif"></td>
+   </tr>
+   <tr style="cursor: nwse-resize;">
+    <td><code class="language-markup">nwse-resize</code></td>
+    <td><img alt="4-resize.gif"  src="/files/3807/4-resize.gif" style="width: 26px; height: 26px;"></td>
+   </tr>
+   <tr style="cursor: -webkit-zoom-in; cursor: zoom-in;">
+    <td rowspan="2">Zoom</td>
+    <td><code class="language-markup">zoom-in</code></td>
+    <td><img alt="zoom-in.gif"  src="/@api/deki/files/3459/=zoom-in.gif"></td>
+    <td rowspan="2" style="cursor: auto;">
+     <p>Indicates that something can be zoomed (magnified) in or out.</p>
+    </td>
+   </tr>
+   <tr style="cursor: -webkit-zoom-out; cursor: zoom-out;">
+    <td><code class="language-markup">zoom-out</code></td>
+    <td><img alt="zoom-out.gif"  src="/@api/deki/files/3460/=zoom-out.gif"></td>
+   </tr>
+   <tr  style="cursor: -moz-grab; cursor: -webkit-grab; cursor: grab;">
+    <td rowspan="2">Grab</td>
+    <td><code class="language-markup">grab</code></td>
+    <td><img alt="grab.gif"  src="/@api/deki/files/3440/=grab.gif"></td>
+    <td rowspan="2" style="cursor: auto;">
+     <p>Indicates that something can be grabbed (dragged to be moved).</p>
+    </td>
+   </tr>
+   <tr style="cursor: -moz-grabbing; cursor: -webkit-grabbing; cursor: grabbing;">
+    <td><code class="language-markup">grabbing</code></td>
+    <td><img alt="grabbing.gif"  src="/@api/deki/files/3441/=grabbing.gif"></td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+</dl>
+
+<h3>Examples</h3>
+
+<pre >.foo { cursor: crosshair; }
+
+/* use prefixed-value if "zoom-in" isn't supported */
+.bar { cursor: -webkit-zoom-in;  cursor: zoom-in; } 
+
+/* standard cursor value as fallback for url() <u>must</u> be provided (doesn't work without) */
+.baz { cursor: url(hyper.cur), auto }
+</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic User Interface Module Level 3<br><small lang="en-US">The definition of 'cursor' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Addition of several keywords and the positioning syntax for <code class="language-markup">url()</code>.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'cursor' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome (WebKit)</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td><code class="language-markup">auto</code>, <code class="language-markup">crosshair</code>, <code class="language-markup">default</code>, <code class="language-markup">move</code>, <code class="language-markup">text</code>, <code class="language-markup">wait</code>, <code class="language-markup">help</code>,<br>
+    <code class="language-markup">n-resize</code>, <code class="language-markup">e-resize</code>, <code class="language-markup">s-resize</code>, <code class="language-markup">w-resize</code>,<br>
+    <code class="language-markup">ne-resize</code>, <code class="language-markup">nw-resize</code>, <code class="language-markup">se-resize</code>, <code class="language-markup">sw-resize</code></td>
+   <td>1.0</td>
+   <td>1.0 (1.0)</td>
+   <td>4.0</td>
+   <td>7.0</td>
+   <td>1.2</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">pointer</code>, <code class="language-markup">progress</code></td>
+   <td>1.0</td>
+   <td>1.0 (1.0 | 1.7)</td>
+   <td>6.0</td>
+   <td>7.x</td>
+   <td>1.2 | 3.0</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">url()</code> - See <a  title="Using URL values for the cursor property">Using URL values</a></td>
+   <td>1.0 (523)</td>
+   <td>1.5 (1.8);<br>
+    OS X: 4.0 (2.0)</td>
+   <td>6.0</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>3.0</td>
+  </tr>
+  <tr>
+   <td>Positioning syntax for <code class="language-markup">url()</code> values <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">not-allowed</code>, <code class="language-markup">no-drop</code>, <code class="language-markup">vertical-text</code>, <code class="language-markup">all-scroll</code>,<br>
+    <code class="language-markup">col-resize</code>, <code class="language-markup">row-resize</code></td>
+   <td>1.0 (522)</td>
+   <td>1.5 (1.8)</td>
+   <td>6.0</td>
+   <td>10.6</td>
+   <td>3.0</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">alias</code>, <code class="language-markup">cell</code>, <code class="language-markup">copy</code>,<br>
+    <code class="language-markup">ew-resize</code>, <code class="language-markup">ns-resize</code>, <code class="language-markup">nesw-resize</code>, <code class="language-markup">nwse-resize</code></td>
+   <td>1.0 (522)</td>
+   <td>1.5 (1.8)</td>
+   <td>10.0</td>
+   <td>10.6</td>
+   <td>3.0</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">context-menu</code></td>
+   <td>OS X, Linux: 1.0 (522)</td>
+   <td>OS X, Linux: 1.5 (1.8)</td>
+   <td>10.0</td>
+   <td>10.6</td>
+   <td>3.0</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">none</code></td>
+   <td>5.0 (533)</td>
+   <td>3.0 (1.9)</td>
+   <td>9.0</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>5.0</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">inherit</code></td>
+   <td>1.0</td>
+   <td>1.0</td>
+   <td>8.0</td>
+   <td>9.0</td>
+   <td>1.2</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">zoom-in</code>, <code class="language-markup">zoom-out</code></td>
+   <td>1.0 (522) <span  title="prefix">-webkit-</span></td>
+   <td>1.0 (1.4) <span  title="prefix">-moz-</span><br>
+    24.0</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td>11.6</td>
+   <td>3.0 <span  title="prefix">-webkit-</span></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">grab</code>, <code class="language-markup">grabbing</code></td>
+   <td>1.0; Windows: 22.0 <span  title="prefix">-webkit-</span></td>
+   <td>1.5 (1.8) <span  title="prefix">-moz-</span><br>
+    27.0</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>4.0 <span  title="prefix">-webkit-</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>In IE11, when <code class="language-markup">cursor</code> is applied to an element and this element is underneath an open <a  title="The HTML select (&lt;select>) element represents a control that presents a menu of options. The options within the menu are represented by &lt;option> elements, which can be grouped by &lt;optgroup> elements. Options can be pre-selected for the user."><code class="language-markup">&lt;select&gt;</code></a> menu and the user hovers over a <a  title="The HTML select (&lt;select>) element represents a control that presents a menu of options. The options within the menu are represented by &lt;option> elements, which can be grouped by &lt;optgroup> elements. Options can be pre-selected for the user."><code class="language-markup">&lt;select&gt;</code></a> menu item that's on top of said element, the cursor for said element will be displayed rather than the <a  title="The HTML select (&lt;select>) element represents a control that presents a menu of options. The options within the menu are represented by &lt;option> elements, which can be grouped by &lt;optgroup> elements. Options can be pre-selected for the user."><code class="language-markup">&lt;select&gt;</code></a>'s normal cursor. See <a  >IE bug 963961</a>.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="Using URL values for the cursor property">Using URL values for the cursor property</a></li>
+ <li><a  title="The CSS property pointer-events allows authors to control under what circumstances (if any) a particular graphic element can become the target of mouse events. When this property is unspecified, the same characteristics of the visiblePainted value apply to SVG content."><code class="language-markup">pointer-events</code></a></li>
+ <li><a  >Cursor Property (MSDN)</a></li>
+</ul>
+                                                

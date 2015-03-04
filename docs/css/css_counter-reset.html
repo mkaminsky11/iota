@@ -1,0 +1,134 @@
+<h2>counter-reset</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">counter-reset</code> <a  title="CSS">CSS</a> property is used to reset <a  title="CSS_Counters">CSS Counters</a> to a given value.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">all</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[<a  title="Tooltip not found in DB.">&lt;custom-ident&gt;</a> <a  title="">&lt;integer&gt;</a><a  title="Question mark multiplier: The previous entity is optional (it may be used once, or not at all).">?</a>]<a  title="Plus multiplier: The previous entity may appear 1 or several times.">+</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> none</code>
+</code></pre>
+
+<pre>counter-reset: counter-name        /* Set counter-name to 0 */
+counter-reset: counter-name -1     /* Set counter-name to -1 */
+counter-reset: counter1 1 counter2 4 /* Set counter1 to 1, and counter2 to 4 */
+
+counter-reset: none                /* Cancel any reset that could have been set in less specific rules */
+
+counter-reset: inherit
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;custom-ident&gt;</code></a></dt>
+ <dd>The name of the counter to increment. This identifier is composed by a combination of case-insensitive letters <code class="language-markup">a</code> to <code class="language-markup">z</code>, numbers <code class="language-markup">0</code> to <code class="language-markup">9</code>, underscores (<code class="language-markup">_</code>), and/or dashes (<code class="language-markup">-</code>). The first non-dash character must be a letter (that is, no number at the beginning of it, even if preceded by a dash.) Also, two dashes are forbidden at the beginning of the identifier. It can't be <code class="language-markup">none</code>, <code class="language-markup">unset</code>, <code class="language-markup">initial</code>, or <code class="language-markup">inherit</code> in any combination of cases.</dd>
+ <dt><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a></dt>
+ <dd>The value to reset the counter to on each occurrence of the element. Defaults to <code class="language-markup">0</code> if not given.</dd>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>Is a keyword indicating that no counter reset is to be performed. It can be used to hide <code class="language-markup">counter-reset</code> defined in less specific rules.</dd>
+</dl>
+
+<p>You may specify as many counters to reset as you want, each separated by a space.</p>
+
+<h3>Examples</h3>
+
+<pre >h1 {
+  counter-reset: chapter section 1 page;
+  /* Sets the chapter and page counters to 0
+     and the section counter to 1. */
+}
+</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Lists and Counters Module Level 3<br><small lang="en-US">The definition of 'counter-reset' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'counter-reset' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<div><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.0</td>
+   <td>1.0 (?)</td>
+   <td>8.0</td>
+   <td>9.2</td>
+   <td>3.1 (?)</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td>25.0 (?)</td>
+   <td>10 (?)</td>
+   <td>10.0</td>
+   <td>3.2</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="CSS/Counters">CSS Counters</a>, <a  title="The counter-increment CSS property is used to increase the value of CSS Counters by a given value. The counter's value can be reset using the counter-reset CSS property."><code class="language-markup">counter-increment</code></a></li>
+</ul>
+                                                

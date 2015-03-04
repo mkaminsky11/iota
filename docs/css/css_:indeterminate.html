@@ -1,0 +1,130 @@
+<h2>:indeterminate</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">:indeterminate</code> CSS <a  title="en/CSS/Pseudo-classes">pseudo-class</a> represents any <code class="language-markup">&lt;input type="checkbox"&gt;</code> element whose <code class="language-markup">indeterminate</code> DOM property is set to <code class="language-markup">true</code> by JavaScript. In addition, in some browsers, it can be used to match to <a  title="The HTML &lt;progress> Element is used to view the completion progress of a task. While the specifics of how it's displayed is left up to the browser developer, it's typically displayed as a progress bar. Javascript can be used to manipulate the value of progress bar."><code class="language-markup">&lt;progress&gt;</code></a> elements in an indeterminate state.</p>
+
+<h3>Example</h3>
+
+<pre><code class="language-markup">input, span { background: red }
+:indeterminate, :indeterminate + span { background: limegreen }
+</code></pre>
+
+<pre><code class="language-markup">&lt;input type=checkbox&gt; &lt;span&gt;Le contenu de ce paragraphe doit avoir une couleur de fond verte.&lt;/span&gt;
+</code></pre>
+
+<pre><code class="language-markup">document.getElementsByTagName("input")[0].indeterminate = true;
+</code></pre>
+
+<p><iframe  frameborder="0" height="50" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:indeterminate$samples/Example?revision=765851" width="100%"></iframe></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of ':indeterminate' in that specification.</small></a></td>
+   <td><span >Living Standard</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">HTML5<br><small lang="en-US">The definition of ':indeterminate' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Defines the semantic regarding HTML and constraint validation.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':indeterminate' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic User Interface Module Level 3<br><small lang="en-US">The definition of ':indeterminate' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines the pseudo-class, but not the associated semantic.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td><code class="language-markup"><span>type="checkbox"</span></code></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><a  title="Released on 2010-01-21.">3.6</a> (1.9.2)</td>
+   <td>9.0</td>
+   <td>10.60 (2.6)</td>
+   <td>3.0</td>
+  </tr>
+  <tr>
+   <td><a  title="The HTML &lt;progress> Element is used to view the completion progress of a task. While the specifics of how it's displayed is left up to the browser developer, it's typically displayed as a progress bar. Javascript can be used to manipulate the value of progress bar."><code class="language-markup">&lt;progress&gt;</code></a></td>
+   <td>6.0</td>
+   <td><a  title="Released on 2011-08-16.">6.0</a> (6.0)</td>
+   <td>10</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>5.2</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td><code class="language-markup"><span>type="checkbox"</span></code></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>1.0 (1.9.2)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td><a  title="The HTML &lt;progress> Element is used to view the completion progress of a task. While the specifics of how it's displayed is left up to the browser developer, it's typically displayed as a progress bar. Javascript can be used to manipulate the value of progress bar."><code class="language-markup">&lt;progress&gt;</code></a></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><a  title="Released on 2011-08-16.">6.0</a> (6.0)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p> </p>
+                                                

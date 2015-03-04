@@ -1,0 +1,28 @@
+<h2>column-rule</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>In multi-column layouts, the <code class="language-markup">column-rule</code> CSS property specifies a straight line, or "rule", to be drawn between each column. It is a convenient shorthand to avoid setting each of the individual <code class="language-markup">column-rule-*</code> properties separately : <a  title=""><code class="language-markup">column-rule-width</code></a>, <a  title=""><code class="language-markup">column-rule-style</code></a> and <a  title=""><code class="language-markup">column-rule-color</code></a>.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> the concatenation of the initial values of its longhand properties:<ul><li><code class="language-markup">column-rule-width</code>: <code class="language-markup">medium</code></li><li><code class="language-markup">column-rule-style</code>: <code class="language-markup">none</code></li><li><code class="language-markup">column-rule-color</code>: <code class="language-markup">currentColor</code></li></ul></li>  <li><dfn>Applies to</dfn> multicol elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as each of the properties of the shorthand:<ul><li><code class="language-markup">column-rule-color</code>: If the value is translucent, the computed value will be the <code class="language-markup">rgba()</code> corresponding one. If it isn't, it will be the <code class="language-markup">rgb()</code> corresponding one. The <code class="language-markup">transparent</code> keyword maps to <code class="language-markup">rgba(0,0,0,0)</code>.<span></span></li><li><code class="language-markup">column-rule-style</code>: as specified<span></span></li><li><code class="language-markup">column-rule-width</code>: an absolute length; <code class="language-markup">0</code> if the column rule style is <code class="language-markup">none</code> or <code class="language-markup">hidden</code></li></ul></li>  <li><dfn>Animatable</dfn> as each of the properties of the shorthand:<ul><li><code class="language-markup">column-rule-color</code>: yes, as a <a  title="Values of the &lt;color> CSS data type are interpolated on each of their red, green, blue components, each handled as a real, floating-point number. Note that interpolation of colors happens in the alpha-premultiplied sRGBA color space to prevent unexpected grey colors to appear.">color</a></li><li><code class="language-markup">column-rule-style</code>: no</li><li><code class="language-markup">column-rule-width</code>: yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a></li></ul></li>  <li><dfn>Canonical order</dfn> order of appearance in the formal grammar of the values<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="&lt;br-width>">&lt;'column-rule-width'&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> <a  title="&lt;br-style>">&lt;'column-rule-style'&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> <a  title="&lt;color>">&lt;'column-rule-color'&gt;</a></code>
+</code></pre>
+<h3 >Values</h3>
+<p>Accepts one, two or three values in any order:</p>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;'column-rule-width'&gt;</code></dt>
+ <dd>
+  Is a <a  title=""><code class="language-markup">&lt;length&gt;</code></a> or one of the three keywords, <code class="language-markup">thin</code>, <code class="language-markup">medium</code> or <code class="language-markup">thick</code>. See <a  title=""><code class="language-markup">border-width</code></a> for details.</dd>
+ <dt>
+  <code class="language-markup">&lt;'column-rule-style'&gt;</code></dt>
+ <dd>
+  See <a  title=""><code class="language-markup">border-style</code></a> for possible values and details.</dd>
+ <dt>
+  <code class="language-markup">&lt;'column-rule-color'&gt;</code></dt>
+ <dd>
+  Is a <a  title=""><code class="language-markup">&lt;color&gt;</code></a> value.</dd>
+</dl>

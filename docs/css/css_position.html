@@ -1,0 +1,49 @@
+<h2>position</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">position</code> <a  title="CSS">CSS</a> property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">static</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<p>A <strong>positioned element</strong> is an element whose <a  title="CSS/computed_value">computed</a> position property is <code class="language-markup">relative</code>, <code class="language-markup">absolute</code>,<code class="language-markup"> fixed</code> or <code class="language-markup">sticky</code>.</p>
+<p>A <strong>relatively positioned element</strong> is an element whose <a  title="CSS/computed_value">computed</a> position property is <code class="language-markup">relative</code>.</p>
+<p>An <strong>absolutely positioned element</strong> is an element whose <a  title="CSS/computed_value">computed</a> position property is <code class="language-markup">absolute</code> or <code class="language-markup">fixed.</code></p>
+<p>A <strong>stickily positioned element</strong> is an element whose <a  title="CSS/computed_value">computed</a> position property is <code class="language-markup">sticky</code>.</p>
+<p>The <a  title="The top CSS property specifies part of the position of positioned elements. It has no effect on non-positioned elements."><code class="language-markup">top</code></a>, <a  title="The right CSS property specifies part of the position of positioned elements."><code class="language-markup">right</code></a>, <a  title="The bottom CSS property participates in specifying the position of positioned elements."><code class="language-markup">bottom</code></a>, and <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> properties specify the position of positioned elements.</p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">static <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> relative <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> absolute <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> sticky <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> fixed</code></code></pre>
+<pre>position: static
+position: relative
+position: absolute
+position: fixed
+position: sticky
+
+position: inherit
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">static</code></dt>
+ <dd>
+  This keyword lets the element use the normal behavior, that is it is laid out in its current position in the flow.  The<code class="language-markup"> top</code>,<code class="language-markup"> right</code>,<code class="language-markup"> bottom</code>, <code class="language-markup">left</code> and <code class="language-markup">z-index</code> properties do not apply.</dd>
+ <dt>
+  <code class="language-markup">relative</code></dt>
+ <dd>
+  This keyword lays out all elements as though the element were not positioned, and then adjust the element's position, without changing layout (and thus leaving a gap for the element where it would have been had it not been positioned). The effect of <code class="language-markup">position:relative</code> on <code class="language-markup">table-*-group</code>, <code class="language-markup">table-row</code>, <code class="language-markup">table-column</code>, <code class="language-markup">table-cell</code>, and <code class="language-markup">table-caption</code> elements is undefined.</dd>
+ <dt>
+  <code class="language-markup">absolute</code></dt>
+ <dd>
+  Do not leave space for the element. Instead, position it at a specified position relative to its closest positioned ancestor or to the containing block. Absolutely positioned boxes can have margins, they do not collapse with any other margins.</dd>
+ <dt>
+  <span style="font-family: 'Courier New', 'Andale Mono', monospace; font-weight: inherit; line-height: normal;">fixed</span></dt>
+ <dd>
+  Do not leave space for the element. Instead, position it at a specified position relative to the screen's viewport and don't move it when scrolled. When printing, position it at that fixed position on <em>every page</em>.</dd>
+</dl>
+<dl>
+ <dt>
+  <code class="language-markup">sticky</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The box position is calculated according to the normal flow (this is called the position in normal flow). Then the box is offset relative to its flow root and containing block and in all cases, including <code class="language-markup">table</code> elements, does not affect the position of any following boxes. When a box B is stickily positioned, the position of the following box is calculated as though B were not offset. The effect of ‘<code class="language-markup">position: sticky</code>’ on <code class="language-markup">table</code> elements is the same as for ‘<code class="language-markup">position: relative</code>’.</dd>
+</dl>

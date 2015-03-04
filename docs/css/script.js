@@ -6,30 +6,42 @@ request({
 	uri: "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference"
 }, function(err, res, body){
 		$ = cheerio.load(body);
-		var main = $(".index > ol > li > ol > li > a").each(function(index){
-		var href = "https://developer.mozilla.org" + $(this).attr("href");
+		var main = $(".index > ol > li > ol > li > a")
+		var goal = main.length;
+		main.each(function(index){
+			var href = "https://developer.mozilla.org" + $(this).attr("href");
 
-		var base = $(this).html().replace("<code>","<!--next-->\n<h2>").replace("</code>","</h2>");
-        request({
-           uri: href
-        }, function(err, res, bdy){
-            try{
-								//$ = cheerio.load(bdy);
-                //var wiki = $("#wikiArticle").html().split("<h2 id=\"Examples\">Examples</h2>")[0];
-								var wiki = bdy.split("<article id=\"wikiArticle\">")[1].split("</article>")[0].split("<h2 id=\"Examples\">Examples</h2>")[0];
+	        request({
+	           uri: href
+	        }, function(err, res, bdy){
+	            try{
+									var wiki = bdy.split("<article id=\"wikiArticle\">")[1].split("</article>")[0].split("<h2 id=\"Examples\">Examples</h2>")[0];
 
-              	wiki.replace(/class="(.*?)"/g, "");
-                wiki.replace(/id="(.*?)"/g, "");
-                wiki.replace(/href="(.*?)"/g, "");
+	              	wiki = wiki.replace(/class="(.*?)"/g, "");
+	                wiki = wiki.replace(/id="(.*?)"/g, "");
+	                wiki = wiki.replace(/href="(.*?)"/g, "");
+									wiki = wiki.replace(/<h2(.*?)>/g, "<h3>");
+									wiki = wiki.replace(/<\/h2>/g, "</h3>");
+									wiki = wiki.replace("<div><section class=\"Quick_links\" id=\"Quick_Links\"><!-- --></section></div>","");
+									//wiki = wiki.replace(/<pre(.*?)>/g, "<pre><code class=\"language-markup\">");
+									wiki = wiki.replace(/<code(.*?)>/g, "<code class=\"language-markup\">");
+									wiki = wiki.replace(/<\/pre>/g, "</code></pre>");
 
-                var file = "css_" + href.split("/CSS/")[1];
-								console.log(file);
-            }
-            catch(e){
-							console.log("error:" + e + ":" + href);
-						}
-        });
-	});
+									wiki = "<h2>" + href.split("/CSS/")[1] + "</h2>\n" + wiki;
+
+	                var file = "css_" + href.split("/CSS/")[1] + ".html";
+									goal--;
+									console.log(goal + " left");
+									fs.writeFileSync(file, wiki, 'utf8');
+
+	            }
+	            catch(e){
+								goal--;
+							}
+	        });
+
+
+			});
 });
 
 /*

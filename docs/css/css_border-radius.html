@@ -1,0 +1,117 @@
+<h2>border-radius</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">border-radius</code> CSS property allows Web authors to define how rounded border corners are. The curve of each corner is defined using one or two radii, defining its shape: circle or ellipse.</p>
+
+<p><img alt="Images of CSS3 rounded corners: no rounding, rounding w/ an arc of circle, rounding w/ an arc of ellipse"  src="/files/3638/border-radius-sh.png" style="width: 549px; height: 164px;"></p>
+
+<p>The radius applies to the whole <a  title="The background CSS property is a shorthand for setting the individual background values in a single place in the style sheet. background can be used to set the values for one or more of: background-clip, background-color, background-image, background-origin, background-position, background-repeat, background-size, and background-attachment."><code class="language-markup">background</code></a>, even if the element has no border; the exact position of the clipping is defined by the <a  title="Technical review completed. Editorial review completed."><code class="language-markup">background-clip</code></a> property.</p>
+
+<p>This property is a <a  title="en/CSS/Shorthand_properties">shorthand</a> to set the four properties <a  title="The border-top-left-radius CSS property sets the rounding of the top-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0,no rounding is done and the corner is square."><code class="language-markup">border-top-left-radius</code></a>, <a  title="The border-top-right-radius CSS property sets the rounding of the top-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square."><code class="language-markup">border-top-right-radius</code></a>, <a  title="The border-bottom-right-radius CSS property sets the rounding of the bottom-right corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square."><code class="language-markup">border-bottom-right-radius</code></a> and <a  title="The border-bottom-left-radius CSS property sets the rounding of the bottom-left corner of the element. The rounding can be a circle or an ellipse, or if one of the value is 0 no rounding is done and the corner is square."><code class="language-markup">border-bottom-left-radius</code></a>.</p>
+
+<div >As with any shorthand property, individual inherited values are not possible, that is <code class="language-markup">border-radius:0 0 inherit inherit</code>, which would override existing definitions partially. In that case, the individual longhand properties have to be used.</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> the concatenation of the initial values of its longhand properties:<ul><li><code class="language-markup">border-top-left-radius</code>: <code class="language-markup">0</code></li><li><code class="language-markup">border-top-right-radius</code>: <code class="language-markup">0</code></li><li><code class="language-markup">border-bottom-right-radius</code>: <code class="language-markup">0</code></li><li><code class="language-markup">border-bottom-left-radius</code>: <code class="language-markup">0</code></li></ul></li>  <li><dfn>Applies to</dfn> all elements; but UA are not required to apply to <code class="language-markup">table</code> and <code class="language-markup">inline-table</code> elements when <a  title="The border-collapse CSS property selects a table's border model. This has a big influence on the look and style of the table cells."><code class="language-markup">border-collapse</code></a> is <code class="language-markup">collapse</code>. The behavior on internal table elements is undefined for the moment.. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the corresponding dimension of the border box<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as each of the properties of the shorthand:<ul><li><code class="language-markup">border-bottom-left-radius</code>: two absolute length or percentages<span></span></li><li><code class="language-markup">border-bottom-right-radius</code>: two absolute length or percentages<span></span></li><li><code class="language-markup">border-top-left-radius</code>: two absolute length or percentages<span></span></li><li><code class="language-markup">border-top-right-radius</code>: two absolute length or percentages<span></span></li></ul></li>  <li><dfn>Animatable</dfn> as each of the properties of the shorthand:<ul><li><code class="language-markup">border-top-left-radius</code>: yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li><li><code class="language-markup">border-top-right-radius</code>: yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li><li><code class="language-markup">border-bottom-right-radius</code>: yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li><li><code class="language-markup">border-bottom-left-radius</code>: yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li></ul></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> ]{1,4} [ / [ <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> ]{1,4} ]<a  title="Question mark multiplier: The previous entity is optional (it may be used once, or not at all).">?</a></code></code></pre>
+
+<pre><strong>The syntax of the first radius allows one to four values:</strong>
+border-radius: <em>radius</em>             
+border-radius: <em>top-left-and-bottom-right</em> <em>top-right-and-bottom-left</em> 
+border-radius: <em>top-left</em> <em>top-right-and-bottom-left</em> <em>bottom-right</em> 
+border-radius: <em>top-left</em> <em>top-right</em> <em>bottom-right</em> <em>bottom-left</em> 
+
+<strong>The syntax of the second radius also allows one to four values</strong>
+border-radius: (first radius values) / <em>radius</em>             
+border-radius: (first radius values) / <em>top-left-and-bottom-right</em> <em>top-right-and-bottom-left</em> 
+border-radius: (first radius values) / <em>top-left</em> <em>top-right-and-bottom-left</em> <em>bottom-right</em> 
+border-radius: (first radius values) / <em>top-left</em> <em>top-right</em> <em>bottom-right</em> <em>bottom-left</em> 
+
+border-radius: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<table>
+ <tbody>
+  <tr>
+   <td style="vertical-align: top;"><em>radius</em></td>
+   <td><img alt="all-corner.png"  src="/@api/deki/files/6138/=all-corner.png"></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in each corner of the border. It is used only in the one-value syntax.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-left-and-bottom-right</em></td>
+   <td><img alt="top-left-bottom-right.png"  src="/@api/deki/files/6141/=top-left-bottom-right.png"></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the top-left and bottom-right corners of the element's box. It is used only in the two-value syntax.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-right-and-bottom-left</em></td>
+   <td><img alt="top-right-bottom-left.png"  src="/@api/deki/files/6143/=top-right-bottom-left.png" style=""></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the top-right and bottom-left corners of the element's box. It is used only in the two- and three-value syntaxes.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-left</em></td>
+   <td><img alt="top-left.png"  src="/@api/deki/files/6142/=top-left.png" style=""></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the top-left corner of the element's box. It is used only in the three- and four-value syntaxes.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>top-right</em></td>
+   <td style="margin-left: 2px;"><img alt="top-right.png"  src="/@api/deki/files/6144/=top-right.png" style=""></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the top-right corner of the element's box. It is used only in the four-value syntax.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>bottom-right</em></td>
+   <td style="margin-left: 2px;"><img alt="bottom-rigth.png"  src="/@api/deki/files/6140/=bottom-rigth.png"></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the bottom-right corner of the element's box. It is used only in the three- and four-value syntaxes.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><em>bottom-left</em></td>
+   <td><img alt="bottom-left.png"  src="/@api/deki/files/6139/=bottom-left.png"></td>
+   <td style="vertical-align: top;">Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> denoting a radius to use for the border in the bottom-left corner of the element's box. It is used only in the four-value syntax.</td>
+  </tr>
+  <tr>
+   <td style="vertical-align: top;"><code class="language-markup">inherit</code></td>
+   <td> </td>
+   <td style="vertical-align: top;">Is a keyword indicating that all four values are inherited from their parent's element calculated value.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt>&lt;length&gt;</dt>
+ <dd>Denotes the size of the circle radius or the semi-major and semi-minor axes of the ellipsis. It can be expressed in any unit allowed by the CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> data types. Negative values are invalid.</dd>
+ <dt>&lt;percentage&gt;</dt>
+ <dd>Denotes the size of the circle radius, or the semi-major and semi-minor axes of the ellipsis, using percentage values. Percentages for the horizontal axis refer to the width of the box, percentages for the vertical axis refer to the height of the box. Negative values are invalid.</dd>
+</dl>
+
+<p>For example:</p>
+
+<pre >border-radius: 1em/5em;
+
+/* is equivalent to */
+
+border-top-left-radius:     1em 5em;
+border-top-right-radius:    1em 5em;
+border-bottom-right-radius: 1em 5em;
+border-bottom-left-radius:  1em 5em;
+</code></pre>
+
+<pre >border-radius: 4px 3px 6px / 2px 4px;
+
+/* is equivalent to: */
+
+border-top-left-radius:     4px 2px;
+border-top-right-radius:    3px 4px;
+border-bottom-right-radius: 6px 2px;
+border-bottom-left-radius:  3px 4px;
+</code></pre>
+

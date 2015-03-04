@@ -1,0 +1,45 @@
+<h2>align-self</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">align-self</code> <a  title="CSS">CSS</a> property aligns flex items of the current flex line overriding the <a  title="en/CSS/flex-align"><code class="language-markup">align-items</code></a> value. If any of the flex item's cross-axis margin is set to <code class="language-markup">auto</code>, then <code class="language-markup">align-self</code> is ignored.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> flex items, including in-flow pseudo-elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> auto computes to parent's align-items; otherwise as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<p>See <a  title="/en/CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a> for more properties and information.</p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">auto <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> flex-start <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> flex-end <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> center <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> baseline <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> stretch</code></code></pre>
+
+<pre>align-self: auto
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+
+align-self: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">auto</code></dt>
+ <dd>Computes to parent's <a  title="The CSS align-items property aligns flex items of the current flex line the same way as justify-content but in the perpendicular direction."><code class="language-markup">align-items</code></a> value or <code class="language-markup">stretch</code> if the element has no parent.</dd>
+ <dt><code class="language-markup">flex-start</code></dt>
+ <dd>The cross-start margin edge of the flex item is flushed with the cross-start edge of the line.</dd>
+ <dt><code class="language-markup">flex-end</code></dt>
+ <dd>The cross-end margin edge of the flex item is flushed with the cross-end edge of the line.</dd>
+ <dt><code class="language-markup">center</code></dt>
+ <dd>The flex item's margin box is centered within the line on the cross-axis. If the cross-size of the item is larger than the flex container, it will overflow equally in both directions.</dd>
+ <dt><code class="language-markup">baseline</code></dt>
+ <dd>All flex items are aligned such that their baselines align. The item with the largest distance between its cross-start margin edge and its baseline is flushed with the cross-start edge of the line.</dd>
+ <dt><code class="language-markup">stretch</code></dt>
+ <dd>Flex items are stretched such as the cross-size of the item's margin box is the same as the line while respecting width and height constraints.</dd>
+</dl>
+

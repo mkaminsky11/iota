@@ -1,0 +1,44 @@
+<h2>clip</h2>
+
+                                                      <div><section  ><!-- --></section><div > 
+            <p><strong>Deprecated</strong><br>This feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time.</p> 
+        </div></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">clip</code> <a >CSS</a> property defines what portion of an element is visible. The <code class="language-markup">clip</code> property applies only to absolutely positioned elements, that is elements with <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">position:absolute</code></a> or <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">position:fixed</code></a>.</p>
+
+<div >
+<p><strong>Warning:</strong> This property is deprecated. Use <a  title="The clip-path property prevents a portion of an element from drawing by defining a clipping region."><code class="language-markup">clip-path</code></a> instead.</p>
+</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> absolutely positioned elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> <code class="language-markup">auto</code> if specified as <code class="language-markup">auto</code>, otherwise a rectangle with four values, each of which is <code class="language-markup">auto</code> if specified as <code class="language-markup">auto</code> or the computed length otherwise</li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;shape> CSS data type which are rectangles are interpolated over their top, right, bottom and left component, each treated as a real, floating-point number.">rectangle</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="rect(&lt;top>, &lt;right>, &lt;bottom>, &lt;left>)">&lt;shape&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> auto</code>
+</code></pre>
+
+<pre>clip: rect(1px, 10em, 3rem, 2ch)
+clip: auto
+
+clip: inherit</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;shape&gt;</code></dt>
+ <dd>A rectangular <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;shape&gt;</code></a> of the form
+ <pre style="margin: 0;">rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;)   /* standard syntax */
+</code></pre>
+ or
+
+ <pre style="margin: 0;">rect(&lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;)      /* backwards compatible syntax */</code></pre>
+ where <code class="language-markup">&lt;top&gt;</code> and <code class="language-markup">&lt;bottom&gt;</code> specify offsets from the <em>inside top border edge</em> of the box, and <code class="language-markup">&lt;right&gt;</code>, and <code class="language-markup">&lt;left&gt;</code> specify offsets from the <em>inside left border edge</em> of the box — that is, the extent of the padding box.</dd>
+ <dd><code class="language-markup">&lt;top&gt;</code>, <code class="language-markup">&lt;right&gt;</code>, <code class="language-markup">&lt;bottom&gt;</code>, and <code class="language-markup">&lt;left&gt;</code> may either have a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> value or<code class="language-markup"> auto</code>. If any side's value is <code class="language-markup">auto</code>, the element is clipped to that side's <em>inside border edge</em>.</dd>
+ <dt><code class="language-markup">auto</code></dt>
+ <dd>The element does not clip (default value). Note that this is distinct from <code class="language-markup">rect(auto, auto, auto, auto)</code>, which does clip to the inside border edges of the element.</dd>
+</dl>
+

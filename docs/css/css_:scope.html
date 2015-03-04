@@ -1,0 +1,124 @@
+<h2>:scope</h2>
+
+                                                      <p></p><section  ><!-- --></section><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+<h3>Summary</h3>
+<p>The <code class="language-markup">:scope</code> CSS <a  title="Pseudo-classes"> pseudo-class</a> matches the elements that are a reference point for selectors to match against. In HTML, a new reference point can be defined using the <code class="language-markup"><a >scoped</a></code> attribute of the <a  title="The HTML &lt;style> element contains style information for a document, or a part of document. The specific style information is contained inside of this element, usually in the CSS."><code class="language-markup">&lt;style&gt;</code></a>. If no such attribute is used on an HTML page, the reference point is the <a  title="The HTML root element (&lt;html>) represents the root of an HTML document. All other elements must be descendants of this element."><code class="language-markup">&lt;html&gt;</code></a> element.</p>
+<h3>Syntax</h3>
+<pre >:scope { <em>style properties</em> }</code></pre>
+<h3>Example</h3>
+<pre >&lt;article&gt;
+  The element selected by :scope has a lime background if your browser supports scoped stylesheet.
+  &lt;section&gt; 
+    &lt;p&gt;Outside scope.&lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;style scoped&gt;
+      :scope { background-color: lime; }
+    &lt;/style&gt;
+    &lt;p&gt;Inside scope.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;section&gt; 
+    &lt;p&gt;Outside scope.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+<h3 >Live result</h3>
+<div>
+ <iframe  frameborder="0" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:scope$samples/Example?revision=698017" width="100%"></iframe></div>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small>The definition of ':scope' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td> 20 [1]</td>
+    <td>21</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>7.0 [3]</td>
+   </tr>
+   <tr>
+    <td>In <code class="language-markup">.querySelector/.querySelectorAll</code></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><a  >32</a></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>7.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Mobile</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><a  >25</a> [2]</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>7.0</td>
+   </tr>
+   <tr>
+    <td>In <code class="language-markup">.querySelector/.querySelectorAll</code></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><a  >32</a></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>7.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<p> </p>
+<p>[1] Supported in Chrome 20+ by enabling the "<strong>Enable &lt;style scoped&gt;</strong>" or "<strong>experimental WebKit features</strong>" flag in chrome://flags.<br>
+ <span style="line-height: 1.5;">[2] Gecko 20 and later implement </span><code class="language-markup">:scope </code><span style="line-height: 1.5;">pseudo-classes</span><span style="line-height: 1.5;">, but the preference </span><code class="language-markup">layout.css.scope-pseudo.enabled</code><span style="line-height: 1.5;"> must be set to </span><code class="language-markup">true</code><span style="line-height: 1.5;">. This is only the case by default in Nightly and Aurora test versions.<br>
+ [3] Although Safari 7 registers a match of the pseudo-class, and therefore applies the CSS rule, <a >it does not yet support style scoping itself</a>, with the consequence that the applied CSS rule floods beyond the intended portion of the document.</span></p>
+<p> </p>
+<h3>See also</h3>
+<ul>
+ <li>The <a  title="The :root CSS  pseudo-class matches the root element of a tree representing the document. Applied to HTML, :root represents the &lt;html> element and is identical to the selector html, except that its specificity is higher."><code class="language-markup">:root</code></a> <a  title="/en-US/docs/Web/CSS/Pseudo-classes">pseudo-class</a>.</li>
+</ul>
+                                                

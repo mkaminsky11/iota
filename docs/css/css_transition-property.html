@@ -1,0 +1,46 @@
+<h2>transition-property</h2>
+
+                                                      <div>
+ <section  ><!-- --></section> <div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">transition-property</code> CSS property is used to specify the names of CSS properties to which a <a >transition effect</a> should be applied.</p>
+<div >
+ <strong>Note:</strong> The set of properties that can be animated is subject to change; as such, you should avoid including any properties in the list that don't currently animate, because someday they might, causing unexpected results.</div>
+<p>If you specify a shorthand property (for example, <a  title=""><code class="language-markup">background</code></a>, all of its longhand sub-properties that can be animated will be.</p>
+<div>
+ <ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">all</code></li>  <li><dfn>Applies to</dfn> all elements, <a  title=""><code class="language-markup">::before</code></a> and <a  title=""><code class="language-markup">::after</code></a> <a  title="/en-US/docs/CSS/Pseudo-elements">pseudo-elements</a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul></div>
+<h3>Syntax</h3>
+<pre ><a >Formal syntax</a>: <code class="language-markup">none <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="all | IDENT">&lt;single-transition-property&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a>  [ ‘,’ <a  title="all | IDENT">&lt;single-transition-property&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a> ]<a  title="Asterisk multiplier: the previous entity may appear 0, 1 or several times.">*</a><br></code>
+</code></pre>
+<pre>transition-property: none
+transition-property: all
+transition-property: test_05
+transition-property: -specific
+transition-property: sliding-vertically
+
+transition-property: test1
+transition-property: test1, animation4
+transition-property: all, height, all
+transition-property: all, -moz-specific, sliding
+
+transition-property: inherit
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">none</code></dt>
+ <dd>
+  No properties will transition.</dd>
+ <dt>
+  <code class="language-markup">all</code></dt>
+ <dd>
+  All properties that can have an animated transition will do so.</dd>
+ <dt>
+  <code class="language-markup">IDENT</code></dt>
+ <dd>
+  A string identifying the property to which a transition effect should be applied when its value changes. This identifier is composed by case-insensitive letter <code class="language-markup">a</code> to <code class="language-markup">z</code>, numbers <code class="language-markup">0</code> to <code class="language-markup">9</code>, an underscore (<code class="language-markup">_</code>) or a dash(<code class="language-markup">-</code>). The first non-dash character must be a letter (that is no number at the beginning of it, even preceded by a dash). Also two dashes are forbidden at the beginning of the identifier.</dd>
+</dl>

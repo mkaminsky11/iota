@@ -5,8 +5,6 @@
   "window": {
     "title": "iota",
     "icon": "icon.png",
-    "toolbar": false,
-    "frame": false,
     "width": 800,
     "height": 120,
     "position": "center",

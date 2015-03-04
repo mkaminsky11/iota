@@ -1,0 +1,35 @@
+<h2>font-kerning</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-kerning</code></strong> CSS property controls the usage of the kerning information; that is, it controls how letters are spaced. The kerning information is stored in the font, and if the font is <em>well-kerned</em>, this feature allows spacing between characters to be very similar, whatever the characters are.</p>
+<p><img alt="Example of font-kerning" src="https://mdn.mozillademos.org/files/8455/font-kerning.png" style="width: 180px; height: 84px; display: block; margin: auto;"></p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">auto <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> none</code></code></pre>
+<pre>font-kerning: auto
+font-kerning: normal
+font-kerning: none
+
+font-kerning: initial
+font-kerning: inherit
+font-kerning: unset
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  This keyword defers to the browser regarding whether to use kerning. When the font size is big, font kerning may look strange and browsers will disable it. This is the default value.</dd>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword requires kerning to be applied.</dd>
+ <dt>
+  <code class="language-markup">none</code></dt>
+ <dd>
+  This keyword prevents the browser from using the kerning information stored in the font.</dd>
+</dl>

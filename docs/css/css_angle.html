@@ -1,0 +1,147 @@
+<h2>angle</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">&lt;angle&gt;</code> <a  title="CSS">CSS</a> data type represents angle values. Positive angles represent right angles, negative angles represent left angles. Its syntax is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a> data type immediately followed by the unit (<code class="language-markup">deg</code>, <code class="language-markup">grad</code>, <code class="language-markup">rad</code> or <code class="language-markup">turn</code>). Like for any CSS dimension, there is no space between the unit literal and the number.</p>
+
+<p>For static properties and a given unit, an angle can be represented by several values: <code class="language-markup">90deg</code> and <code class="language-markup">-270deg</code>, or <code class="language-markup">1turn</code> and <code class="language-markup">4turn</code> represents the same final position. For dynamic properties, like applying a <a  title="The CSS transition property is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay. It allows to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript."><code class="language-markup">transition</code></a> on the <a  title="The CSS transform property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated, scaled, and skewed according to the values set."><code class="language-markup">transform</code></a> property, the effect will nevertheless be different.</p>
+
+<p>The following units may be used:</p>
+
+<ul>
+ <li><code class="language-markup"><a >deg</a></code> which represents an angle in <a   title="http://en.wikipedia.org/wiki/Degree_%28angle%29">degrees</a>. One full circle is <code class="language-markup">360deg</code>. E.g. <code class="language-markup">0deg</code>, <code class="language-markup">90deg</code>,<code class="language-markup"> 360deg</code>.</li>
+ <li><code class="language-markup"><a >grad</a></code> which represents an angle in <a   title="http://en.wikipedia.org/wiki/Gradian">gradians</a>. One full circle is <code class="language-markup">400grad</code>. E.g. <code class="language-markup">0grad</code>, <code class="language-markup">100grad</code>,<code class="language-markup"> 400grad</code>.</li>
+ <li><code class="language-markup"><a >rad</a></code> which represents an angle in <a   title="http://en.wikipedia.org/wiki/Radian">radians</a>.  One full circle is 2π radians which approximates to <code class="language-markup">6.2832rad</code>. <code class="language-markup">1rad</code> is 180/π degrees. E.g. <code class="language-markup">0rad</code>, <code class="language-markup">1.0708rad</code>,<code class="language-markup"> 6.2832rad</code>.</li>
+ <li><code class="language-markup"><a >turn</a></code> which represents the number of turns the angle is. One full circle is <code class="language-markup">1turn</code>. E.g. <code class="language-markup">0turn</code>, <code class="language-markup">0.25turn</code>,<code class="language-markup"> 1turn</code>.</li>
+</ul>
+
+<p>Even if all units represent the same time for the value <code class="language-markup">0</code>, the unit may not be omitted in that case as it isn't a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a>: <code class="language-markup">0</code> is invalid and does not represent <code class="language-markup">0deg</code>, <code class="language-markup">0grad</code>, <code class="language-markup">0rad</code> or <code class="language-markup">0turn</code>.</p>
+
+<h3>Examples</h3>
+
+<table style="width: 100%;">
+ <tbody>
+  <tr>
+   <td><img alt="Angle90.png"  src="/@api/deki/files/5704/=Angle90.png" style=""></td>
+   <td>
+    <p>A right angle: <code class="language-markup">90deg = 100grad = 0.25turn</code> <code class="language-markup">≈</code><code class="language-markup"> 1.5708rad</code></p>
+   </td>
+  </tr>
+  <tr>
+   <td><img alt="Angle180.png"  src="/@api/deki/files/5706/=Angle180.png"></td>
+   <td>A flat angle: <code class="language-markup">180deg = 200grad = 0.5turn</code><code class="language-markup"> </code><code class="language-markup">≈</code><code class="language-markup"> 3.1416rad</code></td>
+  </tr>
+  <tr>
+   <td><img alt="AngleMinus90.png"  src="/@api/deki/files/5707/=AngleMinus90.png"></td>
+   <td>A right angle (towards the left): <code class="language-markup">-90deg = -100grad = -0.25turn</code> <code class="language-markup">≈</code><code class="language-markup"> -1.5708rad</code></td>
+  </tr>
+  <tr>
+   <td><img alt="Angle0.png"  src="/@api/deki/files/5708/=Angle0.png"></td>
+   <td>
+    <p>A null angle: <code class="language-markup">0deg = 0grad = 0turn</code><code class="language-markup"> </code><code class="language-markup">=</code><code class="language-markup"> 0rad</code></p>
+
+    <div ><strong>Note:</strong> <code class="language-markup">0</code> is not a valid angle value.</div>
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Values and Units Module Level 3<br><small lang="en-US">The definition of '&lt;angle&gt;' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2 (528.17)</td>
+   <td>3.6 (1.9.2)</td>
+   <td>9.0</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td>4.0 (528.17)</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">turn</code> unit</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td>13.0</td>
+   <td>9.0</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">turn</code> unit</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td>13.0</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li>CSS Data Types : <code class="language-markup"><a >&lt;angle&gt;</a></code>, <code class="language-markup"><a >&lt;blend-mode&gt;</a></code>, <code class="language-markup"><a >&lt;color&gt;</a></code>, <code class="language-markup"><a >&lt;custom-ident&gt;</a></code>, <code class="language-markup"><a >&lt;frequency&gt;</a></code>, <code class="language-markup"><a >&lt;gradient&gt;</a></code>, <code class="language-markup"><a >&lt;image&gt;</a></code>, <code class="language-markup"><a >&lt;length&gt;</a></code>, <code class="language-markup"><a >&lt;number&gt;</a></code>, <code class="language-markup"><a >&lt;percentage&gt;</a></code>, <code class="language-markup"><a >&lt;position&gt;</a></code>, <code class="language-markup"><a >&lt;ratio&gt;</a></code>, <code class="language-markup"><a >&lt;resolution&gt;</a></code>, <code class="language-markup"><a >&lt;shape&gt;</a></code>, <code class="language-markup"><a >&lt;string&gt;</a></code>, <code class="language-markup"><a >&lt;time&gt;</a></code>, <code class="language-markup"><a >&lt;timing-function&gt;</a></code>, <code class="language-markup"><a >&lt;uri&gt;</a></code></li>
+</ul>
+                                                

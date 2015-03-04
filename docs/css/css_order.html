@@ -1,0 +1,158 @@
+<h2>order</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <a  title="CSS">CSS</a> <code class="language-markup">order</code> property specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the <code class="language-markup">order</code> value. Elements with the same <code class="language-markup">order</code> value are laid out in the order they appear in the source code.</p>
+
+<div >
+<p><strong>Note</strong>: <code class="language-markup">order</code> is only meant to affect the <strong>visual order</strong>, not the logical order, or the tab order, of elements. It must not be used on non-visual media such as speech.</p>
+</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> flex items and absolutely-positioned flex container children</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> yes, as an <a  title="Values of the &lt;integer> CSS data type are interpolated via integer discrete steps. The calculation is done as if they were real, floating-point numbers and the discrete value is obtained using the floor function.">integer</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<p>See <a  title="CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a> for more properties and information.</p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="">&lt;integer&gt;</a></code>
+</code></pre>
+
+<pre>order: 5
+
+order: inherit
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;integer&gt;</code></dt>
+ <dd>Represents the ordinal group the flex item has been assigned.</dd>
+</dl>
+
+<h3>Examples</h3>
+
+<p>Here is a basic HTML chunk:</p>
+
+<pre >&lt;!DOCTYPE html&gt;
+&lt;header&gt;…&lt;/header&gt;
+&lt;div id='main'&gt;
+   &lt;article&gt;…&lt;/article&gt;
+   &lt;nav&gt;…&lt;/nav&gt;
+   &lt;aside&gt;…&lt;/aside&gt;
+&lt;/div&gt;
+&lt;footer&gt;…&lt;/footer&gt;</code></pre>
+
+<p>The following CSS code should create a classic two-sidebar layout surrounding a content block. The Flexible Box Layout Module automatically creates blocks of equal vertical size and uses as much horizontal space as available.</p>
+
+<pre >#main { display: flex; }
+#main &gt; article { flex:1;         order: 2; }
+#main &gt; nav     { width: 200px;   order: 1; }
+#main &gt; aside   { width: 200px;   order: 3; }</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Flexible Box Layout Module<br><small lang="en-US">The definition of 'order' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Firefox (Gecko)</th>
+   <th>Chrome</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><a  title="Released on 2013-01-08.">18.0</a> (18.0) (behind a pref) [1]<br>
+    <a  title="Released on 2013-04-02.">20.0</a> (20.0)</td>
+   <td>21.0<span  title="prefix">-webkit</span></td>
+   <td>10.0, but under the non-standard <code class="language-markup">-ms-flex-order</code> name <span  title="prefix">-ms</span>  [2]</td>
+   <td>12.10</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>Android</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>12.10</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] To activate Flexbox support for Firefox 18 and 19, the user change the about:config preference <code class="language-markup">layout.css.flexbox.enabled</code> to <code class="language-markup">true</code>. Multi-line flexible boxes are supported since Firefox 28.</p>
+
+<p>[2] In Internet Explorer 10, a flexible container is declared using <code class="language-markup">display:-ms-flexbox</code> and not <code class="language-markup">display:flex</code>.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="CSS/Using_CSS_flexible_boxes">Using CSS flexible boxes</a></li>
+ <li>Flexible-boxes-related properties: <a  title="The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: margin-top, margin-right, margin-bottom and margin-left.
+ Negative values are also allowed."><code class="language-markup">margin</code></a>,  
+<a  title="The CSS align-content property aligns a flex container's lines within the flex container when there is extra space on the cross-axis. This property has no effect on single line flexible boxes."><code class="language-markup">align-content</code></a>,  
+<a  title="The CSS align-items property aligns flex items of the current flex line the same way as justify-content but in the perpendicular direction."><code class="language-markup">align-items</code></a>,  
+<a  title="The align-self CSS property aligns flex items of the current flex line overriding the align-items value. If any of the flex item's cross-axis margin is set to auto, then align-self is ignored."><code class="language-markup">align-self</code></a>,  
+<a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a>,  
+<a  title="The flex CSS property is a shorthand property specifying the ability of a flex item to alter its dimensions to fill available space. Flex items can be stretched to use available space proportional to their flex grow factor or their flex shrink factor to prevent overflow."><code class="language-markup">flex</code></a>,  
+<a  title="The CSS flex-basis property specifies the flex basis which is the initial main size of a flex item. The property determines the size of the content-box unless specified otherwise using box-sizing."><code class="language-markup">flex-basis</code></a>,  
+<a  title="The CSS flex-direction property specifies how flex items are placed in the flex container defining the main axis and the direction (normal or reversed)."><code class="language-markup">flex-direction</code></a>,  
+<a  title="The CSS flex-flow property is a shorthand property for flex-direction and flex-wrap individual properties."><code class="language-markup">flex-flow</code></a>,  
+<a  title="The CSS flex-grow property specifies the flex grow factor of a flex item."><code class="language-markup">flex-grow</code></a>,  
+<a  title="The CSS flex-shrink property specifies the flex shrink factor of a flex item."><code class="language-markup">flex-shrink</code></a>,  
+<a  title="The CSS flex-wrap property specifies whether the children are forced into a single line or if the items can be flowed on multiple lines."><code class="language-markup">flex-wrap</code></a>,  
+<a  title="The CSS justify-content property defines how a browser distributes available space between and around elements when aligning flex items in the main-axis of the current line. The alignment is done after the lengths and auto margins are applied, meaning that, if there is at least one flexible element, with flex-grow different than 0, it will have no effect as there won't be any available space."><code class="language-markup">justify-content</code></a>,  
+<a  title="The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height."><code class="language-markup">min-height</code></a>,  
+<a  title="The min-width CSS property is used to set the minimum width of a given element. It prevents the used value of the width property from becoming smaller than the value specified for min-width."><code class="language-markup">min-width</code></a>,  
+<a  title="The CSS order property specifies the order used to lay out flex items in their flex container. Elements are laid out by ascending order of the order value. Elements with the same order value are laid out in the order they appear in the source code."><code class="language-markup">order</code></a></li>
+</ul>
+                                                

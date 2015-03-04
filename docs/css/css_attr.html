@@ -1,0 +1,139 @@
+<h2>attr</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">attr()</code> <a >CSS</a> function is used to retrieve the value of an attribute of the selected element and use it in the style sheet. It can be used on pseudo-elements too and, in this case, the value of the attribute on the <a >pseudo-element</a>'s originated element is returned.</p>
+
+<p>The <code class="language-markup">attr()</code> function can be used with any CSS property, but support for properties other than <a  title="The content CSS property is used with the ::before and ::after pseudo-elements to generate content in an element. Objects inserted using the content property are anonymous replaced elements."><code class="language-markup">content</code></a> is <span title="This is an experimental API that should not be used in production code."><i > </i></span>.</p>
+
+<h3>Syntax</h3>
+
+<pre ><a >Formal syntax</a>: attr( attribute-name &lt;type-or-unit&gt;? [, &lt;fallback&gt; ]? )
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">attribute-name</code></dt>
+ <dd>Is the name of an attribute on the HTML element referenced in the CSS.</dd>
+ <dt><code class="language-markup">&lt;type-</code>or-unit&gt; <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>Is a keyword representing either the type of the attribute's value, or its unit, as in HTML some attributes have implicit units. If the use of <code class="language-markup">&lt;type-or-unit&gt;</code> as a value for the given attribute is invalid, the <code class="language-markup">attr()</code> expression will be invalid too. If omitted, it defaults to <code class="language-markup">string</code>. The list of valid values are:
+ <table >
+  <thead>
+   <tr>
+    <th scope="col">Keyword</th>
+    <th scope="col">Associated type</th>
+    <th scope="col">Comment</th>
+    <th scope="col">Default value</th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><code class="language-markup">string</code></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;string&gt;</code></a></td>
+    <td>The attribute value is treated as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;string&gt;</code></a>.  It is NOT reparsed, and in particular the characters are used as-is instead of CSS escapes being turned into different characters.</td>
+    <td>An empty string</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">color</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;color&gt;</code></a></td>
+    <td>The attribute value is parsed as a hash (3- or 6-value hash) or a keyword. It must be a valid CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;string&gt;</code></a> value.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">currentColor</code></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">url</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;uri&gt;&lt;/uri&gt;</code></a></td>
+    <td>The attribute value is parsed as a string that is used inside a CSS <code class="language-markup">url()</code>function.<br>
+     Relative URL are resolved relatively to the original document, not relatively to the style sheet.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td>The url <code class="language-markup">about:invalid</code> that points to a non-existent document with a generic error condition.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">integer</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a>. If it is not valid, that is not an integer or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0</code>, or, if <code class="language-markup">0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">number</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0</code>, or, if <code class="language-markup">0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">length</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> dimension, that is including the unit (e.g. <code class="language-markup">12.5em</code>). If it is not valid, that is not a length or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given unit is a relative length, <code class="language-markup">attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0</code>, or, if <code class="language-markup">0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">em</code>, <code class="language-markup">ex</code>, <code class="language-markup">px</code>, <code class="language-markup">rem</code>, <code class="language-markup">vw</code>, <code class="language-markup">vh</code>, <code class="language-markup">vmin</code>, <code class="language-markup">vmax</code>, <code class="language-markup">mm</code>, <code class="language-markup">cm</code>, <code class="language-markup">in</code>, <code class="language-markup">pt</code>, or <code class="language-markup">pc</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>, that is without the unit (e.g. <code class="language-markup">12.5</code>), and interpreted as a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given unit is a relative length, <code class="language-markup">attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0</code>, or, if <code class="language-markup">0</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">angle</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;angle&gt;</code></a> dimension, that is including the unit (e.g. <code class="language-markup">30.5deg</code>). If it is not valid, that is not an angle or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0deg</code>, or, if <code class="language-markup">0deg</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">deg</code>, <code class="language-markup">grad</code>, <code class="language-markup">rad</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;angle&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>, that is without the unit (e.g. <code class="language-markup">12.5</code>), and interpreted as an <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;angle&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0deg</code>, or, if <code class="language-markup">0deg</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">time</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;time&gt;</code></a> dimension, that is including the unit (e.g. <code class="language-markup">30.5ms</code>). If it is not valid, that is not a time or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0s</code>, or, if <code class="language-markup">0s</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">s</code>, <code class="language-markup">ms</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;time&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>, that is without the unit (e.g. <code class="language-markup">12.5</code>), and interpreted as an<a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;time&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0s</code>, or, if <code class="language-markup">0s</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">frequency</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;frequency&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;frequency&gt;</code></a> dimension, that is including the unit (e.g. <code class="language-markup">30.5kHz</code>). If it is not valid, that is not a frequency or out of the range accepted by the CSS property, the default value is used.</td>
+    <td><code class="language-markup">0Hz</code>, or, if <code class="language-markup">0Hz</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">Hz</code>, <code class="language-markup">kHz</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;frequency&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>, that is without the unit (e.g. <code class="language-markup">12.5</code>), and interpreted as a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;frequency&gt;</code></a> with the specified unit. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0Hz</code>, or, if <code class="language-markup">0Hz</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">%</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a></td>
+    <td>The attribute value is parsed as a CSS <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;number&gt;</code></a>, that is without the unit (e.g. <code class="language-markup">12.5</code>), and interpreted as a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a>. If it is not valid, that is not a number or out of the range accepted by the CSS property, the default value is used.<br>
+     If the given value is used as a length, <code class="language-markup">attr()</code>computes it to an absolute length.<br>
+     Leading and trailing spaces are stripped.</td>
+    <td><code class="language-markup">0%</code>, or, if <code class="language-markup">0%</code> is not a valid value for the property, the property's minimum value.</td>
+   </tr>
+  </tbody>
+ </table>
+ </dd>
+ <dt><code class="language-markup">&lt;fallback&gt;</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The value to be used if the associated attribute is missing or contains an invalid value. The fallback value must be valid where <code class="language-markup">attr()</code> is used, even if it is not used, and must not contain another <code class="language-markup">attr()</code> expression. If <code class="language-markup">attr()</code> is not the sole component value of a property, its <code class="language-markup">&lt;fallback&gt;</code> value must be of the type defined by <code class="language-markup">&lt;type-or-unit&gt;</code>. If not set, CSS will use the default value defined for each <code class="language-markup">&lt;type-or-unit&gt;</code>.</dd>
+</dl>
+

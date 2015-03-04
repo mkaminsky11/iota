@@ -1,0 +1,46 @@
+<h2>font-size-adjust</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">font-size-adjust</code> CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters.</p>
+
+<p>This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters. This can cause problems when the first-choice <a  title="The font-family CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer, or that can be downloaded using the information provided by a @font-face at-rule."><code class="language-markup">font-family</code></a> is unavailable and its replacement has a significantly different aspect ratio (the ratio of the size of lowercase letters to the size of the font).</p>
+
+<p>To do this in a way that is compatible with browsers that do not support <code class="language-markup">font-size-adjust</code>, it is specified as a number that the <a  title="The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units."><code class="language-markup">font-size</code></a> property is multiplied by. This means the value specified for the property should generally be the aspect ratio of the first choice font. For example, a style sheet that specifies</p>
+
+<pre >font-size: 14px;  
+font-size-adjust: 0.5;
+</code></pre>
+
+<p>is really specifying that the lowercase letters of the font should be <code class="language-markup">7px</code> high (0.5 × 14px).</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;number> CSS data type are interpolated as real, floating-point, numbers.">number</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">none <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;number&gt;</a></code></code></pre>
+
+<pre>font-size-adjust: none
+font-size-adjust: 3
+font-size-adjust: 10.7
+
+font-size-adjust: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>Choose the size of the font based only on the <a  title="The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units."><code class="language-markup">font-size</code></a> property.</dd>
+ <dt><code class="language-markup">&lt;number&gt;</code></dt>
+ <dd>
+ <p>Choose the size of the font so that its lowercase letters (as determined by the x-height metric of the font) are the specified number times the <a  title="The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units."><code class="language-markup">font-size</code></a>.</p>
+
+ <p>The number specified should generally be the aspect ratio (ratio of x-height to font size) of the first choice <a  title="The font-family CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer, or that can be downloaded using the information provided by a @font-face at-rule."><code class="language-markup">font-family</code></a>. This will mean that the first choice font, when available, will appear the same size in browsers, whether or not they <code class="language-markup">support font-size-adjust</code>.</p>
+ </dd>
+</dl>
+

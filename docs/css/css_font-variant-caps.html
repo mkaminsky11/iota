@@ -1,0 +1,63 @@
+<h2>font-variant-caps</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-variant-caps</code></strong> CSS property controls the usage of alternate glyphs for capital letters. Scripts can have capital letter glyphs of different sizes, the normal uppercase glyphs, small capital glyphs, and petite capital glyphs. This property controls which alternate glyphs to use.</p>
+<p>If petite capital glyphs are not present in the font, small capital glyphs are used. If these are not present, the browser synthesizes them from the uppercase glyphs. Note that some caseless characters, like punctuation marks, may have such special glyphs: they are designed to better match the characters around them. Nevertheless synthetic small capitals glyphs are never synthesized for caseless character.</p>
+<div >
+ The values takes into account language-specific case mapping rules, like:
+ <ul>
+  <li>In Turkic languages, like Turkish (tr), Azerbaijani (az), Crimean Tatar (crh), Volga Tatar (tt), and Bashkir (ba), there are two kinds of i, with and without the dot, and two case pairings: <code class="language-markup">i</code>/<code class="language-markup">İ</code> and <code class="language-markup">ı</code>/<code class="language-markup">I</code>.</li>
+  <li>In German (de), the <code class="language-markup">ß</code> becomes <code class="language-markup">SS</code> in uppercase.</li>
+  <li>In Greek (el), vowels lose their accent when the whole word is in uppercase (<code class="language-markup">ά</code>/<code class="language-markup">Α</code>), except for the disjunctive eta (<code class="language-markup">ή</code>/<code class="language-markup">Ή</code>). Also, diphthongs with an accent on the first vowel lose the accent and gain a diacritic on the second vowel (<code class="language-markup">άι</code>/<code class="language-markup">ΑΪ</code>).</li>
+ </ul>
+</div>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> small-caps <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> all-small-caps <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> petite-caps <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> all-petite-caps <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> unicase <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> titling-caps</code></code></pre>
+<pre>font-variant-caps: normal
+font-variant-caps: small-caps
+font-variant-caps: all-small-caps
+font-variant-caps: petite-caps
+font-variant-caps: all-petite-caps
+font-variant-caps: unicase 
+font-variant-caps: titling-caps
+
+font-variant-caps: initial
+font-variant-caps: inherit
+font-variant-caps: unset
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+ <dt>
+  <code class="language-markup">small-caps</code></dt>
+ <dd>
+  This keyword forces the use of small capitals letters for lower case characters. It corresponds to the OpenType value <code class="language-markup">smcp</code>; if the font doesn't support them, it synthesizes the glyphs.</dd>
+ <dt>
+  <code class="language-markup">all-small-caps</code></dt>
+ <dd>
+  This keyword forces the use of small capital letters for lower case characters. It corresponds to the OpenType values <code class="language-markup">smcp</code> and <code class="language-markup">c2sc</code>; if the font doesn't support them, it synthesizes the glyphs.</dd>
+ <dt>
+  <code class="language-markup">petite-caps</code></dt>
+ <dd>
+  This keyword forces the use of petite capital letters for lower case characters. It corresponds to the OpenType value <code class="language-markup">pcap</code>; if the font doesn't support them, small caps glyphs are used instead.</dd>
+ <dt>
+  <code class="language-markup">all-petite-caps</code></dt>
+ <dd>
+  This keyword forces the use of petite capital letters for lower case characters. It corresponds to the OpenType values <code class="language-markup">pcap</code> and <code class="language-markup">c2pc</code>; if the font doesn't support them, small caps glyphs are used instead.</dd>
+ <dt>
+  <code class="language-markup">unicase</code></dt>
+ <dd>
+  This keyword forces the use of small capital letters for upper case characters. It corresponds to the OpenType value <code class="language-markup">unic</code>; if the font doesn't support them, small caps glyphs are used for the upper case characters instead.</dd>
+ <dt>
+  <code class="language-markup">titling-caps</code></dt>
+ <dd>
+  This keyword forces the use of special capitals for titling, for both lower and uppercase letters. Regular uppercase glyphs are usually designed to be rendered with lowercase glyphs: they tend to appear too bold when a long run of text use such glyphs. The special glyphs used here are designed not to produce this effect. This keyword corresponds to the OpenType value <code class="language-markup">titl</code>; if the font doesn't support it, the keyword has no visible action.</dd>
+</dl>

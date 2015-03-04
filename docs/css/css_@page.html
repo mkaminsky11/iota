@@ -1,0 +1,14 @@
+<h2>@page</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p >The <code class="language-markup">@page</code> CSS at-rule is used to modify some CSS properties when printing a document.<strong> </strong>You can't change all CSS properties with <code class="language-markup">@page</code>. You can only change the margins, orphans, widows, and page breaks of the document. Attempts to change any other CSS properties will be ignored.</p>
+<p >The <code class="language-markup">@page</code> at-rule can be accessed via the CSS object model interface <a  title="CSSPageRule is an interface representing a single CSS @page rule. It implements the CSSRule interface with a type value of 6 (CSSRule.PAGE_RULE)."><code class="language-markup">CSSPageRule</code></a>.</p>
+<div >
+ <strong>Note:</strong> The W3C is discussing how to handle viewport-related <a  title=""><code class="language-markup">&lt;length&gt;</code></a> units, <code class="language-markup">vh</code>, <code class="language-markup">vw</code>, <code class="language-markup">vmin</code>, and <code class="language-markup">vmax</code>. Meanwhile do not use them within a <code class="language-markup">@page</code> at-rule.</div>
+<h3>Syntax</h3>
+<pre >@page :pseudo-class {
+  margin:2in;
+}
+</code></pre>

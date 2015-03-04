@@ -1,0 +1,139 @@
+<h2>:not</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <strong>negation </strong><a  title="Pseudo-classes">CSS pseudo-class</a>, <code class="language-markup">:not(X)</code>, is a functional notation taking a simple selector <var>X</var> as an argument. It matches an element that is not represented by the argument. <var>X</var> must not contain another negation selector.</p>
+
+<p>The <a  title="Specificity">specificity</a> of the <code class="language-markup">:not</code> pseudo-class is the specificity of its argument. The <code class="language-markup">:not</code> pseudo-class does not add to the selector specificity, unlike other pseudo-classes.</p>
+
+<div ><strong>Notes:</strong>
+
+<ul>
+ <li >Useless selectors can be written using this pseudo-class. E.g. <code class="language-markup">:not(*)</code> matching any element which is not any element will never be applied.</li>
+ <li >It is possible to rewrite other rules. E.g. <code class="language-markup">foo:not(bar)</code> will match the same element as the simple <code class="language-markup">foo</code>. Nevertheless the <a  title="Specificity">specificity</a> of the first one is higher.</li>
+ <li ><code class="language-markup">:not(foo){} </code>will match anything that isn't <code class="language-markup">foo</code>, <strong>including <code class="language-markup">html</code> and <code class="language-markup">body</code></strong>.</li>
+</ul>
+</div>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-markup">:not(selector) { <em>style properties</em> }</code></pre>
+
+<h3>Examples</h3>
+
+<h3  name="Usage_Example">Usage Example</h3>
+
+<pre><code class="language-markup">p:not(.classy) { color: red; }
+body :not(p) { color: green; }</code></pre>
+
+<p>...where...</p>
+
+<pre><code class="language-markup">&lt;p&gt;Some text.&lt;/p&gt;
+&lt;p &gt;Some other text.&lt;/p&gt;
+&lt;span&gt;One more text&lt;span&gt;
+</code></pre>
+
+<p>...should look like...</p>
+
+<p><iframe  frameborder="0" height="150" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:not$samples/Examples?revision=765865" width="100%"></iframe></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':not()' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Extends its argument to allow some non-simple selectors.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 3<br><small lang="en-US">The definition of ':not()' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>9.0</td>
+   <td>9.5</td>
+   <td>3.2</td>
+  </tr>
+  <tr>
+   <td>Extended arguments</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td>1.0 (1)</td>
+   <td>9.0</td>
+   <td>10.0</td>
+   <td>3.2</td>
+  </tr>
+  <tr>
+   <td>Extended arguments</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p> </p>
+                                                

@@ -1,0 +1,141 @@
+<h2>:first-child</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">:first-child</code> <a  title="CSS">CSS</a> <a  title="Pseudo-classes">pseudo-class </a>represents any element that is the first child element of its parent.</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-markup">element:first-child { <em>style properties</em> }
+</code></pre>
+
+<h3>Examples</h3>
+
+<h3 >Example 1</h3>
+
+<h4 >HTML Content</h4>
+
+<pre><code class="language-markup">&lt;div&gt;
+  &lt;span&gt;This span is limed!&lt;/span&gt;
+  &lt;span&gt;This span is not. :(&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<h4 >CSS Content</h4>
+
+<pre><code class="language-markup">span:first-child {
+    background-color: lime;
+}
+</code></pre>
+
+<p>... looks like ...</p>
+
+<p><span><iframe  frameborder="0" height="50" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:first-child$samples/Example_1?revision=765845" width="300"></iframe></span></p>
+
+<h3  name="Example_2_-_Using_UL">Example 2 - Using UL</h3>
+
+<h4 >HTML Content</h4>
+
+<pre><code class="language-markup">&lt;ul&gt;
+  &lt;li&gt;List 1&lt;/li&gt;
+  &lt;li&gt;List 2&lt;/li&gt;
+  &lt;li&gt;List 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<h4 >CSS Content</h4>
+
+<pre><code class="language-markup">li{
+  color:red;
+}
+li:first-child{
+  color:green;
+}</code></pre>
+
+<p>... looks like ...</p>
+
+<p><span><iframe  frameborder="0" height="100" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:first-child$samples/Example_2_-_Using_UL?revision=765845" width="300"></iframe></span></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':first-child' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 3<br><small lang="en-US">The definition of ':first-child' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>4.0</td>
+   <td><a  title="Released on 2008-06-17.">3.0</a> (1.9)</td>
+   <td>7<sup><a >[1]</a></sup></td>
+   <td>9.5</td>
+   <td>4</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.9.1)</td>
+   <td>7<sup><a >[1]</a></sup></td>
+   <td>10.0</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p><a  name="compat_hint1">[1]</a> Internet Explorer 7 doesn't update the styles when elements are added dynamically. In Internet Explorer 8, if an element is inserted dynamically by clicking on a link the first-child style isn't applied until the link loses focus.</p>
+                                                

@@ -1,0 +1,61 @@
+<h2>image</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+<h3>Summary</h3>
+<p>The <code class="language-markup">&lt;image&gt;</code> <a  title="CSS">CSS</a> data type represents a 2D image. There are two kinds of images in CSS: plain static images, often referenced using a URL, and dynamically-generated images like gradients or representations of parts of the tree.</p>
+<p>CSS can handle different kinds of images:</p>
+<ul>
+ <li>images with <em>intrinsic dimensions</em>, that is a natural size, like a jpeg image which has a fixed dimensions.</li>
+ <li>images with <em>several intrinsic dimensions</em>, that exist in several versions inside a file, like some .ico formats. In that case, the intrinsic dimension will be the one of the bigger image, in surface, and with the closest ratio to the one of the containing box.</li>
+ <li>images with no intrinsic dimensions but with <em>an intrinsic aspect ratio</em>, between its width and height, like some vectorized images, in the SVG format for example.</li>
+ <li>images with <em><a name="no_intrinsic">neither intrinsic dimensions</a>, nor an intrinsic aspect ratio</em>, like a CSS gradient for example.</li>
+</ul>
+<p>CSS determines the <em>concrete object size</em> using these <em>intrinsic dimensions</em>, the <em>specified size </em>defined by CSS properties like <a  title=""><code class="language-markup">width</code></a>, <a  title=""><code class="language-markup">height</code></a> or <a  title=""><code class="language-markup">background-size</code></a>, and the <em>default object size</em> defined by the kind of property the image is used with:</p>
+<table >
+ <thead>
+  <tr>
+   <th>Kind of object</th>
+   <th>Default object size</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a  title=""><code class="language-markup">background-image</code></a></td>
+   <td>The size of the element's background positioning area</td>
+  </tr>
+  <tr>
+   <td><a  title=""><code class="language-markup">list-style-image</code></a></td>
+   <td>The size of a character of <code class="language-markup">1em</code></td>
+  </tr>
+  <tr>
+   <td><a  title=""><code class="language-markup">border-image</code></a></td>
+   <td>The size of the element's border image area</td>
+  </tr>
+  <tr>
+   <td><a  title=""><code class="language-markup">cursor</code></a></td>
+   <td>A browser-defined size matching the usual size of a cursor on the used system</td>
+  </tr>
+  <tr>
+   <td>Replaced content<br>
+    like with the combination of the CSS <a  title=""><code class="language-markup">content</code></a> property<br>
+    in combination with the CSS pseudo-elements <a  title=""><code class="language-markup">::after</code></a> and <a  title=""><code class="language-markup">::before</code></a></td>
+   <td>A <code class="language-markup">300px</code><code class="language-markup"> × 150px</code> rectangle</td>
+  </tr>
+ </tbody>
+</table>
+<p>The concrete object size is calculated using the following algorithm:</p>
+<ul>
+ <li>If the specified size defines both the width and the height, these values are used as the concrete object size.</li>
+ <li>If the specified size defines one of both the width and the height, the missing value is determined using the intrinsic ratio, if there is any, the intrinsic dimensions if the specified value matches, or using the default object size for that missing value.</li>
+ <li>If the specified size do not define the width and the height, the concrete object size will be calculated so that it matches the intrinsic aspect ratio of the images but do not exceed the default object size in any dimension. If the image has no intrinsic aspect ratio, the intrinsic aspect ratio of the object it applies to is used; if this object has none, the missing width or height are taken from the default object size.</li>
+</ul>
+<p>Images can be used with numerous CSS properties like <a  title=""><code class="language-markup">background-image</code></a>, <a  title=""><code class="language-markup">border-image</code></a>, <a  title=""><code class="language-markup">content</code></a>, <a  title=""><code class="language-markup">list-style-image</code></a> or <a  title=""><code class="language-markup">cursor</code></a>.</p>
+<div >
+ <strong>Note:</strong> Not all browsers support any type of images on any property. See the <a  title="https://developer.mozilla.org/en/CSS/image#Browser_compatibility">browser compatibility section</a> for a comprehensive list.</div>
+<h3>Syntax</h3>
+<p>An <code class="language-markup">&lt;image&gt;</code> CSS data type represents may be one of the following:</p>
+<ul>
+ <li>An image denoted by a CSS <a  title=""><code class="language-markup">&lt;uri&gt;</code></a> data type and the <code class="language-markup">url()</code> function;</li>
+ <li>A CSS <a  title=""><code class="language-markup">&lt;gradient&gt;</code></a>;</li>
+ <li>A part of the page, defined by the <a  title=""><code class="language-markup">element()</code></a> function.</li>
+</ul>

@@ -1,0 +1,131 @@
+<h2>mix-blend-mode</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">mix-blend-mode</code> CSS property describes how an element content should blend with the content of the element that is below it and the element's background.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all HTML elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><code class="language-markup">Formal syntax:  <code class="language-markup"><code class="language-markup"><a  title="Possible values: normal, multiply, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, luminosity">&lt;blend-mode&gt;</a></code></code></code></code></pre>
+
+<pre>mix-blend-mode: normal;
+mix-blend-mode: luminosity;
+
+mix-blend-mode: initial;
+mix-blend-mode: inherit;
+mix-blend-mode: unset;
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;blend-mode&gt;</code></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;blend-mode&gt;</code></a> denoting the blending mode that should be applied. There can be several values, separated by commas.</dd>
+</dl>
+
+<h3>Examples</h3>
+
+<pre >&lt;svg&gt;
+  &lt;circle cx="40" cy="40" r="40" fill="red"/&gt;
+  &lt;circle cx="80" cy="40" r="40" fill="lightgreen"/&gt;
+  &lt;circle cx="60" cy="80" r="40" fill="blue"/&gt;
+&lt;/svg&gt;</code></pre>
+
+<pre >circle { mix-blend-mode: screen; }</code></pre>
+
+<h3 >Live result</h3>
+
+<p><iframe  frameborder="0" height="120" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/mix-blend-mode$samples/Examples?revision=764227" width="120"></iframe></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Compositing and blending Level 1<br><small lang="en-US">The definition of 'mix-blend-mode' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>Initial specification.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>
+    <p >41.0</p>
+   </td>
+   <td><a  title="Released on 2014-09-02.">32.0</a> (32.0)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>8.0</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>
+    <p >41.0</p>
+   </td>
+   <td>32.0 (32.0)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>8.0</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;blend-mode&gt;</code></a></li>
+ <li><a  title="The background-blend-mode CSS property describes how the element's background images should blend with each other and the element's background color."><code class="language-markup">background-blend-mode</code></a></li>
+</ul>
+                                                

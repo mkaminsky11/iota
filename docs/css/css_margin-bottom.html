@@ -1,0 +1,174 @@
+<h2>margin-bottom</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p><img alt="The effect of the CSS margin-bottom property on the element box" src="/files/4045/margin-bottom.svg" style="width: 400px; height: 130px; border: 1px solid; margin-right: 1em; margin-bottom: 1em; padding-right: 0.5em; float: left;"><span >The <code class="language-markup">margin-bottom</code> <a  title="CSS">CSS</a> property of an element sets the margin space required on the bottom of an element. A negative value is also allowed.</span></p>
+<p><span >This property has no effect on <em>non-replaced</em> inline elements, like <a  title="The HTML Teletype Text Element (&lt;tt>) produces an inline element displayed in the browser's default monotype font. This element was intended to style text as it would display on a fixed width display, such as a teletype. It probably is more common to display fixed width type using the &lt;code> element."><code class="language-markup">&lt;tt&gt;</code></a> or <a  title="The HTML &lt;span> element is a generic inline container for phrasing content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element is appropriate. &lt;span> is very much like a &lt;div> element, but &lt;div> is a block-level element whereas a &lt;span> is an inline element."><code class="language-markup">&lt;span&gt;</code></a>.</span></p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> all elements except elements with table <a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a> types other than <code class="language-markup">table-caption</code>, <code class="language-markup">table</code> and <code class="language-markup">inline-table</code>. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the width of the containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the percentage as specified or the absolute length<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible value: a number followed by 'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc', 'px', like 3px, 1.5cm, -0.5em, 0.">&lt;length&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> auto</code></code></pre>
+<pre>margin-bottom: 10px;        /* An absolute length */
+margin-bottom: 1em;         /* A length relative to the text size */
+margin-bottom: 5%;          /* A margin relative to the nearest block container's width */
+margin-bottom: auto;
+
+margin-bottom: inherit;
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>
+  Specifies a fixed width. See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> for possible values.</dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  A <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> always relative to the <strong>width</strong> of the containing block.</dd>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  See <a  title="The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: margin-top, margin-right, margin-bottom and margin-left.
+ Negative values are also allowed."><code class="language-markup">margin</code></a>.</dd>
+</dl>
+<h3>Example</h3>
+<h3 >HTML</h3>
+<pre >&lt;div &gt;
+&lt;div &gt;Box 0&lt;/div&gt;
+&lt;div &gt;Box 1&lt;/div&gt;
+&lt;div &gt;Box one's negative margin pulls me up&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h3 >CSS</h3>
+<p>CSS for divs to set margin-bottom and height</p>
+<pre >.box0 {
+    margin-bottom:1em;
+    height:3em;
+}
+.box1 {
+    margin-bottom:-1.5em;
+    height:4em;
+}
+.box2 {
+    border:1px dashed black;
+    border-width:1px 0;
+    margin-bottom:2em;
+}
+
+</code></pre>
+<p>Some definations for container and divs so margins' effects can be seen more clearly</p>
+<pre >.container {
+    background-color:orange;
+    width:320px;
+    border:1px solid black;
+}
+div {
+    width:320px;
+    background-color:gold;
+}</code></pre>
+<p><iframe  frameborder="0" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/margin-bottom$samples/Example?revision=698397" width="350"></iframe></p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic Box Model<br><small>The definition of 'margin-bottom' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small>The definition of 'margin-bottom' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">margin-bottom</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small>The definition of 'margin-bottom' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Removes its effect on inline elements.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small>The definition of 'margin-bottom' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari (WebKit)</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>3.0</td>
+    <td>3.5</td>
+    <td>1.0 (85)</td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">auto</code> value</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>6.0 (strict mode)</td>
+    <td>3.5</td>
+    <td>1.0 (85)</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1)</td>
+    <td>6.0</td>
+    <td>6.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li>Margin-related properties: <a  title="The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: margin-top, margin-right, margin-bottom and margin-left.
+ Negative values are also allowed."><code class="language-markup">margin</code></a>,  
+<a  title="The margin-top CSS property of an element sets the margin space required on the top of an element. A negative value is also allowed."><code class="language-markup">margin-top</code></a>,  
+<a  title="The margin-right CSS property of an element sets the margin space required on the right side of an element. A negative value is also allowed."><code class="language-markup">margin-right</code></a>,  
+<a  title="The margin-bottom CSS property of an element sets the margin space required on the bottom of an element. A negative value is also allowed."><code class="language-markup">margin-bottom</code></a>,  
+<a  title="The margin-left CSS property of an element sets the margin space required on the left side of a box associated with an element. A negative value is also allowed."><code class="language-markup">margin-left</code></a>,  
+<a  title="The border CSS property is a shorthand property for setting the individual border property values in a single place in the style sheet. border can be used to set the values for one or more of: border-width, border-style, border-color."><code class="language-markup">border</code></a>,  
+<a  title="The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding</code></a></li>
+</ul>
+                                                

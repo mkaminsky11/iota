@@ -1,0 +1,271 @@
+<h2>font-weight</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <a  title="The font-weight CSS property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on normal and bold."><code class="language-markup">font-weight</code></a> <a  title="CSS">CSS</a> property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on <code class="language-markup">normal</code> and <code class="language-markup">bold</code>.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the keyword or the numerical value as specified, with <code class="language-markup">bolder</code> and <code class="language-markup">lighter</code> transformed to the real value</li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Font weight values are interpolated via discrete steps (multiples of 100). The interpolation happens in real number space and is converted to an integer by rounding to the nearest multiple of 100, with values halfway between multiples of 100 rounded towards positive infinity.">font weight</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> bold <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> bolder <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> lighter <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 100 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 200 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 300 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 400 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 500 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 600 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 700 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 800 <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> 900</code></code></pre>
+
+<pre><code class="language-markup">font-weight: normal
+font-weight: bold
+
+font-weight: lighter
+font-weight: bolder
+
+font-weight: 100
+font-weight: 200
+font-weight: 300
+font-weight: 400
+font-weight: 500
+font-weight: 600
+font-weight: 700
+font-weight: 800
+font-weight: 900
+
+font-weight: inherit</code></code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">normal</code></dt>
+ <dd>Normal font weight. Same as <code class="language-markup">400</code>.</dd>
+ <dt><code class="language-markup">bold</code></dt>
+ <dd>Bold font weight. Same as <code class="language-markup">700</code>.</dd>
+ <dt><code class="language-markup">lighter</code></dt>
+ <dd>One font weight lighter than the parent element (among the available weights of the font).</dd>
+ <dt><code class="language-markup">bolder</code></dt>
+ <dd>One font weight darker than the parent element (among the available weights of the font).</dd>
+ <dt><code class="language-markup">100</code>, <code class="language-markup">200</code>, <code class="language-markup">300</code>, <code class="language-markup">400</code>, <code class="language-markup">500</code>, <code class="language-markup">600</code>, <code class="language-markup">700</code>, <code class="language-markup">800</code>, <code class="language-markup">900</code></dt>
+ <dd>Numeric font weights for fonts that provide more than just normal and bold.</dd>
+</dl>
+
+<h3  name="Examples">Fallback</h3>
+
+<p>If the exact weight given is unavailable, then the following heuristic is used to determine the weight actually rendered:</p>
+
+<ul>
+ <li>If a weight greater than <code class="language-markup">500</code> is given, the closest available darker weight is used (or, if there is none, the closest available lighter weight).</li>
+ <li>If a weight less than <code class="language-markup">400</code> is given, the closest available lighter weight is used (or, if there is none, the closest available darker weight).</li>
+ <li>If a weight of exactly <code class="language-markup">400</code> is given, then <code class="language-markup">500</code> is used. If <code class="language-markup">500</code> is not available, then the heuristic for font weights less than 500 is used.</li>
+ <li>If a weight of exactly <code class="language-markup">500</code> is given, then <code class="language-markup">400</code> is used. If <code class="language-markup">400</code> is not available, then the heuristic for font weights less than 400 is used.</li>
+</ul>
+
+<p>This means that for fonts that provide only <code class="language-markup">normal</code> and <code class="language-markup">bold</code>, <code class="language-markup">100</code>-<code class="language-markup">500</code> are normal, and <code class="language-markup">600</code>-<code class="language-markup">900</code> are bold.</p>
+
+<h3 >Meaning of relative weights</h3>
+
+<p>When <code class="language-markup">lighter</code> or <code class="language-markup">bolder</code> is given, the following chart is used to calculate the absolute weight of the element:</p>
+
+<table>
+ <thead>
+  <tr>
+   <th>Inherited value</th>
+   <th><code class="language-markup">bolder</code></th>
+   <th><code class="language-markup">lighter</code></th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>100</th>
+   <td>400</td>
+   <td>100</td>
+  </tr>
+  <tr>
+   <th>200</th>
+   <td>400</td>
+   <td>100</td>
+  </tr>
+  <tr>
+   <th>300</th>
+   <td>400</td>
+   <td>100</td>
+  </tr>
+  <tr>
+   <th>400</th>
+   <td>700</td>
+   <td>100</td>
+  </tr>
+  <tr>
+   <th>500</th>
+   <td>700</td>
+   <td>100</td>
+  </tr>
+  <tr>
+   <th>600</th>
+   <td>900</td>
+   <td>400</td>
+  </tr>
+  <tr>
+   <th>700</th>
+   <td>900</td>
+   <td>400</td>
+  </tr>
+  <tr>
+   <th>800</th>
+   <td>900</td>
+   <td>700</td>
+  </tr>
+  <tr>
+   <th>900</th>
+   <td>900</td>
+   <td>700</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3  name="Examples">Common weight name mapping</h3>
+
+<p>The 100 to 900 values roughly correspond to the following common weight names:</p>
+
+<dl>
+ <dt><code class="language-markup">100</code></dt>
+ <dd>Thin</dd>
+ <dt><code class="language-markup">200</code></dt>
+ <dd>Extra Light (Ultra Light)</dd>
+ <dt><code class="language-markup">300</code></dt>
+ <dd>Light</dd>
+ <dt><code class="language-markup">400</code></dt>
+ <dd>Normal</dd>
+ <dt><code class="language-markup">500</code></dt>
+ <dd>Medium</dd>
+ <dt><code class="language-markup">600</code></dt>
+ <dd>Semi Bold (Demi Bold)</dd>
+ <dt><code class="language-markup">700</code></dt>
+ <dd>Bold</dd>
+ <dt><code class="language-markup">800</code></dt>
+ <dd>Extra Bold (Ultra Bold)</dd>
+ <dt><code class="language-markup">900</code></dt>
+ <dd>Black (Heavy)</dd>
+</dl>
+
+<h3  name="Examples">Interpolation</h3>
+
+<p>A <code class="language-markup">font-weight</code> value is interpolated via discrete steps (multiples of 100). The interpolation happens in real number space and is converted to an integer by rounding to the nearest multiple of 100, with values halfway between multiples of 100 rounded towards positive infinity.</p>
+
+<h3>Examples</h3>
+
+<pre >/* Set paragraph text to be bold. */
+p { font-weight: bold; }
+
+/* Set h1 (level 1 heading) text to one step darker than
+   normal but less than a standard bold. */
+h1 { font-weight: 500; }
+
+/* Sets text enclosed within span tag to be one step lighter
+   than the parent. */
+span { font-weight: lighter; }</code></pre>
+
+<p><a  >View the live example</a></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'font-weight' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'font-weight' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">font-weight</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'font-weight' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of 'font-weight' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>3.0</td>
+   <td>3.5</td>
+   <td>1.3</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.0)</td>
+   <td>6.0</td>
+   <td>6.0</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="The font CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height and font-family, or a way to set the element's font to a system font, using specific keywords."><code class="language-markup">font</code></a>,  
+<a  title="The font-family CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer, or that can be downloaded using the information provided by a @font-face at-rule."><code class="language-markup">font-family</code></a>,  
+<a  title="The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units."><code class="language-markup">font-size</code></a>,  
+<a  title="The font-size-adjust CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters."><code class="language-markup">font-size-adjust</code></a>,  
+<a  title="The font-stretch CSS property selects a normal, condensed, or expanded face from a font."><code class="language-markup">font-stretch</code></a>,  
+<a  title="The font-style CSS property allows italic or oblique faces to be selected within a font-family."><code class="language-markup">font-style</code></a>,  
+<a  title="The font-variant CSS property selects a normal, or small-caps face from a font family. Setting the CSS Level 2 (Revision 1) values of the  font-variant property, that is normal or small-caps, is also possible by using the font shorthand."><code class="language-markup">font-variant</code></a>,  
+<a  title="The font-weight CSS property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on normal and bold."><code class="language-markup">font-weight</code></a>,  
+<a  title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule."><code class="language-markup">@font-face</code></a></li>
+</ul>
+                                                

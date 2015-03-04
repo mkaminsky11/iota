@@ -1,0 +1,33 @@
+<h2>animation-play-state</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<div>
+ <div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">animation-play-state</code> <a  title="CSS">CSS</a> property determines whether an animation is running or paused. You can query this property's value to determine whether or not the animation is currently running; in addition, you can set its value to pause and resume playback of an animation.</p>
+<p>Resuming a paused animation will start the animation from where it left off at the time it was paused, rather than starting over from the beginning of the animation sequence.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">running</code></li>  <li><dfn>Applies to</dfn> all elements, <a  title=""><code class="language-markup">::before</code></a> and <a  title=""><code class="language-markup">::after</code></a> <a  title="/en-US/docs/CSS/Pseudo-elements">pseudo-elements</a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><code class="language-markup"><a  title="running | paused">&lt;single-animation-play-state&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a></code></code>
+</code></pre>
+<pre>animation-play-state: running
+animation-play-state: paused
+
+animation-play-state: paused, running, running
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">running</code></dt>
+ <dd>
+  The animation is currently playing.</dd>
+ <dt>
+  <code class="language-markup">paused</code></dt>
+ <dd>
+  The animation is currently paused.</dd>
+</dl>

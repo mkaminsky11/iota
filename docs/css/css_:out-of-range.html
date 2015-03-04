@@ -1,0 +1,127 @@
+<h2>:out-of-range</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<div>
+  </div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">:out-of-range</code> CSS <a  title="Pseudo-classes">pseudo-class</a> matches when an element has its value attribute outside the specified range limitations for this element. It allows the page to give a feedback that the value currently defined using the element is outside the range limits. A value can be outside of a range if it is either smaller or larger than maximum and minimum set values.</p>
+<div >
+ <strong>Note:</strong> this pseudo-class only applies to elements that have a range limitations. In absence of such a limitation, the element can neither be 'in-range' nor 'out-of-range'.</div>
+<h3>Example</h3>
+<div >
+ <h3 >HTML</h3>
+ <pre >&lt;form action="" &gt;
+    &lt;ul&gt;Values between 1 and 10 are valid.
+        &lt;li&gt;
+            &lt;input  name="value1" type="number" placeholder="1 to 10" min="1" max="10" value="12"&gt;
+            &lt;label for="value1"&gt;Your value is &lt;/label&gt;
+        &lt;/li&gt;
+&lt;/form&gt;</code></pre>
+ <h3 >CSS</h3>
+ <pre >li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+input {
+    border: 1px solid black;
+}
+input:in-range {
+    background-color: rgba(0, 255, 0, 0.25);
+}
+input:out-of-range {
+    background-color: rgba(255, 0, 0, 0.25);
+    border: 2px solid red;
+}
+input:in-range + label::after {
+    content:' OK';
+}
+input:out-of-range + label::after {
+    content:'out of range!';
+}</code></pre>
+</div>
+<div>
+ <iframe  frameborder="0" height="140" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:out-of-range$samples/example?revision=531721" width="600"></iframe></div>
+<div>
+  </div>
+<h3><span>Specifications</span></h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   lang="en" title="The definition of ':in-range' in that specification.">Selectors Level 4</a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   lang="en" title="The definition of ':in-range' in that specification.">CSS Basic User Interface Module Level 3</a></td>
+   <td><span >Working Draft</span></td>
+   <td>Initial specification.</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Support on &lt;input&gt;</td>
+    <td>10.0</td>
+    <td><a  title="Released on 2014-03-18.">28.0</a> (28.0)</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td>11.0</td>
+    <td>5.2</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Mobile</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Support on &lt;input&gt;</td>
+    <td>2.3</td>
+    <td>16.0 (16.0)</td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li>Link-related pseudo-classes: <a  title=""><code class="language-markup">:link</code></a>, <a  title=""><code class="language-markup">:visited</code></a>, and <a  title=""><code class="language-markup">:hover</code></a>.</li>
+ <li><a >Data form validation guide</a></li>
+</ul>
+                                                

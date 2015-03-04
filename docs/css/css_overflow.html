@@ -1,0 +1,165 @@
+<h2>overflow</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">overflow</code> CSS property specifies whether to clip content, render scrollbars or just display content when it overflows its block level container.</p>
+<p>Using the <code class="language-markup">overflow</code> property with a value different to <code class="language-markup">visible</code> (its default) will create a new <a  title="CSS/block_formatting_context">block formatting context</a>. This is technically necessary — if a float intersected with the scrolling element it would forcibly rewrap the content. The rewrap would happen after each scroll step, leading to a slow scrolling experience.</p>
+<div >
+ <p><strong>Note</strong>: When programmatically setting <code class="language-markup">scrollTop</code> on the relevant HTML element, even when <code class="language-markup">overflow</code> has the <code class="language-markup">hidden</code> value an element may still need to scroll.</p>
+</div>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">visible</code></li>  <li><dfn>Applies to</dfn> non-replaced block-level elements and non-replaced inline-block elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">visible <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> hidden <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> scroll <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> auto</code></code></pre>
+<pre>overflow: visible
+overflow: hidden
+overflow: scroll
+overflow: auto
+
+overflow: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">visible</code></dt>
+ <dd>
+  Default value. Content is not clipped, it may be rendered outside the content box.</dd>
+ <dt>
+  <code class="language-markup">hidden</code></dt>
+ <dd>
+  The content is clipped and no scrollbars are provided.</dd>
+ <dt>
+  <code class="language-markup">scroll</code></dt>
+ <dd>
+  The content is clipped and desktop browsers use scrollbars, whether or not any content is clipped. This avoids any problem with scrollbars appearing and disappearing in a dynamic environment. Printers may print overflowing content.</dd>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  Depends on the user agent. Desktop browsers like Firefox provide scrollbars if content overflows.</dd>
+</dl>
+<h4  name="Mozilla_Extensions">Mozilla Extensions</h4>
+<dl>
+ <dt>
+  <code class="language-markup">-moz-scrollbars-none </code><span title="This is an obsolete API and is no longer guaranteed to work."><i > </i></span></dt>
+ <dd>
+  Use <code class="language-markup">overflow:hidden</code> instead.</dd>
+ <dt>
+  <code class="language-markup">-moz-scrollbars-horizontal </code><span title="This deprecated API should no longer be used, but will probably still work."><i > </i></span></dt>
+ <dd>
+  Use of <a  title="The overflow-x CSS property specifies whether to clip content, render a scroll bar or display overflow content of a block-level element, when it overflows at the left and right edges."><code class="language-markup">overflow-x</code></a> and <a  title="The overflow-y CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges."><code class="language-markup">overflow-y</code></a> is preferred.</dd>
+ <dt>
+  <code class="language-markup">-moz-scrollbars-vertical </code><span title="This deprecated API should no longer be used, but will probably still work."><i > </i></span></dt>
+ <dd>
+  Use of <a  title="The overflow-x CSS property specifies whether to clip content, render a scroll bar or display overflow content of a block-level element, when it overflows at the left and right edges."><code class="language-markup">overflow-x</code></a> and <a  title="The overflow-y CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges."><code class="language-markup">overflow-y</code></a> is preferred.</dd>
+ <dt>
+  -moz-hidden-unscrollable <span >Non-standard</span></dt>
+ <dd>
+  Is intended mainly for internal use and by themes. Disables scrolling of XML root elements and <code class="language-markup">&lt;html&gt;</code>, <code class="language-markup"> &lt;body&gt;</code> by arrow keys and mouse wheel.</dd>
+</dl>
+<h3>Examples</h3>
+<pre >p {  
+     width: 12em;
+     height: 6em;
+     border: dotted;
+     overflow: visible; /* content is not clipped */ 
+}
+</code></pre>
+<p style="overflow: visible; display: inline-block; width: 12em; height: 6em; border: dotted;"><code class="language-markup">visible</code> (default)<br>
+ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<pre>p { overflow: hidden; /* no scrollbars are provided */ }
+</code></pre>
+<p style="overflow: hidden; display: inline-block; width: 12em; height: 6em; border: dotted;"><code class="language-markup">overflow: hidden</code><br>
+ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<pre>p { overflow: scroll; /* always show scrollbars */ }
+</code></pre>
+<p style="overflow: scroll; display: inline-block; width: 12em; height: 6em; border: dotted;"><code class="language-markup">overflow: scroll</code><br>
+ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<pre>p { overflow: auto; /* append scrollbars if necessary */ }
+</code></pre>
+<p style="overflow: auto; display: inline-block; width: 12em; height: 6em; border: dotted;"><code class="language-markup">overflow: auto</code><br>
+ Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic Box Model<br><small lang="en-US">The definition of 'overflow' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'overflow' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>4.0</td>
+    <td>7.0</td>
+    <td>1.0 (85)</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td>1.0 (1)</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3  name="Firefox_(Gecko)_Notes">Firefox (Gecko) Notes</h3>
+<p>Through Firefox 3.6 (Gecko 1.9.2), the<code class="language-markup"> overflow </code>property is incorrectly applied to table-group elements (<code class="language-markup">&lt;thead&gt;</code> , <code class="language-markup">&lt;tbody&gt;</code> , <code class="language-markup">&lt;tfoot&gt;</code>). This behavior is corrected in later versions.</p>
+<h3  name="Internet_Explorer_Notes">Internet Explorer Notes</h3>
+<p>Internet Explorer 4 to 6 enlarges an element with<code class="language-markup"> overflow:visible </code>(default value) to fit the content inside it.<code class="language-markup"> height/width </code>behaves like<code class="language-markup"> min-height/min-width</code>.</p>
+<h3>See also</h3>
+<ul>
+ <li>Related CSS properties: <a  title="The text-overflow CSS property determines how overflowed content that is not displayed is signaled to the users. It can be clipped, or display an ellipsis ('…', U+2026 Horizontal Ellipsis) or a Web author-defined string."><code class="language-markup">text-overflow</code></a>, <a  title="The white-space CSS property is used to to describe how white spaces inside the element is handled."><code class="language-markup">white-space</code></a>, <a  title="The overflow-x CSS property specifies whether to clip content, render a scroll bar or display overflow content of a block-level element, when it overflows at the left and right edges."><code class="language-markup">overflow-x</code></a>, <a  title="The overflow-y CSS property specifies whether to clip content, render a scroll bar, or display overflow content of a block-level element, when it overflows at the top and bottom edges."><code class="language-markup">overflow-y</code></a>, <a  title="The clip CSS property defines what portion of an element is visible. The clip property applies only to absolutely positioned elements, that is elements with position:absolute or position:fixed."><code class="language-markup">clip</code></a>, <a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a></li>
+</ul>
+                                                

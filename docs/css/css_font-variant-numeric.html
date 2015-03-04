@@ -1,0 +1,68 @@
+<h2>font-variant-numeric</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-variant-numeric</code></strong> CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn> order of appearance in the formal grammar of the values<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> [ <a  title="[ lining-nums | oldstyle-nums ]">&lt;numeric-figure-values&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> <a  title="[ proportional-nums | tabular-nums ]">&lt;numeric-spacing-values&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> <a  title="[ diagonal-fractions | stacked-fractions ]">&lt;numeric-fraction-values&gt;</a> <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> ordinal <a  title="Double bar: the two entities are optional, and may appear in any order.">||</a> slashed-zero ]</code></code></pre>
+<pre>font-variant-numeric: normal
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: ordinal</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: slashed-zero</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: lining-nums         /* &lt;numeric-figure-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: oldstyle-nums       /* &lt;numeric-figure-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: proportional-nums   /* &lt;numeric-spacing-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: tabular-nums        /* &lt;numeric-spacing-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: diagonal-fractions  /* &lt;numeric-fraction-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: stacked-fractions   /* &lt;numeric-fraction-values&gt; */</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: oldstyle-nums stacked-fractions</span>
+
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: initial</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: inherit</span>
+font-variant-<span style="font-size: 1rem;">numeric</span><span style="font-size: 1rem;">: unset</span>
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+ <dt>
+  <code class="language-markup">ordinal</code></dt>
+ <dd>
+  This keyword forces the use of special glyphs for the ordinal markers, like 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, 4<sup>th</sup> in English or a 1<sup>a</sup> in Italian. It corresponds to the OpenType values <code class="language-markup">ordn</code>.</dd>
+ <dt>
+  <code class="language-markup">slashed-zero</code></dt>
+ <dd>
+  This keyword forces the use of a 0 with a slash; this is useful when a clear distinction between O and 0 is needed. It corresponds to the OpenType values <code class="language-markup">zero</code>.</dd>
+ <dt>
+  <em>&lt;numeric-figure-values</em>&gt;</dt>
+ <dd>
+  These values controls the figures used for numbers. Two values are possible:
+  <ul>
+   <li><code class="language-markup">lining-nums</code> activating the set of figures where numbers are all lying on the baseline. It corresponds to the OpenType values <code class="language-markup">lnum</code>.</li>
+   <li><code class="language-markup">oldstyle-nums</code> activating the set of figures where some numbers, like 3, 4, 7, 9 have descenders. It corresponds to the OpenType values <code class="language-markup">onum</code>.</li>
+  </ul>
+ </dd>
+ <dt>
+  <em>&lt;numeric-spacing-values</em>&gt;</dt>
+ <dd>
+  These values controls the sizing of figures used for numbers. Two values are possible:
+  <ul>
+   <li><code class="language-markup">proportional-nums</code> activating the set of figures where numbers are not all of the same size. It corresponds to the OpenType values <code class="language-markup">pnum</code>.</li>
+   <li><code class="language-markup">tabular-nums</code> activating the set of figures where numbers are all of the same size, allowing them to be easily aligned like in tables. It corresponds to the OpenType values <code class="language-markup">tnum</code>.</li>
+  </ul>
+ </dd>
+ <dt>
+  <em>&lt;numeric-figure-values</em>&gt;</dt>
+ <dd>
+  These values controls the glyphs used to display fractions. Two values are possible:
+  <ul>
+   <li><code class="language-markup">diagonal-fractions</code> activating the set of figures where the numerator and denominator are made smaller and separated by a slash. It corresponds to the OpenType values <code class="language-markup">frac</code>.</li>
+   <li><code class="language-markup">stacked-fractions</code> activating the set of figures where the numerator and denominator are made smaller, stacked and separated by a horizontal line. It corresponds to the OpenType values <code class="language-markup">afrc</code>.</li>
+  </ul>
+ </dd>
+</dl>

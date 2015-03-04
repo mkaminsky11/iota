@@ -1,0 +1,165 @@
+<h2>right</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">right</code> <a  title="CSS">CSS</a> property specifies part of the position of positioned elements.</p>
+<p>For absolutely positioned elements (those with <a  title="The position CSS property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects."><code class="language-markup">position</code></a><code class="language-markup">:</code> <code class="language-markup">absolute</code> or <code class="language-markup">position:</code> <code class="language-markup">fixed</code>), it specifies the distance between the right margin edge of the element and the right edge of its containing block.</p>
+<p>The <code class="language-markup">right</code> property has no effect on non-positioned elements.</p>
+<p>When both the <code class="language-markup">right</code> CSS property and the <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> CSS property are defined, the position of the element is<em> overspecified</em>. In that case, the <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> value has precedence when the container is left-to-right (that is that the <code class="language-markup">right</code> computed value is set to <code class="language-markup">-left</code>), and the <code class="language-markup">right</code> value has precedence when the container is right-to-left (that is that the <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> computed value is set to <code class="language-markup">-right</code>).</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> positioned elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the width of the containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> if specified as a length, the corresponding absolute length; if specified as a percentage, the specified value; otherwise, <code class="language-markup">auto</code></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> auto</code>
+</code></pre>
+<pre>right: 3px         /* &lt;length&gt; values */
+right: 2.4em
+
+right: 10%         /* &lt;percentages&gt; of the width of the containing block */
+
+right: auto
+
+right: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>
+  Is a negative, null or positive <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> that represents:
+  <ul>
+   <li>for <em>absolutely positioned elements</em>, the distance to the right edge of the containing block;</li>
+   <li>for <em>relatively positioned elements</em>, the offset that the element is moved right from its position in the normal flow if it wasn't positioned.</li>
+  </ul>
+ </dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the containing block's width, used as described in the <a >summary</a>.</dd>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  Is a keyword that represents:
+  <ul>
+   <li>for absolutely positioned elements, the position the element based on the <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> property and treat <code class="language-markup">width: auto</code> as a width based on the content.</li>
+   <li>for relatively positioned elements, the right offset the element from its original position based on the <a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a> property, or if <code class="language-markup">left</code> is also <code class="language-markup">auto</code>, do not offset it at all.</li>
+  </ul>
+ </dd>
+ <dt>
+  <code class="language-markup">inherit</code></dt>
+ <dd>
+  Is a keyword indicating that the value is the same than the computed value from its parent element (which may not be its containing block). This computed value is then handled like it was a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a>, <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> or the <code class="language-markup">auto</code> keyword.</dd>
+</dl>
+<h3>Examples</h3>
+
+<pre >#example_3 {
+  width: 600px;
+  height: 400px;
+  background-color: #FFC7E4;
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+#example_4 {
+  width:200px;
+  height:200px;
+  background-color: #FFD7C2;
+  position:absolute;
+  bottom:10px;
+  right: 20px;
+}</code></pre>
+<pre > &lt;div &gt;Example 3&lt;/div&gt;
+ &lt;div &gt;Example 4&lt;/div&gt;
+</code></pre>
+<p><a  >Example Demo Link</a></p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'right' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">right</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'right' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>5.5</td>
+    <td>5.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1)</td>
+    <td>6.0</td>
+    <td>6.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li>Position-related CSS properties:  
+<a  title="The position CSS property chooses alternative rules for positioning elements, designed to be useful for scripted animation effects."><code class="language-markup">position</code></a>,  
+<a  title="The float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it. A floating element is one where the computed value of float is not none."><code class="language-markup">float</code></a>,  
+<a  title="The top CSS property specifies part of the position of positioned elements. It has no effect on non-positioned elements."><code class="language-markup">top</code></a>,  
+<a  title="The right CSS property specifies part of the position of positioned elements."><code class="language-markup">right</code></a>,  
+<a  title="The bottom CSS property participates in specifying the position of positioned elements."><code class="language-markup">bottom</code></a>,  
+<a  title="The left CSS property specifies part of the position of positioned elements."><code class="language-markup">left</code></a>,  
+<a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a>,  
+<a  title="The visibility CSS property has two purposes:"><code class="language-markup">visibility</code></a>,  
+<a  title="The clear CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them."><code class="language-markup">clear</code></a></li>
+</ul>
+                                                

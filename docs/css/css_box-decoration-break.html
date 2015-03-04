@@ -1,0 +1,31 @@
+<h2>box-decoration-break</h2>
+
+                                                      <p></p><section  ><!-- --></section><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+<p>The <strong><code class="language-markup">box-decoration-break</code></strong> CSS property specifies how the <a  title="The background CSS property is a shorthand for setting the individual background values in a single place in the style sheet. background can be used to set the values for one or more of: background-clip, background-color, background-image, background-origin, background-position, background-repeat, background-size, and background-attachment."><code class="language-markup">background</code></a>, <a  title="The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding</code></a>, <a  title="The border CSS property is a shorthand property for setting the individual border property values in a single place in the style sheet. border can be used to set the values for one or more of: border-width, border-style, border-color."><code class="language-markup">border</code></a>, <a  title="The border-image CSS property allows drawing an image on the borders of elements. This makes drawing complex looking widgets much simpler than it has been and removes the need for nine boxes in some cases."><code class="language-markup">border-image</code></a>, <a  title="Technical review completed."><code class="language-markup">box-shadow</code></a>, <a  title="The margin CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: margin-top, margin-right, margin-bottom and margin-left.
+ Negative values are also allowed."><code class="language-markup">margin</code></a> and <a  title="The clip CSS property defines what portion of an element is visible. The clip property applies only to elements with position:absolute."><code class="language-markup">clip</code></a> of an element is applied when the box for the element is fragmented.  Fragmentation occurs when an inline box wraps onto multiple lines, or when a block spans more than one column inside a column layout container, or spans a page break when printed.  Each piece of the rendering for the element is called a fragment.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">slice</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>:  <code class="language-markup">slice <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> clone</code>
+</code></pre>
+<pre>box-decoration-break: slice;
+box-decoration-break: clone;
+
+box-decoration-break: initial;
+box-decoration-break: inherit;
+box-decoration-break: unset;
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">slice</code></dt>
+ <dd>
+  The element is rendered as if its box were not fragmented, and then the rendering for this hypothetical box is sliced into pieces for each line/column/page. Note that the hypothetical box can be different for each fragment since it uses its own height if the break occurs in the inline direction, and its own width if the break occurs in the block direction. See the CSS specification for details.</dd>
+ <dt>
+  <code class="language-markup">clone</code></dt>
+ <dd>
+  Each box fragment is rendered independently with the specified border, padding and margin wrapping each fragment. The <a  title="The border-radius CSS property allows Web authors to define how rounded border corners are. The curve of each corner is defined using one or two radii, defining its shape: circle or ellipse."><code class="language-markup">border-radius</code></a>, <a  title="The border-image CSS property allows drawing an image on the borders of elements. This makes drawing complex looking widgets much simpler than it has been and removes the need for nine boxes in some cases."><code class="language-markup">border-image</code></a> and <a  title="Technical review completed."><code class="language-markup">box-shadow</code></a>, are applied to each fragment independently. The background is drawn independently in each fragment which means that a background image with <a  title="The background-repeat CSS property defines how background images are repeated. A background image can be repeated along the horizontal axis, the vertical axis, both axes, or not repeated at all."><code class="language-markup">background-repeat</code></a>: <code class="language-markup">no-repeat</code> may be repeated multiple times.</dd>
+</dl>

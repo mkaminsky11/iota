@@ -1,0 +1,132 @@
+<h2>border-image-outset</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">border-image-outset</code> property describes by what amount the <dfn>border image area</dfn> extends beyond the border box.</p>
+
+<div><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0s</code></li>  <li><dfn>Applies to</dfn> all elements, except internal table elements when <a  title="The border-collapse CSS property selects a table's border model. This has a big influence on the look and style of the table cells."><code class="language-markup">border-collapse</code></a> is <code class="language-markup">collapse</code>. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> all lengths made absolute, otherwise as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul></div>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;number&gt;</a> ]{1,4}</code>
+</code></pre>
+
+<pre>border-image-outset: <em>sides</em> <em>                 /* One-value syntax   */</em>  e.g. border-image-outset: 30%; 
+border-image-outset: <em>vertical</em> <em>horizontal</em> <em>   /* Two-value syntax   */ </em> e.g. border-image-outset: 10% 30%; 
+border-image-outset: <em>top</em> <em>horizontal</em> <em>bottom </em><em> /* Three-value syntax */ </em> e.g. border-image-outset: 30px 30% 45px; 
+border-image-outset: <em>top</em> <em>right</em> <em>bottom</em> <em>left </em><em> /* Four-value syntax  */ </em> e.g. border-image-outset: 7px 12px 14px 5px;
+
+border-image-repeat: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><em>sides</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box in all four directions.</dd>
+ <dt><em>horizontal</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box in both horizontal directions (left and right).</dd>
+ <dt><em>vertical</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box in both vertical directions (top and bottom).</dd>
+ <dt><em>top</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box past its top edge.</dd>
+ <dt><em>bottom</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box past its bottom edge.</dd>
+ <dt><em>right</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box past its right edge.</dd>
+ <dt><em>left</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of the amount by which the border image area extends beyond the border box past its left edge.</dd>
+ <dt><code class="language-markup">inherit</code></dt>
+ <dd>Is a keyword indicating that all four values are inherited from each parent elements' calculated value.</dd>
+</dl>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Backgrounds and Borders Module Level 3<br><small lang="en-US">The definition of 'border-image-outset' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>Initial specification</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<div><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>15.0</td>
+   <td><a  title="Released on 2012-08-28.">15.0</a> (15.0)</td>
+   <td>11</td>
+   <td>15</td>
+   <td>6</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td>15.0 (15.0)</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><code class="language-markup">border-image</code> related CSS properties: <a  title="The border-image CSS property allows drawing an image on the borders of elements. This makes drawing complex looking widgets much simpler than it has been and removes the need for nine boxes in some cases."><code class="language-markup">border-image</code></a>, 
+<a  title="The border-image-source CSS property defines the &lt;image> to use instead of the style of the border. If this property is set to none, the style defined by border-style is used instead."><code class="language-markup">border-image-source</code></a>, 
+<a  title="The border-image-width CSS property defines the width of the border. If specified, it overrides the border-width property."><code class="language-markup">border-image-width</code></a>, 
+<a  title="The border-image-slice CSS property divides the image specified by border-image-source in nine regions: the four corners, the four edges and the middle. It does this by specifying 4 inwards offsets."><code class="language-markup">border-image-slice</code></a>, 
+<a  title="The border-image-repeat CSS property defines how the middle part of a border image is handled so that it can match the size of the border. It has a one-value syntax that describes the behavior of all the sides, and a two-value syntax that sets a different value for the horizontal and vertical behavior."><code class="language-markup">border-image-repeat</code></a>, 
+<a  title="The border-image-outset property describes by what amount the border image area extends beyond the border box."><code class="language-markup">border-image-outset</code></a></li>
+</ul>
+                                                

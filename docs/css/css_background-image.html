@@ -1,0 +1,36 @@
+<h2>background-image</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<p>The <a  title="/en-US/docs/CSS">CSS</a> <code class="language-markup">background-image</code> property sets one or several background images for an element. The images are drawn on stacking context layers on top of each other. The first layer specified is drawn as if it is closest to the user. The <a  title="border">borders</a> of the element are then drawn on top of them, and the <a  title="The background-color CSS property sets the background color of an element, either through a color value or the keyword transparent."><code class="language-markup">background-color</code></a> is drawn beneath them.</p>
+
+<p>How the images are drawn relative to the box and its borders is defined by the <a  title="Technical review completed. Editorial review completed."><code class="language-markup">background-clip</code></a> and <a  title="The background-origin CSS property determines the background positioning area, that is the position of the origin of an image specified using the background-image CSS property."><code class="language-markup">background-origin</code></a> CSS properties.</p>
+
+<p>If a specified image cannot be drawn (for example, when the file denoted by the specified URI cannot be loaded), browsers handle it as they would a <code class="language-markup">none</code> value.</p>
+
+<div ><strong>Note:</strong> Even if the images are opaque and the color won't be displayed in normal circumstances, web developers should always specify a <a  title="The background-color CSS property sets the background color of an element, either through a color value or the keyword transparent."><code class="language-markup">background-color</code></a>. If the images cannot be loaded—for instance, when the network is down—the background color will be used as a fallback.</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified, but with URIs made absolute<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="none | &lt;image>">&lt;bg-image&gt;</a><a  title="Hash mark multiplier: The previous entity may appear 0, 1 or several times, each occurrence being separated from the previous one by a comma.">#</a></code>
+</code></pre>
+
+<pre>background-image: none
+background-image: url(http://www.example.com/images/bck.png)
+
+background-image: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>Is a keyword denoting the absence of images.</dd>
+ <dt><code class="language-markup">&lt;image&gt;</code></dt>
+ <dd>Is an <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;image&gt;</code></a> denoting the image to display. There can be several of them, separated by commas, as <a  title="Multiple backgrounds">multiple backgrounds</a> are supported.</dd>
+</dl>
+

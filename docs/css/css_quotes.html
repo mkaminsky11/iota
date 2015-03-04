@@ -1,0 +1,124 @@
+<h2>quotes</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">quotes</code> <a  title="CSS">CSS</a> property indicates how user agents should render quotation marks.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> user agent specific</li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[<a  title="">&lt;string&gt;</a> <a  title="">&lt;string&gt;</a>]<a  title="Plus multiplier: The previous entity may appear 1 or several times.">+</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> none</code></code></pre>
+
+<pre>quotes: none
+quotes: "«" "»"         /* Set <em>open-quote</em> and <em>close-quote</em> to the French quotation marks */
+quotes: "«" "»" "‹" "›" /* Set two levels of quotation marks */
+
+quotes: inherit
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>The <code class="language-markup">open-quote</code> and <code class="language-markup">close-quote</code> values of the <a  title="The content CSS property is used with the ::before and ::after pseudo-elements to generate content in an element. Objects inserted using the content property are anonymous replaced elements."><code class="language-markup">content</code></a> property produce no quotation marks.</dd>
+ <dt><code class="language-markup">[&lt;string&gt; &lt;string&gt;]+</code></dt>
+ <dd>One or more pairs of <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;string&gt;</code></a> values for <code class="language-markup">open-quote</code> and <code class="language-markup">close-quote</code>. The first pair represents the outer level of quotation, the second pair is for the first nested level, next pair for third level and so on.</dd>
+</dl>
+
+<h3>Examples</h3>
+
+<pre >q { quotes: '"' '"' "'" "'" }
+q:before { content: open-quote }
+q:after  { content: close-quote }
+</code></pre>
+
+<h3>Notes</h3>
+
+<p>Starting in Firefox 3.5, the initial value of the quotes property can be read using <code class="language-markup">-moz-<a   title="en-US/docs/CSS/initial">initial</a></code> This wasn't possible in earlier versions of Firefox.</p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'quotes' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>11</td>
+   <td>1.5</td>
+   <td>8.0</td>
+   <td>4.0</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="The content CSS property is used with the ::before and ::after pseudo-elements to generate content in an element. Objects inserted using the content property are anonymous replaced elements."><code class="language-markup">content</code></a></li>
+</ul>
+                                                

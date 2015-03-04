@@ -1,0 +1,115 @@
+<h2>counter</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<p><span >CSS counters are, in essence, variables maintained by CSS whose values may be incremented by CSS rules to track how many times they're used. This lets you adjust the appearance of content based on its placement in the document.</span> CSS counters are an implementation of <a  >Automatic counters and numbering</a> in CSS 2.1.</p>
+
+<p>The value of a counter is manipulated through the use of <a  title="The counter-reset CSS property is used to reset CSS Counters to a given value."><code class="language-markup">counter-reset</code></a> and <a  title="The counter-increment CSS property is used to increase the value of CSS Counters by a given value. The counter's value can be reset using the counter-reset CSS property."><code class="language-markup">counter-increment</code></a> can be displayed on a page using the <code class="language-markup">counter()</code> or <code class="language-markup">counters()</code> function of the <code class="language-markup"><a  title="CSS/content">content</a></code> property.</p>
+
+<h3>Using counters</h3>
+
+<p>To use a CSS counter, it must first be reset to a value, 0 by default. To add the value of a counter to an element, use the <code class="language-markup">counter()</code> function. The following CSS adds to the beginning of each h3 element "Section &lt;the value of the counter&gt;:".</p>
+
+<pre >body {
+  counter-reset: section;                   /* Set the section counter to 0 */
+}
+h3::before {
+  counter-increment: section;               /* Increment the section counter*/
+  content: "Section" counter(section) ": "; /* Display the counter */
+}
+</code></pre>
+
+<p>Example:</p>
+
+<pre >&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;h3&gt;Body&lt;/h3&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;</code></pre>
+
+<p><iframe  frameborder="0" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/Guide/CSS/Counters$samples/Using_counters?revision=766141" width="300"></iframe></p>
+
+<h3>Nesting counters</h3>
+
+<p>A CSS counter can be especially useful to make outlined lists because a new instance of a CSS counter is automatically created in child elements. Using the <code class="language-markup">counters()</code> function, a string can be inserted between different levels of nested counters. For example this CSS:</p>
+
+<pre >ol {
+  counter-reset: section;                /* Creates a new instance of the
+                                            section counter with each ol
+                                            element */
+  list-style-type: none;
+}
+li::before {
+  counter-increment: section;            /* Increments only this instance
+                                            of the section counter */
+  content: counters(section,".") " ";    /* Adds the value of all instances
+                                            of the section counter separated
+                                            by a ".". */
+                                         /* if you need to support &lt; IE8 then
+                                            make sure there is no space after 
+                                            the ','
+}
+</code></pre>
+
+<p>Combined with the following HTML:</p>
+
+<pre >&lt;ol&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 1     --&gt;
+  &lt;li&gt;item               &lt;!-- 2     --&gt;
+    &lt;ol&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.1   --&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.2   --&gt;
+      &lt;li&gt;item           &lt;!-- 2.3   --&gt;
+        &lt;ol&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.1 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.2 --&gt;
+        &lt;/ol&gt;
+        &lt;ol&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.1 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.2 --&gt;
+          &lt;li&gt;item&lt;/li&gt;  &lt;!-- 2.3.3 --&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;item&lt;/li&gt;      &lt;!-- 2.4   --&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 3     --&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 4     --&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 1     --&gt;
+  &lt;li&gt;item&lt;/li&gt;          &lt;!-- 2     --&gt;
+&lt;/ol&gt;</code></pre>
+
+<p>Yields this result:</p>
+
+<p><iframe  frameborder="0" height="100%" src="https://mdn.mozillademos.org/en-US/docs/Web/Guide/CSS/Counters$samples/Nesting_counters?revision=766141" width="400"></iframe></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'counter-reset' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="CSS/counter-reset">counter-reset</a></li>
+ <li><a  title="CSS/counter-increment">counter-increment</a></li>
+</ul>
+
+<p><em>There is an additional example available at <a   rel="freelink">http://www.mezzoblue.com/archives/20.../counter_intu/</a>. This blog entry was posted on November 01, 2006, but appears to be accurate.</em></p>
+
+<p> </p>
+                                                

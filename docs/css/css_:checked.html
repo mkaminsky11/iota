@@ -1,0 +1,226 @@
+<h2>:checked</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">:checked</code> CSS <a  title="Pseudo-classes">pseudo-class</a> selector represents any <strong>radio </strong>(<code class="language-markup">&lt;input type="radio"&gt;</code>), <strong>checkbox </strong>(<code class="language-markup">&lt;input type="checkbox"&gt;</code>) or <strong>option</strong> (<a  title="In a Web form, the HTML &lt;option> element is used to create a control representing an item within a &lt;select>, an &lt;optgroup> or a &lt;datalist> HTML5 element."><code class="language-markup">&lt;option&gt;</code></a> in a <a  title="The HTML select (&lt;select>) element represents a control that presents a menu of options. The options within the menu are represented by &lt;option> elements, which can be grouped by &lt;optgroup> elements. Options can be pre-selected for the user."><code class="language-markup">&lt;select&gt;</code></a>) element that is checked or toggled to an <code class="language-markup">on</code> state. The user can change this state by clicking on the element, or selecting a different value, in which case the <code class="language-markup">:checked</code> pseudo-class no longer applies to this element, but will to the relevant one.</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-markup">element:checked { style properties }</code></pre>
+
+<h3>Examples</h3>
+
+<h3  name="Example_selectors">Example selectors</h3>
+
+<pre><code class="language-markup">/* any "checkable" element */
+:checked {
+  width: 50px;
+  height: 50px;
+}
+
+/* only radio elements */
+input[type="radio"]:checked {
+  margin-left: 25px;
+}
+
+/* only checkbox elements */
+input[type="checkbox"]:checked {
+  display: none;  
+}
+
+/* only option elements */
+option:checked {
+  color: red;
+}
+</code></pre>
+
+<dl>
+ <dt><code class="language-markup">input[type="radio"]:checked</code></dt>
+ <dd>Represents all radio buttons on the page that are checked</dd>
+ <dt><code class="language-markup">input[type="checkbox"]:checked</code></dt>
+ <dd>Represents all checkboxes on the page that are checked</dd>
+ <dt><code class="language-markup">option:checked</code></dt>
+ <dd>Represents all select's options on the page that are selected</dd>
+</dl>
+
+<h3  name="">Using hidden checkboxes in order to store some CSS boolean values</h3>
+
+<p>The <code class="language-markup">:checked</code> pseudo-class applied to hidden checkboxes appended at the begin of your page could be employed in order to store some dynamic booleans to be used by a CSS rule. The following example shows how to hide/show some expandable elements simply clicking on a button (<a   title="Expandable elements through the :checked pseudoclass">download this demo</a>).</p>
+
+<pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+&lt;title&gt;Expandable elements&lt;/title&gt;
+&lt;style type="text/css"&gt;
+#expand-btn {
+    margin: 0 3px;
+    display: inline-block;
+    font: 12px / 13px "Lucida Grande", sans-serif;
+    text-shadow: rgba(255, 255, 255, 0.4) 0 1px;
+    padding: 3px 6px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    background-color: #969696;
+    cursor: default;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: rgba(255, 255, 255, 0.4) 0 1px, inset 0 20px 20px -10px white;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px, inset 0 20px 20px -10px white;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 1px, inset 0 20px 20px -10px white;
+}
+
+#isexpanded:checked ~ #expand-btn, #isexpanded:checked ~ * #expand-btn {
+    background: #B5B5B5;
+    -moz-box-shadow: inset rgba(0, 0, 0, 0.4) 0 -5px 12px, inset rgba(0, 0, 0, 1) 0 1px 3px, rgba(255, 255, 255, 0.4) 0 1px;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0 -5px 12px, inset rgba(0, 0, 0, 1) 0 1px 3px, rgba(255, 255, 255, 0.4) 0 1px;
+    box-shadow: inset rgba(0, 0, 0, 0.4) 0 -5px 12px, inset rgba(0, 0, 0, 1) 0 1px 3px, rgba(255, 255, 255, 0.4) 0 1px;
+}
+
+#isexpanded, .expandable {
+    display: none;
+}
+
+#isexpanded:checked ~ * tr.expandable {
+    display: table-row;
+    background: #cccccc;
+
+}
+
+#isexpanded:checked ~ p.expandable, #isexpanded:checked ~ * p.expandable {
+    display: block;
+    background: #cccccc;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type="checkbox"  /&gt;
+
+&lt;h1&gt;Expandable elements&lt;/h1&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Column #1&lt;/th&gt;&lt;th&gt;Column #2&lt;/th&gt;&lt;th&gt;Column #3&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr &gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr &gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr &gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;td&gt;[cell text]&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;[some sample text]&lt;/p&gt;
+&lt;p&gt;&lt;label for="isexpanded" &gt;Show hidden elements&lt;/label&gt;&lt;/p&gt;
+&lt;p &gt;[another sample text]&lt;/p&gt;
+&lt;p&gt;[some sample text]&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3  name="Using_hidden_radioboxes_in_order_to_store_some_CSS_boolean_values">Using hidden radioboxes in order to store some CSS boolean values</h3>
+
+<p>You can also use the <code class="language-markup">:checked</code> pseudo-class applied to hidden radioboxes in order to build, for example, an <strong>image gallery with full-size images shown only when mouse clicks on previews</strong>. See <a   title="css-checked-gallery.zip">this demo</a> for a possible cue.</p>
+
+<div ><strong>Note:</strong> For an analogous effect, but based on <a   title="CSS/:hover"><code class="language-markup">:hover</code></a> pseudo-class and without hidden radioboxes, see <a   title="css-gallery.zip">this demo</a>, taken from the <a   title="CSS/:hover">:hover</a> page.</div>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">WHATWG HTML Living Standard<br><small lang="en-US">The definition of ':checked' in that specification.</small></a></td>
+   <td><span >Living Standard</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">HTML5<br><small lang="en-US">The definition of ':checked' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Defines the semantic regarding HTML.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':checked' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic User Interface Module Level 3<br><small lang="en-US">The definition of ':checked' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Link to Selectors Level 3.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 3<br><small lang="en-US">The definition of ':checked' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Defines the pseudo-class, but not the associated semantic</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>9.0</td>
+   <td>9.0</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td>1.0 (1.0)</td>
+   <td>9.0</td>
+   <td>9.5</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p> </p>
+                                                

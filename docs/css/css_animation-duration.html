@@ -1,0 +1,32 @@
+<h2>animation-duration</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<div>
+ <div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">animation-duration</code> CSS property specifies the length of time that an animation should take to complete one cycle.</p>
+<p>A value of <code class="language-markup">0s</code>, which is the default value, indicates that no animation should occur.</p>
+<p>It is often convenient to use the shorthand property <a  title=""><code class="language-markup">animation</code></a> to set all animation properties at once.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0s</code></li>  <li><dfn>Applies to</dfn> all elements, <a  title=""><code class="language-markup">::before</code></a> and <a  title=""><code class="language-markup">::after</code></a> <a  title="/en-US/docs/CSS/Pseudo-elements">pseudo-elements</a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by 's' or 'ms' like 3s, -2.5ms, or 0s.">&lt;time&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a></code>
+</code></pre>
+<pre>animation-duration: 6s
+animation-duration: 120ms
+animation-duration: 1s, 15s
+animation-duration: 10s, 30s, 230ms
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;time&gt;</code></dt>
+ <dd>
+  The duration that an animation should take to complete one cycle. This may be specified in either seconds (by specifying <code class="language-markup">s</code> as the unit) or milliseconds (by specifying <code class="language-markup">ms</code> as the unit). If you don't specify a unit, the declaration will be invalid.</dd>
+</dl>
+<div >
+ <strong>Note:</strong> Negative values are invalid, causing the declaration to be ignored. Note that some early, prefixed, implementations may consider them as identical to <code class="language-markup">0s</code>.</div>

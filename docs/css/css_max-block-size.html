@@ -1,0 +1,171 @@
+<h2>max-block-size</h2>
+
+                                                      <p></p><section  ><!-- --></section><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+
+<p>The <code class="language-markup">max-block-size</code> <a  title="CSS">CSS</a> property defines the horizontal or vertical maximal size of an element's block depending on its writing mode. It corresponds to the <a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a> or the <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a> property, depending on the value defined for <a  title="CSS Writing Modes Level 3 defines CSS features to support various international script modes, such as left-to-right (e.g., Latin and Indic), right-to-left (e.g., Hebrew and Arabic), bidirectional (e.g., mixed Latin and Arabic) and vertical (e.g., Asian). This article is about the CSS writing-mode property."><code class="language-markup">writing-mode</code></a>. If the writing mode is vertically oriented, the value of <code class="language-markup">max-block-size</code> relates to the maximal width of the element, otherwise it relates to the maximal height of the element. It relates to <a  title="The max-inline-size CSS property defines the horizontal or vertical maximal size of an element's block depending on it's writing mode. It corresponds to the max-width or the max-height property depending on the value defined for writing-mode."><code class="language-markup">max-inline-size</code></a>, which defines the other dimension of the element.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> same as <a  title="The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">width</code></a> and <a  title="The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">height</code></a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> block-size of containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> same as <a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a> and <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="&lt;length> | &lt;percentage> | none | max-content | min-content | fit-content | fill-available">&lt;'max-width'&gt;</a></code>
+</code></pre>
+
+<pre>max-block-size: 300px           /* &lt;length&gt; values */
+max-block-size: 25em
+
+max-block-size: 75%             /* &lt;percentage&gt; values */
+
+max-block-size: none            /* Keyword values */
+max-block-size: max-content
+max-block-size: min-content
+max-block-size: fit-content
+max-block-size: fill-available
+
+max-block-size: inherit</code></pre>
+
+<h3 >Values</h3>
+
+<p>The <code class="language-markup">max-block-size</code> property takes the same values as the <a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a> and <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a> properties.</p>
+
+<h3>Example</h3>
+
+<h3 >HTML Content</h3>
+
+<pre >&lt;p &gt;Example text&lt;/p&gt;
+</code></pre>
+
+<h3 >CSS Content</h3>
+
+<pre >.exampleText {
+  writing-mode: vertical-rl;
+  background-color: yellow;
+  block-size: 100%;
+  max-block-size: 200px;
+}</code></pre>
+
+<p><iframe  frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/max-block-size$samples/Example?revision=738531"></iframe></p>
+
+<h3>Specification</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Logical Properties Level 1<br><small lang="en-US">The definition of 'max-block-size' in that specification.</small></a></td>
+   <td><span >Editor's Draft</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><a  title="Released on 2015-05-19.">38.0</a> (38.0)<sup><a >[1]</a></sup></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td>38.0 (38.0)<sup><a >[1]</a></sup></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p><a  name="compat_hint1">[1]</a> Available since Gecko 38, but behind the preference <code class="language-markup">layout.css.vertical-text.enabled</code>, disabled by default.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li>The mapped physical properties: <a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a> and <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a></li>
+ <li><a  title="CSS Writing Modes Level 3 defines CSS features to support various international script modes, such as left-to-right (e.g., Latin and Indic), right-to-left (e.g., Hebrew and Arabic), bidirectional (e.g., mixed Latin and Arabic) and vertical (e.g., Asian). This article is about the CSS writing-mode property."><code class="language-markup">writing-mode</code></a></li>
+ <li>Logical CSS properties:  
+<a  title="The block-size CSS property defines the horizontal or vertical size of an element's block depending on it's writing mode. It corresponds to the width or the height property depending on the value defined for writing-mode."><code class="language-markup">block-size</code></a>,  
+<a  title="The inline-size CSS property defines the horizontal or vertical size of an element's block depending on it's writing mode. It corresponds to the width or the height property depending on the value defined for writing-mode."><code class="language-markup">inline-size</code></a>,  
+<a  title="The min-block-size CSS property defines the horizontal or vertical minimal size of an element's block depending on it's writing mode. It corresponds to the min-width or the min-height property depending on the value defined for writing-mode."><code class="language-markup">min-block-size</code></a>,  
+<a  title="The min-inline-size CSS property defines the horizontal or vertical minimal size of an element's block depending on it's writing mode. It corresponds to the min-width or the min-height property depending on the value defined for writing-mode."><code class="language-markup">min-inline-size</code></a>,  
+<a  title="The max-block-size CSS property defines the horizontal or vertical maximal size of an element's block depending on it's writing mode. It corresponds to the max-width or the max-height property depending on the value defined for writing-mode."><code class="language-markup">max-block-size</code></a>,  
+<a  title="The max-inline-size CSS property defines the horizontal or vertical maximal size of an element's block depending on it's writing mode. It corresponds to the max-width or the max-height property depending on the value defined for writing-mode."><code class="language-markup">max-inline-size</code></a>,  
+<a  title="The margin-block-start CSS property defines the logical block start margin of an element, which maps to a physical margin depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the margin-top, margin-right, margin-bottom or margin-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">margin-block-start</code></a>,  
+<a  title="The margin-block-end CSS property defines the logical block end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the margin-top, margin-right, margin-bottom or margin-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">margin-block-end</code></a>,  
+<a  title="The margin-inline-start CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the margin-top, margin-right, margin-bottom or margin-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">margin-inline-start</code></a>,  
+<a  title="The margin-inline-end CSS property defines the logical inline end margin of an element, which maps to a physical margin depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the margin-top, margin-right, margin-bottom or margin-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">margin-inline-end</code></a>,  
+<a  title="The offset-block-start CSS property defines the logical block start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the top, right, bottom or left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">offset-block-start</code></a>,  
+<a  title="The offset-block-end CSS property defines the logical block end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the top, right, bottom or left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">offset-block-end</code></a>,  
+<a  title="The offset-inline-start CSS property defines the logical inline start offset of an element, which maps to a physical offset depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the top, right, bottom or left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">offset-inline-start</code></a>,  
+<a  title="The offset-inline-end CSS property defines the logical inline end offset of an element, which maps to a physical offset depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the top, right, bottom or left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">offset-inline-end</code></a>,  
+<a  title="The padding-block-start CSS property defines the logical block start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the padding-top, padding-right, padding-bottom or padding-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">padding-block-start</code></a>,  
+<a  title="The padding-block-end CSS property defines the logical block end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the padding-top, padding-right, padding-bottom or padding-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">padding-block-end</code></a>,  
+<a  title="The padding-inline-start CSS property defines the logical inline start padding of an element, which maps to a physical padding depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the padding-top, padding-right, padding-bottom or padding-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">padding-inline-start</code></a>,  
+<a  title="The padding-inline-end CSS property defines the logical inline end padding of an element, which maps to a physical padding depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the padding-top, padding-right, padding-bottom or padding-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">padding-inline-end</code></a>,  
+<a  title="The border-block-start-width CSS property defines the width of the logical block start border of an element, which maps to a physical border width depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-width, border-right-width, border-bottom-width or border-left-width property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-start-width</code></a>,  
+<a  title="The border-block-end-width CSS property defines the width of the logical block end border of an element, which maps to a physical border width depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-width, border-right-width, border-bottom-width or border-left-width property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-end-width</code></a>,  
+<a  title="The border-inline-start-width CSS property defines the width of the logical inline start border of an element, which maps to a physical border width depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-width, border-right-width, border-bottom-width or border-left-width property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-start-width</code></a>,  
+<a  title="The border-inline-end-width CSS property defines the width of the logical inline end border of an element, which maps to a physical border width depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-width, border-right-width, border-bottom-width or border-left-width property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-end-width</code></a>,  
+<a  title="The border-block-start-style CSS property defines the style of the logical block start border of an element, which maps to a physical border style depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-style, border-right-style, border-bottom-style or border-left-style property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-start-style</code></a>,  
+<a  title="The border-block-end-style CSS property defines the style of the logical block end border of an element, which maps to a physical border style depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-style, border-right-style, border-bottom-style or border-left-style property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-end-style</code></a>,  
+<a  title="The border-inline-start-style CSS property defines the style of the logical inline start border of an element, which maps to a physical border style depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-style, border-right-style, border-bottom-style or border-left-style property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-start-style</code></a>,  
+<a  title="The border-inline-end-style CSS property defines the style of the logical inline end border of an element, which maps to a physical border style depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-style, border-right-style, border-bottom-style or border-left-style property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-end-style</code></a>,  
+<a  title="The border-block-start-color CSS property defines the color of the logical block start border of an element, which maps to a physical border color depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-color, border-right-color, border-bottom-color or border-left-color property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-start-color</code></a>,  
+<a  title="The border-block-end-color CSS property defines the color of the logical block end border of an element, which maps to a physical border color depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-color, border-right-color, border-bottom-color or border-left-color property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-end-color</code></a>,  
+<a  title="The border-inline-start-color CSS property defines the color of the logical inline start border of an element, which maps to a physical border color depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-color, border-right-color, border-bottom-color or border-left-color property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-start-color</code></a>,  
+<a  title="The border-inline-end-color CSS property defines the color of the logical inline end border of an element, which maps to a physical border color depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top-color, border-right-color, border-bottom-color or border-left-color property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-end-color</code></a>,  
+<a  title="The border-block-start CSS property is a shorthand property for setting the individual logical block start border property values in a single place in the style sheet. border-block-start can be used to set the values for one or more of: border-block-start-width, border-block-start-style, border-block-start-color. It maps to a physical border depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top, border-right, border-bottom or border-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-start</code></a>,  
+<a  title="The border-block-end CSS property is a shorthand property for setting the individual logical block end border property values in a single place in the style sheet. border-block-end can be used to set the values for one or more of: border-block-end-width, border-block-end-style, border-block-end-color. It maps to a physical border depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top, border-right, border-bottom or border-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-block-end</code></a>,  
+<a  title="The border-inline-start CSS property is a shorthand property for setting the individual logical inline start border property values in a single place in the style sheet. border-inline-start can be used to set the values for one or more of: border-inline-start-width, border-inline-start-style, border-inline-start-color. It maps to a physical border depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top, border-right, border-bottom or border-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-start</code></a>,  
+<a  title="The border-inline-end CSS property is a shorthand property for setting the individual logical inline end border property values in a single place in the style sheet. border-inline-end can be used to set the values for one or more of: border-inline-end-width, border-inline-end-style, border-inline-end-color. It maps to a physical border depending on the element's writing mode, directionality and text orientation. I.e. it corresponds to the border-top, border-right, border-bottom or border-left property depending on the values defined for writing-mode, direction and text-orientation."><code class="language-markup">border-inline-end</code></a></li>
+</ul>
+                                                

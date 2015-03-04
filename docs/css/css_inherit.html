@@ -1,0 +1,120 @@
+<h2>inherit</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">inherit</code> CSS-value causes the element for which it is specified to take the <a >computed value</a> of the property from its parent element. It is allowed on every CSS property.</p>
+
+<p>For <a  title="en/CSS/inheritance">inherited properties</a>, this reinforces the default behavior, and is only needed to override another rule.  For <a  title="en/CSS/inheritance">non-inherited properties</a>, this specifies a behavior that typically makes relatively little sense and you may consider using <a  title="The initial CSS keyword applies the initial value of a property to an element. It is allowed on every CSS property and causes the element for which it is specified to use the initial value of the property."><code class="language-markup">initial</code></a> instead, or <a  title="The unset CSS keyword is the combination of the initial and inherit keywords. Like these two other CSS-wide keywords, it can be applied to any CSS property, including the CSS shorthand all. This keyword resets the property to its inherited value if it inherits from its parent or to its initial value if not. In other words, it behaves like the inherit keyword in the first case and like the initial keyword in the second case."><code class="language-markup">unset</code></a> on the <a  title="The CSS all shorthand property resets all properties, but unicode-bidi and direction to their initial or inherited value."><code class="language-markup">all</code></a> property.</p>
+
+<div >
+<p>Inheritance is always from the parent element in the document tree, even when the parent element is not the containing block.</p>
+</div>
+
+<h3>Example</h3>
+
+<pre> /* make second-level headers green */
+ h2 { color: green; }
+
+ /* ...but leave those in the sidebar alone so they use their parent's color */
+ #sidebar h2 { color: inherit; }
+</code></pre>
+
+<p>In this example the<code class="language-markup"> h2 </code>elements inside the sidebar might be different colors. For example, if one of them were the child of a div matched by the rule</p>
+
+<pre > div#current { color: blue; }
+</code></pre>
+
+<p>it would be blue.</p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Values and Units Module Level 3<br><small lang="en-US">The definition of 'inherit' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>No significant change from <a   hreflang="en" lang="en" title="The 'CSS Level 2 (Revision 1)' specification">CSS Level 2 (Revision 1)</a></td>
+  </tr>
+  <tr style="vertical-align: top;">
+   <td style="vertical-align: top;"><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'inherit' in that specification.</small></a></td>
+   <td style="vertical-align: top;"><span >Recommendation</span></td>
+   <td style="vertical-align: top;">Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<div><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>8.0</td>
+   <td>4.0</td>
+   <td>1.0 (85)</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.0)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a   title="es/CSS/inheritance">Inheritance</a></li>
+ <li>The <a  title="The CSS all shorthand property resets all properties, but unicode-bidi and direction to their initial or inherited value."><code class="language-markup">all</code></a> CSS property.</li>
+ <li>
+  <p>The CSS-wide property values: <a  title="The initial CSS keyword applies the initial value of a property to an element. It is allowed on every CSS property and causes the element for which it is specified to use the initial value of the property."><code class="language-markup">initial</code></a>, <a  title="The inherit CSS-value causes the element for which it is specified to take the computed value of the property from its parent element. It is allowed on every CSS property."><code class="language-markup">inherit</code></a> and <a  title="The unset CSS keyword is the combination of the initial and inherit keywords. Like these two other CSS-wide keywords, it can be applied to any CSS property, including the CSS shorthand all. This keyword resets the property to its inherited value if it inherits from its parent or to its initial value if not. In other words, it behaves like the inherit keyword in the first case and like the initial keyword in the second case."><code class="language-markup">unset</code></a>.</p>
+ </li>
+</ul>
+                                                

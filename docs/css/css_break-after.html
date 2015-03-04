@@ -1,0 +1,88 @@
+<h2>break-after</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">break-after</code> <a >CSS</a> property describes how the page, column or region break behavior after the generated box. If there is no generated box, the property is ignored.</p>
+<p>Each possible break point, that is each element boundary, is under the influence of three properties, the <code class="language-markup">break-after</code> value of the previous element, the <a  title="The break-before CSS property describes how the page, column or region break behavior before the generated box. If there is no generated box, the property is ignored."><code class="language-markup">break-before</code></a> value of the next element and the <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">break-inside</code></a> of the containing element.</p>
+<p>To define if a break must be done, the following rules are applied:</p>
+<ol>
+ <li>If any of the three concerned values is a <em>forced break value</em>, that is <code class="language-markup">always</code>, <code class="language-markup">left</code>, <code class="language-markup">right</code>, <code class="language-markup">page</code>, <code class="language-markup">column</code> or <code class="language-markup">region</code>, it has precedence. If several of the concerned values is such a break, the one of the element that appears the latest in the flow is taken (that is the <a  title="The break-before CSS property describes how the page, column or region break behavior before the generated box. If there is no generated box, the property is ignored."><code class="language-markup">break-before</code></a> value has precedence over the <code class="language-markup">break-after</code> value, which itself has precedence over the <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">break-inside</code></a> value).</li>
+ <li>If any of the three concerned values is an <em>avoid break value</em>, that is <code class="language-markup">avoid</code>, <code class="language-markup">avoid-page</code>, <code class="language-markup">avoid-region</code>, <code class="language-markup">avoid-column</code>, no such break will be applied at that point.</li>
+</ol>
+<p>Once forced breaks have been applied, soft breaks may be added if needed, but not on element boundaries that resolve in a corresponding avoid value.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> block-level elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">paged</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">auto <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> always <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> avoid <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> left <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> right <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> page <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> column <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> avoid-page <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> avoid-colum</code>
+</code></pre>
+<pre>break-after: auto
+break-after: always
+break-after: left
+break-after: right
+break-after: recto
+break-after: verso
+break-after: page
+break-after: column
+break-after: region
+break-after: avoid
+break-after: avoid-page
+break-after: avoid-column
+break-after: avoid-region
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  Initial value. Allows, meaning neither forbid nor force, any break (either page, column or region) to be be inserted after the principal box.</dd>
+ <dt>
+  <code class="language-markup">always</code></dt>
+ <dd>
+  Always force page breaks after the principal box. This is a synonym of <code class="language-markup">page</code>, it has been kept to facilitate transition from <a  title="The page-break-after CSS property adjusts page breaks after the current element."><code class="language-markup">page-break-after</code></a> which is subset of this property.</dd>
+ <dt>
+  <code class="language-markup">avoid</code></dt>
+ <dd>
+  Prevent any break, either page, column or region, to be inserted right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">left</code></dt>
+ <dd>
+  Force one or two page breaks right after the principal box so that the next page is formatted as a left page.</dd>
+ <dt>
+  <code class="language-markup">right</code></dt>
+ <dd>
+  Force one or two page breaks right after the principal box so that the next page is formatted as a right page.</dd>
+ <dt>
+  <code class="language-markup">page</code></dt>
+ <dd>
+  Always force one page break right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">column</code></dt>
+ <dd>
+  Always force one column break right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">region </code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  Always force one region break right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">recto</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  Force one or two page breaks right after the principal box so that next page is formatted as a recto page, that is a right page in a left-to-right spread or a left page in a right-to-left spread.</dd>
+ <dt>
+  <code class="language-markup">verso </code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  Force one or two page breaks right after the principal box so that next page is formatted as a verso page, that is a left page in a left-to-right spread or a left right in a right-to-left spread.</dd>
+ <dt>
+  <code class="language-markup">avoid-page</code></dt>
+ <dd>
+  Avoid any page break right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">avoid-column</code></dt>
+ <dd>
+  Avoid any column break right after the principal box.</dd>
+ <dt>
+  <code class="language-markup">avoid-region </code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  Avoid any region break right after the principal box.</dd>
+</dl>

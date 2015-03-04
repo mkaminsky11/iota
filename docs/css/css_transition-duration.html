@@ -1,0 +1,26 @@
+<h2>transition-duration</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+<h3>Summary</h3>
+<p>The <code class="language-markup">transition-duration</code> <a  title="CSS">CSS</a> property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is <code class="language-markup">0s</code>, meaning that no animation will occur.</p>
+<p>You may specify multiple durations; each duration will be applied to the corresponding property as specified by the <a  title=""><code class="language-markup">transition-property</code></a> property, which acts as a master list. If there are fewer durations specified than in the master list, the user agent repeat the list of durations. If there are more durations, the list is simply truncated to the right size. In both case the CSS declaration stays valid.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0s</code></li>  <li><dfn>Applies to</dfn> all elements, <a  title=""><code class="language-markup">::before</code></a> and <a  title=""><code class="language-markup">::after</code></a> <a  title="/en-US/docs/CSS/Pseudo-elements">pseudo-elements</a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">interactive</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by 's' or 'ms' like 3s, -2.5ms, or 0s.">&lt;time&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a></code>
+</code></pre>
+<pre>transition-duration: 6s
+transition-duration: 120ms
+transition-duration: 1s, 15s
+transition-duration: 10s, 30s, 230ms
+
+transition-duration: inherit
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;time&gt;</code></dt>
+ <dd>
+  Is a <a  title=""><code class="language-markup">&lt;time&gt;</code></a> denoting the amount of time the transition from the old value of a property to the new value should take. A time of <code class="language-markup">0s</code> indicates that no transition will happen, that is the switch between the two states will be instantaneous. A negative value for the time renders the declaration invalid.</dd>
+</dl>

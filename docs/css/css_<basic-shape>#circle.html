@@ -1,0 +1,66 @@
+<h2><basic-shape>#circle</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">&lt;basic-shape&gt;</code></strong> type can be specified using basic shape functions. When using this syntax to define shapes, the reference box is defined by each property that uses <code class="language-markup">&lt;basic-shape&gt;</code> values. The coordinate system for the shape has its origin on the top-left corner of the reference box with the x-axis running to the right and the y-axis running downwards. All the lengths expressed in percentages are resolved from the used dimensions of the reference box.</p>
+<h3>Possible shapes</h3>
+<p>The following shapes are supported. All <code class="language-markup">&lt;basic-shape&gt;</code> values use functional notation and are defined here using the <a >value definition syntax</a>.</p>
+<dl>
+ <dt>
+  <code class="language-markup"><a name="inset"></a>inset()</code></dt>
+ <dd>
+  <pre ><code class="language-markup">inset( &lt;shape-arg&gt;{1,4} [round &lt;border-radius&gt;]? )</code></code></pre>
+  <p>Defines an inset rectangle.</p>
+  <p>When all of the first four arguments are supplied they represent the top, right, bottom and left offsets from the reference box inward that define the positions of the edges of the inset rectangle. These arguments follow the syntax of the margin shorthand, that let you set all four insets with one, two or four values.</p>
+  <p>The optional <a ><code class="language-markup">&lt;border-radius&gt;</code></a> argument(s) define rounded corners for the inset rectangle using the border-radius shorthand syntax.</p>
+  <p>A pair of insets in either dimension that add up to more than the used dimension (such as left and right insets of 75% apiece) define a shape enclosing no area. For this specification, this results in an empty float area.</p>
+ </dd>
+ <dt>
+  <code class="language-markup"><a name="polygon"></a>polygon()</code></dt>
+ <dd>
+  <pre ><code class="language-markup">polygon( [&lt;fill-rule&gt;,]? [&lt;shape-arg&gt; &lt;shape-arg&gt;]# )</code></code></pre>
+  <p><code class="language-markup">&lt;fill-rule&gt;</code> represents the <a >filling rule</a> used to determine the interior of the polygon. Possible values are <code class="language-markup">nonzero</code> and <code class="language-markup">evenodd</code>. Default value when omitted is <code class="language-markup">nonzero</code>.</p>
+  <p>Each pair argument in the list represents <em>x<sub>i</sub></em> and <em>y<sub>i</sub></em> - the x and y axis coordinates of the i<sup>th</sup> vertex of the polygon.</p>
+ </dd>
+ <dt>
+  <code class="language-markup"><a name="circle"></a>circle(</code>)</dt>
+ <dd>
+  <pre ><code class="language-markup"><code class="language-markup"><code class="language-markup">circle( [&lt;shape-radius&gt;]? [at &lt;position&gt;]? )</code></code></code></code></pre>
+  <p>The <code class="language-markup">&lt;shape-radius&gt;</code> argument represents <em>r</em>, the radius of the circle. Negative values are invalid. A percentage value here is resolved from the used width and height of the reference box as <code class="language-markup">sqrt(width^2+height^2)/sqrt(2)</code>.</p>
+  <p>The <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;position&gt;</code></a> argument defines the center of the circle. This defaults to center if omitted.</p>
+ </dd>
+ <dt>
+  <code class="language-markup"><a name="ellipse"></a>ellipse()</code></dt>
+ <dd>
+  <pre ><code class="language-markup"><code class="language-markup"><code class="language-markup">ellipse( [&lt;shape-radius&gt;{2}]? [at &lt;position&gt;]? )</code></code></code></code></pre>
+  <p>The <code class="language-markup">&lt;shape-radius&gt;</code> arguments represent r<sub>x</sub> and r<sub>y</sub>, the x-axis and y-axis radii of the ellipse, in that order. Negative values for either radius are invalid. Percentage values here are resolved against the used width (for the r<sub>x</sub> value) and the used height (for the r<sub>y</sub> value) of the reference box.</p>
+  <p>The position argument defines the center of the ellipse. This defaults to center if omitted.</p>
+ </dd>
+</dl>
+<p>The arguments not defined above are defined as follows:</p>
+<pre ><code class="language-markup">&lt;shape-arg&gt; = &lt;length&gt; | &lt;percentage&gt;
+&lt;shape-radius&gt; = &lt;length&gt; | &lt;percentage&gt; | closest-side | farthest-side</code></code></pre>
+<p>Defines a radius for a circle or ellipse. If omitted it defaults to <code class="language-markup">closest-side</code>.</p>
+<p><code class="language-markup">closest-side</code> uses the length from the center of the shape to the closest side of the reference box. For circles, this is the closest side in any dimension. For ellipses, this is the closest side in the radius dimension.</p>
+<p><code class="language-markup">farthest-side</code> uses the length from the center of the shape to the farthest side of the reference box. For circles, this is the farthest side in any dimension. For ellipses, this is the farthest side in the radius dimension.</p>
+<h3>Computed Values of Basic Shapes</h3>
+<p>The values in a <code class="language-markup">&lt;basic-shape&gt;</code> function are computed as specified, with these exceptions:</p>
+<ul>
+ <li>Omitted values are included and compute to their defaults.</li>
+ <li>A <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;position&gt;</code></a> value in <code class="language-markup">circle()</code> or  <code class="language-markup">ellipse()</code> is computed as a pair of offsets (horizontal then vertical) from the top left origin, each given as a combination of an absolute length and a percentage.</li>
+ <li>A <a ><code class="language-markup">&lt;border-radius&gt;</code></a> value in <code class="language-markup">inset()</code> is computed as an expanded list of all eight <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or percentage values.</li>
+</ul>
+<h3>Interpolation of Basic Shapes</h3>
+<div>
+  </div>
+<div>
+ For interpolating between one basic shape and a second, the rules below are applied. The values in the shape functions interpolate as a simple list. The list values interpolate as <a >length</a>, <a >percentage</a>, or <a >calc</a> where possible. If list values are not one of those types but are identical (such as finding nonzero in the same list position in both lists) those values do interpolate.</div>
+<div>
+  </div>
+<ul>
+ <li>Both shapes must use the same reference box.</li>
+ <li>If both shapes are the same type, that type is <code class="language-markup">ellipse()</code> or <code class="language-markup">circle()</code>, and none of the radii use the <code class="language-markup">closest-side</code> or <code class="language-markup">farthest-side</code> keywords, interpolate between each value in the shape functions.</li>
+ <li>If both shapes are of type <code class="language-markup">inset()</code>, interpolate between each value in the shape functions.</li>
+ <li>If both shapes are of type <code class="language-markup">polygon()</code>, both polygons have the same number of vertices, and use the same <a ><code class="language-markup">&lt;fill-rule&gt;</code></a>, interpolate between each value in the shape functions.</li>
+ <li>In all other cases no interpolation is specified.</li>
+</ul>

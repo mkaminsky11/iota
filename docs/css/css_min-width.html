@@ -1,0 +1,47 @@
+<h2>min-width</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">min-width</code> CSS property is used to set the minimum width of a given element. It prevents the used value of the <a  title="The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">width</code></a> property from becoming smaller than the value specified for <code class="language-markup">min-width</code>.</p>
+
+<p>The value of <code class="language-markup">min-width </code>overrides both <a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a> and <a  title="The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">width</code></a>.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0</code></li>  <li><dfn>Applies to</dfn> all elements but non-replaced inline elements, table rows, and row groups</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the width of the containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the percentage as specified or the absolute length<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> auto <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> max-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> min-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> fit-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> fill-available</code></code></pre>
+
+<pre>min-width: 3.5em
+min-width: 10%
+min-width: max-content
+min-width: min-content
+min-width: fit-content
+min-width: fill-available
+
+min-width: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>The fixed minimum width. See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> for possible units. Negative values make the declaration invalid.</dd>
+ <dt><code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>The fixed minimum width expressed as a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> of containing block's width. Negative values make the declaration invalid.</dd>
+ <dt><code class="language-markup">auto</code></dt>
+ <dd>The default minimum size for flex items, providing a more reasonable default than 0 for other layouts.</dd>
+ <dt><code class="language-markup">max-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The intrinsic preferred width.</dd>
+ <dt><code class="language-markup">min-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The intrinsic minimum width.</dd>
+ <dt><code class="language-markup">fill-available</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The containing block width minus horizontal margin, border and padding. Some browsers implement an ancient name for this keyword, <code class="language-markup">available</code>.</dd>
+ <dt><code class="language-markup">fit-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>Defined as <code class="language-markup">min(max-content, max(min-content, fill-available)</code>.</dd>
+</dl>
+

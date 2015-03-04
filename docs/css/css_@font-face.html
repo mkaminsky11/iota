@@ -1,0 +1,41 @@
+<h2>@font-face</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">@font-face</code> <a  title="CSS">CSS</a> <a  title="At-rule">at-rule</a> allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, <code class="language-markup">@font-face</code> eliminates the need to depend on the limited number of fonts users have installed on their computers. The <code class="language-markup">@font-face</code> at-rule may be used not only at the top level of a CSS, but also inside any <a  title="CSS/At-rule#Conditional_Group_Rules">CSS conditional-group at-rule</a>.</p>
+
+<h3>Syntax</h3>
+
+<pre >@font-face {
+              [ font-family: &lt;family-name&gt;; ]?
+           || [ src: [ &lt;uri&gt; [format(&lt;string&gt;#)]? | &lt;font-face-name&gt; ]#; ]?
+           || [ unicode-range: &lt;urange&gt;#; ]?
+           || [ font-variant: &lt;font-variant&gt;; ]?
+           || [ font-feature-settings: normal|&lt;feature-tag-value&gt;#; ]?
+           || [ font-stretch: &lt;font-stretch&gt;; ]?
+           || [ font-weight: &lt;weight&gt;; ]?
+           || [ font-style: &lt;style&gt;; ]?
+}
+</code></pre>
+
+<h3 >Descriptors</h3>
+
+<dl>
+ <dt><code class="language-markup">family-name</code></dt>
+ <dd>Specifies a name that will be used as the font face value for font properties. ( i.e. font-family: &lt;family-name&gt;; )</dd>
+ <dt><code class="language-markup">src</code></dt>
+ <dd>URL for the remote font file location, or the name of a font on the user's computer in the form <code class="language-markup">local("Font Name")</code>. You can specify a font on the user's local computer by name using the <code class="language-markup">local()</code> syntax. If that font isn't found, other sources will be tried until one is found.</dd>
+ <dt><code class="language-markup">font-variant</code></dt>
+ <dd>A <a  title="The font-variant CSS property selects a normal, or small-caps face from a font family. Setting the CSS Level 2 (Revision 1) values of the  font-variant property, that is normal or small-caps, is also possible by using the font shorthand."><code class="language-markup">font-variant</code></a> value.</dd>
+ <dt><code class="language-markup">font-stretch</code></dt>
+ <dd>A <a  title="The font-stretch CSS property selects a normal, condensed, or expanded face from a font."><code class="language-markup">font-stretch</code></a> value.</dd>
+ <dt><code class="language-markup">font-weight</code></dt>
+ <dd>A <a  title="The font-weight CSS property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on normal and bold."><code class="language-markup">font-weight</code></a> value.</dd>
+ <dt><code class="language-markup">font-style</code></dt>
+ <dd>A <a  title="The font-style CSS property allows italic or oblique faces to be selected within a font-family."><code class="language-markup">font-style</code></a> value.</dd>
+ <dt><a  title="The unicode-range CSS descriptor sets the specific range of characters to be downloaded from a font defined by @font-face and made available for use on the current page."><code class="language-markup">unicode-range</code></a></dt>
+ <dd>The range of unicode code points defined in the font-face rule.</dd>
+</dl>
+

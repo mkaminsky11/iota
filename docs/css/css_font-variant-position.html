@@ -1,0 +1,36 @@
+<h2>font-variant-position</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <strong><code class="language-markup">font-variant-position</code></strong> CSS property controls the usage of alternate glyphs of smaller size positioned as superscript or subscript regarding the baseline of the font, which is set unchanged. These glyphs are likely to be used in <a  title="The HTML Subscript Element (&lt;sub>) defines a span of text that should be displayed, for typographic reasons, lower, and often smaller, than the main span of text."><code class="language-markup">&lt;sub&gt;</code></a> and <a  title="The HTML Superscript Element (&lt;sup>) defines a span of text that should be displayed, for typographic reasons, higher, and often smaller, than the main span of text."><code class="language-markup">&lt;sup&gt;</code></a> elements.</p>
+<p>When the usage of these alternate glyphs is activated, if one character in the run doesn't have such typographically enhanced glyph, the whole set of characters of the run is rendered using a fallback method, synthesizing these glyphs.</p>
+<p>These alternate glyphs share the same em-box and the same baseline as the rest of the font. They are merely graphically enhanced but have no effect on the line-height and other box characteristics.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> sub <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> super</code></code></pre>
+<pre>font-variant-position: normal
+font-variant-position: sub
+font-variant-position: super
+
+font-variant-position: initial
+font-variant-position: inherit
+font-variant-position: unset
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">normal</code></dt>
+ <dd>
+  This keyword leads to the deactivation of the use of such alternate glyphs.</dd>
+ <dt>
+  <code class="language-markup">sub</code></dt>
+ <dd>
+  This keyword forces the use of subscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.</dd>
+ <dt>
+  <code class="language-markup">super</code></dt>
+ <dd>
+  This keyword forces the use of superscript alternate glyphs. If, in a given run, one such glyph is not available for a character, the whole characters in the run is rendered using synthesized appropriate glyphs.</dd>
+</dl>

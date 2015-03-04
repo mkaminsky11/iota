@@ -1,0 +1,89 @@
+<h2>font-family</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">font-family</code> CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer, or that can be downloaded using the information provided by a <a  title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule."><code class="language-markup">@font-face</code></a> at-rule.</p>
+
+<p>Web authors should always add at least one generic family in a font-family list, since there's no guarantee that a specific font is installed on the computer or can be downloaded using a <a  title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule."><code class="language-markup">@font-face</code></a> at-rule. The generic family lets the browser select an acceptable fallback font when needed.</p>
+
+<p>It is often convenient to use the shorthand property <a  title="The font CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height and font-family, or a way to set the element's font to a system font, using specific keywords."><code class="language-markup">font</code></a> to set <code class="language-markup">font-size</code> and other font related properties all at once.</p>
+
+<div ><strong>Note:</strong> The <code class="language-markup">font-family</code> property specifies a list of fonts, from highest priority to lowest. Font selection does <strong>not</strong> simply stop at the first font named in the list that is on the user's system. Rather, font selection is done <strong>one character at a time</strong>, so that if an available font does not have a glyph that can display a character needed, the later available fonts are tried. However, this doesn't work in Internet Explorer 6 or earlier.<br>
+<br>
+When a font is only available in some <a  title="CSS/font-style">styles</a>, <a  title="CSS/font-variant">variants</a>, or <a  title="CSS/font-size">sizes</a>, those properties may also influence which font family is chosen.</div>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> depends on user agent</li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="&lt;string> | &lt;IDENT>+">&lt;family-name&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="Tooltip not found in DB.">&lt;generic-family&gt;</a> ]<a  title="Hash mark multiplier: The previous entity may appear 0, 1 or several times, each occurrence being separated from the previous one by a comma.">#</a></code> 
+</code></pre>
+
+<pre>font-family: Gill Sans Extrabold, sans-serif
+font-family: "Goudy Bookletter 1911", sans-serif
+
+font-family: sans-serif
+font-family: serif
+font-family: fantasy
+font-family: cursive
+font-family: monospace
+
+font-family: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<table >
+ <tbody>
+  <tr>
+   <td><code class="language-markup">&lt;family-name&gt;</code></td>
+   <td>The name of a font family. For example, "Times" and "Helvetica" are font families. Font family names containing whitespace should be quoted.</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">&lt;generic-name&gt;</code></td>
+   <td>
+    <p>Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent in case when none of the specified fonts are available. Generic family names are keywords and must not be quoted. A generic font family should be the a last alternative in the list of font family names.</p>
+
+    <dl>
+     <dt><code class="language-markup">serif</code></dt>
+     <dd style='font-family: Palatino,"Palatino Linotype",Palladio,"URW Palladio",serif;'>Glyphs have finishing strokes, flared or tapering ends, or have actual serifed endings.<br>
+     E.g.  Palatino, "Palatino Linotype", Palladio, "URW Palladio", serif</dd>
+     <dt><code class="language-markup">sans-serif</code></dt>
+     <dd style='font-family: "Trebuchet MS","Liberation Sans","Nimbus Sans L",sans-serif;'>Glyphs have stroke endings that are plain.<br>
+     E.g. 'Trebuchet MS', 'Liberation Sans', 'Nimbus Sans L', sans-serif</dd>
+     <dt><code class="language-markup">monospace</code></dt>
+     <dd style='font-family: "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;'>All glyphs have the same fixed width.<br>
+     E.g. "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace</dd>
+     <dt><code class="language-markup">cursive</code></dt>
+     <dd>Glyphs in cursive fonts generally have either joining strokes or other cursive characteristics beyond those of italic typefaces. The glyphs are partially or completely connected, and the result looks more like handwritten pen or brush writing than printed letterwork.</dd>
+     <dt><code class="language-markup">fantasy</code></dt>
+     <dd>Fantasy fonts are primarily decorative fonts that contain playful representations of characters.</dd>
+    </dl>
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+<h3 >Valid family names</h3>
+
+<p>Font family names must either be given quoted as strings, or unquoted as a sequence of one or more identifiers. This means that punctuation characters and digits at the start of each token must be escaped in unquoted font family names.</p>
+
+<p>For example, the following declarations are valid:</p>
+
+<pre>font-family: Gill Sans Extrabold, sans-serif;
+font-family: "Goudy Bookletter 1911", sans-serif;</code></pre>
+
+<p>The following declarations are <strong>invalid</strong>:</p>
+
+<pre>font-family: Goudy Bookletter 1911, sans-serif;
+font-family: Red/Black, sans-serif;
+font-family: "Lucida" Grande, sans-serif;
+font-family: Ahem!, sans-serif;
+font-family: test@foo, sans-serif;
+font-family: #POUND, sans-serif;
+font-family: Hawaii 5-0, sans-serif;</code></pre>
+

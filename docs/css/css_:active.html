@@ -1,0 +1,147 @@
+<h2>:active</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">:active</code> CSS <a  title="Pseudo-classes">pseudo-class</a> matches when an element is being activated by the user. It allows the page to give a feedback that the activation has been detected by the browser. When interacting with a mouse, this is typically the time between the user presses the mouse button and releases it. The <code class="language-markup">:active</code> pseudo-class is also typically matched when using the keyboard tab key. It is frequently used on <a  title="The HTML &lt;a> Element (or the HTML Anchor Element) defines a hyperlink, the named target destination for a hyperlink, or both."><code class="language-markup">&lt;a&gt;</code></a> and <a  title="The HTML &lt;button> Element represents a clickable button."><code class="language-markup">&lt;button&gt;</code></a> HTML elements, but may not be limited to just those.</p>
+
+<p>This style may be overridden by any other link-related pseudo-classes, that is <a  title="The :link CSS pseudo-class lets you select links inside elements. This will select any link which has not yet been visited, even those already styled using selector with other link-related pseudo-classes like :hover, :active or :visited. In order to appropriately style links, you need to put the :link rule before the other ones, as defined by the LVHA-order: :link — :visited — :hover — :active. The :focus pseudo-class is usually placed right before or right after :hover, depending on the expected effect."><code class="language-markup">:link</code></a>, <a  title="The :hover CSS pseudo-class matches when the user designates an element with a pointing device, but does not necessarily activate it. This style may be overridden by any other link-related pseudo-classes, that is :link, :visited, and :active, appearing in subsequent rules. In order to style appropriately links, you need to put the :hover rule after the :link and :visited rules but before the :active one, as defined by the LVHA-order: :link — :visited — :hover — :active."><code class="language-markup">:hover</code></a>, and <a  title="The :visited CSS pseudo-class lets you select only links that have been visited. This style may be overridden by any other link-related pseudo-classes, that is :link, :hover, and :active, appearing in subsequent rules. In order to style appropriately links, you need to put the :visited rule after the :link rule but before the other ones, defined in the LVHA-order: :link — :visited — :hover — :active."><code class="language-markup">:visited</code></a>, appearing in subsequent rules. In order to style the appropriate links, you need to put the <code class="language-markup">:active</code> rule after all the other link-related rules, as defined by the <em>LVHA-order</em>: <code class="language-markup">:link</code> — <code class="language-markup">:visited</code> — <code class="language-markup">:hover</code> — <code class="language-markup">:active</code>.</p>
+
+<div ><strong>Note:</strong> On systems with multi-button mice, CSS 3 specifies that the <code class="language-markup">:active</code> pseudo-class must only apply to the primary button; on right-handed mice, this is typically the leftmost button.</div>
+
+<h3>Example</h3>
+
+<div >
+<h3 >HTML</h3>
+
+<pre >&lt;body&gt;
+    &lt;h1&gt;:active CSS selector example&lt;/h1&gt;
+    &lt;p&gt;The following link will turn lime during the time you click it and release the click: &lt;a &gt;Mozilla Developer Network&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+<h3 >CSS</h3>
+
+<pre >body { background-color: #ffffc9 }
+a:link { color: blue } /* unvisited links */
+a:visited { color: purple } /* visited links */
+a:hover { <span >font-weight: bold</span> } /* user hovers */
+a:active { color: lime } /* active links */</code></pre>
+</div>
+
+<div><iframe  frameborder="0" height="140" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/:active$samples/example?revision=766021" width="600"></iframe></div>
+
+<h3><span>Specifications</span></h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':active' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 3<br><small lang="en-US">The definition of ':active' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of ':active' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of ':active' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<div><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Support on the <code class="language-markup">&lt;a&gt;</code> element</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>4.0</td>
+   <td>5.0</td>
+   <td>1.0</td>
+  </tr>
+  <tr>
+   <td>Support on any element</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>8.0</td>
+   <td>7.0</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Support on the <code class="language-markup">&lt;a&gt;</code> element</td>
+   <td>1.0</td>
+   <td>1.0 (1.0)</td>
+   <td>6.0</td>
+   <td>6.0</td>
+   <td>1.0</td>
+  </tr>
+  <tr>
+   <td>Support on any element</td>
+   <td>1.0</td>
+   <td>1.0 (1.0)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span> [1]</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] By default, Safari Mobile does not use the <a  title="The :active CSS pseudo-class matches when an element is being activated by the user. It allows the page to give a feedback that the activation has been detected by the browser. When interacting with a mouse, this is typically the time between the user presses the mouse button and releases it. The :active pseudo-class is also typically matched when using the keyboard tab key. It is frequently used on &lt;a> and &lt;button> HTML elements, but may not be limited to just those."><code class="language-markup">:active</code></a> state unless there is a <a ><code class="language-markup">touchstart</code></a> event handler on the relevant element or on the <a  title="The HTML &lt;body> element represents the content of an HTML document. There is only one &lt;body> element in a document."><code class="language-markup">&lt;body&gt;</code></a>.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li>Link-related pseudo-classes: <a  title="The :link CSS pseudo-class lets you select links inside elements. This will select any link which has not yet been visited, even those already styled using selector with other link-related pseudo-classes like :hover, :active or :visited. In order to appropriately style links, you need to put the :link rule before the other ones, as defined by the LVHA-order: :link — :visited — :hover — :active. The :focus pseudo-class is usually placed right before or right after :hover, depending on the expected effect."><code class="language-markup">:link</code></a>, <a  title="The :visited CSS pseudo-class lets you select only links that have been visited. This style may be overridden by any other link-related pseudo-classes, that is :link, :hover, and :active, appearing in subsequent rules. In order to style appropriately links, you need to put the :visited rule after the :link rule but before the other ones, defined in the LVHA-order: :link — :visited — :hover — :active."><code class="language-markup">:visited</code></a>, and <a  title="The :hover CSS pseudo-class matches when the user designates an element with a pointing device, but does not necessarily activate it. This style may be overridden by any other link-related pseudo-classes, that is :link, :visited, and :active, appearing in subsequent rules. In order to style appropriately links, you need to put the :hover rule after the :link and :visited rules but before the :active one, as defined by the LVHA-order: :link — :visited — :hover — :active."><code class="language-markup">:hover</code></a>.</li>
+</ul>
+                                                

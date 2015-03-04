@@ -1,0 +1,112 @@
+<h2>:empty</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">:empty</code> <a  title="Pseudo-classes">pseudo-class</a> represents any element that has no children at all. Only element nodes and text (including whitespace) are considered. Comments or processing instructions do not affect whether an element is considered empty or not.</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-markup">&lt;element&gt;:empty { <em>style properties</em> }
+</code></pre>
+
+<h3>Examples</h3>
+
+<pre><code class="language-markup">.box {
+  background: red;
+  height: 200px;
+  width: 200px;
+}
+
+.box:empty {
+  background: lime;
+}
+</code></pre>
+
+<pre><code class="language-markup">&lt;div &gt;&lt;!-- I will be lime --&gt;&lt;/div&gt;
+&lt;div &gt;I will be red&lt;/div&gt;
+&lt;div &gt;
+    &lt;!-- I will be red because of the whitespace around this comment --&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 4<br><small lang="en-US">The definition of ':empty' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Selectors Level 3<br><small lang="en-US">The definition of ':empty' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>9.0</td>
+   <td>9.5</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>2.1</td>
+   <td>1.0 (1)</td>
+   <td>9.5</td>
+   <td>10.0</td>
+   <td>3.1</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+                                                

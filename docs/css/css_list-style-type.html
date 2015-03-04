@@ -1,0 +1,458 @@
+<h2>list-style-type</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">list-style-type</code> CSS property specifies appearance of a list item element. As it is the only one which defaults to <code class="language-markup">display:list-item</code>, this is usually a <a  title="The HTML List item element (&lt;li>) is used to represent a list item. It should be contained in an ordered list (&lt;ol>), an unordered list (&lt;ul>) or a menu (&lt;menu>), where it represents a single entity in that list. In menus and unordered lists, list items are ordinarily displayed using bullet points. In ordered lists, they are usually displayed with some ascending counter on the left such as a number or letter"><code class="language-markup">&lt;li&gt;</code></a> element, but can be any element with this <a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a> value.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">disc</code></li>  <li><dfn>Applies to</dfn> list items</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<p>The <a  title="color">color</a> of the marker will be the same as the computed color of the element it applies to.</p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Tooltip not found in DB.">&lt;custom-ident&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> symbols)</code>
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">symbols()</code></a></dt>
+ <dd>Defines an anonymous style of the list.</dd>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>No item marker is shown.</dd>
+ <dt><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;custom-ident&gt;</code></a></dt>
+ <dd>A identifier matching the value of a <a  title="The @counter-style CSS at-rule lets authors define specific counter styles that are not part of the predefined set of styles. A @counter-style rule defines how to convert a counter value into a string representation."><code class="language-markup">@counter-style</code></a> or one of the predefined styles:</dd>
+</dl>
+
+<dl style="background: rgb(238, 238, 238); padding: 0.5em 0px 0.5em 0.5em; border: 1px solid powderblue; font-size: 90%; -moz-column-width: 20em; -webkit-columns: 20em; -moz-column-rule: 1px solid powderblue; -webkit-column-rule: 1px solid powderblue;">
+ <dt><code class="language-markup">disc</code></dt>
+ <dd>
+ <ul style="list-style-type: disc;">
+  <li>A filled circle (default value)</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">circle</code></dt>
+ <dd>
+ <ul style="list-style-type: circle;">
+  <li>A hollow circle</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">square</code></dt>
+ <dd>
+ <ul style="list-style-type: square;">
+  <li>A filled square</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">decimal</code></dt>
+ <dd>
+ <ul style="list-style-type: decimal;">
+  <li>Han decimal numbers</li>
+  <li>Beginning with 1.</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">cjk-decimal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul>
+  <li>Decimal numbers</li>
+  <li>E.g. 一, 二, 三, ..., 九八, 九九, 一〇〇</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">decimal-leading-zero</code></dt>
+ <dd>
+ <ul style="list-style-type: decimal-leading-zero;">
+  <li>Decimal numbers</li>
+  <li>Padded by initial zeros</li>
+  <li>E.g. 01, 02, 03, … 98, 99</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">lower-roman</code></dt>
+ <dd>
+ <ul style="list-style-type: lower-roman;">
+  <li>Lowercase roman numerals</li>
+  <li>E.g. i, ii, iii, iv, v…</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">upper-roman</code></dt>
+ <dd>
+ <ul style="list-style-type: upper-roman;">
+  <li>Uppercase roman numerals</li>
+  <li>E.g. I, II, III, IV, V…</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">lower-greek</code></dt>
+ <dd>
+ <ul style="list-style-type: lower-greek;">
+  <li>Lowercase classical Greek</li>
+  <li>alpha, beta, gamma…</li>
+  <li>E.g. α, β, γ…</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">lower-alpha</code></dt>
+ <dt><code class="language-markup">lower-latin</code></dt>
+ <dd>
+ <ul style="list-style-type: lower-alpha;">
+  <li>Lowercase ASCII letters</li>
+  <li>E.g. a, b, c, … z</li>
+  <li><code class="language-markup">lower-latin</code> is unsupported in IE7 and earlier</li>
+  <li>See <a >Browser compatibility</a> section.</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">upper-alpha</code></dt>
+ <dt><code class="language-markup">upper-latin</code></dt>
+ <dd>
+ <ul style="list-style-type: upper-alpha;">
+  <li>Uppercase ASCII letters</li>
+  <li>E.g. A, B, C, … Z</li>
+  <li><code class="language-markup">upper-latin</code> is unsupported in IE7 and earlier</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">arabic-indic</code></dt>
+ <dt><code class="language-markup">-moz-arabic-indic</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-arabic-indic; list-style-type: arabic-indic;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">armenian</code></dt>
+ <dd>
+ <ul style="list-style-type: armenian;">
+  <li>Traditional Armenian numbering</li>
+  <li>(ayb/ayp, ben/pen, gim/keem…</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">bengali</code></dt>
+ <dt><code class="language-markup">-moz-bengali</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-bengali; list-style-type: bengali;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">cambodian</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span>*</dt>
+ <dd>
+ <ul style="list-style-type: cambodian;">
+  <li>Example</li>
+  <li>Is a synonym for <code class="language-markup">khmer</code></li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">cjk-earthly-branch</code></dt>
+ <dt><code class="language-markup">-moz-cjk-earthly-branch</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-cjk-earthly-branch; list-style-type: cjk-earthly-branch;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">cjk-heavenly-stem</code></dt>
+ <dt><code class="language-markup">-moz-cjk-heavenly-stem</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-cjk-heavenly-stem; list-style-type: cjk-heavenly-stem;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">cjk-ideographic</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: cjk-ideographic;">
+  <li>Identical to <code class="language-markup">simp-chinese-informal</code></li>
+  <li>E.g. 一万一千一百一十一</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">devanagari</code></dt>
+ <dt><code class="language-markup">-moz-devanagari</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-devanagari; list-style-type: devanagari;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">ethiopic-numeric</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: ethiopic-numeric;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">georgian</code></dt>
+ <dd>
+ <ul style="list-style-type: georgian;">
+  <li>Traditional Georgian numbering</li>
+  <li>E.g. an, ban, gan, … he, tan, in…</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">gujarati</code></dt>
+ <dt><code class="language-markup">-moz-gujarati</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-gujarati; list-style-type: gujarati;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">gurmukhi</code></dt>
+ <dt><code class="language-markup">-moz-gurmukhi</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-gurmukhi; list-style-type: gurmukhi;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">hebrew</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: hebrew;">
+  <li>Traditional Hebrew numbering</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">hiragana</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: hiragana;">
+  <li>a, i, u, e, o, ka, ki, …</li>
+  <li>(Japanese)</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">hiragana-iroha</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: hiragana-iroha;">
+  <li>i, ro, ha, ni, ho, he, to, …</li>
+  <li><a   title="Iroha">Iroha</a> is the old japanese ordering of syllabs.</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">japanese-formal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: japanese-formal;">
+  <li>Japanese formal numbering to be used in legal or financial document.</li>
+  <li>E.g., 壱萬壱阡壱百壱拾壱</li>
+  <li>The kanjis are designed so that they can't be modified to look like another correct one</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">japanese-informal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: japanese-informal;">
+  <li>Japanese informal numbering</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">kannada</code></dt>
+ <dt><code class="language-markup">-moz-kannada</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-kannada; list-style-type: kannada;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt style="list-style-type: katakana;"><code class="language-markup">katakana</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: katakana;">
+  <li>A, I, U, E, O, KA, KI, …</li>
+  <li>(Japanese)</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">katakana-iroha</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: katakana-iroha;">
+  <li>I, RO, HA, NI, HO, HE, TO, …</li>
+  <li><a   title="Iroha">Iroha</a> is the old japanese ordering of syllabs.</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">khmer</code></dt>
+ <dt><code class="language-markup">-moz-khmer</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-khmer; list-style-type: khmer;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">korean-hangul-formal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: korean-hangul-formal;">
+  <li>Korean hangul numbering.</li>
+  <li>E.g., 일만 일천일백일십일</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">korean-hanja-formal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: korean-hanja-formal;">
+  <li>Formal Korean Han numbering.</li>
+  <li>E.g. 壹萬 壹仟壹百壹拾壹</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">korean-hanja-informal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: korean-hanja-informal;">
+  <li>Korean hanja numbering.</li>
+  <li>E.g., 萬 一千百十一</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">lao</code></dt>
+ <dt><code class="language-markup">-moz-lao</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-lao; list-style-type: lao;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">lower-armenian</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span>*</dt>
+ <dd>
+ <ul style="list-style-type: lower-armenian;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">malayalam</code></dt>
+ <dt><code class="language-markup">-moz-malayalam</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-malayalam; list-style-type: malayalam;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">mongolian</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: mongolian;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">myanmar</code></dt>
+ <dt><code class="language-markup">-moz-myanmar</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-myanmar; list-style-type: myanmar;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">oriya</code></dt>
+ <dt><code class="language-markup">-moz-oriya</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-oriya; list-style-type: oriya;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">persian</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dt><code class="language-markup">-moz-persian</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-persian; list-style-type: persian;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">simp-chinese-formal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: simp-chinese-formal;">
+  <li>Simplified Chinese formal numbering.</li>
+  <li>E.g. 壹万壹仟壹佰壹拾壹</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">simp-chinese-informal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: simp-chinese-informal;">
+  <li>Simplified Chinese informal numbering.</li>
+  <li>E.g. 一万一千一百一十一</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">tamil</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dt><code class="language-markup">-moz-tamil</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-tamil; list-style-type: tamil;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">telugu</code></dt>
+ <dt><code class="language-markup">-moz-telugu</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-telugu; list-style-type: telugu;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">thai</code></dt>
+ <dt><code class="language-markup">-moz-thai</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-thai; list-style-type: thai;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">tibetan</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span>*</dt>
+ <dd>
+ <ul style="list-style-type: tibetan;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">trad-chinese-formal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: trad-chinese-formal;">
+  <li>Traditional Chinese formal numbering.</li>
+  <li>E.g. 壹萬壹仟壹佰壹拾壹</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">trad-chinese-informal</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: trad-chinese-informal;">
+  <li>Traditional Chinese informal numbering.</li>
+  <li>E.g. 一萬一千一百一十一</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">upper-armenian</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span>*</dt>
+ <dd>
+ <ul style="list-style-type: upper-armenian;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">disclosure-open</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: disclosure-open;">
+  <li>Symbol indicating that a disclosure widget, like <a  title="The HTML &lt;details> Element is used as a disclosure widget from which the user can retrieve additional information."><code class="language-markup">&lt;details&gt;</code></a> is opened.</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">disclosure-closed</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+ <ul style="list-style-type: disclosure-closed;">
+  <li>Symbol indicating that a disclosure widget, like <a  title="The HTML &lt;details> Element is used as a disclosure widget from which the user can retrieve additional information."><code class="language-markup">&lt;details&gt;</code></a> is closed.</li>
+ </ul>
+ </dd>
+</dl>
+
+<h3 >Non-standard extensions</h3>
+
+<p>A few more predefined types are provided by Mozilla (Firefox), Blink (Chrome and Opera) and WebKit (Safari) to support list types in other languages. See the compatibility table to check which browsers supports which extension.</p>
+
+<dl style="background: rgb(238, 238, 238); padding: 0.5em 0px 0.5em 0.5em; border: 1px solid powderblue; font-size: 90%; -moz-column-width: 16em; -webkit-columns: 16em; -moz-column-rule: 1px solid powderblue; -webkit-column-rule: 1px solid powderblue;">
+ <dt><code class="language-markup">-moz-ethiopic-halehame</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-ethiopic-halehame;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">-moz-ethiopic-halehame-am</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-ethiopic-halehame-am;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">ethiopic-halehame-ti-er</code></dt>
+ <dt><code class="language-markup">-moz-ethiopic-halehame-ti-er</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-ethiopic-halehame-ti-er;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">ethiopic-halehame-ti-et</code></dt>
+ <dt><code class="language-markup">-moz-ethiopic-halehame-ti-et</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-ethiopic-halehame-ti-et;">
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">hangul</code></dt>
+ <dt><code class="language-markup">-moz-hangul</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-hangul;">
+  <li>Example</li>
+  <li>Example</li>
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">hangul-consonant</code></dt>
+ <dt><code class="language-markup">-moz-hangul-consonant</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-hangul-consonant;">
+  <li>Example</li>
+  <li>Example</li>
+  <li>Example</li>
+ </ul>
+ </dd>
+ <dt><code class="language-markup">urdu</code></dt>
+ <dt><code class="language-markup">-moz-urdu</code></dt>
+ <dd>
+ <ul style="list-style-type: -moz-urdu;">
+  <li>Example</li>
+ </ul>
+ </dd>
+</dl>
+

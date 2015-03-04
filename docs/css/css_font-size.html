@@ -1,0 +1,204 @@
+<h2>font-size</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">font-size</code> <a  title="CSS">CSS</a> property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of <code class="language-markup">em</code> and <code class="language-markup">ex</code> length units.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">medium</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Percentages</dfn> refer to the parent element's font size<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified, but with relative lengths converted into absolute lengths<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="xx-small | s-small | small | medium | large | x-large | xx-large">&lt;absolute-size&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="larger | smaller">&lt;relative-size&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="Possible value: a number followed by 'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc', 'px', like 3px, 1.5cm, -0.5em, 0.">&lt;length&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a></code></code></pre>
+<pre>font-size: xx-small  /* &lt;absolute-size&gt; values */
+font-size: x-small
+font-size: small
+font-size: medium
+font-size: large
+font-size: x-large
+font-size: xx-large
+
+font-size: larger    /* &lt;relative-size&gt; values */
+font-size: smaller
+
+font-size: 12px      /* &lt;length&gt; values */
+font-size: 0.8em
+
+font-size: 80%       /* &lt;percentage&gt; values */
+
+font-size: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">xx-small, x-small, small, medium, large, x-large, xx-large</code></dt>
+ <dd>
+  A set of absolute size keywords based on the user's default font size (which is <code class="language-markup">medium</code>). Similar to presentational HTML's <code class="language-markup">&lt;font size="1"&gt;</code> through <code class="language-markup">&lt;font size="7"&gt;</code> where the user's default font size is <code class="language-markup">&lt;font size="3"&gt;</code>.</dd>
+ <dt>
+  <code class="language-markup">larger, smaller</code></dt>
+ <dd>
+  Larger or smaller than the parent element's font size, by roughly the ratio used to separate the absolute size keywords above.</dd>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code><em> </em></dt>
+ <dd>
+  A positive <a  title=""><code class="language-markup">&lt;length&gt;</code></a>. When the units are specified in <code class="language-markup">em</code> or <code class="language-markup">ex</code>, the size is defined relative to the size of the font on the parent element of the element in question. For example, 0.5em is half the font size of the parent of the current element.</dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  A positive <a  title=""><code class="language-markup">&lt;percentage&gt;</code></a> of the parent element's font size.</dd>
+</dl>
+<p>It is best to use values that are relative to the user's default font size, and avoid absolute values such as lengths with units other than <code class="language-markup">em</code> or <code class="language-markup">ex</code>. However, if such absolute values must be used, <code class="language-markup">px</code> are preferred over other units because their meaning does not vary depending on what the operating system thinks (generally incorrectly) the resolution of the monitor is.</p>
+<h3>Possible approaches</h3>
+<p>There are several ways to specify the font size, with keywords or numerical values for pixels or ems. Choose the appropriate method based on the needs for the particular web page.</p>
+<h3  name="Keywords">Keywords</h3>
+<p>Keywords are a good way to set the size of fonts on the web. By setting a keyword font size on the body element, you can set relative font-sizing everywhere else on the page, giving you the ability to easily scale the font up or down on the entire page accordingly.</p>
+<h3  name="Pixels">Pixels</h3>
+<p>Setting the font size in pixel values (<code class="language-markup">px</code>) is a good choice when you need pixel accuracy. A px value is static. This is an OS-independent and cross-browser way of literally telling the browsers to render the letters at exactly the number of pixels in height that you specified. The results may vary slightly across browsers, as they may use different algorithms to achieve a similar effect.</p>
+<p>Font sizing settings can also be used in combination. For example, if a parent element is set to <code class="language-markup">16px</code> and its child element is set to <code class="language-markup">larger</code>, the child element displays larger than the parent element in the page.</p>
+<div >
+ <strong>Note:</strong> Defining font sizes in pixel is <em>not accessible</em>, because the user cannot change the font size from the browser. (For example, users with limited vision may wish to set the font size much larger than the size chosen by a web designer.) Therefore, avoid using pixels for font sizes if you wish to create an inclusive design.</div>
+<h3  name="Ems">Ems</h3>
+<p>Another way of setting the font size is with <code class="language-markup">em</code> values. The size of an <code class="language-markup">em</code> value is dynamic. When defining the <code class="language-markup">font-size</code> property, an em is equal to the size of the font that applies to the parent of the element in question. If you haven't set the font size anywhere on the page, then it is the browser default, which is probably 16px. So, by default 1em = 16px, and 2em = 32px. If you set a <code class="language-markup">font-size</code> of 20px on the body element, then 1em = 20px and 2em = 40px. Note that the value 2 is essentially a multiplier of the current em size.</p>
+<p>In order to calculate the em equivalent for any pixel value required, you can use this formula:</p>
+<pre>em = desired element pixel value / parent element font-size in pixels</code></pre>
+<p>For example, suppose the font-size of the body of the page is set to 1em, with the browser standard of 1em = 16px; if the font-size you want is 12px, then you should specify 0.75em (because 12/16 = 0.75). Similarly, if you want a font size of 10px, then specify 0.625em (10/16 = 0.625); for 22px, specify 1.375em (22/16).</p>
+<p>A popular technique to use throughout the document is to set the the font-size of the body to 62.5% (that is 62.5% of the default of 16px), which equates to 10px, or 0.625em. Now you can set the font-size for any elements using em units, with an easy-to-remember conversion, by dividing the px value by 10. This way 6px = 0.6em, 8px = 0.8em, 12px = 1.2em, 14px = 1.4em, 16px = 1.6em. For example:</p>
+<pre >body {
+  font-size: 62.5%; /* font-size 1em = 10px */
+}
+p {
+  font-size: 1.6em; /* 1.6em = 16px */
+}</code></pre>
+<p>The em is a very useful unit in CSS, since it can adapt automatically to the font that the reader chooses to use.</p>
+<h3>Examples</h3>
+<h3 >Example 1</h3>
+<pre >/* Set paragraph text to be very large. */
+p { font-size: xx-large }
+
+/* Set h1 (level 1 heading) text to be 2.5 times the size
+ * of the text around it. */
+h1 { font-size: 250% }
+
+/* Sets text enclosed within span tag to be 16px */
+span { font-size: 16px; }
+</code></pre>
+<h3 >Example 2</h3>
+<pre >.small {
+	font-size: xx-small;
+}
+.larger {
+	font-size: larger;
+}
+.point {
+	font-size: 24pt;
+}
+.percent {
+	font-size: 200%;
+}
+</code></pre>
+<pre ><span>&lt;h1 &gt;Small H1&lt;/h1&gt;
+&lt;h1 &gt;Larger H1&lt;/h1&gt;</span>
+<span>&lt;h1 &gt;24 point H1&lt;/h1&gt;
+&lt;h1 &gt;200% H1&lt;/h1&gt;</span></code></pre>
+<h4 >Live Sample</h4>
+<p><iframe  frameborder="0" height="200" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/font-size$samples/Example_2?revision=494185" width="600"></iframe></p>
+<h3>Notes</h3>
+<p><code class="language-markup">em</code> and <code class="language-markup">ex</code> units on the <a  title=""><code class="language-markup">font-size</code></a> property are relative to the parent element's font size (unlike all other properties, where they're relative to the font size on the element). This means <code class="language-markup">em</code> units and percentages do the same thing for <a  title=""><code class="language-markup">font-size</code></a>.</p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   lang="en" title="The definition of 'font-size' in that specification.">CSS Fonts Module Level 3</a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   lang="en" title="The definition of 'font-size' in that specification.">CSS Transitions</a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">font-size</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   lang="en" title="The definition of 'font-size' in that specification.">CSS Level 2 (Revision 1)</a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   lang="en" title="The definition of 'font-size' in that specification.">CSS Level 1</a></td>
+   <td> </td>
+   <td> </td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>5.5</td>
+    <td>7.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Chrome for Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Mobile</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0</td>
+    <td>1.0 (1)</td>
+    <td>6.0</td>
+    <td>6.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li><a  title=""><code class="language-markup">font</code></a>,  
+<a  title=""><code class="language-markup">font-family</code></a>,  
+<a  title=""><code class="language-markup">font-size</code></a>,  
+<a  title=""><code class="language-markup">font-size-adjust</code></a>,  
+<a  title=""><code class="language-markup">font-stretch</code></a>,  
+<a  title=""><code class="language-markup">font-style</code></a>,  
+<a  title=""><code class="language-markup">font-variant</code></a>,  
+<a  title=""><code class="language-markup">font-weight</code></a>,  
+<a  title=""><code class="language-markup">@font-face</code></a></li>
+</ul>
+                                                

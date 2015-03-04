@@ -1,0 +1,26 @@
+<h2>@namespace</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">@namespace</code> rule is an at-rule that defines the <a >XML namespaces</a> that will be used in the style sheet. The namespaces defined can be used to restrict the <a >universal</a>, <a >type</a>, and <a >attribute</a> selectors to only select elements under that namespace. <span style="line-height: 1.572;">The </span><code class="language-markup">@namespace</code><span style="line-height: 1.572;"> rule is generally only useful when dealing with an XML document containing multiple namespaces - for example, an XHTML document with SVG embedded.</span></p>
+
+<p>The <code class="language-markup">@namespace</code> rule can be used to define the <strong>default namespace</strong> for the style sheet. When a default namespace is defined, all universal and type selectors (but not attribute selectors, see note below) apply only to elements on that namespace. Any <code class="language-markup">@namespace</code><span style="line-height: 1.572;"> rules must follow all </span><code class="language-markup">@charset</code><span style="line-height: 1.572;"> and </span><code class="language-markup">@import</code><span style="line-height: 1.572;"> rules and precede all other non-ignored at-rules and style rules in a style-sheet.</span></p>
+
+<p>The <code class="language-markup">@namespace</code> rule can also be used to define a <strong>namespace prefix</strong> for a style sheet. When a universal, type, or attribute selector is prefixed with a namespace prefix, then that selector only matches if the namespace (and not just the name in the case of type or attribute selectors) of the element or attribute matches.</p>
+
+<p><span style="line-height: 1.572;">When using non-XML HTML, known elements will be automatically be assigned namespaces. This means that HTML elements will act as though they are on the XHTML namespace, even if there is no </span><span style="font-family: 'Courier New', 'Andale Mono', monospace; line-height: normal;">xmlns</span><span style="line-height: 1.572;"> attribute anywhere in the HTML document.</span></p>
+
+<p><span style="line-height: 1.572;">Note that in XML, unless a prefix is defined directly on an attribute, that attribute has no namespace. In other words, attributes do not inherit the namespace of the element they're on. To match this behaviour, the default namespace in CSS does not apply to attribute selectors.</span></p>
+
+<h3>Syntax</h3>
+
+<p>For a default namespace:</p>
+
+<pre>@namespace url(<em>XML-namespace-URL</em>);</code></pre>
+
+<p><span style="line-height: 1.572;">For a namespace prefix:</span></p>
+
+<pre><span style="line-height: 1.572;">​@namespace <em>prefix</em> url(<em>XML-namespace-URL</em>);</span></code></pre>
+

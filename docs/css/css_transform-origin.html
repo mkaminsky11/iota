@@ -1,0 +1,89 @@
+<h2>transform-origin</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<p></p><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">transform-origin</code> CSS property lets you modify the origin for transformations of an element. For example, the transform-origin of the <code class="language-markup">rotate()</code> function is the centre of rotation. (This property is applied by first translating the element by the negated value of the property, then applying the element's transform, then translating by the property value.)</p>
+
+<p>Not explicitly set values are reset to their corresponding values.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">50% 50% 0</code></li>  <li><dfn>Applies to</dfn> transformable elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the size of bounding box<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> for <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> the absolute value, otherwise a percentage</li>  <li><dfn>Animatable</dfn> yes, as a simple list of a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn> One or two values, with length made absolute and keywords translated to percentages<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> left <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> center <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> right <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> top <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> bottom] <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> [ [ <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> left <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> center <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> right ] <a  title="Double ampersand: The two entities are mandatory, but may appear in any order.">&amp;&amp;</a> [ <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> top <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> center <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> bottom ] ] <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a><a  title="Question mark multiplier: The previous entity is optional (it may be used once, or not at all).">?</a></code>
+</code></pre>
+
+<pre>transform-origin: <em>x-offset</em>                                   /* One-value syntax */   E.g.  transform-origin: 2px 
+transform-origin: <em>offset-keyword</em>                                                      E.g.  transform-origin: bottom
+
+transform-origin: <em>x-offset</em> <em>y-offset</em>                          /* Two-value syntax */   E.g.  transform-origin: 3cm 2px
+transform-origin: <em>y-offset</em> <em>x-offset-keyword</em>                                           E.g.  transform-origin: 2px left
+transform-origin: <em>x-offset-keyword</em> <em>y-offset</em>                                           E.g.  transform-origin: left 2px
+transform-origin: x-<em>offset-keyword</em> <em>y-offset-keyword</em>                                   E.g.  transform-origin: right top
+transform-origin: <em>y-offset-keyword</em> <em>x-offset-keyword</em>                                   E.g.  transform-origin: top right
+
+transform-origin: <em>x-offset</em> <em>y-offset</em> <em>z-offset</em>                 /* Three-value syntax */ E.g.  transform-origin: 2px 30% 10px
+transform-origin: <em>y-offset</em> <em>x-offset-keyword</em> <em>z-offset</em>                                  E.g.  transform-origin: 2px left 10px
+transform-origin: <em>x-offset-keyword</em> <em>y-offset</em> <em>z-offset</em>                                  E.g.  transform-origin: left 5px -3px
+transform-origin: x-<em>offset-keyword</em> <em>y-offset-keyword z-offset</em>                          E.g.  transform-origin: right bottom 2cm
+transform-origin: <em>y-offset-keyword</em> <em>x-offset-keyword z-offset</em>                          E.g.  transform-origin: bottom right 2cm
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><em>x-offset</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> describing how far from the left edge of the box the origin of the transform is set.</dd>
+ <dt><em>offset-keyword</em></dt>
+ <dd>Is one of the <code class="language-markup">left</code>, <code class="language-markup">right</code>, <code class="language-markup">top</code>, <code class="language-markup">bottom</code> or <code class="language-markup">center</code> keyword describing the corresponding offset.</dd>
+ <dt><em>y-offset</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> or a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> describing how far from the top edge of the box the origin of the transform is set.</dd>
+ <dt><em>x-offset-keyword</em></dt>
+ <dd>Is one of the <code class="language-markup">left</code>, <code class="language-markup">right</code> or <code class="language-markup">center</code> keyword describing how far from the left edge of the box the origin of the transform is set.</dd>
+ <dt><em>y-offset-keyword</em></dt>
+ <dd>Is one of the <code class="language-markup">top</code>, <code class="language-markup">bottom</code> or <code class="language-markup">center</code> keyword describing how far from the top edge of the box the origin of the transform is set.</dd>
+ <dt><em>z-offset</em></dt>
+ <dd>Is a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> (and never a <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> which would make the statement invalid) describing how far from the user eye the z=0 origin is set.</dd>
+</dl>
+
+<p>The keywords are convenience shorthands and match the following <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> values:</p>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">keyword</th>
+   <th scope="col">value</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code class="language-markup">left</code></td>
+   <td><code class="language-markup">0%</code></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">center</code></td>
+   <td><code class="language-markup">50%</code></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">right</code></td>
+   <td><code class="language-markup">100%</code></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">top</code></td>
+   <td><code class="language-markup">0%</code></td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">bottom</code></td>
+   <td><code class="language-markup">100%</code></td>
+  </tr>
+ </tbody>
+</table>
+

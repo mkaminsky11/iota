@@ -1,0 +1,145 @@
+<h2>@font-feature-values#@swash</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">@font-feature-values</code> <a  title="CSS">CSS</a> <a  title="At-rule">at-rule</a> allows authors to use a common name in <a   title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">font-variant-alternate</code></a> for feature activated differently in OpenType. It allows to simplify the CSS when using several fonts.</p>
+<pre >@font-feature-values Font One { /* How to activate nice-style in Font One */  @styleset {
+    nice-style: 12;
+  }
+}
+ 
+@font-feature-values Font Two { /* How to activate nice-style in Font Two */
+  @styleset {
+    nice-style: 4;
+  }
+} 
+
+…
+
+.nice-look { font-variant-alternate: styleset(nice-style); } /* Independent of the font */
+</code></pre>
+<p>The <code class="language-markup">@<code class="language-markup">font-feature-values</code></code> at-rule may be used at the top level of a CSS, but also inside any <a  title="CSS/At-rule#Conditional_Group_Rules">CSS conditional-group at-rule</a>.</p>
+<h3>Syntax</h3>
+<pre>@font-feature-values &lt;font-family&gt; {
+      [  @swash | @ornaments | @annotation | @stylistic | @styleset | @character-variant 
+        {
+           [ &lt;IDENT&gt;: &lt;integer&gt;+ ]?
+        } 
+      ]?
+}
+</code></pre>
+<h3 >At-rules</h3>
+<h3>Example</h3>
+<p>TBD</p>
+<dl>
+ <dt>
+  <a name="@swash"><code class="language-markup">@swash</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">swash()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. A swash feature value definition allows only one value: <code class="language-markup">ident1: 2</code> is valid when <code class="language-markup">ident2: 2 4</code> isn't.</dd>
+ <dt>
+  <a name="@annotation"><code class="language-markup">@annotation</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">annotation()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. An annotation feature value definition allows only one value: <code class="language-markup">ident1: 2</code> is valid when <code class="language-markup">ident2: 2 4</code> isn't.</dd>
+ <dt>
+  <a name="@ornaments"><code class="language-markup">@ornaments</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">ornaments()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. An ornaments feature value definition allows only one value: <code class="language-markup">ident1: 2</code> is valid when <code class="language-markup">ident2: 2 4</code> isn't.</dd>
+ <dt>
+  <a name="@stylistic"><code class="language-markup">@stylistic</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">stylistic()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. A stylistice feature value definition allows only one value: <code class="language-markup">ident1: 2</code> is valid when <code class="language-markup">ident2: 2 4</code> isn't.</dd>
+ <dt>
+  <a name="@styleset"><code class="language-markup">@styleset</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">styleset()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. A stylset feature value definition allows and illimited amount of values: <code class="language-markup">ident1: 2 4 12 1</code>maps to the OpenType values <code class="language-markup">ss02</code>, <code class="language-markup">ss04</code>, <code class="language-markup">ss12</code>, <code class="language-markup">ss01</code>. Note that values higher than <code class="language-markup">99</code> are valid, but doesn't map to any OpenType values and are ignored.</dd>
+ <dt>
+  <a name="@character-variant"><code class="language-markup">@character-variant</code></a></dt>
+ <dd>
+  Specifies a feature name that will work with the <a ><code class="language-markup">character-variant()</code></a> functional notation of <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a>. A character-variant feature value definition allows one or two values: <code class="language-markup">ident1: 2</code>  maps to <code class="language-markup">cv02=1</code> and <code class="language-markup">ident2: 2 4</code> maps to <code class="language-markup">cv02)4</code> and <code class="language-markup">ident2: 2 4 5</code> isn't valid.</dd>
+</dl>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Fonts Module Level 3<br><small lang="en-US">The definition of 'font-variant' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>Initial definition</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari (WebKit)</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><a  title="Released on 2014-12-01.">34</a> (34) [1]</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td>34.0 (34) [1]</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<p>[1] Experimental implementation of the CSS Fonts Level 3 extensions was available since Gecko 24. It was governed by the preference <code class="language-markup">layout.css.font-features.enabled</code> defaulting to <code class="language-markup">true</code> on Nightly and Aurora only.</p>
+<h3>See also</h3>
+<ul>
+ <li>The <a  title="The font-variant-alternates CSS property controls the usage of alternate glyphs associated to alternative names defined in @font-feature-values."><code class="language-markup">font-variant-alternates</code></a> property that uses values that this at-rule defines.</li>
+ <li><a  title="The font CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height and font-family, or a way to set the element's font to a system font, using specific keywords."><code class="language-markup">font</code></a>,  
+<a  title="The font-family CSS property allows for a prioritized list of font family names and/or generic family names to be specified for the selected element. Unlike most other CSS properties, values are separated by a comma to indicate that they are alternatives. The browser will select the first font on the list that is installed on the computer, or that can be downloaded using the information provided by a @font-face at-rule."><code class="language-markup">font-family</code></a>,  
+<a  title="The font-size CSS property specifies the size of the font – specifically the desired height of glyphs from the font. Setting the font size may, in turn, change the size of other items, since it is used to compute the value of em and ex length units."><code class="language-markup">font-size</code></a>,  
+<a  title="The font-size-adjust CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters."><code class="language-markup">font-size-adjust</code></a>,  
+<a  title="The font-stretch CSS property selects a normal, condensed, or expanded face from a font."><code class="language-markup">font-stretch</code></a>,  
+<a  title="The font-style CSS property allows italic or oblique faces to be selected within a font-family."><code class="language-markup">font-style</code></a>,  
+<a  title="The font-variant CSS property selects a normal, or small-caps face from a font family. Setting the CSS Level 2 (Revision 1) values of the  font-variant property, that is normal or small-caps, is also possible by using the font shorthand."><code class="language-markup">font-variant</code></a>,  
+<a  title="The font-weight CSS property specifies the weight or boldness of the font. However, some fonts are not available in all weights; some are available only on normal and bold."><code class="language-markup">font-weight</code></a>,  
+<a  title="The @font-face CSS at-rule allows authors to specify online fonts to display text on their web pages. By allowing authors to provide their own fonts, @font-face eliminates the need to depend on the limited number of fonts users have installed on their computers. The @font-face at-rule may be used not only at the top level of a CSS, but also inside any CSS conditional-group at-rule."><code class="language-markup">@font-face</code></a></li>
+</ul>
+                                                

@@ -1,0 +1,25 @@
+<h2>transition-delay</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+<h3>Summary</h3>
+<p>The <code class="language-markup">transition-delay</code> <a  title="CSS">CSS</a> property specifies the amount of time to wait between a change being requested to a property that is to be transitioned and the start of the <a  title="en/CSS/CSS transitions">transition effect</a>.</p>
+<p>A value of <code class="language-markup">0s</code>, or <code class="language-markup">0ms</code>, indicates that the property will begin to animate its transition immediately when the value changes; positive values will delay the start of the transition effect for the corresponding number of seconds. Negative values cause the transition to begin immediately, but to cause the transition to seem to begin partway through the animation effect.</p>
+<p>You may specify multiple delays; each delay will be applied to the corresponding property as specified by the <a  title=""><code class="language-markup">transition-property</code></a> property, which acts as a master list. If there are fewer delays specified than in the master list, missing values are set to the initial value (<code class="language-markup">0s</code>). If there are more delays, the list is simply truncated to the right size. In both case the CSS declaration stays valid.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">0s</code></li>  <li><dfn>Applies to</dfn> all elements, <a  title=""><code class="language-markup">::before</code></a> and <a  title=""><code class="language-markup">::after</code></a> <a  title="/en-US/docs/CSS/Pseudo-elements">pseudo-elements</a></li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">interactive</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by 's' or 'ms' like 3s, -2.5ms, or 0s.">&lt;time&gt;</a><a  title="Hash mark multiplier: the previous entity may appear 0, 1 or several times, each occurence being separated from the previous one by a comma">#</a></code>
+</code></pre>
+<pre>transition-delay: 3s
+transition-delay: 2s, 4ms
+
+transition-delay: initial
+</code></pre>
+<h3 >Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;time&gt;</code></dt>
+ <dd>
+  Is a <a  title=""><code class="language-markup">&lt;time&gt;</code></a> denoting the amount of time to wait between a property's value changing and the start of the animation effect.</dd>
+</dl>

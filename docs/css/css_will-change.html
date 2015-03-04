@@ -1,0 +1,64 @@
+<h2>will-change</h2>
+
+                                                      <p></p><section  ><!-- --></section><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+
+<p><span >The <code class="language-markup">will-change</code> <a >CSS</a> property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can setup appropriate optimizations ahead of time before the element is actually changed.</span> These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required<span style="line-height: 1.5;">.</span></p>
+
+<p>Proper usage of this property can be a bit tricky:</p>
+
+<ul>
+ <li>
+  <p ><em>Don't apply will-change to too many elements.</em> The browser already tries as hard as it can to optimize everything. Some of the stronger optimizations that are likely to be tied to <code class="language-markup">will-change</code> end up using a lot of a machine’s resources, and when overused like this can cause the page to slow down or consume a lot of resources.</p>
+ </li>
+ <li>
+  <p><em>Use sparingly.</em> The normal behavior for optimizations that the browser make is to remove the optimizations as soon as it can and revert back to normal. But adding <code class="language-markup">will-change</code> directly in a stylesheet implies that the targeted elements are always a few moments away from changing and the browser will keep the optimizations for much longer time than it would have otherwise. So it is a good practice to switch <code class="language-markup">will-change</code> on and off on using script code before and after the change occurs.</p>
+ </li>
+ <li>
+  <p><em>Don't apply will-change to elements to perform premature optimization</em>. If your page is performing well, don't add the <code class="language-markup">will-change</code> property to elements just to wring out a little more speed. <code class="language-markup">will-change</code> is intended to be used as something of a last resort, in order to try to deal with existing performance problems. It should not be used to anticipate performance problems. Excessive use of <code class="language-markup">will-change</code> will result in excessive memory use and will cause more complex rendering to occur as the browser attempts to prepare for the possible change. This will lead to worse performance.</p>
+ </li>
+ <li>
+  <p ><em>Give it sufficient time to work</em>. This property is intended as a method for authors to let the user-agent know about properties that are likely to change ahead of time. Then the browser can choose to apply any ahead-of-time optimizations required for the property change before the property change actually happens. So it is important to give the the browser some time to actually do the optimizations. Find some way to predict at least slightly ahead of time that something will change, and set <code class="language-markup">will-change</code> then.</p>
+ </li>
+</ul>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> all elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">all</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre  style="font-size: 14px;"><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">auto <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="scroll-position | contents | &lt;custom-ident>">&lt;animateable-feature&gt;</a><a  title="Hash mark multiplier: The previous entity may appear 0, 1 or several times, each occurrence being separated from the previous one by a comma.">#</a></code>
+</code></pre>
+
+<pre>will-change: auto
+will-change: scroll-position
+will-change: contents
+will-change: transform        // Example of &lt;custom-ident&gt; 
+will-change: opacity          // Example of &lt;custom-ident&gt;
+will-change: left, top        // Example of two &lt;animateable-feature&gt;
+
+will-change: unset
+will-change: initial
+will-change: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">auto</code></dt>
+ <dd>This keyword expresses no particular intent; the user agent should apply whatever heuristics and optimizations it normally does.</dd>
+</dl>
+
+<p>The <code class="language-markup">&lt;animateable-feature&gt;</code> can be one of the following values:</p>
+
+<dl>
+ <dt><code class="language-markup">scroll-position</code></dt>
+ <dd>Indicates that the author expects to animate or change the scroll position of the element in the near future.</dd>
+ <dt><code class="language-markup">contents</code></dt>
+ <dd>Indicates that the author expects to animate or change something about the element’s contents in the near future.</dd>
+ <dt><a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;custom-ident&gt;</code></a></dt>
+ <dd>Indicates that the author expects to animate or change the property with the given name on the element in the near future. If the property given is a shorthand, it indicates the expectation for all the longhands the shorthand expands to. It cannot be one of the following values: <code class="language-markup">unset</code>, <code class="language-markup">initial</code>, <code class="language-markup">inherit</code>, <code class="language-markup">will-change</code>, <code class="language-markup">auto</code>, <code class="language-markup">scroll-position</code>, or <code class="language-markup">contents</code>.</dd>
+</dl>
+

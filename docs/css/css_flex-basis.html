@@ -1,0 +1,32 @@
+<h2>flex-basis</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <a  title="CSS">CSS</a> <code class="language-markup">flex-basis</code> property specifies the flex basis which is the initial <strong>main size</strong> of a flex item. <code class="language-markup">The property</code> determines the size of the content-box unless specified otherwise using <a  title="The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification."><code class="language-markup">box-sizing</code></a>.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> flex items, including in-flow pseudo-elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the flex container's inner main size<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified, with lengths made absolute<span></span></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn> the length or percentage before the keyword, if both are present<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="/en-US/docs/CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="[&lt;length> | &lt;percentage>] &amp;&amp; [border-box | content-box]? | available | min-content | max-content | fit-content | auto">&lt;'width'&gt;</a></code>
+</code></pre>
+
+<pre>flex-basis: 10em      /* &lt;'width'&gt; */
+flex-basis: 3px       /* &lt;'width'&gt; */
+flex-basis: auto      /* &lt;'width'&gt; */
+flex-basis: content
+
+flex-basis: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;'width'&gt;</code></dt>
+ <dd>Defined as a number followed by a absolute unit such as <code class="language-markup">px</code>, <code class="language-markup">mm</code> or <code class="language-markup">pt</code>, or a percentage of the parent flex container main size property. Negative values are invalid.</dd>
+</dl>
+

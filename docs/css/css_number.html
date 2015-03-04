@@ -1,0 +1,118 @@
+<h2>number</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">&lt;number&gt;</code> <a  title="CSS">CSS</a> data type represents a number, either integer or fractional. Its syntax extends the one of the <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a> data value. To represent a fractional value, add the fractional part — a '.' followed by one or several decimal digits — to any <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a> data value. Like for <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;integer&gt;</code></a> data type, there isn't any unit associated to a <code class="language-markup">&lt;number&gt;</code>, which is not a CSS dimension.</p>
+<h3>Interpolation</h3>
+<p>Values of the <code class="language-markup">&lt;number&gt;</code> CSS data type can be interpolated in order to allow animations. In that case they are interpolated as real, floating-point, numbers. The speed of the interpolation is determined by the <a  title="timing-function">timing function</a> associated with the animation.</p>
+<h3>Examples</h3>
+<p>These are valid number values:</p>
+<pre>12          A raw <a  title="integer">&lt;integer&gt;</a> is also a &lt;number&gt;
+4.01        A positive non-integer &lt;number&gt;
+-456.8      Negative non-integer &lt;number&gt;
+0.0         Zero
++0.0        Zero, with a leading +
+-0.0        Zero, with a leading - (Though strange, this is an allowed value)
+.60         Digits are optional before the dot
+<span style="line-height: normal;">10e3        The scientific notation is allowed </span>
+-3.4e-2     Most complex case of scientific notation
+</code></pre>
+<p>These are invalid number values:</p>
+<pre>12.         The dot should be followed by a number
++-12.2    Only one leading +/- is allowed
+12.1.1      Only one dot is allowed
+</code></pre>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Values and Units Module Level 3<br><small lang="en-US">The definition of '&lt;number&gt;' in that specification.</small></a></td>
+   <td><span >Candidate Recommendation</span></td>
+   <td>No significant change from CSS Level 2 (Revision 1)</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of '&lt;number&gt;' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Explicitly defined</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of '&lt;number&gt;' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Implicitly defined</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari (WebKit)</th>
+   </tr>
+   <tr>
+    <td>basic</td>
+    <td>1.0</td>
+    <td>1.0 (1.0)</td>
+    <td>&lt;=5.0</td>
+    <td>yes</td>
+    <td>1.0 (85)</td>
+   </tr>
+   <tr>
+    <td>Scientific notation</td>
+    <td>?</td>
+    <td>29</td>
+    <td>11</td>
+    <td>?</td>
+    <td>?</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>yes</td>
+    <td>yes</td>
+    <td>yes</td>
+    <td>yes</td>
+    <td>yes</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li><a  title="CSS Reference">CSS Reference</a> index</li>
+ <li>CSS Data Types : <code class="language-markup"><a >&lt;angle&gt;</a></code>, <code class="language-markup"><a >&lt;blend-mode&gt;</a></code>, <code class="language-markup"><a >&lt;color&gt;</a></code>, <code class="language-markup"><a >&lt;frequency&gt;</a></code>, <code class="language-markup"><a >&lt;gradient&gt;</a></code>, <code class="language-markup"><a >&lt;image&gt;</a></code>, <code class="language-markup"><a >&lt;length&gt;</a></code>, <code class="language-markup"><a >&lt;number&gt;</a></code>, <code class="language-markup"><a >&lt;percentage&gt;</a></code>, <code class="language-markup"><a >&lt;position&gt;</a></code>, <code class="language-markup"><a >&lt;ratio&gt;</a></code>, <code class="language-markup"><a >&lt;resolution&gt;</a></code>, <code class="language-markup"><a >&lt;shape&gt;</a></code>, <code class="language-markup"><a >&lt;string&gt;</a></code>, <code class="language-markup"><a >&lt;time&gt;</a></code>, <code class="language-markup"><a >&lt;timing-function&gt;</a></code>, <code class="language-markup"><a >&lt;uri&gt;</a></code>, <code class="language-markup"><a >&lt;user-ident&gt;</a></code></li>
+</ul>
+                                                

@@ -1,0 +1,228 @@
+<h2>margin</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">margin</code> CSS property sets the margin for all four sides. It is a shorthand to avoid setting each side separately with the other margin properties: <a  title="The margin-top CSS property of an element sets the margin space required on the top of an element. A negative value is also allowed."><code class="language-markup">margin-top</code></a>, <a  title="The margin-right CSS property of an element sets the margin space required on the right side of an element. A negative value is also allowed."><code class="language-markup">margin-right</code></a>, <a  title="The margin-bottom CSS property of an element sets the margin space required on the bottom of an element. A negative value is also allowed."><code class="language-markup">margin-bottom</code></a> and <a  title="The margin-left CSS property of an element sets the margin space required on the left side of a box associated with an element. A negative value is also allowed."><code class="language-markup">margin-left</code></a>.<br>
+ Negative values are also allowed.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> the concatenation of the initial values of its longhand properties:<ul><li><code class="language-markup">margin-bottom</code>: is itself a shorthand, its initial value is the concatenation of its own longhand properties</li><li><code class="language-markup">margin-left</code>: is itself a shorthand, its initial value is the concatenation of its own longhand properties</li><li><code class="language-markup">margin-right</code>: is itself a shorthand, its initial value is the concatenation of its own longhand properties</li><li><code class="language-markup">margin-top</code>: is itself a shorthand, its initial value is the concatenation of its own longhand properties</li></ul></li>  <li><dfn>Applies to</dfn> all elements except elements with table <a  title="The display CSS property specifies the type of rendering box used for an element. In HTML, default display property values are taken from behaviors described in the HTML specifications or from the browser/user default stylesheet. The default value in XML is inline."><code class="language-markup">display</code></a> types other than <code class="language-markup">table-caption</code>, <code class="language-markup">table</code> and <code class="language-markup">inline-table</code>. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the width of the containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as each of the properties of the shorthand:<ul><li><code class="language-markup">margin-bottom</code>: the percentage as specified or the absolute length<span></span></li><li><code class="language-markup">margin-left</code>: the percentage as specified or the absolute length<span></span></li><li><code class="language-markup">margin-right</code>: the percentage as specified or the absolute length<span></span></li><li><code class="language-markup">margin-top</code>: the percentage as specified or the absolute length<span></span></li></ul></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[ <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> auto ]{1,4}</code></code></pre>
+
+<pre>margin: <em>style</em>                  /* <em>One-value syntax</em>   */  E.g. margin: 1em; 
+margin: <em>vertical</em> <em>horizontal</em>    /* <em>Two-value syntax</em>   */  E.g. margin: 5% auto; 
+margin: <em>top</em> <em>horizontal</em> <em>bottom</em>  /* <em>Three-value syntax</em> */  E.g. margin: 1em auto 2em; 
+margin: <em>top</em> <em>right</em> <em>bottom</em> <em>left</em>  /* <em>Four-value syntax</em>  */  E.g. margin: 2px 1em 0 auto; 
+
+margin: inherit
+</code></pre>
+
+<h3 >Values</h3>
+
+<p>Accepts one, two, three or four values of the following:</p>
+
+<dl>
+ <dt><code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>Specifies a fixed width. Negative Values are allowed. See for <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> possible units.</dd>
+ <dt><code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>A <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> relative to the <strong>width</strong> of the containing block. Negative values are allowed.</dd>
+ <dt><code class="language-markup">auto</code></dt>
+ <dd><code class="language-markup">auto </code>is replaced by some suitable value, e.g. it can be used for centering of blocks.<br>
+ <code class="language-markup">div { width:50%;  margin:0 auto; }</code> centers the div container horizontally.</dd>
+</dl>
+
+<ul>
+ <li><strong>One</strong> single value applies to all <strong>four sides</strong>.</li>
+ <li><strong>Two</strong> values apply first to <strong>top and bottom</strong>, the second one to <strong>left and right</strong>.</li>
+ <li><strong>Three</strong> values apply first to <strong>top</strong>, second to <strong>left and right</strong> and third to <strong>bottom</strong>.</li>
+ <li><strong>Four</strong> values apply to <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> and <strong>left</strong> in that order (clockwise).</li>
+</ul>
+
+<h3>Examples</h3>
+
+<h3 >Simple example</h3>
+
+<h4 >HTML</h4>
+
+<pre >&lt;div &gt;
+  margin:     auto;
+  background: gold;
+  width:      66%;
+&lt;/div&gt;
+&lt;div &gt;
+  margin:     20px 0 0 -20px;
+  background: gold;
+  width:      66%;
+&lt;/div&gt;</code></pre>
+
+<h4 >CSS</h4>
+
+<pre >.ex1 {
+  margin: auto;
+  background: gold;
+  width: 66%;
+}
+.ex2 {
+  margin: 20px 0px 0 -20px;
+  background: gold;
+  width: 66%;
+}</code></pre>
+
+<p><iframe  frameborder="0" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/margin$samples/Margin_Exemples?revision=759975"></iframe></p>
+
+<h3 >Another example</h3>
+
+<pre >margin: 5%;                /* all sides 5% margin */
+
+margin: 10px;              /* all sides 10px margin */
+
+margin: 1.6em 20px;        /* top and bottom 1.6em, left and right 20px margin */
+
+margin: 10px 3% 1em;       /* top 10px, left and right 3%, bottom 1em margin */
+
+margin: 10px 3px 30px 5px; /* top 10px, right 3px, bottom 30px, left 5px margin */
+
+margin: 1em auto;          /* 1em margin on top and bottom, box is horizontally centered */
+
+margin: auto;              /* box is horizontally centered, 0 margin on top and bottom */
+</code></pre>
+
+<h3>Horizontal centering with <code class="language-markup">margin: 0 auto;</code></h3>
+
+<p>To center something horizontally in modern browsers, use <code class="language-markup"><a >display</a>: flex; <a >justify-content</a>: center;</code> .</p>
+
+<p>However, in older browsers like IE8-9, these are not available. In order to center an element inside its parent, use <code class="language-markup">margin: 0 auto;</code></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic Box Model<br><small lang="en-US">The definition of 'margin' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No significant change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'margin' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">margin</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'margin' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Removes its effect on inline elements.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of 'margin' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>3.0</td>
+   <td>3.5</td>
+   <td>1.0 (85)</td>
+  </tr>
+  <tr>
+   <td><code class="language-markup">auto</code> value</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>6.0 (strict mode)</td>
+   <td>3.5</td>
+   <td>1.0 (85)</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1)</td>
+   <td>6.0</td>
+   <td>6.0</td>
+   <td>1.0</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li>Margin-related properties:  
+<a  title="Technical review completed."><code class="language-markup">margin</code></a>,  
+<a  title="The margin-top CSS property of an element sets the margin space required on the top of an element. A negative value is also allowed."><code class="language-markup">margin-top</code></a>,  
+<a  title="The margin-right CSS property of an element sets the margin space required on the right side of an element. A negative value is also allowed."><code class="language-markup">margin-right</code></a>,  
+<a  title="The margin-bottom CSS property of an element sets the margin space required on the bottom of an element. A negative value is also allowed."><code class="language-markup">margin-bottom</code></a>,  
+<a  title="The margin-left CSS property of an element sets the margin space required on the left side of a box associated with an element. A negative value is also allowed."><code class="language-markup">margin-left</code></a>,  
+<a  title="The border CSS property is a shorthand property for setting the individual border property values in a single place in the style sheet. border can be used to set the values for one or more of: border-width, border-style, border-color."><code class="language-markup">border</code></a>,  
+<a  title="The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding</code></a></li>
+ <li><a   title="en/CSS/margin collapsing">Margin collapsing</a></li>
+ <li>Border-related properties:  
+<a  title="The border CSS property is a shorthand property for setting the individual border property values in a single place in the style sheet. border can be used to set the values for one or more of: border-width, border-style, border-color."><code class="language-markup">border</code></a>,  
+<a  title="Technical review completed."><code class="language-markup">border-width</code></a>,  
+<a  title="Technical review completed."><code class="language-markup">border-style</code></a>,  
+<a  title="The border-color CSS property is a shorthand for setting the color of the four sides of an element's border: border-top-color, border-right-color, border-bottom-color, border-left-color"><code class="language-markup">border-color</code></a>,  
+<a  title="Technical review completed."><code class="language-markup">margin</code></a>,  
+<a  title="The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding</code></a></li>
+ <li>Padding-related properties:  
+<a  title="The padding CSS property sets the required padding space on all sides of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding</code></a>,  
+<a  title="The padding-top CSS property of an element sets the padding space required on the top of an element. The padding area is the space between the content of the element and its border. Contrary to margin-top values, negative values of padding-top are invalid."><code class="language-markup">padding-top</code></a>,  
+<a  title="The padding-right CSS property of an element sets the padding space required on the right side of an element. The padding area is the space between the content of the element and its border. Negative values are not allowed."><code class="language-markup">padding-right</code></a>,  
+<a  title="The padding-bottom CSS property of an element sets the height of the padding area at the bottom of an element. The padding area is the space between the content of the element and it's border. Contrary to margin-bottom values, negative values of padding-bottom are invalid."><code class="language-markup">padding-bottom</code></a>,  
+<a  title="The padding-left CSS property of an element sets the padding space required on the left side of an element. The padding area is the space between the content of the element and it's border. A negative value is not allowed."><code class="language-markup">padding-left</code></a>,  
+<a  title="The border CSS property is a shorthand property for setting the individual border property values in a single place in the style sheet. border can be used to set the values for one or more of: border-width, border-style, border-color."><code class="language-markup">border</code></a>,  
+<a  title="Technical review completed."><code class="language-markup">margin</code></a></li>
+</ul>
+                                                

@@ -1,0 +1,203 @@
+<h2>max-height</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">max-height</code> CSS property is used to set the maximum height of a given element. It prevents the used value of the <a  title="The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">height</code></a> property from becoming larger than the value specified for <code class="language-markup">max-height</code>.</p>
+
+<p><a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a> overrides <a  title="The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">height</code></a>, but <a  title="The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height."><code class="language-markup">min-height</code></a> overrides <a  title="The max-height CSS property is used to set the maximum height of a given element. It prevents the used value of the height property from becoming larger than the value specified for max-height."><code class="language-markup">max-height</code></a>.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>  <li><dfn>Applies to</dfn> all elements but non-replaced inline elements, table columns, and column groups</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> The percentage is calculated with respect to the height of the generated box's containing block. If the height of the containing block is not specified explicitly (i.e., it depends on content height), and this element is not absolutely positioned, the percentage value is treated as <code class="language-markup">none</code>.</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the percentage as specified or the absolute length or <code class="language-markup">none</code></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup"><a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a> <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> none <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> max-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> min-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> fit-content <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> fill-available</code>
+</code></pre>
+
+<pre>max-height: 3.5em
+max-height: 75%
+max-height: none
+max-height: max-content
+max-height: min-content
+max-height: fit-content
+max-height: fill-available
+
+max-height: inherit
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>A fixed maximum height. See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> for possible units.</dd>
+ <dt><code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>The <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;percentage&gt;</code></a> is calculated with respect to the height of the containing block. If the height of the containing block is not specified explicitly, the percentage value is treated as <code class="language-markup">none</code>.</dd>
+ <dt><code class="language-markup">none</code></dt>
+ <dd>No limit on the height of the box.</dd>
+ <dt><code class="language-markup">max-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The intrinsic preferred height.</dd>
+ <dt><code class="language-markup">min-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The intrinsic minimum height.</dd>
+ <dt><code class="language-markup">fill-available</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The containing block height minus vertical margin, border and padding. Some browsers implement an ancient name for this keyword, <code class="language-markup">available</code>.</dd>
+ <dt><code class="language-markup">fit-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>The same as <code class="language-markup">max-content.</code></dd>
+</dl>
+
+<h3>Examples</h3>
+
+<pre >table { max-height: 75%; }
+
+form { max-height: none; }
+</code></pre>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Intrinsic &amp; Extrinsic Sizing Module Level 3<br><small lang="en-US">The definition of 'max-height' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Adds the <code class="language-markup">max-content</code>, <code class="language-markup">min-content</code>, <code class="language-markup">fit-content</code>, and <code class="language-markup">fill-available</code> keywords.<br>
+    <em>Both CSS3 Box and CSS3 Writing Modes drafts defined at some point these keywords. These drafts are superseded by this spec.</em></td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'max-height' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">max-height</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'max-height' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial definition.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>7.0</td>
+   <td>7.0</td>
+   <td>1.0</td>
+  </tr>
+  <tr>
+   <td>applies to <code class="language-markup">&lt;table&gt; </code>[1]</td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+  <tr>
+   <td rowspan="1"><code class="language-markup">max-content</code>, <code class="language-markup">min-content</code>, and <code class="language-markup">fit-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+   <td><span style="color: #f00;">Not supported</span> [3]</td>
+   <td><a  title="Released on 2008-06-17.">3.0</a> (1.9)<span  title="prefix">-moz</span> [2]</td>
+   <td rowspan="1"><span style="color: #f00;">Not supported</span></td>
+   <td rowspan="1"><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span> [3]</td>
+  </tr>
+  <tr>
+   <td rowspan="1"><code class="language-markup">fill-available</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span> <a   title="implement height/min-height/max-height: fill  (-moz-available)">bug 527285</a></td>
+   <td rowspan="1"><span style="color: #f00;">Not supported</span></td>
+   <td rowspan="1"><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td>applies to <code class="language-markup">&lt;table&gt; </code>[1]</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td rowspan="1"><code class="language-markup">max-content</code>, <code class="language-markup">min-content</code>, and <code class="language-markup">fit-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td rowspan="1"><code class="language-markup">fill-available</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td rowspan="1"><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[1] CSS 2.1 explicitely leaves the behavior of <code class="language-markup">max-height</code> with <a  title="The HTML Table Element (&lt;table>) represents data in two dimensions or more."><code class="language-markup">&lt;table&gt;</code></a> undefined. Therefore any behavior is CSS2.1-compliant; newer CSS specifications may define this behavior, so Web developers shouldn't rely on a specific one now.</p>
+
+<p>[2] Gecko experimentally implements the definitions given in CSS3 Basic Box. This one defines <code class="language-markup">available</code> and not <code class="language-markup">fill-available</code>. Also the definition of <code class="language-markup">fit-content</code> is simpler than in CSS3 Sizing.</p>
+
+<p>[3] WebKit implements an earlier proposal for setting the height to an intrinsic height: the keywords <code class="language-markup">intrinsic</code>, instead of <code class="language-markup">max-content</code>, and <code class="language-markup">min-intrinsic</code>, instead of <code class="language-markup">min-content</code>. There is no equivalent for <code class="language-markup">fill-available</code> or <code class="language-markup">fit-content</code>.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="en/CSS/box_model">The box model</a></li>
+ <li><a  title="The max-width CSS property is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width."><code class="language-markup">max-width</code></a>, <a  title="The box-sizing CSS property is used to alter the default CSS box model used to calculate widths and heights of elements. It is possible to use this property to emulate the behavior of browsers that do not correctly support the CSS box model specification."><code class="language-markup">box-sizing</code></a>, <a  title="The height CSS property specifies the height of the content area of an element. The content area is inside the padding, border, and margin of the element."><code class="language-markup">height</code></a>, <a  title="The min-height CSS property is used to set the minimum height of a given element. It prevents the used value of the height property from becoming smaller than the value specified for min-height."><code class="language-markup">min-height</code></a></li>
+</ul>
+                                                

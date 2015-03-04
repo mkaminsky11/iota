@@ -1,0 +1,187 @@
+<h2>letter-spacing</h2>
+
+                                                      <div><section  ><!-- --></section></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">letter-spacing</code> CSS property specifies spacing behavior between text characters.</p>
+
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">normal</code></li>  <li><dfn>Applies to</dfn> all elements. It also applies to <a  title="The ::first-letter CSS pseudo-element selects the first letter of the first line of a block, if it is not preceded by any other content (such as images or inline tables) on its line."><code class="language-markup">::first-letter</code></a> and <a  title="The ::first-line CSS pseudo-element applies styles only to the first line of an element. The amount of the text on the first line depends of numerous factors, like the width of the elements or of the document, but also of the font size of the text. As all pseudo-elements, the selectors containing ::first-line does not match any real HTML element."><code class="language-markup">::first-line</code></a>.</li>  <li><dfn><a >Inherited</a></dfn> yes</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> an optimum value consisting of either an absolute length or the keyword <code class="language-markup">normal</code></li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a></li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+
+<h3>Syntax</h3>
+
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">normal <a  title="Single bar: The two entities are optional, but exactly one must be present.">|</a> <a  title="Possible values: a number followed by'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc' or 'px', like 3px, 1.5cm, -0.5em or 0">&lt;length&gt;</a></code>
+</code></pre>
+
+<pre>letter-spacing: normal
+
+letter-spacing: 0.3em
+letter-spacing: 3px
+letter-spacing: .3px
+
+letter-spacing: inherit
+</code></pre>
+
+<h3  name="Values">Values</h3>
+
+<dl>
+ <dt><code class="language-markup">normal</code></dt>
+ <dd>The spacing is the normal spacing for the current font. This value allows the user agent to alter the space between characters in order to justify text. That's the difference to the length value<code class="language-markup"> 0</code>.</dd>
+ <dt><code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>Indicates inter-character space <strong><em>in addition to</em></strong> the default space between characters. Values may be negative, but there may be implementation-specific limits. User agents may not further increase or decrease the inter-character space in order to justify text.<br>
+ See <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;length&gt;</code></a> values for possible units.</dd>
+</dl>
+
+<h3><br>
+ Letter spacing examples</h3>
+
+<h3 >HTML Content</h3>
+
+<pre >&lt;p &gt; letter spacing &lt;/p&gt;
+&lt;p &gt; letter spacing &lt;/p&gt;
+&lt;p &gt; letter spacing &lt;/p&gt;
+&lt;p &gt; letter spacing &lt;/p&gt;
+</code></pre>
+
+<h3 >CSS Content</h3>
+
+<pre >.first-example { letter-spacing: 0.4em; }
+.second-example { letter-spacing: 1em; }
+.third-example { letter-spacing: -0.05em; }
+.fourth-example { letter-spacing: 6px; }
+</code></pre>
+
+<p><iframe  frameborder="0" height="185" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/letter-spacing$samples/Letter_spacing_examples?revision=739677" width="440"></iframe></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Text Level 3<br><small lang="en-US">The definition of 'letter-spacing' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small lang="en-US">The definition of 'letter-spacing' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Defines <code class="language-markup">letter-spacing</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small lang="en-US">The definition of 'letter-spacing' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No change.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">Scalable Vector Graphics (SVG) 1.1 (Second Edition)<br><small lang="en-US">The definition of 'letter-spacing' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial SVG specification.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small lang="en-US">The definition of 'letter-spacing' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial specification</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Chrome</th>
+   <th>Firefox (Gecko)</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari (WebKit)</th>
+  </tr>
+  <tr>
+   <td>HTML support</td>
+   <td>1.0</td>
+   <td>1.0 (1.7 or earlier)</td>
+   <td>4.0</td>
+   <td>3.5</td>
+   <td>1.0 (85)</td>
+  </tr>
+  <tr>
+   <td>SVG support</td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #f00;">Not supported</span> (<a   title="Support the 'letter-spacing' and 'word-spacing' properties in SVG">bug 371787</a>)</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+   <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Android</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>IE Mobile</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>HTML support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+  <tr>
+   <td>SVG support</td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3>See also</h3>
+
+<ul>
+ <li>Text-related properties:  
+<a  title="The letter-spacing CSS property specifies spacing behavior between text characters."><code class="language-markup">letter-spacing</code></a>,  
+<a  title="The text-align CSS property describes how inline content like text is aligned in its parent block element. text-align does not control the alignment of block elements itself, only their inline content."><code class="language-markup">text-align</code></a>,  
+<a  title="The text-decoration CSS property is used to set the text formatting to underline, overline, line-through or blink. Underline and overline decorations are positioned under the text, line-through over it."><code class="language-markup">text-decoration</code></a>,  
+<a  title="The text-decoration-color CSS property sets the color used when drawing underlines, overlines, or strike-throughs specified by text-decoration-line. This is the preferred way to color these text decorations, rather than using combinations of other HTML elements."><code class="language-markup">text-decoration-color</code></a>,  
+<a  title="The text-decoration-line CSS property sets what kind of line decorations are added to an element."><code class="language-markup">text-decoration-line</code></a>,  
+<a  title="The text-decoration-style CSS property defines the style of the lines specified by text-decoration-line. The style applies to all lines, there is no way to define different style for each of the line defined by text-decoration-line."><code class="language-markup">text-decoration-style</code></a>,  
+<a  title="The text-rendering CSS property provides information to the rendering engine about what to optimize for when rendering text. The browser makes trade-offs among speed, legibility, and geometric precision. The text-rendering property is an SVG property that is not defined in any CSS standard. However, Gecko and WebKit browsers let you apply this property to HTML and XML content on Windows, Mac OS X and Linux."><code class="language-markup">text-rendering</code></a>,  
+<a  title="The text-shadow CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and text-decorations of the element."><code class="language-markup">text-shadow</code></a>,  
+<a  title="The text-transform CSS property specifies how to capitalize an element's text. It can be used to make text appear in all-uppercase or all-lowercase, or with each word capitalized."><code class="language-markup">text-transform</code></a>,  
+<a  title="The text-indent CSS property specifies how much horizontal space should be left before the beginning of the first line of the text content of an element. Horizontal spacing is with respect to the left (or right, for right-to-left layout) edge of the containing block element's box."><code class="language-markup">text-indent</code></a>,  
+<a  title="The white-space CSS property is used to to describe how white spaces inside the element is handled."><code class="language-markup">white-space</code></a>,  
+<a  title="The word-spacing CSS property specifies spacing behavior between tags and words."><code class="language-markup">word-spacing</code></a></li>
+ <li><a  title="The font-kerning CSS property controls the usage of the kerning information; that is, it controls how letters are spaced. The kerning information is stored in the font, and if the font is well-kerned, this feature allows spacing between characters to be very similar, whatever the characters are."><code class="language-markup">font-kerning</code></a></li>
+</ul>
+                                                

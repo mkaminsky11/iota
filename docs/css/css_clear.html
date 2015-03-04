@@ -1,0 +1,144 @@
+<h2>clear</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">clear</code> <a  title="CSS">CSS</a> property specifies whether an element can be next to <a  title="CSS/float">floating</a> elements that precede it or must be moved down (cleared) below them.</p>
+<p>The <code class="language-markup">clear</code> property applies to both floating and non-floating elements.</p>
+<p>When applied to non-floating blocks, it moves the <a  title="CSS/box_model">border edge</a> of the element down until it is below the <a  title="CSS/box_model">margin edge</a> of all relevant floats. This movement (when it happens) causes <a  title="CSS/margin_collapsing">margin collapsing</a> not to occur.</p>
+<p>When applied to floating elements, it moves the <a  title="CSS/box_model">margin edge</a> of the element below the <a  title="CSS/box_model">margin edge</a> of all relevant floats. This affects the position of later floats, since later floats cannot be positioned higher than earlier ones.</p>
+<p>The floats that are relevant to be cleared are the earlier floats within the same <a  title="CSS/block_formatting_context">block formatting context</a>.</p>
+<div >
+ <p><strong>Note: </strong>If you want an element to contain all floating elements inside it, you can either float the container as well, or use <code class="language-markup">clear</code> on a replaced <a ><code class="language-markup">::after</code></a> <a >pseudo-element</a> on it.</p>
+ <pre>#container:after { 
+   content: "";
+   display: block; 
+   clear: both;
+}
+</code></pre>
+</div>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>  <li><dfn>Applies to</dfn> block-level elements</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> as specified<span></span></li>  <li><dfn>Animatable</dfn> no</li>  <li><dfn>Canonical order</dfn>  the unique non-ambiguous order defined by the formal grammar<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">none <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> left <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> right <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> both</code></code></pre>
+<pre>clear: none
+clear: left
+clear: right
+clear: both
+
+clear: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">none</code></dt>
+ <dd>
+  The element is <em>not</em> moved down to clear past floating elements.</dd>
+ <dt>
+  <code class="language-markup">left</code></dt>
+ <dd>
+  The element is moved down to clear past <em>left</em> floats.</dd>
+ <dt>
+  <code class="language-markup">right</code></dt>
+ <dd>
+  The element is moved down to clear past <em>right</em> floats.</dd>
+ <dt>
+  <code class="language-markup">both</code></dt>
+ <dd>
+  The element is moved down to clear past <em>both</em> left and right floats.</dd>
+</dl>
+<h3>Examples</h3>
+<p><a   rel="custom">View Live Examples</a></p>
+<pre >h1 { clear: none }
+h2 { clear: right }</code></pre>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small>The definition of 'clear' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>No significant changes, though details are clarified.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small>The definition of 'clear' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial specification</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<div>
+ <div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div></div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>4.0</td>
+    <td>3.5</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td>1.0</td>
+    <td>1.0 (1)</td>
+    <td>6.0</td>
+    <td>6.0</td>
+    <td>1.0</td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li>Position-related CSS properties:  
+<a ><code class="language-markup">position</code></a>,  
+<a ><code class="language-markup">float</code></a>,  
+<a ><code class="language-markup">top</code></a>,  
+<a ><code class="language-markup">right</code></a>,  
+<a ><code class="language-markup">bottom</code></a>,  
+<a ><code class="language-markup">left</code></a>,  
+<a ><code class="language-markup">display</code></a>,  
+<a ><code class="language-markup">visibility</code></a>,  
+<a ><code class="language-markup">clear</code></a></li>
+ <li><a  title="CSS/box_model">Box model</a></li>
+</ul>
+                                                

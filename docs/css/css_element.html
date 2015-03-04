@@ -1,0 +1,144 @@
+<h2>element</h2>
+
+                                                      <div><section  ><!-- --></section><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div></div>
+
+<h3>Summary</h3>
+
+<p>The <code class="language-markup">element()</code> <a  title="CSS">CSS</a> function defines an <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">&lt;image&gt;</code></a> value generated from an arbitrary HTML element. This image is live, meaning that if the HTML element is changed, the CSS properties using the resulting value are automatically updated.</p>
+
+<p>A particularly useful scenario for using this would be to render an image in an HTML <a  title="The HTML &lt;canvas> Element can be used to draw graphics via scripting (usually JavaScript). For example, it can be used to draw graphs, make photo compositions or even perform animations. You may (and should) provide alternate content inside the &lt;canvas> block. That content will be rendered both on older browsers that don't support canvas and in browsers with JavaScript disabled."><code class="language-markup">&lt;canvas&gt;</code></a> element, then use that as a background.</p>
+
+<p>On Gecko browsers, you can use the non-standard <a  title="Changes the element being used as the CSS background for a background with a given background element ID."><code class="language-markup">document.mozSetImageElement()</code></a> method to change the element being used as the background for a given CSS background element.</p>
+
+<h3>Syntax</h3>
+
+<pre><code class="language-markup">element( <em>id</em> )</code></pre>
+
+<p>where:</p>
+
+<dl>
+ <dt><strong><code class="language-markup">id</code></strong></dt>
+ <dd>The ID of an element to use as the background, specified using the HTML attribute #<em>id</em> on the element.</dd>
+</dl>
+
+<h3>Examples</h3>
+
+<p>These examples can be <a  title="https://developer.mozilla.org/samples/cssref/moz-element.html">viewed live</a> in builds of Firefox that support <code class="language-markup">-moz-element()</code>.</p>
+
+<h3 >A somewhat realistic example</h3>
+
+<p>This example uses a hidden <a  title="The HTML &lt;div> element (or HTML Document Division Element) is the generic container for flow content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element (such as &lt;article> or &lt;nav>) is appropriate."><code class="language-markup">&lt;div&gt;</code></a> as a background. The background element uses a gradient, but also includes text that is rendered as part of the background.</p>
+
+<pre><code class="language-markup">&lt;div style="width:400px; height:400px; background:-moz-element(#myBackground1) no-repeat;"&gt;
+  &lt;p&gt;This box uses the element with the #myBackground1 ID as its background!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style="overflow:hidden; height:0;"&gt;
+  &lt;div  style="width:1024px; height:1024px; background-image: linear-gradient(to right, red, orange, yellow, white);"&gt;
+  &lt;p style="transform-origin:0 0; transform: rotate(45deg); color:white;"&gt;This text is part of the background. Cool, huh?&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>The <a  title="The HTML &lt;div> element (or HTML Document Division Element) is the generic container for flow content, which does not inherently represent anything. It can be used to group elements for styling purposes (using the class or id attributes), or because they share attribute values, such as lang. It should be used only when no other semantic element (such as &lt;article> or &lt;nav>) is appropriate."><code class="language-markup">&lt;div&gt;</code></a> element with the ID "myBackground1" is used as the background for the content including the paragraph "This box uses the element with the #myBackground1 ID as its background!".</p>
+
+<p><img alt="example1.png"  src="/@api/deki/files/4624/=example1.png"></p>
+
+<h3 >A somewhat more bizarre example</h3>
+
+<p>This example uses a hidden <a  title="The HTML &lt;button> Element represents a clickable button."><code class="language-markup">&lt;button&gt;</code></a> element in a repeating pattern as its background. This demonstrates that you can use arbitrary elements as background, but doesn't necessarily demonstrate good design practices.</p>
+
+<pre><code class="language-markup">&lt;div style="width:400px; height:100px; background:-moz-element(#myBackground2);"&gt;
+&lt;/div&gt;
+
+&lt;div style="overflow:hidden; height:0;"&gt;
+  &lt;button  type="button"&gt;Evil button!&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img alt="example2.png"  src="/@api/deki/files/4625/=example2.png"></p>
+
+<h3>Specifications</h3>
+
+<table >
+ <thead>
+  <tr>
+   <th>Specification</th>
+   <th>Status</th>
+   <th>Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Image Values and Replaced Content Module Level 4<br><small lang="en-US">The definition of 'Using Elements as Images: the element() notation' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Actually now deferred to CSS4.</td>
+  </tr>
+ </tbody>
+</table>
+
+<h3>Browser compatibility</h3>
+
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Firefox (Gecko)</th>
+   <th>Chrome</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>4.0 (2.0) [*] <span  title="prefix"><a   title="The name of this feature is prefixed with '-moz' as this browser considers it experimental">-moz</a></span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div >
+<table >
+ <tbody>
+  <tr>
+   <th>Feature</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>Android</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Basic support</td>
+   <td>4.0 (2.0) [*] <span  title="prefix"><a   title="The name of this feature is prefixed with '-moz' as this browser considers it experimental">-moz</a></span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">Not supported</span></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<p>[*] Usage limited to the <a  title="The background CSS property is a shorthand for setting the individual background values in a single place in the style sheet. background can be used to set the values for one or more of: background-clip, background-color, background-image, background-origin, background-position, background-repeat, background-size, and background-attachment."><code class="language-markup">background</code></a> and <a  title="The CSS background-image property sets one or several background images for an element. The images are drawn on stacking context layers on top of each other. The first layer specified is drawn as if it is closest to the user. The borders of the element are then drawn on top of them, and the background-color is drawn beneath them."><code class="language-markup">background-image</code></a> CSS properties.</p>
+
+<h3>See also</h3>
+
+<ul>
+ <li><a  title="Changes the element being used as the CSS background for a background with a given background element ID."><code class="language-markup">document.mozSetImageElement()</code></a></li>
+</ul>
+                                                

@@ -1,0 +1,274 @@
+<h2>width</h2>
+
+                                                      <div>
+ <section  ><!-- --></section></div>
+<h3>Summary</h3>
+<p>The <code class="language-markup">width</code> CSS property specifies the width of the content area of an element. The <a  title="CSS/box_model#content">content area</a> is <em>inside</em> the padding, border, and margin of the element.</p>
+<p>The <a ><code class="language-markup">min-width</code></a> and <a ><code class="language-markup">max-width</code></a> properties override <a ><code class="language-markup">width</code></a>.</p>
+<p></p><ul > 
+  <li><dfn><a >Initial value</a></dfn> <code class="language-markup">auto</code></li>  <li><dfn>Applies to</dfn> all elements but non-replaced inline elements, table rows, and row groups</li>  <li><dfn><a >Inherited</a></dfn> no</li>  <li><dfn>Percentages</dfn> refer to the width of the containing block<span></span></li>  <li><dfn>Media</dfn> <a ><code class="language-markup">visual</code></a></li>  <li><dfn><a >Computed value</a></dfn> the percentage or <code class="language-markup">auto</code> as specified or the absolute length</li>  <li><dfn>Animatable</dfn> yes, as a <a  title="Values of the &lt;length> CSS data type are interpolated as real, floating-point numbers.">length</a>, <a  title="Values of the &lt;percentage> CSS data type are interpolated as real, floating-point numbers.">percentage</a> or calc(); when both values are lengths, they are interpolated as lengths; when both values are percentages, they are interpolated as percentages; otherwise, both values are converted into a calc() function that is the sum of a length and a percentage (each possibly zero), and these calc() functions have each half interpolated as real numbers. </li>  <li><dfn>Canonical order</dfn> the length or percentage before the keyword, if both are present<span></span></li> 
+</ul><p></p>
+<h3>Syntax</h3>
+<pre ><a  title="CSS/Value_definition_syntax">Formal syntax</a>: <code class="language-markup">[<a  title="Possible value: a number followed by 'em', 'ex', 'ch', 'rem', 'px', 'cm', 'mm', 'in', 'vh', 'vw', 'vmin', 'vmax', 'pt', 'pc', 'px', like 3px, 1.5cm, -0.5em, 0.">&lt;length&gt;</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> <a  title="">&lt;percentage&gt;</a>] <a  title="Double ampersand: the two entities are mandatory, but may appear in any order.">&amp;&amp;</a> [border-box <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> content-box]<a  title="Question mark multiplier: the previous entity is optional (it may be used once, or not at all).">?</a> <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> available <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> min-content <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> max-content <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> fit-content <a  title="Single bar: the two entities are optional, but exactly one must be present.">|</a> auto</code></code></pre>
+<pre>width: 300px        /* &lt;length&gt; values */
+width: 25em
+
+width: 75%          /* &lt;percentage&gt; values */
+
+width: border-box   /* Keyword values */
+width: content-box
+width: max-content
+width: min-content
+width: available
+width: fit-content
+width: auto
+
+width: inherit
+</code></pre>
+<h3  name="Values">Values</h3>
+<dl>
+ <dt>
+  <code class="language-markup">&lt;length&gt;</code></dt>
+ <dd>
+  See <a ><code class="language-markup">&lt;length&gt;</code></a> for possible units.</dd>
+ <dt>
+  <code class="language-markup">&lt;percentage&gt;</code></dt>
+ <dd>
+  Specified as a <a ><code class="language-markup">&lt;percentage&gt;</code></a> of containing block's width.</dd>
+ <dt>
+  <code class="language-markup">border-box </code><span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  If present, the preceding <a ><code class="language-markup">&lt;length&gt;</code></a> or <a ><code class="language-markup">&lt;percentage&gt;</code></a> is applied to the element's border box.</dd>
+ <dt>
+  <code class="language-markup">content-box</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  If present, the preceding <a ><code class="language-markup">&lt;length&gt;</code></a> or <a ><code class="language-markup">&lt;percentage&gt;</code></a> is applied to the element's content box.</dd>
+ <dt>
+  <code class="language-markup">auto</code></dt>
+ <dd>
+  The browser will calculate and select a width for the specified element.</dd>
+ <dt>
+  <code class="language-markup">max-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The intrinsic preferred width.</dd>
+ <dt>
+  <code class="language-markup">min-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The intrinsic minimum width.</dd>
+ <dt>
+  <code class="language-markup">available</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The containing block width minus horizontal margin, border and padding.
+  <div >
+   <strong>Note:</strong> WebKit implements a variation of this value, under the name <code class="language-markup">fill-available</code> as of December 2013.</div>
+ </dd>
+ <dt>
+  <code class="language-markup">fit-content</code> <span title="This is an experimental API that should not be used in production code."><i > </i></span></dt>
+ <dd>
+  The larger of:
+  <ul>
+   <li>the intrinsic minimum width</li>
+   <li>the smaller of the intrinsic preferred width and the available width</li>
+  </ul>
+  <div >
+   <strong>Note:</strong> WebKit implements an earlier version of this value, under the name <code class="language-markup">intrinsic</code>, but as of June 2012, implements <code class="language-markup">fit-content</code> as well.</div>
+ </dd>
+</dl>
+<h3>Examples</h3>
+<h3 >Default width</h3>
+<pre >p.goldie { background: gold }</code></pre>
+<pre >&lt;p &gt;The Mozilla community produces a lot of great software.&lt;/p&gt;</code></pre>
+<hr>
+<p><iframe  frameborder="0" height="64px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/width$samples/Default_width?revision=646389" width="500px"></iframe></p>
+<h3 >Pixels and ems</h3>
+<pre >.px_length {
+  width: 200px;
+  background-color: red;
+  color: white;
+  border: 1px solid black;
+}
+.em_length {
+  width: 20em;
+  background-color: white;
+  color: red;
+  border: 1px solid black;
+}
+</code></pre>
+<pre >&lt;div &gt;Width measured in px&lt;/div&gt;
+&lt;div &gt;Width measured in em&lt;/div&gt;</code></pre>
+<p><iframe  frameborder="0" height="64px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/width$samples/Pixels_and_ems?revision=646389" width="500px"></iframe></p>
+<h3 >Percentage</h3>
+<pre >.percent {
+	width: 20%;
+	background-color: silver;
+	border: 1px solid red;
+}</code></pre>
+<pre >&lt;div &gt;Width in percentage&lt;/div&gt;</code></pre>
+<p><iframe  frameborder="0" height="64px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/width$samples/Percentage?revision=646389" width="500px"></iframe></p>
+<h3 >max-content</h3>
+<hr>
+<pre >p.maxgreen {
+  background: lightgreen;
+  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
+}</code></pre>
+<pre >&lt;p &gt;The Mozilla community produces a lot of great software.&lt;/p&gt;</code></pre>
+<hr>
+<p><iframe  frameborder="0" height="64px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/width$samples/max-content?revision=646389" width="500px"></iframe></p>
+<h3 >min-content</h3>
+<pre >p.minblue {
+  background: lightblue;
+  width: -moz-min-content;    /* Firefox */
+  width: -webkit-min-content; /* Chrome */
+}</code></pre>
+<pre >&lt;p &gt;The Mozilla community produces a lot of great software.&lt;/p&gt;</code></pre>
+<p><iframe  frameborder="0" height="150px" src="https://mdn.mozillademos.org/en-US/docs/Web/CSS/width$samples/min-content?revision=646389" width="500px"></iframe></p>
+<h3>Specifications</h3>
+<table >
+ <thead>
+  <tr>
+   <th scope="col">Specification</th>
+   <th scope="col">Status</th>
+   <th scope="col">Comment</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Basic Box Model<br><small>The definition of 'width' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Added the <code class="language-markup">max-content</code>, <code class="language-markup">min-content</code>, <code class="language-markup">available</code>, <code class="language-markup">fit-content</code>, <code class="language-markup">border-box</code>, <code class="language-markup">content-box</code> keywords.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Transitions<br><small>The definition of 'width' in that specification.</small></a></td>
+   <td><span >Working Draft</span></td>
+   <td>Lists <code class="language-markup">width</code> as animatable.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 2 (Revision 1)<br><small>The definition of 'width' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Precises on which element it applies to.</td>
+  </tr>
+  <tr>
+   <td><a   hreflang="en" lang="en">CSS Level 1<br><small>The definition of 'width' in that specification.</small></a></td>
+   <td><span >Recommendation</span></td>
+   <td>Initial specification.</td>
+  </tr>
+ </tbody>
+</table>
+<h3>Browser compatibility</h3>
+<p></p><div > 
+    <a  name="AutoCompatibilityTable"></a> 
+    <ul> 
+        <li ><a>Desktop</a></li> 
+        <li><a>Mobile</a></li> 
+    </ul> 
+</div><p></p>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Chrome</th>
+    <th>Firefox (Gecko)</th>
+    <th>Internet Explorer</th>
+    <th>Opera</th>
+    <th>Safari (WebKit)</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td>1.0 (1.7 or earlier)</td>
+    <td>4</td>
+    <td>3.5</td>
+    <td>1.0 (85)</td>
+   </tr>
+   <tr>
+    <td>Animatability<span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><a  title="Released on 2012-10-09.">16.0</a> (16.0)</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">max-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td>22 <span  title="prefix">-webkit</span></td>
+    <td><a  title="Released on 2008-06-17.">3.0</a> (1.9)<span  title="prefix">-moz</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td>15 <span  title="prefix">-webkit</span></td>
+    <td>
+     <p>2.0 (421) (<code class="language-markup">intrinsic</code> value)</p>
+     <p>6.1 <span  title="prefix">-webkit</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">min-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td>22 <span  title="prefix">-webkit</span></td>
+    <td><a  title="Released on 2008-06-17.">3.0</a> (1.9) <span  title="prefix">-moz</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td>15 <span  title="prefix">-webkit</span></td>
+    <td>6.1 <span  title="prefix">-webkit</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">available</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><a  title="Released on 2008-06-17.">3.0</a> (1.9) <span  title="prefix">-moz</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">fill-available</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><span style="color: #888;" title="Please update this with the earliest version of support.">(Yes)</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">fit-content</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td>22 <span  title="prefix">-webkit</span></td>
+    <td><a  title="Released on 2008-06-17.">3.0</a> (1.9) <span  title="prefix">-moz</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td>15 <span  title="prefix">-webkit</span></td>
+    <td>6.1 <span  title="prefix">-webkit</span></td>
+   </tr>
+   <tr>
+    <td><code class="language-markup">border-box</code> and <code class="language-markup">content-box</code><span title="This is an experimental API that should not be used in production code."><i > </i></span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+    <td><span style="color: #f00;">Not supported</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<div >
+ <table >
+  <tbody>
+   <tr>
+    <th>Feature</th>
+    <th>Android</th>
+    <th>Firefox Mobile (Gecko)</th>
+    <th>IE Phone</th>
+    <th>Opera Mobile</th>
+    <th>Safari Mobile</th>
+   </tr>
+   <tr>
+    <td>Basic support</td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+    <td><span style="color: rgb(255, 153, 0);" title="Compatibility unknown; please update this.">?</span></td>
+   </tr>
+  </tbody>
+ </table>
+</div>
+<h3>See also</h3>
+<ul>
+ <li><a  title="CSS/box_model">box model</a>, <a ><code class="language-markup">height</code></a>, <a ><code class="language-markup">box-sizing</code></a>, <a ><code class="language-markup">min-width</code></a>, <a ><code class="language-markup">max-width</code></a></li>
+</ul>
+                                                

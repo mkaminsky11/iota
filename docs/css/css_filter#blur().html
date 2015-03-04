@@ -1,0 +1,37 @@
+<h2>filter#blur()</h2>
+
+                                                      <p></p><section  ><!-- --></section><p></p>
+
+<p></p><div > 
+    <p><strong>This is an experimental technology</strong><br>Because this technology's specification has not stabilized, check the <a >compatibility table</a> for the proper prefixes to use in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the spec changes.</p> 
+</div><p></p>
+
+<h3>Summary</h3>
+
+<p>The CSS <code class="language-markup">filter</code> property provides for effects like blurring or color shifting on an element’s rendering before the element is displayed. Filters are commonly used to adjust the rendering of an image, a background, or a border.</p>
+
+<p>Included in the CSS standard are several functions that achieve predefined effects. You can also reference a filter specified in SVG with a URL to an <a  title="/en/SVG/Element/filter">SVG filter element</a>.</p>
+
+<div ><strong>Note:</strong> Older versions (4.0 through 9.0) of the Windows Internet Explorer browser supported a non-standard <a   title="http://msdn.microsoft.com/en-us/library/ms532853(v=vs.85).aspx">"filter"</a> that has since been deprecated.</div>
+
+<ul >
+ <li><dfn><a >Initial value</a></dfn> <code class="language-markup">none</code></li>
+ <li><dfn>Applies to</dfn> graphics and container elements</li>
+ <li><dfn><a >Inherited</a></dfn> no</li>
+ <li><dfn>Media</dfn> <a  title="The documentation about this has not yet been written; please consider contributing!"><code class="language-markup">visual</code></a></li>
+ <li><dfn><a >Computed value</a></dfn> as specified</li>
+ <li><dfn>Animatable</dfn> yes</li>
+</ul>
+
+<h3>Syntax</h3>
+
+<p>With a function, use the following:</p>
+
+<pre>filter: &lt;filter-function&gt; [&lt;filter-function&gt;]* | none
+</code></pre>
+
+<p>For a reference to an SVG <a  title="The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element."><code class="language-markup">&lt;filter&gt;</code></a> element, use the following:</p>
+
+<pre >filter: url(svg-url#element-id) 
+</code></pre>
+
