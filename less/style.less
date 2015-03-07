@@ -10,12 +10,11 @@
 #input{
   background: rgba(255,255,255,0.7);
   padding: 20px;
-  width: ~"calc(100% - 44px)";
+  width: ~"calc(100% - 40px)";
   height: 40px;
   position: relative;
   background: inherit;
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 6px;
+  border: none;
   overflow: hidden;
   background: rgba(225,225,225,0.8);
 
@@ -56,6 +55,7 @@
 body, html{
   background-color: transparent;
   overflow: hidden;
+  margin: 0;
 }
 
 #sep{
@@ -69,7 +69,7 @@ body, html{
   z-index: 1;
   background: rgba(235,235,235,0.85);
   max-height: ~"calc(100% - 80px)";
-  width: ~"calc(100% - 4px)";
+  width: ~"calc(100%)";
   overflow-y: auto;
   overflow-x: hidden;
   border-bottom-right-radius: 6px;
@@ -113,37 +113,32 @@ body, html{
   display: none;
   background: rgba(235,235,235,0.9);
   z-index: 2;
-  height: ~"calc(100% - 130px)";
+  height: ~"calc(100% - 120px)";
   padding: 20px;
-  width: ~"calc(100% - 60px)";
+  width: ~"calc(100% - 40px)";
   position: absolute;
-  top: 88px;
-  left: 8px;
+  top: 80px;
+  left: 0px;
   color: rgb(47, 45, 45);
   font-family: "Lato";
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid rgba(0,0,0,0.2);
+
+  a{
+    color: #3498DB;
+    font-weight: bold;
+    text-decoration: underline;
+  }
 }
 
 pre, code{
     margin: 0;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
-    background-color: transparent !important;
     overflow: auto !important;
-
-    background-color: transparent !important;
 }
 
 pre > code{
   overflow: auto !important;
-
-  * {
-    background-color: transparent !important;
-  }
-}
-
-code[class*="language-"], pre[class*="language-"] {
-  font-size: 13px !important;
 }

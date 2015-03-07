@@ -12,6 +12,15 @@ if (typeof nativeMenuBar.createMacBuiltin === "function"){
 }
 //win.showDevTools();
 
+var dims = {w:win.width, h:win.height};
+
+$(document).ready(function(){
+  $(window).resize(function(){
+    //dims = {w:win.width, h:win.height};
+
+  });
+});
+
 /**
 * GET DOCS
 **/
@@ -21,17 +30,19 @@ var fuzzy = [];
 function init(){
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
-    if(folders[i] !== "script.js" && folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
+    if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
       var doc = fs.readdirSync("docs/" + folders[i]);
       for(var j = 0; j < doc.length; j++){
-        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1){
+        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js"){
           var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("<!--next-->");
           for(var k = 0; k < text.length; k++){
-            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","");
+            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
+            name = name.replace(/\\/g, "");
+
             var section = {
               name: name,
               html: text[k].trim(),
-              path: "docs/" + folders[i] + "/" + name,
+              path: "docs/" + folders[i] + "/" + doc[j],
               icon: "docs/" + folders[i] + "/icon.png"
             };
 
@@ -81,11 +92,15 @@ $("#type").keyup(function(e){
     }
     for(var c = 0; c < length; c++){
       if(fin[c] !== null){
-        var img_path_arr = fin[c].path.split("/");
-        var img_path = "docs/" + img_path_arr[1] + "/icon.png";
+        try{
+          var img_path_arr = fin[c].path.split("/");
+          var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
-        var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><img src=\""+img_path+"\"><h6>" + fin[c].name + "</h6></div>";
-        $("#results").append(base);
+          var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><img src=\""+img_path+"\"><h6>" + fin[c].name + "</h6></div>";
+          $("#results").append(base);
+        } catch(e){
+          console.log(fin[c]);
+        }
       }
     }
 
@@ -103,37 +118,57 @@ $(document).keyup(function(e) {
 });
 
 function openResults(){
-  win.resizeTo(win.width, 500);
-
-  $("#input").velocity({
-    borderBottomLeftRadius: "0px",
-    borderBottomRightRadius: "0px"
-  },{
-    duration: 500
-  });
+  win.resizeTo(win.width, dims.h + 400);
 
   $("#results").slideDown();
 }
 
 function closeResults(){
-  win.resizeTo(win.width, 120);
-
-  $("#input").velocity({
-    borderBottomLeftRadius: "6px",
-    borderBottomRightRadius: "6px"
-  },{
-    duration: 500
-  });
+  win.resizeTo(win.width, dims.h);
 
   $("#results").slideUp();
 }
 
 function openPath(path){
+
   for(var i = 0; i < docs.length; i++){
     if(docs[i].path === path){
-      $("#display").html(docs[i].html);
 
-      Prism.highlightAll();
+      var lang = path.split("/")[1];
+
+      var my_html = docs[i].html;
+      if(path.indexOf(".md") !== -1){
+        my_html = markdown.toHTML(my_html)
+      }
+
+      my_html.replace(/<pre>/g, "<pre><code>");
+      my_html.replace(/<\/pre>/g, "</pre></code>");
+
+      $("#display").html(my_html);
+      $("#display img").remove();
+      $("#display a").each(function(index){
+          var href = $(this).attr("href");
+          if(typeof href !== typeof undefined && href !== false){
+
+            if(lang === "nodejs"){
+
+            } else if(lang === "css"){
+
+            } else if(lang === "javascript"){
+
+            } else if(lang === "nw"){
+
+            }
+
+            $(this).removeAttr("href");
+            $(this).attr("onclick","openThis('"+href+"')");
+          }
+      });
+
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+
     }
   }
   $(".result").velocity({
@@ -153,6 +188,10 @@ function closePath(){
     queue: false
   });
   $("#display").slideUp();
+}
+
+function openThis(path){
+  gui.Shell.openExternal(path);
 }
 
 function compare(a,b) {

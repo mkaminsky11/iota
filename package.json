@@ -6,13 +6,14 @@
     "title": "iota",
     "icon": "icon.png",
     "width": 800,
-    "height": 120,
+    "height": 80,
     "position": "center",
     "min_width": 400,
-    "min_height": 120,
-    "transparent": true,
-    "frame": false,
-    "toolbar": false
+    "min_height": 80,
+    "transparent": false,
+    "frame": true,
+    "toolbar": false,
+    "resizable": false
   },
   "webkit": {
     "plugin": true
