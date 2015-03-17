@@ -5,8 +5,8 @@
   "window": {
     "title": "iota",
     "icon": "icon.png",
-    "width": 800,
-    "height": 80,
+    "width": 1000,
+    "height": 600,
     "position": "center",
     "min_width": 400,
     "min_height": 80,
