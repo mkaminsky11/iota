@@ -10,10 +10,9 @@
     "position": "center",
     "min_width": 400,
     "min_height": 80,
-    "transparent": false,
-    "frame": true,
-    "toolbar": false,
-    "resizable": false
+    "transparent": true,
+    "frame": false,
+    "toolbar": false
   },
   "webkit": {
     "plugin": true

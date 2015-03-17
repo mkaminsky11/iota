@@ -10,16 +10,18 @@ if (typeof nativeMenuBar.createMacBuiltin === "function"){
   nativeMenuBar.createMacBuiltin("iota");
   win.menu = nativeMenuBar;
 }
-//win.showDevTools();
-
-var dims = {w:win.width, h:win.height};
-
 $(document).ready(function(){
   $(window).resize(function(){
-    //dims = {w:win.width, h:win.height};
 
   });
 });
+
+//TODO: look into these
+//win.minimize();
+//win.close();
+//win.maximize();
+//http://codepen.io/ozer/pen/ckwyd
+//https://css-tricks.com/frosting-glass-css-filters/
 
 /**
 * GET DOCS
@@ -118,14 +120,10 @@ $(document).keyup(function(e) {
 });
 
 function openResults(){
-  win.resizeTo(win.width, dims.h + 400);
-
   $("#results").slideDown();
 }
 
 function closeResults(){
-  win.resizeTo(win.width, dims.h);
-
   $("#results").slideUp();
 }
 
