@@ -32,13 +32,18 @@ $(document).ready(function(){
     }
     configHistory();
   });
+  $(".edit").click(function(){
+    if(current_open !== null){
+      editors.open(current_open);
+    }
+  });
 
   $(window).resize(function(){
 
   });
 });
 
-//win.showDevTools();
+win.showDevTools();
 
 /**
 * SETUP
@@ -175,7 +180,6 @@ function search(term){
 }
 
 function searchDefault(){
-  current_open = null;
 	$("#results").html("");
 	var _html = "";
 	for(var i = 0; i < defaults.length; i++){

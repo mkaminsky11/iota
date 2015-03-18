@@ -300,7 +300,7 @@ span, input, i{
 
 #window{
     position: absolute;
-    width: 100%;
+    width: calc(100% - 2px);
     height: calc(100% - 3px);
     top: 0%;
     left: 0%;

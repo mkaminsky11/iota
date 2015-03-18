@@ -4,6 +4,7 @@
   "node-main": "js/main.js",
   "window": {
     "title": "iota",
+    "position": "center",
     "icon": "icon.png",
     "width": 1000,
     "height": 600,
