@@ -4,26 +4,76 @@
   <script src="js/velocity.js"></script>
   <script src="js/fuzzy.js"></script>
 
-  <link rel="stylesheet" href="font/font.css">
   <link rel="stylesheet" href="css/hybrid.css">
   <script src="js/highlight.pack.js"></script>
 
   <script src="md/markdown.min.js"></script>
+
+  <link rel="stylesheet" href="fa/css/font-awesome.min.css">
 </head>
 <body style="background-color: transparent">
 
-  <div id="input">
-    <div class="blur"></div>
-    <input type="text" id="type" placeholder="Search documentation...">
+  <div class="window" id="window">
+    <div class="topbar" style="-webkit-app-region: drag">
+      <div class="stoplight">
+        <span class="close"></span>
+        <span class="min"></span>
+        <span class="max"></span>
+      </div>
+
+      <div class="nav">
+        <span class="prev active"><i class="fa fa-angle-left"></i></span>
+        <span class="next"><i class="fa fa-angle-right"></i></span>
+        <span class="alt"><i class="fa fa-question"></i></span>
+
+        <span class="search">
+		        <i class="fa fa-search"></i>
+            <input type="text" id="type" value="mkaminsky11.github.io" class="search"/>
+            <i class="fa fa-times-circle"></i>
+        </span>
+    </div>
+
+		<div class="nav-right nav">
+			<span class="new"><i class="fa fa-plus"></i></span>
+			<span class="edit"><i class="fa fa-edit"></i></span>
+		</div>
+
+        </div>
+
+        <div class="content">
+            <div class="body" id="display">
+
+            </div>
+            <div class="sidebar">
+                <div class="blur">
+
+                </div>
+		<div class="sidebar-container">
+      <div class="sidebar-content" id="results">
+
+
+        <div class="sidebar-header">
+          <span>javascript</span>
+        </div>
+
+        <div class="sidebar-item">
+				      <img src="http://nodejs-cloud.com/img/128px/nodejs.png"><p>node.js</p>
+			   </div>
+
+			   <div class="sidebar-item">
+				       <img src="https://iojs.org/images/1.0.0.png"><p>io.js</p>
+			   </div>
+
+			<div class="sidebar-header">
+				<span>CSS</span>
+			</div>
+
+
+		  </div>
+    </div>
   </div>
-
-  <div id="results" style="display:none">
-
-  </div>
-
-  <div id="display" style="display:none">
-
-  </div>
+</div>
+</div>
 
   <script src="js/app.js"></script>
 </body>

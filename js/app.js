@@ -11,31 +11,38 @@ if (typeof nativeMenuBar.createMacBuiltin === "function"){
   win.menu = nativeMenuBar;
 }
 $(document).ready(function(){
+  $(".close").click(function(){
+    win.close();
+  });
+  $(".min").click(function(){
+    win.minimize();
+  });
+  $(".max").click(function(){
+    win.maximize();
+  });
+
   $(window).resize(function(){
 
   });
 });
 
-//TODO: look into these
-//win.minimize();
-//win.close();
-//win.maximize();
-//http://codepen.io/ozer/pen/ckwyd
-//https://css-tricks.com/frosting-glass-css-filters/
+win.showDevTools();
 
 /**
 * GET DOCS
 **/
 var docs = [];
 var fuzzy = [];
+var defaults = [];
 
 function init(){
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
-    if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1){
+    if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1 && folders[i] !== "docs.json"){
+
       var doc = fs.readdirSync("docs/" + folders[i]);
       for(var j = 0; j < doc.length; j++){
-        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js"){
+        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js" && doc[j] !== "doc.json"){
           var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("<!--next-->");
           for(var k = 0; k < text.length; k++){
             var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
@@ -45,13 +52,15 @@ function init(){
               name: name,
               html: text[k].trim(),
               path: "docs/" + folders[i] + "/" + doc[j],
-              icon: "docs/" + folders[i] + "/icon.png"
+              icon: "docs/" + folders[i] + "/icon.png",
+              folder: folders[i]
             };
 
             docs.push(section);
           }
         }
       }
+
     }
   }
 
@@ -61,18 +70,45 @@ function init(){
     fuzz.path = docs[a].path;
     fuzzy.push(fuzz);
   }
+
+  var json = JSON.parse(fs.readFileSync("docs/docs.json", "utf8")).data;
+  for(var x = 0; x < json.length; x++){
+    var name = json[x].name;
+    var path = json[x].path;
+
+    var to_push = {
+      name: name,
+			path: path
+    };
+
+    to_push.data = [];
+
+    for(var y = 0; y < docs.length; y++){
+      if(docs[y].folder === path){
+        to_push.data.push(docs[y]);
+      }
+    }
+
+    defaults.push(to_push);
+  }
+
 }
 
 init();
+searchDefault();
 
 /**
 * DETECT INPUT
 **/
-$("#type").keyup(function(e){
-  closePath();
-  //
-  var val = $("#type").val();
-  if(val !== ""){
+
+function search(term){
+  var val = term;
+  if(val === ""){
+		searchDefault();
+	}
+	else{
+	}
+	/*if(val !== ""){
     var res = [];
 
     for(var i = 0; i < fuzzy.length; i++){
@@ -88,10 +124,7 @@ $("#type").keyup(function(e){
     var fin = res.sort(compare);
 
     $("#results").html("");
-    var length = 21;
-    if(fin.length < 20){
-      length = fin.length;
-    }
+    length = fin.length;
     for(var c = 0; c < length; c++){
       if(fin[c] !== null){
         try{
@@ -110,7 +143,29 @@ $("#type").keyup(function(e){
   }
   else{
     closeResults();
-  }
+  }*/
+}
+
+function searchDefault(){
+	$("#results").html("");
+	var _html = "";
+	for(var i = 0; i < defaults.length; i++){
+		var name = defaults[i].name;
+		var data = defaults[i].data;
+		var icon = "docs/" + defaults[i].path + "/icon.png";
+		_html = _html + "<div class=\"sidebar-header\"><span>" + name + "</span></div>";
+		for(var j = 0; j < data.length; j++){
+			_html = _html + "<div class=\"sidebar-item\" data-path=\""+data[j].path+"\" onclick=\"openPath('"+data[j].path+"')\"><img src=\""+icon+"\"><p>" + data[j].name + "</p></div>";
+		}
+	}	
+	$("#results").html(_html);
+}
+
+$("#type").keyup(function(e){
+  closePath();
+  //
+  var val = $("#type").val();
+  search(val);
 });
 
 $(document).keyup(function(e) {
@@ -169,23 +224,9 @@ function openPath(path){
 
     }
   }
-  $(".result").velocity({
-    opacity: 0
-  },{
-    duration: 500,
-    queue: false
-  });
-  $("#display").slideDown();
 }
 
 function closePath(){
-  $(".result").velocity({
-    opacity: 1
-  },{
-    duration: 500,
-    queue: false
-  });
-  $("#display").slideUp();
 }
 
 function openThis(path){
