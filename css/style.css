@@ -218,11 +218,12 @@
     background-color: white;
     position: relative;
 	overflow: auto;
+  padding-bottom: 10px;
 }
 
 .blur{
-    filter: blur(10px) saturate(3);
-    -webkit-filter: blur(10px) saturate(3);
+    /*filter: blur(10px) saturate(3);
+    -webkit-filter: blur(10px) saturate(3);*/
     background: rgba(235,235,235,0.95);
 
     position: absolute;
@@ -300,7 +301,7 @@ span, input, i{
 #window{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 3px);
     top: 0%;
     left: 0%;
 }
@@ -314,6 +315,29 @@ html, body{
     overflow: hidden;
 }
 
+.body{
+  font-size: 14px;
+}
+
+.body h2{
+  font-size: 19px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  color: rgb(77, 77, 77);
+}
+
+.body h3{
+  color: rgb(40, 38, 38);
+  font-size: 15px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.body a{
+  text-decoration: underline;
+  color: #3498DB;
+}
+
 pre, code{
     margin: 0;
     margin-top: 0 !important;
@@ -323,8 +347,5 @@ pre, code{
 
 pre > code{
   overflow: auto !important;
-}
-
-code[class*="language-"], pre[class*="language-"] {
-  font-size: 13px !important;
+  font-size: 12px;
 }

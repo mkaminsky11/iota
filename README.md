@@ -1,9 +1,10 @@
 #IOTA
 
-A documentation viewer built with [nw.js](http://nwjs.io/).
+##A documentation viewer built with [nw.js](http://nwjs.io/).
 ![demo](demo.gif)
 
 To build:
+
 ```shell
 git clone https://github.com/mkaminsky11/iota.git
 nw iota #that's it! It should run!
@@ -44,12 +45,3 @@ Go into `docs`, and you'll find a bunch of folders for each language (when this 
 Inside the language folders, there are bunch of folders. Again, their names don't matter, but they should be logically organized.
 
 Documentation is in markdown. The name of the documented item is an `<h2>`(`##` in markdown). **There should be NO OTHER ##'s**.
-```markdown
-##Documenting This
-
-This is some documentation
-'''javascript
-//hello
-'''
-```
-If you want, you can also create a `script.js` file in the language directories, which pull data from online sources. They sould work with Node.js/IO.js .

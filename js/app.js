@@ -20,13 +20,46 @@ $(document).ready(function(){
   $(".max").click(function(){
     win.maximize();
   });
+  $(".prev").click(function(){
+    if(stack.canGoBack() === true){
+      openPath(stack.goBack());
+    }
+    configHistory();
+  });
+  $(".next").click(function(){
+    if(stack.canGoForwards() === true){
+      openPath(stack.goForwards());
+    }
+    configHistory();
+  });
 
   $(window).resize(function(){
 
   });
 });
 
-win.showDevTools();
+//win.showDevTools();
+
+/**
+* SETUP
+**/
+var store = markdown.toHTML(fs.readFileSync("README.md", "utf8"));
+
+$("#store").html(store);
+$("#store img").attr("style", "width: 50%;display:block;margin-bottom:20px;margin-left:auto;margin-right:auto;margin-top:20px;");
+$("#store h1, #store h2").attr("style","text-align:center");
+$("#store a").each(function(index){
+    var href = $(this).attr("href");
+    if(typeof href !== typeof undefined && href !== false){
+      $(this).removeAttr("href");
+      $(this).attr("onclick","openThis('"+href+"')");
+    }
+});
+
+$("#display").html($("#store").html());
+$('pre code').each(function(i, block) {
+  hljs.highlightBlock(block);
+});
 
 /**
 * GET DOCS
@@ -34,6 +67,8 @@ win.showDevTools();
 var docs = [];
 var fuzzy = [];
 var defaults = [];
+var current_open = null;
+
 
 function init(){
   var folders = fs.readdirSync("docs");
@@ -107,8 +142,6 @@ function search(term){
 		searchDefault();
 	}
 	else{
-	}
-	/*if(val !== ""){
     var res = [];
 
     for(var i = 0; i < fuzzy.length; i++){
@@ -131,22 +164,18 @@ function search(term){
           var img_path_arr = fin[c].path.split("/");
           var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
-          var base = "<div class='result' data-path='"+fin[c].path+"' onclick='openPath(\""+fin[c].path+"\")'><img src=\""+img_path+"\"><h6>" + fin[c].name + "</h6></div>";
+          var base = "<div class=\"sidebar-item\" data-path='"+fin[c].path+"' onclick=\"openPath('"+fin[c].path+"')\"><img src=\""+img_path+"\"><p>" + fin[c].name + "</p></div>";
           $("#results").append(base);
         } catch(e){
           console.log(fin[c]);
         }
       }
     }
-
-    openResults();
   }
-  else{
-    closeResults();
-  }*/
 }
 
 function searchDefault(){
+  current_open = null;
 	$("#results").html("");
 	var _html = "";
 	for(var i = 0; i < defaults.length; i++){
@@ -157,32 +186,25 @@ function searchDefault(){
 		for(var j = 0; j < data.length; j++){
 			_html = _html + "<div class=\"sidebar-item\" data-path=\""+data[j].path+"\" onclick=\"openPath('"+data[j].path+"')\"><img src=\""+icon+"\"><p>" + data[j].name + "</p></div>";
 		}
-	}	
+	}
 	$("#results").html(_html);
 }
 
 $("#type").keyup(function(e){
-  closePath();
-  //
   var val = $("#type").val();
   search(val);
 });
 
 $(document).keyup(function(e) {
   if (e.keyCode == 27) {
-    closePath();
+    //escape
   }
 });
 
-function openResults(){
-  $("#results").slideDown();
-}
-
-function closeResults(){
-  $("#results").slideUp();
-}
-
 function openPath(path){
+  current_open = path;
+  stack.goTo(path);
+  configHistory();
 
   for(var i = 0; i < docs.length; i++){
     if(docs[i].path === path){
@@ -202,17 +224,6 @@ function openPath(path){
       $("#display a").each(function(index){
           var href = $(this).attr("href");
           if(typeof href !== typeof undefined && href !== false){
-
-            if(lang === "nodejs"){
-
-            } else if(lang === "css"){
-
-            } else if(lang === "javascript"){
-
-            } else if(lang === "nw"){
-
-            }
-
             $(this).removeAttr("href");
             $(this).attr("onclick","openThis('"+href+"')");
           }
@@ -224,9 +235,6 @@ function openPath(path){
 
     }
   }
-}
-
-function closePath(){
 }
 
 function openThis(path){
@@ -243,4 +251,20 @@ function compare(a,b) {
   if (b.name > a.name)
     return -1;
   return 0;
+}
+
+function configHistory(){
+  if(stack.canGoBack() === true){
+    $(".prev").addClass("active");
+  }
+  else{
+    $(".prev").removeClass("active");
+  }
+
+  if(stack.canGoForwards() === true){
+    $(".next").addClass("active");
+  }
+  else{
+    $(".next").removeClass("active");
+  }
 }
