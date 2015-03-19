@@ -16,8 +16,11 @@ nw iota #that's it! It should run!
 + icons
 
 ###Todo
-+ themes
-+ keyboard shortcut (duh)
++ settings/themes
++ keyboard shortcut
++ editing
++ create new
++ delete
 
 ###Docsets Done
 + nw (node webkit)
