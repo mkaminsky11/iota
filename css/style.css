@@ -109,7 +109,7 @@
   margin-right:7px;
 }
 
-.nav span.alt i, .nav span.new i, .nav span.edit i {
+.nav span.trash i, .nav span.alt i, .nav span.new i, .nav span.edit i {
   font-size:14px;
   position:relative;
   top:3px;
@@ -121,6 +121,10 @@
 
 .nav span.new{
 	margin-right: 1px;
+}
+
+.nav span.trash{
+  margin-right: 7px;
 }
 
 .nav span.search {
@@ -191,7 +195,7 @@
   -ms-flex-direction: row;
   flex-direction: row;
 
-	height: calc(100% - 24px);
+	height: calc(100% - 38px);
 }
 
 .sidebar{

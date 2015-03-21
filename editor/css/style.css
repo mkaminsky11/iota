@@ -109,7 +109,7 @@
   margin-right:7px;
 }
 
-.nav span.alt i, .nav span.new i, .nav span.edit i {
+.nav span.trash i, .nav span.alt i, .nav span.new i, .nav span.edit i {
   font-size:14px;
   position:relative;
   top:3px;
@@ -121,6 +121,10 @@
 
 .nav span.new{
 	margin-right: 1px;
+}
+
+.nav span.trash{
+  margin-right: 7px;
 }
 
 .nav span.search {
@@ -192,6 +196,8 @@
   flex-direction: row;
 
 	height: calc(100% - 24px);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .sidebar{
@@ -240,4 +246,13 @@ html, body{
     height: 100%;
     font-family: arial;
     overflow: hidden;
+}
+
+#display{
+  width: 100%;
+  height: 100%;
+}
+
+.CodeMirror{
+  height: calc(100% - 10px) !important;
 }

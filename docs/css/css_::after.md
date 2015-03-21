@@ -7,7 +7,7 @@ The CSS `::after` [pseudo-element][0] matches a virtual last child of the select
 ### Syntax
 
     element:after  { _style properties_ }  /* CSS2 syntax */
-    
+
     element::after { _style properties_ }  /* CSS3 syntax */
 
 The` ::after `notation was introduced in CSS 3 in order to establish a discrimination between [pseudo-classes][2] and [pseudo-elements][0]. Browsers also accept the notation `:after `introduced in CSS 2\.
@@ -24,10 +24,10 @@ Let's create two classes: one for boring paragraphs and one for exciting ones. W
     Just hit the edit button to add new live samples, or improve existing samples.</p>
 
     .exciting-text::after {
-      content: "<- now this *is* exciting!"; 
+      content: "<- now this *is* exciting!";
       color: green;
     }
-    
+
     .boring-text::after {
        content:    "<- BORING!";
        color:      red;
@@ -44,7 +44,7 @@ We can style text or images in the [`content`][1] property almost any way we wan
     .ribbon {
       background-color: #5BC8F7;
     }
-    
+
     .ribbon::after {
       content: "Look at this orange box.";
       background-color: #FFBA10;
@@ -63,7 +63,7 @@ The following example shows the use of the `::after` [pseudo-element][0] in conj
       <span data-descr="small popups which also hide again">tooltips</span>.<br />
       Dont be shy, hover over to take a <span data-descr="not to be taken literally">look</span>.
     </p>
-    
+
 
     span[data-descr] {
       position: relative;
@@ -71,7 +71,7 @@ The following example shows the use of the `::after` [pseudo-element][0] in conj
       color: #00F;
       cursor: help;
     }
-    
+
     span[data-descr]:hover::after {
       content: attr(data-descr);
       position: absolute;

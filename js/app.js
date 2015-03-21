@@ -5,6 +5,7 @@ var fs = require('fs');
 * SET UP TOOLBAR
 **/
 var win = gui.Window.get();
+win.showDevTools();
 var nativeMenuBar = new gui.Menu({ type: "menubar" });
 if (typeof nativeMenuBar.createMacBuiltin === "function"){
   nativeMenuBar.createMacBuiltin("iota");
@@ -42,8 +43,6 @@ $(document).ready(function(){
 
   });
 });
-
-win.showDevTools();
 
 /**
 * SETUP
