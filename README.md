@@ -14,13 +14,16 @@ nw iota #that's it! It should run!
 + searching
 + viewing documentation
 + icons
++ editing
 
 ###Todo
 + settings/themes
 + keyboard shortcut
-+ editing
 + create new
 + delete
++ refresh on edit
++ make sure editing is valid (only one `##` before updating)
++ change fuzzy search to [Fuse.js](http://kiro.me/projects/fuse.html)
 
 ###Docsets Done
 + nw (node webkit)
@@ -47,4 +50,4 @@ Go into `docs`, and you'll find a bunch of folders for each language (when this 
 
 Inside the language folders, there are bunch of folders. Again, their names don't matter, but they should be logically organized.
 
-Documentation is in markdown. The name of the documented item is an `<h2>`(`##` in markdown). **There should be NO OTHER ##'s**.
+Documentation is in markdown. The name of the documented item is an `<h2>`(`##` in markdown). There should be NO OTHER `##`s besides the title.
