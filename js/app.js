@@ -69,10 +69,14 @@ $('pre code').each(function(i, block) {
 * GET DOCS
 **/
 var docs = [];
-var fuzzy = [];
 var defaults = [];
 var current_open = null;
-
+var id_counter = 1;
+var search_options = {
+  keys: ['name'],
+  id: 'id'
+}
+var fuse = null;
 
 function init(){
   var folders = fs.readdirSync("docs");
@@ -92,22 +96,17 @@ function init(){
               html: text[k].trim(),
               path: "docs/" + folders[i] + "/" + doc[j],
               icon: "docs/" + folders[i] + "/icon.png",
-              folder: folders[i]
+              folder: folders[i],
+              id: id_counter
             };
 
             docs.push(section);
+            id_counter++;
           }
         }
       }
 
     }
-  }
-
-  for(var a = 0; a < docs.length; a++){
-    var name = docs[a].name;
-    var fuzz = new FuzzySet([name]);
-    fuzz.path = docs[a].path;
-    fuzzy.push(fuzz);
   }
 
   var json = JSON.parse(fs.readFileSync("docs/docs.json", "utf8")).data;
@@ -131,6 +130,7 @@ function init(){
     defaults.push(to_push);
   }
 
+  fuse = new Fuse(docs, search_options);
 }
 
 init();
@@ -146,33 +146,25 @@ function search(term){
 		searchDefault();
 	}
 	else{
-    var res = [];
-
-    for(var i = 0; i < fuzzy.length; i++){
-      var fuzz = fuzzy[i].get(val);
-      try{
-        res.push({
-          name: fuzz[0][1],
-          value: fuzz[0][0],
-          path: fuzzy[i].path
-        });
-      }catch(e){}
-    }
-    var fin = res.sort(compare);
+    var res = fuse.search(val);
 
     $("#results").html("");
-    length = fin.length;
-    for(var c = 0; c < length; c++){
-      if(fin[c] !== null){
+
+    for(var c = 0; c < res.length; c++){
+      if(res[c] !== null){
+        var id_index = res[c] - 1;
+        var obj = docs[id_index];
+
         try{
-          var img_path_arr = fin[c].path.split("/");
+          var img_path_arr = obj.path.split("/");
           var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
-          var base = "<div class=\"sidebar-item\" data-path='"+fin[c].path+"' onclick=\"openPath('"+fin[c].path+"')\"><img src=\""+img_path+"\"><p>" + fin[c].name + "</p></div>";
+          var base = "<div class=\"sidebar-item\" data-path='"+obj.path+"' onclick=\"openPath('"+obj.path+"')\"><img src=\""+img_path+"\"><p>" + obj.name + "</p></div>";
           $("#results").append(base);
-        } catch(e){
-          console.log(fin[c]);
+        }catch(e){
+
         }
+
       }
     }
   }
