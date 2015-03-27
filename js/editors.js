@@ -1,11 +1,7 @@
 var gui = require('nw.gui');
 
 var editors = {
-  editors: [],
-  watch: function(curr, prev){
-    console.log(curr);
-    console.log(prev);
-  }
+  editors: []
 };
 
 editors.open = function(path){
@@ -57,5 +53,5 @@ editors.close = function(path){
 };
 
 editors.refresh = function(path){
-  
+  console.log(path); //check to make sure that this works first
 };
