@@ -23,7 +23,6 @@ nw iota #that's it! It should run!
 + delete
 + refresh on edit
 + make sure editing is valid (only one `##` before updating)
-+ change fuzzy search to [Fuse.js](http://kiro.me/projects/fuse.html)
 + error messages
 + create own docsets
 
