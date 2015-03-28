@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="css/hybrid.css">
   <script src="js/highlight.pack.js"></script>
 
-  <script src="md/markdown.min.js"></script>
-
   <link rel="stylesheet" href="fa/css/font-awesome.min.css">
 </head>
 <body style="background-color: transparent">
@@ -16,6 +14,14 @@
   <div class="window" id="window">
 
     <div id="store" style="display:none">
+    </div>
+
+    <div class="dropdown" id="choose-docset" style="display:none">
+      <select class="select-docset">
+
+      </select>
+      <button class="selected-button" onclick="$('#choose-docset').slideUp()">Cancel</button>
+      <button class="unselected-button" onclick="docsets.new($('#choose-docset .select-docset').val())">Select</button>
     </div>
 
     <div class="topbar" style="-webkit-app-region: drag">
@@ -39,7 +45,7 @@
 
 		<div class="nav-right nav">
       <span class="trash" onclick="trash()"><i class="fa fa-trash"></i></span>
-			<span class="new" onclick="alert('not done yet!')"><i class="fa fa-plus"></i></span>
+			<span class="new" onclick="$('#choose-docset').slideDown()"><i class="fa fa-plus"></i></span>
 			<span class="edit"><i class="fa fa-edit"></i></span>
 		</div>
 

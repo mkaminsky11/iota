@@ -42,6 +42,7 @@
     -webkit-flex: none;
     -ms-flex: none;
     flex: none;
+    z-index: 10;
 }
 
 .topbar > div {
@@ -196,6 +197,8 @@
   flex-direction: row;
 
 	height: calc(100% - 38px);
+
+  z-index: 7;
 }
 
 .sidebar{
@@ -355,4 +358,63 @@ pre, code{
 pre > code{
   overflow: auto !important;
   font-size: 12px;
+}
+
+.dropdown{
+  width: calc(40% - 40px);
+  position: absolute;
+  z-index: 8;
+  /* display: none; */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ECECEC;
+  top: 37px;
+  left: calc(30% + 20px);
+  -moz-box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 4px 12px rgba(0,0,0,.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+  overflow: auto;
+  border: 1px solid #C1C2C2;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.dropdown button{
+  border-radius: 4px;
+  padding-left: 24px;
+  padding-right: 24px;
+  float: right;
+  margin-left: 6px;
+}
+
+.dropdown .selected-button{
+  background: -moz-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -webkit-gradient(left top, left bottom,color-stop(3%, #E9E9E9), color-stop(100%, #1A82FB));
+  background: -webkit-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -o-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -ms-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: linear-gradient(to bottom, #6AB2F8 3%, #1A82FB 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6AB2F8', endColorstr='#1A82FB', GradientType=0 );
+  border: none;
+  color: white;
+  border: solid thin #368AF7;
+}
+
+.dropdown .unselected-button{
+  background: -moz-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
+  background: -webkit-gradient(left top, left bottom,color-stop(3%, #FFFFFF), color-stop(100%, #E1E6EC));
+  background: -webkit-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
+  background: -o-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
+  background: -ms-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
+  background: linear-gradient(to bottom, #FFFFFF 3%, #E1E6EC 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#E1E6EC', GradientType=0 );
+  border: none;
+  color: black;
+  border: solid thin #DADADA;
+}
+
+.dropdown select{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
 }

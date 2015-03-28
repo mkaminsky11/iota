@@ -1,5 +1,6 @@
 var gui = require('nw.gui');
 var fs = require('fs');
+var md = require('markdown-it')();
 
 /**
 * SET UP TOOLBAR
@@ -55,7 +56,7 @@ $(document).ready(function(){
 /**
 * SETUP
 **/
-var store = markdown.toHTML(fs.readFileSync("README.md", "utf8"));
+var store = md.render(fs.readFileSync("README.md", "utf8").replace(/(#)\1{0,}/g, "$& "));
 
 $("#store").html(store);
 $("#store img").attr("style", "width: 50%;display:block;margin-bottom:20px;margin-left:auto;margin-right:auto;margin-top:20px;");
@@ -84,14 +85,14 @@ var search_options = {
 var fuse = null;
 
 function displayDefault(){
+  current_open = null;
   $("#display").html($("#store").html());
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
+  highlight();
 }
 
 function init(){
   docs = [];
+  id_counter = 1;
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
     if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1 && folders[i] !== "docs.json"){
@@ -147,15 +148,11 @@ function search(term){
         var id_index = res[c] - 1;
         var obj = docs[id_index];
 
-        try{
           var img_path_arr = obj.path.split("/");
           var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
           var base = "<div class=\"sidebar-item\" data-path='"+obj.path+"' onclick=\"openPath('"+obj.path+"')\"><img src=\""+img_path+"\"><p>" + obj.name + "</p></div>";
           $("#results").append(base);
-        }catch(e){
-
-        }
 
       }
     }
@@ -207,13 +204,14 @@ function openPath(path){
 
       var my_html = docs[i].html;
       if(path.indexOf(".md") !== -1){
-        my_html = markdown.toHTML(my_html)
+        my_html = md.render(my_html.replace(/^(#)\1{0,}/g, "$& "))
       }
 
       my_html.replace(/<pre>/g, "<pre><code>");
       my_html.replace(/<\/pre>/g, "</pre></code>");
 
       $("#display").html(my_html);
+      highlight();
       $("#display img").remove();
       $("#display a").each(function(index){
           var href = $(this).attr("href");
@@ -221,10 +219,6 @@ function openPath(path){
             $(this).removeAttr("href");
             $(this).attr("onclick","openThis('"+href+"')");
           }
-      });
-
-      $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
       });
 
     }
@@ -268,14 +262,35 @@ function trash(){
     //path is current_open
     var r = confirm("are you sure you want to delete this file? It cannot be undone.");
     if (r == true) {
+      fs.unlinkSync(current_open);
       editors.reset();
       displayDefault();
       $("#type").val("");
       //1. remove the sidebar item
       $("[data-path='"+current_open+"']").remove();
+      //2. actually remove it...
+      current_open = null;
+      //3. reset the docs
+      init();
+      search($("#type").val());
     }
     else {
       //nothing
     }
   }
+}
+
+function highlight(){
+  /*
+  $("#display p").each(function(index){
+   if($(this).children().length === 1){
+     if($($(this).children()[0]).is("code")){
+       $(this).replaceWith("<pre>" + this.innerHTML + "</pre>");
+     }
+   }
+  });
+  */
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 }
