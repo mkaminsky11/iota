@@ -46,7 +46,7 @@ editors.open = function(path){
 
 editors.close = function(path){
   for(var i = 0; i < editors.editors.length; i++){
-    if(editors.editors.path === path){
+    if(editors.editors[i].path === path){
       editors.editors.splice(i, 1);
     }
   }
@@ -55,3 +55,10 @@ editors.close = function(path){
 editors.refresh = function(path){
   console.log(path); //check to make sure that this works first
 };
+
+editors.reset = function(){
+  for(var i = 0; i < editors.editors.length; i++){
+    editors.editors[i].gui.close(true); //close this
+    editors.close(editors.editors[i].path);
+  }
+}

@@ -36,6 +36,10 @@ $(document).ready(function(){
   $(window).resize(function(){
     editor.refresh(); //refreshes the codemirror when resized
   });
+
+  $("#save").click(function(){
+    save();
+  });
 });
 
 var editor = CodeMirror(document.getElementById("display"),{
@@ -51,6 +55,7 @@ var value = fs.readFileSync(path, "utf8");
 editor.setValue(value);
 
 function save(){
+    console.log(is_valid(editor.getValue()));
     if(is_valid(editor.getValue())){
       fs.writeFileSync(path, editor.getValue());
     }
@@ -70,4 +75,5 @@ function is_valid(value){
 
 function show_error(error){
     //TODO
+    alert(error);
 }

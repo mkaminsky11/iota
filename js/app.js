@@ -170,6 +170,12 @@ function search(term){
   }
 }
 
+function reset(){
+  searchDefault();
+  $(".trash .edit .next .prev").removeClass("active");
+  current_open = null;
+}
+
 function searchDefault(){
 	$("#results").html("");
 	var _html = "";
@@ -200,6 +206,7 @@ function openPath(path){
   current_open = path;
   stack.goTo(path);
   configHistory();
+  $(".trash").addClass("active");
 
   for(var i = 0; i < docs.length; i++){
     if(docs[i].path === path){
@@ -261,5 +268,18 @@ function configHistory(){
   }
   else{
     $(".next").removeClass("active");
+  }
+}
+
+function trash(){
+  if($(".trash").hasClass("active")){
+    //path is current_open
+    var r = confirm("are you sure you want to delete this file? It cannot be undone.");
+    if (r == true) {
+
+    }
+    else {
+      //nothing
+    }
   }
 }
