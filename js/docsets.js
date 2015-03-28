@@ -23,7 +23,7 @@ docsets.refresh = function(){
 
     defaults.push(to_push);
   }
-
+  $(".select-docset").html("");
   for(var i = 0; i < defaults.length; i++){
     var add_option = "<option value=\""+defaults[i].path+"\">"+defaults[i].name+"</option>";
     $(".select-docset").append(add_option);

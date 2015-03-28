@@ -1,5 +1,7 @@
 ## break-after
 
+
+
 ### Summary
 
 The `break-after` [CSS][0] property describes how the page, column or region break behavior after the generated box. If there is no generated box, the property is ignored.

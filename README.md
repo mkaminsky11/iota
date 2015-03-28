@@ -19,10 +19,10 @@ nw iota #that's it! It should run!
 ###Todo
 + settings/themes
 + keyboard shortcut
-+ create new
-+ delete
-+ refresh on edit
-+ make sure editing is valid (only one `##` before updating)
++ create new **DONE**
++ delete **DONE**
++ refresh on edit **DONE**
++ make sure editing is valid (only one `##` before updating) **DONE**
 + error messages
 + create own docsets
 
@@ -37,9 +37,10 @@ nw iota #that's it! It should run!
 + Swift?
 + Markdown
 + HTML
++ Python
 
 ###Serious Problems
-Two words: memory usage. This whole thing takes up ~40MB. That's ridiculous.
+Two words: memory usage. This whole thing takes up ~60MB. That's ridiculous.
 
 ###Contributing
 ####Useful Links
