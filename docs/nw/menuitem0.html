@@ -1,0 +1,40 @@
+<h2>MenuItem</h2>
+<p><code class="language-javascript">MenuItem</code> represents an item in a menu. A <code class="language-javascript">MenuItem</code> can be a separator or a normal item which has label and icon. <code class="language-javascript">MenuItem</code> is usually used with <code class="language-javascript">Menu</code> together.</p>
+<pre><code class="language-javascript">// Load native UI library
+var gui = require('nw.gui');
+var item;
+
+// Create a separator
+item = new gui.MenuItem({ type: 'separator' });
+
+// Create a normal item with label and icon
+item = new gui.MenuItem({
+  type: &quot;normal&quot;, 
+  label: &quot;I'm a menu item&quot;,
+  icon: &quot;img/icon.png&quot;
+});
+
+// Or you can omit the 'type' field for normal items
+item = new gui.MenuItem({ label: 'Simple item' });
+
+// Bind a callback to item
+item = new gui.MenuItem({
+  label: &quot;Click me&quot;,
+  click: function() {
+    console.log(&quot;I'm clicked&quot;);
+  },
+  key: &quot;s&quot;,
+  modifiers: &quot;ctrl-alt&quot;,
+});
+
+// You can have submenu!
+var submenu = new gui.Menu();
+submenu.append(new gui.MenuItem({ label: 'Item 1' }));
+submenu.append(new gui.MenuItem({ label: 'Item 2' }));
+submenu.append(new gui.MenuItem({ label: 'Item 3' }));
+item.submenu = submenu;
+
+// And everything can be changed at runtime
+item.label = 'New label';
+item.click = function() { console.log('New click callback'); };
+</code></pre>

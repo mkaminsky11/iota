@@ -1,0 +1,9 @@
+<h2>Window.open(url[, options])</h2>
+<p>Open a new window and load <code class="language-javascript">url</code> in it, you can specify extra <code class="language-javascript">options</code> with the window. All window subfields in [[Manifest format]] can be used. Since v0.4.0, a boolean field <code class="language-javascript">new-instance</code> can be used to start a new Node instance (webkit process). Since v0.9.0 and 0.8.5, <code class="language-javascript">inject-js-start</code> and <code class="language-javascript">inject-js-end</code> field can be used to inject a javascript file, see [[Manifest format]] .</p>
+<p>Since v0.7.3 the opened window is not focused by default. It's a result of unifying behavior across platforms. If you want it to be focused by default, you can set <code class="language-javascript">focus</code> to <code class="language-javascript">true</code> in <code class="language-javascript">options</code>.</p>
+<pre><code class="language-javascript">var win = gui.Window.open('https://github.com', {
+  position: 'center',
+  width: 901,
+  height: 127
+});
+</code></pre>

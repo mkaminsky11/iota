@@ -68,10 +68,7 @@ $("#store a").each(function(index){
     }
 });
 
-$("#display").html($("#store").html());
-$('pre code').each(function(i, block) {
-  hljs.highlightBlock(block);
-});
+displayDefault();
 
 /**
 * GET DOCS
@@ -86,7 +83,15 @@ var search_options = {
 }
 var fuse = null;
 
+function displayDefault(){
+  $("#display").html($("#store").html());
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+}
+
 function init(){
+  docs = []
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
     if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1 && folders[i] !== "docs.json"){
@@ -94,23 +99,21 @@ function init(){
       var doc = fs.readdirSync("docs/" + folders[i]);
       for(var j = 0; j < doc.length; j++){
         if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js" && doc[j] !== "doc.json"){
-          var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8").split("<!--next-->");
-          for(var k = 0; k < text.length; k++){
-            var name = text[k].trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
-            name = name.replace(/\\/g, "");
+          var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8");
+          var name = text.trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
+          name = name.replace(/\\/g, "");
 
-            var section = {
-              name: name,
-              html: text[k].trim(),
-              path: "docs/" + folders[i] + "/" + doc[j],
-              icon: "docs/" + folders[i] + "/icon.png",
-              folder: folders[i],
-              id: id_counter
-            };
+          var section = {
+            name: name,
+            html: text.trim(),
+            path: "docs/" + folders[i] + "/" + doc[j],
+            icon: "docs/" + folders[i] + "/icon.png",
+            folder: folders[i],
+            id: id_counter
+          };
 
-            docs.push(section);
-            id_counter++;
-          }
+          docs.push(section);
+          id_counter++;
         }
       }
 
@@ -284,7 +287,11 @@ function trash(){
     //path is current_open
     var r = confirm("are you sure you want to delete this file? It cannot be undone.");
     if (r == true) {
-
+      editors.reset();
+      displayDefault();
+      $("#type").val("");
+      //1. remove the sidebar item
+      $("[data-path='"+current_open+"']").remove();
     }
     else {
       //nothing

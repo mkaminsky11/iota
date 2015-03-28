@@ -1,0 +1,11 @@
+<h2>Window.close([force])</h2>
+<p>Close current window, you can catch the <code class="language-javascript">close</code> event to prevent the closing. If <code class="language-javascript">force</code> is specified and equals to <code class="language-javascript">true</code>, then the <code class="language-javascript">close</code> event will be ignored.</p>
+<p>Usually you would like to listen to the <code class="language-javascript">close</code> event and do some shutdown work and then do a <code class="language-javascript">close(true)</code> to really close the window.</p>
+<pre><code class="language-javascript">win.on('close', function() {
+  this.hide(); // Pretend to be closed already
+  console.log(&quot;We're closing...&quot;);
+  this.close(true);
+});
+
+win.close();
+</code></pre>

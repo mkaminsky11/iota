@@ -209,7 +209,8 @@
     flex: 0 0 12em;
 
     position: relative;
-	overflow: auto;
+	  overflow: auto;
+    overflow-x: hidden;
 }
 
 .body{
@@ -247,10 +248,12 @@
 	top: 0;
 	left: 0;
 	overflow: auto;
+  overflow-x: hidden;
 }
 
 .sidebar-content{
     position: relative;
+    overflow-x: hidden;
 }
 
 .sidebar-header{
@@ -288,7 +291,7 @@
   	-webkit-flex: 1;
   	-ms-flex: 1;
   	flex: 1;
-	width: 100%;
+    width: 100%;
   	overflow: hidden;
   	overflow-wrap: break-word;
 	margin: 0;

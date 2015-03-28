@@ -53,7 +53,23 @@ editors.close = function(path){
 };
 
 editors.refresh = function(path){
-  console.log(path); //check to make sure that this works first
+  //change docs
+  for(var i = 0; i < docs.length; i++){
+    if(docs[i].path === path){
+      //change it
+
+      var text = fs.readFileSync(path, "utf8")
+      var name = text.trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
+      name = name.replace(/\\/g, "");
+
+      docs[i].name = name;
+      docs[i].html = text;
+
+      $("[data-path='"+path+"'] p").html(name);
+
+      openPath(path);
+    }
+  }
 };
 
 editors.reset = function(){
@@ -61,4 +77,5 @@ editors.reset = function(){
     editors.editors[i].gui.close(true); //close this
     editors.close(editors.editors[i].path);
   }
+  editors.editors = []
 }

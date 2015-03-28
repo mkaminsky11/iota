@@ -1,0 +1,34 @@
+<h2>Window.capturePage(callback [, image_format | config_object ])</h2>
+<p></p>
+<p>Captures the visible area of the window. Note: a simple demo usage can be found here: https://gist.github.com/zhchbin/4749217 </p>
+<p><code class="language-javascript">callback</code> should be a function that will be called when the the image data is ready. It looks like this:</p>
+<pre><code class="language-javascript">function(dataUrl) {...};
+</code></pre>
+
+<p>A <code class="language-javascript">dataURL(string)</code> which encodes an image of the visible area of the captured
+window. May be assigned to the 'src' property of an HTML Image element for display.</p>
+<p><code class="language-javascript">image_format</code> is enumerated string ["jpeg", "png"]. Default is 'jpeg'.</p>
+<p></p>
+<p>It is now possible to define the <code class="language-javascript">datatype</code> of the returned image by using an <code class="language-javascript">config_object</code> as the second parameter.</p>
+<p>This object should be like: </p>
+<pre><code class="language-javascript">{ 
+ format : &quot;[jpeg|png]&quot;, 
+ datatype : &quot;[raw|buffer|datauri]&quot; 
+}
+</code></pre>
+
+<p>Where:<br />
+<code class="language-javascript">format</code> defaults to <code class="language-javascript">jpeg</code><br />
+<code class="language-javascript">datatype</code> defaults to <code class="language-javascript">datauri</code><br />
+</p>
+<p>Example usage:</p>
+<pre><code class="language-javascript">// png as base64string
+win.capturePage(function(base64string){
+ // do something with the base64string
+}, { format : 'png', datatype : 'raw'} );
+
+// png as node buffer
+win.capturePage(function(buffer){
+ // do something with the buffer
+}, { format : 'png', datatype : 'buffer'} );
+</code></pre>

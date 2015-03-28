@@ -1,0 +1,16 @@
+<h2>new Tray(option)</h2>
+<p>Create a new <code class="language-javascript">Tray</code>, <code class="language-javascript">option</code> is an object contains initial settings for the <code class="language-javascript">Tray</code>. <code class="language-javascript">option</code> can have following fields: <code class="language-javascript">title</code>, <code class="language-javascript">tooltip</code>, <code class="language-javascript">icon</code> and <code class="language-javascript">menu</code>.</p>
+<p>Every field has its own property in the <code class="language-javascript">Tray</code>, see documentation of each property for details.</p>
+<p>When you assign <code class="language-javascript">new Tray(option)</code> to a variable/property take care about visibility and GC. </p>
+<pre><code class="language-javascript">function init(){
+ var tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' });
+ // In this case tray will be collected by GC after some time and icon will disappear
+}
+</code></pre>
+
+<p>here is correct variant</p>
+<pre><code class="language-javascript">var tray;
+function init(){
+ tray = new gui.Tray({ title: 'Tray', icon: 'img/icon.png' });
+}
+</code></pre>

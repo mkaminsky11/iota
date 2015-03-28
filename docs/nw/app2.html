@@ -1,0 +1,2 @@
+<h2>App.fullArgv</h2>
+<p><strong>Get</strong> all the command line arguments when starting the app. Because node-webkit itself used switches like <code class="language-javascript">--no-sandbox</code> and <code class="language-javascript">--process-per-tab</code>, it would confuse the app when the switches were meant to be given to node-webkit, so <code class="language-javascript">App.argv</code> just filtered such switches (arguments' precedence were kept). You can get the switches to be filtered with <code class="language-javascript">App.filteredArgv</code>.</p>

@@ -3,6 +3,8 @@
 
 ### Summary
 
+This is a summary
+
 The CSS `::after` [pseudo-element][0] matches a virtual last child of the selected element. It is typically used to add cosmetic content to an element by using the [`content`][1] CSS property. This element is inline by default.
 
 ### Syntax
