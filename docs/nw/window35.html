@@ -1,7 +1,0 @@
-<h2>Window.showDevTools([id | iframe, headless])</h2>
-<p>Open the devtools to inspect the window.</p>
-<p>The optional <code class="language-javascript">id</code> argument is supported since v0.6.0. It should be the value of <code class="language-javascript">id</code> attribute of any <code class="language-javascript">iframe</code> element in the window. It can be used to limit the devtools window to inspect only the iframe. If <code class="language-javascript">id</code> is empty string, this feature is not effective.</p>
-<p>The optional <code class="language-javascript">headless</code> argument is supported since v0.6.0. When it is <code class="language-javascript">true</code>, the Devtools window will not be opened. Instead, a <code class="language-javascript">devtools-opened</code> will be sent to the <code class="language-javascript">Window</code> object after Devtools is ready.</p>
-<p>The optional <code class="language-javascript">iframe</code> argument is supported since v0.7.2. It should be the iframe object. And it serves the same purpose with the <code class="language-javascript">id</code> argument.</p>
-<p>For more information, please read [[Devtools Jail Feature]].</p>
-<p>Since v0.8.1, this function returns a <code class="language-javascript">Window</code> object when <code class="language-javascript">headless</code> is <code class="language-javascript">false</code>, so the devtools Window can be manipulated. Note that the events on this object is not working yet.</p>

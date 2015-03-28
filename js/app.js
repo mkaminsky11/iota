@@ -8,7 +8,7 @@ var win = gui.Window.get();
 
 //
 //
-//win.showDevTools(); //show dev tools
+win.showDevTools(); //show dev tools
 //
 //
 //
@@ -91,7 +91,7 @@ function displayDefault(){
 }
 
 function init(){
-  docs = []
+  docs = [];
   var folders = fs.readdirSync("docs");
   for(var i = 0; i < folders.length; i++){
     if(folders[i][0] !== "." && folders[i].indexOf(".png") === -1 && folders[i] !== "docs.json"){
@@ -120,26 +120,7 @@ function init(){
     }
   }
 
-  var json = JSON.parse(fs.readFileSync("docs/docs.json", "utf8")).data;
-  for(var x = 0; x < json.length; x++){
-    var name = json[x].name;
-    var path = json[x].path;
-
-    var to_push = {
-      name: name,
-			path: path
-    };
-
-    to_push.data = [];
-
-    for(var y = 0; y < docs.length; y++){
-      if(docs[y].folder === path){
-        to_push.data.push(docs[y]);
-      }
-    }
-
-    defaults.push(to_push);
-  }
+  docsets.refresh();
 
   fuse = new Fuse(docs, search_options);
 }

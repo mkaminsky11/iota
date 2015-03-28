@@ -65,6 +65,8 @@ editors.refresh = function(path){
       docs[i].name = name;
       docs[i].html = text;
 
+      docsets.refresh();
+
       $("[data-path='"+path+"'] p").html(name);
 
       openPath(path);
