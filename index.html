@@ -7,7 +7,21 @@
   <link rel="stylesheet" href="css/hybrid.css">
   <script src="js/highlight.pack.js"></script>
 
-  <link rel="stylesheet" href="fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="fa/css/font-awesome.css">
+  <link rel="stylesheet" href="fonts/styles-full.css">
+
+  <!--
+  basic:
+  save
+  cog
+  trash edit
+
+  arrows:
+  add
+  back
+  forwards
+  -->
+
 </head>
 <body style="background-color: transparent">
 
@@ -34,21 +48,21 @@
       </div-->
 
       <div class="nav">
-        <span class="prev"><i class="fa fa-angle-left"></i></span>
-        <span class="next"><i class="fa fa-angle-right"></i></span>
-        <span class="alt" onclick="alert('not done yet!')"><i class="fa fa-cog"></i></span>
+        <span class="prev"><i class="fa icon-arrows-left"></i></span>
+        <span class="next"><i class="fa icon-arrows-right"></i></span>
+        <span class="alt active" onclick="alert('not done yet!')"><i class="fa icon-basic-gear"></i></span>
 
         <span class="search">
-		        <i class="fa fa-search"></i>
+		        <i class="fa icon-basic-magnifier"></i>
             <input type="text" id="type" value="" class="search" placeholder="Search..."/>
-            <i class="fa fa-times-circle" onclick="$('#type').val('')"></i>
+            <i class="fa icon-arrows-circle-remove" onclick="$('#type').val('')"></i>
         </span>
     </div>
 
 		<div class="nav-right nav">
-      <span class="trash" onclick="trash()"><i class="fa fa-trash"></i></span>
-			<span class="new" onclick="$('#choose-docset').slideDown()"><i class="fa fa-plus"></i></span>
-			<span class="edit"><i class="fa fa-edit"></i></span>
+      <span class="trash" onclick="trash()"><i class="fa icon-basic-trashcan"></i></span>
+			<span class="new active" onclick="$('#choose-docset').slideDown()"><i class="fa icon-arrows-plus"></i></span>
+			<span class="edit"><i class="fa icon-basic-sheet-pencil"></i></span>
 		</div>
 
         </div>

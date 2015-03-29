@@ -149,7 +149,7 @@
   text-align:left;
 }
 
-.nav span.search > .fa-search{
+.nav span.search > .icon-basic-magnifier{
 	  position: absolute;
   	font-size: 10px;
   	left: 8px;
@@ -157,11 +157,11 @@
 	color: #B4B4B4 !important;
 }
 
-.fa-search:hover{
+.icon-basic-magnifier:hover{
 	color: #B4B4B4 !important;
 }
 
-.nav span.search > .fa-times-circle{
+.nav span.search > .icon-arrows-circle-remove{
 	position: absolute;
 	font-size: 10px;
 	right: 8px;
