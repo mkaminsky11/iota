@@ -17,11 +17,13 @@
     </div>
 
     <div class="dropdown" id="choose-docset" style="display:none">
-      <select class="select-docset">
+      <form>
+        <select class="select-docset">
 
-      </select>
-      <button class="selected-button" onclick="$('#choose-docset').slideUp()">Cancel</button>
-      <button class="unselected-button" onclick="docsets.new($('#choose-docset .select-docset').val())">Select</button>
+        </select>
+        <button class="selected-button" onclick="$('#choose-docset').slideUp()">Cancel</button>
+        <button class="unselected-button" onclick="docsets.new($('#choose-docset .select-docset').val())">Select</button>
+      </form>
     </div>
 
     <div class="topbar" style="-webkit-app-region: drag">
@@ -72,5 +74,7 @@
   <script src="js/history.js"></script>
   <script src="js/editors.js"></script>
   <script src="js/docsets.js"></script>
+  <script src="js/browse.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/menu.js"></script>
 </body>

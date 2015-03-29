@@ -66,6 +66,7 @@ editors.refresh = function(path){
       docs[i].html = text;
 
       docsets.refresh();
+      browse.reset();
 
       $("[data-path='"+path+"'] p").html(name);
 

@@ -1,10 +1,6 @@
 var gui = require('nw.gui');
 var fs = require('fs');
 var md = require('markdown-it')();
-
-/**
-* SET UP TOOLBAR
-**/
 var win = gui.Window.get();
 
 //
@@ -14,6 +10,8 @@ var win = gui.Window.get();
 //
 //
 
+//menu.append(new gui.MenuItem({ type: 'separator' }));
+
 
 var nativeMenuBar = new gui.Menu({ type: "menubar" });
 if (typeof nativeMenuBar.createMacBuiltin === "function"){
@@ -21,15 +19,6 @@ if (typeof nativeMenuBar.createMacBuiltin === "function"){
   win.menu = nativeMenuBar;
 }
 $(document).ready(function(){
-  $(".close").click(function(){
-    win.close();
-  });
-  $(".min").click(function(){
-    win.minimize();
-  });
-  $(".max").click(function(){
-    win.maximize();
-  });
   $(".prev").click(function(){
     if(stack.canGoBack() === true){
       openPath(stack.goBack());
@@ -46,6 +35,9 @@ $(document).ready(function(){
     if(current_open !== null){
       editors.open(current_open);
     }
+  });
+  $('form').submit(function () {
+   return false;
   });
 
   $(window).resize(function(){
@@ -128,6 +120,7 @@ function init(){
 
 init();
 searchDefault();
+browse.init();
 
 /**
 * DETECT INPUT
@@ -180,14 +173,13 @@ function searchDefault(){
 	$("#results").html(_html);
 }
 
-$("#type").keyup(function(e){
-  var val = $("#type").val();
-  search(val);
-});
+var ok_keys = [38, 40, 13, 27];
 
-$(document).keyup(function(e) {
-  if (e.keyCode == 27) {
-    //escape
+$("#type").keyup(function(e){
+  if(ok_keys.indexOf(e.which) === -1){
+      browse.reset();
+      var val = $("#type").val();
+      search(val);
   }
 });
 
@@ -262,6 +254,7 @@ function trash(){
     //path is current_open
     var r = confirm("are you sure you want to delete this file? It cannot be undone.");
     if (r == true) {
+      browse.reset();
       fs.unlinkSync(current_open);
       editors.reset();
       displayDefault();
@@ -281,15 +274,6 @@ function trash(){
 }
 
 function highlight(){
-  /*
-  $("#display p").each(function(index){
-   if($(this).children().length === 1){
-     if($($(this).children()[0]).is("code")){
-       $(this).replaceWith("<pre>" + this.innerHTML + "</pre>");
-     }
-   }
-  });
-  */
   $('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });

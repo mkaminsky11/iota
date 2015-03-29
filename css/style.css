@@ -296,6 +296,19 @@
   	margin-top: 2px;
 }
 
+.item-active{
+  background: -moz-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -webkit-gradient(left top, left bottom,color-stop(3%, #E9E9E9), color-stop(100%, #1A82FB));
+  background: -webkit-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -o-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: -ms-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
+  background: linear-gradient(to bottom, #6AB2F8 3%, #1A82FB 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6AB2F8', endColorstr='#1A82FB', GradientType=0 );
+}
+.item-active p{
+  color: white;
+}
+
 span, input, i{
   -webkit-app-region: no-drag;
 }
@@ -372,37 +385,10 @@ pre > code{
 }
 
 .dropdown button{
-  border-radius: 4px;
   padding-left: 24px;
   padding-right: 24px;
   float: right;
   margin-left: 6px;
-}
-
-.dropdown .selected-button{
-  background: -moz-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
-  background: -webkit-gradient(left top, left bottom,color-stop(3%, #E9E9E9), color-stop(100%, #1A82FB));
-  background: -webkit-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
-  background: -o-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
-  background: -ms-linear-gradient(top, #6AB2F8 3%, #1A82FB 100%);
-  background: linear-gradient(to bottom, #6AB2F8 3%, #1A82FB 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6AB2F8', endColorstr='#1A82FB', GradientType=0 );
-  border: none;
-  color: white;
-  border: solid thin #368AF7;
-}
-
-.dropdown .unselected-button{
-  background: -moz-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
-  background: -webkit-gradient(left top, left bottom,color-stop(3%, #FFFFFF), color-stop(100%, #E1E6EC));
-  background: -webkit-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
-  background: -o-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
-  background: -ms-linear-gradient(top, #FFFFFF 3%, #E1E6EC 100%);
-  background: linear-gradient(to bottom, #FFFFFF 3%, #E1E6EC 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#E1E6EC', GradientType=0 );
-  border: none;
-  color: black;
-  border: solid thin #DADADA;
 }
 
 .dropdown select{
