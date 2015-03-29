@@ -8,10 +8,10 @@
     "icon": "icon.png",
     "width": 1000,
     "height": 600,
-    "min_width": 400,
-    "min_height": 80,
-    "transparent": true,
-    "frame": false,
+    "min_width": 1000,
+    "min_height": 600,
+    "transparent": false,
+    "frame": true,
     "toolbar": false
   },
   "webkit": {

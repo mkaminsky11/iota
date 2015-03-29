@@ -21,10 +21,10 @@ editors.open = function(path){
     to_push.window = window.open('editor/index.html?path=' + path,{
       "width": 800,
       "height": 700,
-      "min_width": 400,
-      "min_height": 200,
-      "transparent": true,
-      "frame": false,
+      "min_width": 800,
+      "min_height": 700,
+      "transparent": false,
+      "frame": true,
       "toolbar": false
     });
 
