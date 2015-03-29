@@ -40,7 +40,7 @@ nw iota #that's it! It should run!
 + Python
 
 ###Serious Problems
-Two words: memory usage. This whole thing takes up ~60MB. That's ridiculous.
+This whole thing takes up ~60MB. Blame the huge number of `.md` files.
 
 ###Contributing
 ####Useful Links
