@@ -10,18 +10,6 @@
   <link rel="stylesheet" href="fa/css/font-awesome.css">
   <link rel="stylesheet" href="fonts/styles-full.css">
 
-  <!--
-  basic:
-  save
-  cog
-  trash edit
-
-  arrows:
-  add
-  back
-  forwards
-  -->
-
 </head>
 <body style="background-color: transparent">
 
@@ -60,6 +48,7 @@
     </div>
 
 		<div class="nav-right nav">
+      <span class="star" onclick="fav.fav(current_open)"><i class="fa icon-basic-star"></i></span>
       <span class="trash" onclick="trash()"><i class="fa icon-basic-trashcan"></i></span>
 			<span class="new active" onclick="$('#choose-docset').slideDown()"><i class="fa icon-arrows-plus"></i></span>
 			<span class="edit"><i class="fa icon-basic-sheet-pencil"></i></span>
@@ -86,6 +75,7 @@
 </div>
 
   <script src="js/history.js"></script>
+  <script src="js/favorites.js"></script>
   <script src="js/editors.js"></script>
   <script src="js/docsets.js"></script>
   <script src="js/browse.js"></script>

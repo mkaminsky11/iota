@@ -1,0 +1,65 @@
+Due to the removal of `libudev0` and its associated library `libudev.so.0`, node-webkit isn't able to run on newer distributions such as:
+
+ * Ubuntu 13.04+
+ * Fedora 18+
+ * Arch
+ * Gentoo
+ * Derivatives of the above
+
+...and possibly others. Until node-webkit is updated to depend on the currently shipped version `libudev.so.1`, the following solutions *should* provide a stopgap measure for packaging your applications.
+
+**1. Use a wrapper shell script for your application.**
+In this method, we rename the binary executable file as `myapp-bin`, and then create a shell script named `myapp` as the following. Users will then run the `myapp` file to launch your application.
+
+```bash
+#!/bin/bash
+MYAPP_WRAPPER="`readlink -f "$0"`"
+HERE="`dirname "$MYAPP_WRAPPER"`"
+
+# Always use our versions of ffmpeg libs.
+# This also makes RPMs find our library symlinks.
+export LD_LIBRARY_PATH=$([ -n "$LD_LIBRARY_PATH" ] && echo "$HERE:$HERE/lib:$LD_LIBRARY_PATH" || echo "$HERE:$HERE/lib")
+
+exec -a "$0" "$HERE/myapp-bin"  "$@"
+```
+**Creating a symlink for your package in the postinstall script**
+
+In the postinstall script of your DEB or RPM package, run the following script to create a local symlink. Use this together with the previous wrapper script.
+```bash
+#!/bin/bash
+paths=(
+  "/lib/x86_64-linux-gnu/libudev.so.1" # Ubuntu, Xubuntu, Mint
+  "/usr/lib64/libudev.so.1" # SUSE, Fedora
+  "/usr/lib/libudev.so.1" # Arch, Fedora 32bit
+  "/lib/i386-linux-gnu/libudev.so.1" # Ubuntu 32bit
+)
+for i in "${paths[@]}"
+do
+  if [ -f $i ]
+  then
+    ln -sf "$i" /opt/myapp/libudev.so.0
+    break
+  fi
+done
+```
+
+**2. Modify the nw binary itself**
+
+In this method, we navigate (via command line) to the directory containing the nw binary and run the following:
+
+``` bash
+sed -i 's/udev\.so\.0/udev.so.1/g' nw
+```
+
+As should be obvious, this method comes with increased risk of damaging the nw executable and should only be attempted by skilled users *who understand what the command is doing*.
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+Another method for: ubuntu v12.04+ & mint v15.0+ use this code:
+       X64
+           sudo ln -s /lib/x86_64-linux-gnu/libudev.so.1 /lib/x86_64-linux-gnu/libudev.so.0
+Or this
+       X32
+           sudo ln -s /lib/i386-linux-gnu/libudev.so.1 /lib/i386-linux-gnu/libudev.so.0

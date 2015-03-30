@@ -1,0 +1,59 @@
+Due to the update of `libudev0` and its associated library `libudev.so.0` to `libudev1`, node-webkit isn't able to run on older distributions such as:
+
+ * Ubuntu 12.10
+ * Fedora 17
+ * Derivatives of the above
+
+...and possibly others. Until your distribution is updated to the current `libudev.so.1`, the following solutions *should* provide a stopgap measure for packaging your applications.
+
+**1. Create a local symlink to `libudev.so.0`**
+
+Install `libudev0` if needed. Now create a local symlink to `libudev.so.0`. On Ubuntu for example, run from the directory where nw files are extracted:
+
+``` bash
+# ln -s /lib/$(arch)-linux-gnu/libudev.so.0 ./libudev.so.1
+```
+
+Then create a shell script to run nw:
+
+``` bash
+#!/bin/sh
+LD_LIBRARY_PATH=/home/omi/nw:$LD_LIBRARY_PATH ./nw $*
+```
+
+As you are only modifying local contents of node-webkit directory, this option should not have an impact on the overall stability of your system.
+
+**2. Use a wrapper shell script for your application.**
+In this method, we rename the binary executable file as `myapp-bin`, and then create a shell script named `myapp` as the following. Users will then run the `myapp` file to launch your application.
+
+```bash
+#!/bin/bash
+MYAPP_WRAPPER="`readlink -f "$0"`"
+HERE="`dirname "$MYAPP_WRAPPER"`"
+
+# Always use our versions of ffmpeg libs.
+# This also makes RPMs find our library symlinks.
+export LD_LIBRARY_PATH=$([ -n "$LD_LIBRARY_PATH" ] && echo "$HERE:$HERE/lib:$LD_LIBRARY_PATH" || echo "$HERE:$HERE/lib")
+
+exec -a "$0" "$HERE/myapp-bin"  "$@"
+```
+**Creating a symlink for your package in the postinstall script**
+
+In the postinstall script of your DEB or RPM package, run the following script to create a local symlink. Use this together with the previous wrapper script.
+```bash
+#!/bin/bash
+paths=(
+  "/lib/x86_64-linux-gnu/libudev.so.0" # Ubuntu, Xubuntu, Mint
+  "/usr/lib64/libudev.so.0" # SUSE, Fedora
+  "/usr/lib/libudev.so.0" # Arch, Fedora 32bit
+  "/lib/i386-linux-gnu/libudev.so.0" # Ubuntu 32bit
+)
+for i in "${paths[@]}"
+do
+  if [ -f $i ]
+  then
+    ln -sf "$i" /opt/myapp/libudev.so.1
+    break
+  fi
+done
+```

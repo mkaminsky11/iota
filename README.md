@@ -15,16 +15,18 @@ nw iota #that's it! It should run!
 + viewing documentation
 + icons
 + editing
++ create new documentation
++ delete documentation
++ favorites
 
 ###Todo
 + settings/themes
 + keyboard shortcut
-+ create new **DONE**
-+ delete **DONE**
 + refresh on edit **DONE**
 + make sure editing is valid (only one `##` before updating) **DONE**
 + error messages
 + create own docsets
++ filter by favorites
 
 ###Docsets Done
 + nw (node webkit)

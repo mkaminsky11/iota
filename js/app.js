@@ -5,7 +5,7 @@ var win = gui.Window.get();
 
 //
 //
-win.showDevTools(); //show dev tools
+//win.showDevTools(); //show dev tools
 //
 //
 //
@@ -77,6 +77,7 @@ var search_options = {
 var fuse = null;
 
 function displayDefault(){
+  fav.reset();
   current_open = null;
   $("#display").html($("#store").html());
   highlight();
@@ -91,7 +92,7 @@ function init(){
 
       var doc = fs.readdirSync("docs/" + folders[i]);
       for(var j = 0; j < doc.length; j++){
-        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js" && doc[j] !== "doc.json"){
+        if(doc[j][0] !== "." && doc[j].indexOf(".png") === -1 && doc[j] !== "script.js" && doc[j] !== "script.py" && doc[j] !== "doc.json"){
           var text = fs.readFileSync("docs/" + folders[i] + "/" + doc[j], "utf8");
           var name = text.trim().split("\n")[0].replace("<h2>","").replace("</h2>","").replace("##","").replace("\\#\\#","");
           name = name.replace(/\\/g, "");
@@ -144,7 +145,7 @@ function search(term){
           var img_path_arr = obj.path.split("/");
           var img_path = "docs/" + img_path_arr[1] + "/icon.png";
 
-          var base = "<div class=\"sidebar-item\" data-path='"+obj.path+"' onclick=\"openPath('"+obj.path+"')\"><img src=\""+img_path+"\"><p>" + obj.name + "</p></div>";
+          var base = "<div class=\"sidebar-item\" data-path='"+obj.path+"' onclick=\"openPath('"+obj.path+"');browse.doclick('"+obj.path+"')\"><img src=\""+img_path+"\"><p>" + obj.name + "</p></div>";
           $("#results").append(base);
 
       }
@@ -167,7 +168,7 @@ function searchDefault(){
 		var icon = "docs/" + defaults[i].path + "/icon.png";
 		_html = _html + "<div class=\"sidebar-header\"><span>" + name + "</span></div>";
 		for(var j = 0; j < data.length; j++){
-			_html = _html + "<div class=\"sidebar-item\" data-path=\""+data[j].path+"\" onclick=\"openPath('"+data[j].path+"')\"><img src=\""+icon+"\"><p>" + data[j].name + "</p></div>";
+			_html = _html + "<div class=\"sidebar-item\" data-path=\""+data[j].path+"\" onclick=\"openPath('"+data[j].path+"');browse.doclick('"+data[j].path+"')\"><img src=\""+icon+"\"><p>" + data[j].name + "</p></div>";
 		}
 	}
 	$("#results").html(_html);
@@ -186,6 +187,7 @@ $("#type").keyup(function(e){
 function openPath(path){
   current_open = path;
   stack.goTo(path);
+  fav.setFav(path);
   configHistory();
   $(".trash").addClass("active");
 

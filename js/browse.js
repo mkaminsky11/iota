@@ -57,3 +57,10 @@ browse.select = function(index){
   $(".item-active").removeClass("item-active");
   $($(".sidebar-item").get(index)).addClass("item-active");
 };
+
+browse.doclick = function(path){
+  var this_element = $("[data-path=\""+path+"\"]").get(0);
+  var index = $(".sidebar-item").toArray().indexOf(this_element);
+  browse.index = index;
+  browse.select(index);
+};

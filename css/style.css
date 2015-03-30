@@ -102,7 +102,7 @@
   margin-right:7px;
 }
 
-.nav span.trash i, .nav span.alt i, .nav span.new i, .nav span.edit i {
+.nav span.trash i, .nav span.alt i, .nav span.new i, .nav span.edit i, .nav span.star i {
   font-size:14px;
   position:relative;
   top:3px;
@@ -118,6 +118,24 @@
 
 .nav span.trash{
   margin-right: 7px;
+}
+
+.nav span.star{
+  margin-right: 1px;
+}
+
+.nav span.star-active{
+  background: -moz-linear-gradient(top, #F1C40F 3%, #F39C12 100%);
+  background: -webkit-gradient(left top, left bottom,color-stop(3%, #F1C40F), color-stop(100%, #F39C12));
+  background: -webkit-linear-gradient(top, #F1C40F 3%, #F39C12 100%);
+  background: -o-linear-gradient(top, #F1C40F 3%, #F39C12 100%);
+  background: -ms-linear-gradient(top, #F1C40F 3%, #F39C12 100%);
+  background: linear-gradient(to bottom, #F1C40F 3%, #F39C12 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F1C40F', endColorstr='#F39C12', GradientType=0 );
+  color: white;
+}
+.nav span.star-active i{
+  color: white;
 }
 
 .nav span.search {
