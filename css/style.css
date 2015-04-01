@@ -20,9 +20,13 @@ body, html{
 
 #blur img{
   width: 90%;
-  margin-left: 5%;
   border-radius: 5px;
   margin-bottom: 20px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
 }
 
 .col{
@@ -39,5 +43,26 @@ body, html{
 }
 
 .btn i{
+  margin-right: 5px;
+}
+
+#content{
+  padding: 40px;
+}
+
+.blur-colored{
+  background-image: linear-gradient(120deg, #444C86, #983434);
+  color: white;
+  height: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.blur-colored h6{
+  font-size: 10px;
+  margin: 0;
+  font-weight: 400
+}
+.sep{
+  margin-left: 5px;
   margin-right: 5px;
 }
