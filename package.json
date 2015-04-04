@@ -8,8 +8,8 @@
     "icon": "icon.png",
     "width": 1000,
     "height": 600,
-    "min_width": 1000,
-    "min_height": 600,
+    "min_width": 400,
+    "min_height": 350,
     "transparent": false,
     "frame": true,
     "toolbar": false

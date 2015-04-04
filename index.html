@@ -29,16 +29,11 @@
     </div>
 
     <div class="topbar" style="-webkit-app-region: drag">
-      <!--div class="stoplight">
-        <span class="close"></span>
-        <span class="min"></span>
-        <span class="max"></span>
-      </div-->
 
       <div class="nav">
         <span class="prev"><i class="fa icon-arrows-left"></i></span>
         <span class="next"><i class="fa icon-arrows-right"></i></span>
-        <span class="alt active" onclick="alert('not done yet!')"><i class="fa icon-basic-gear"></i></span>
+        <span class="alt active" onclick="settings.open()"><i class="fa icon-basic-gear"></i></span>
 
         <span class="search">
 		        <i class="fa icon-basic-magnifier"></i>
@@ -71,19 +66,20 @@
                 <div class="blur">
 
                 </div>
-		<div class="sidebar-container">
-      <div class="sidebar-content" id="results">
+            		<div class="sidebar-container">
+                  <div class="sidebar-content" id="results">
 
 
-		  </div>
-    </div>
-  </div>
-</div>
+            		  </div>
+                </div>
+          </div>
+      </div>
 </div>
 
   <script src="js/history.js"></script>
   <script src="js/favorites.js"></script>
   <script src="js/editors.js"></script>
+  <script src="js/settings.js"></script>
   <script src="js/docsets.js"></script>
   <script src="js/browse.js"></script>
   <script src="js/app.js"></script>

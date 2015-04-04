@@ -60,6 +60,10 @@ fav.isFav = function(path){
 };
 
 fav.toggle = function(){
+  if(fav_check.checked !== $("#fav-dropdown input").prop('checked')){
+    fav_check.checked = $("#fav-dropdown input").prop('checked');
+  }
+
   //check value of #fav-dropdown > input
   if($("#fav-dropdown input").prop('checked') === true){
     //switch to false

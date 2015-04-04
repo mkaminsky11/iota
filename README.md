@@ -3,12 +3,14 @@
 ##A documentation viewer built with [nw.js](http://nwjs.io/).
 ![demo](demo.gif)
 
-To build:
+To build from source:
 
 ```shell
 git clone https://github.com/mkaminsky11/iota.git
 nw iota #that's it! It should run!
 ```
+
+You can also [download](https://github.com/mkaminsky11/iota/releases) the app (currently for OSX only).
 
 ###Features
 + searching
@@ -27,6 +29,7 @@ nw iota #that's it! It should run!
 + error messages
 + create own docsets
 + filter by favorites **DONE**
++ context menu
 
 ###Docsets Done
 + nw (node webkit)
@@ -55,3 +58,6 @@ Go into `docs`, and you'll find a bunch of folders for each language (when this 
 Inside the language folders, there are bunch of folders. Again, their names don't matter, but they should be logically organized.
 
 Documentation is in markdown. The name of the documented item is an `<h2>`(`##` in markdown). There should be NO OTHER `##`s besides the title.
+
+###[License](LICENSE.md)
+Available under the MIT License

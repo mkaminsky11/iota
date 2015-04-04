@@ -5,7 +5,7 @@ var win = gui.Window.get();
 
 //
 //
-win.showDevTools(); //show dev tools
+//win.showDevTools(); //show dev tools
 //
 //
 //
@@ -167,6 +167,7 @@ function search(term){
       }
     }
   }
+
 }
 
 function reset(){
