@@ -21,9 +21,12 @@ fav.fav = function(path){
 fav.setFav = function(path){
   if(path !== null){
     if(fav.isFav(path)){
-      $('.star').addClass('star-active')
+      $('.star').addClass('star-active');
     } else {
       $('.star').removeClass('star-active');
+    }
+    if($("#fav-dropdown input").prop('checked') === true){
+        searchFav();
     }
   }
 };
@@ -53,5 +56,31 @@ fav.isFav = function(path){
       localStorage.setItem("iotaFav",JSON.stringify([]));
       return false;
     }
+  }
+};
+
+fav.toggle = function(){
+  //check value of #fav-dropdown > input
+  if($("#fav-dropdown input").prop('checked') === true){
+    //switch to false
+    fav.toggleOn();
+  }
+  else{
+    fav.toggleOff(true);
+  }
+};
+
+fav.toggleOn = function(){
+  //search fav
+  $("#fav-dropdown input").prop('checked', true);
+  searchFav();
+};
+
+fav.toggleOff = function(cont){
+  //search default
+  $("#fav-dropdown input").prop('checked', false);
+  if(cont === true){
+    searchDefault();
+    //prevents infinite loop
   }
 };

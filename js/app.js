@@ -5,7 +5,7 @@ var win = gui.Window.get();
 
 //
 //
-//win.showDevTools(); //show dev tools
+win.showDevTools(); //show dev tools
 //
 //
 //
@@ -81,6 +81,22 @@ function displayDefault(){
   current_open = null;
   $("#display").html($("#store").html());
   highlight();
+}
+
+function searchFav(){
+  //don't change what's opened, just what's displayed
+  $("#results").html("");
+
+  for(var i = 0; i < docs.length; i++){
+      var obj = docs[i];
+      if(fav.isFav(obj.path)){
+        var img_path_arr = obj.path.split("/");
+        var img_path = "docs/" + img_path_arr[1] + "/icon.png";
+
+        var base = "<div class=\"sidebar-item\" data-path='"+obj.path+"' onclick=\"openPath('"+obj.path+"');browse.doclick('"+obj.path+"')\"><img src=\""+img_path+"\"><p>" + obj.name + "</p></div>";
+        $("#results").append(base);
+      }
+  }
 }
 
 function init(){
@@ -160,6 +176,7 @@ function reset(){
 }
 
 function searchDefault(){
+  fav.toggleOff(false);
 	$("#results").html("");
 	var _html = "";
 	for(var i = 0; i < defaults.length; i++){

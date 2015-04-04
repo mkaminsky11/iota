@@ -48,8 +48,13 @@
     </div>
 
 		<div class="nav-right nav">
-      <span class="star dropdown-left" onclick="fav.fav(current_open)"><i class="fa icon-basic-star"></i></span>
-      <span class="dropdown-right"><i class="fa icon-arrows-down"></i></span>
+      <span class="star dropdown-left" onclick="fav.fav(current_open)">
+        <i class="fa icon-basic-star"></i>
+        <div class="checkbox-dropdown" id="fav-dropdown" style="display:none">
+          <input type="checkbox" onchange="fav.toggle()"> Filter by Favorites
+        </div>
+      </span>
+      <span class="dropdown-right" onclick="$('#fav-dropdown').toggle();"><i class="fa icon-arrows-down"></i></span>
 
       <span class="trash" onclick="trash()"><i class="fa icon-basic-trashcan"></i></span>
 			<span class="new active" onclick="$('#choose-docset').slideDown()"><i class="fa icon-arrows-plus"></i></span>

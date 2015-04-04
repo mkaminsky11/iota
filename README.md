@@ -26,7 +26,7 @@ nw iota #that's it! It should run!
 + make sure editing is valid (only one `##` before updating) **DONE**
 + error messages
 + create own docsets
-+ filter by favorites
++ filter by favorites **DONE**
 
 ###Docsets Done
 + nw (node webkit)
