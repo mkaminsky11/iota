@@ -7,16 +7,4 @@ var fs = require('fs');
 var win = gui.Window.get();
 //win.showDevTools(); //uncomment when needed
 
-
-
-$(document).ready(function(){
-  $(".close").click(function(){
-    win.close();
-  });
-  $(".min").click(function(){
-    win.minimize();
-  });
-  $(".max").click(function(){
-    win.maximize();
-  });
-});
+win.resizeTo(400,350);
