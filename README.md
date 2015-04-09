@@ -29,7 +29,8 @@ You can also [download](https://github.com/mkaminsky11/iota/releases) the app (c
 + error messages
 + create own docsets
 + filter by favorites **DONE**
-+ context menu
++ context menu **DONE?**
++ **BUILD FOR LINUX + WINDOWS**
 
 ###Docsets Done
 + nw (node webkit)
