@@ -51,7 +51,7 @@ $(document).ready(function(){
 var store = md.render(fs.readFileSync("README.md", "utf8").replace(/(#)\1{0,}/g, "$& "));
 
 $("#store").html(store);
-$("#store img").attr("style", "width: 50%;display:block;margin-bottom:20px;margin-left:auto;margin-right:auto;margin-top:20px;");
+$("#store img").remove(); //don't want the image
 $("#store h1, #store h2").attr("style","text-align:center");
 $("#store a").each(function(index){
     var href = $(this).attr("href");

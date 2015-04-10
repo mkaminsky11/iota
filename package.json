@@ -1,20 +1,55 @@
 {
-  "main": "index.html",
-  "name": "folder",
-  "node-main": "js/main.js",
-  "window": {
-    "title": "iota",
-    "position": "center",
-    "icon": "icon.png",
-    "width": 1000,
-    "height": 600,
-    "min_width": 400,
-    "min_height": 350,
-    "transparent": false,
-    "frame": true,
-    "toolbar": false
-  },
-  "webkit": {
-    "plugin": true
-  }
+    "webexe_settings": {
+        "linux-x32": true, 
+        "windows-x64": true, 
+        "download_dir": "/Users/kaminsky/Downloads/Web2Executable.app/Contents/Resources/files/downloads", 
+        "nw_compression_level": 5, 
+        "mac-x32": true, 
+        "windows-x32": true, 
+        "mac-x64": true, 
+        "nw_version": "0.12.0-rc1", 
+        "force_download": false, 
+        "linux-x64": true
+    }, 
+    "single-instance": true, 
+    "description": "", 
+    "nodejs": true, 
+    "chromium-args": "", 
+    "additional_trust_anchors": "", 
+    "js-flags": "", 
+    "user-agent": "", 
+    "inject-js-end": "", 
+    "keywords": [], 
+    "window": {
+        "fullscreen": false, 
+        "icon": "icon.png", 
+        "resizable": false, 
+        "title": "iota", 
+        "always-on-top": false, 
+        "frame": true, 
+        "visible": true, 
+        "height": 600, 
+        "min_height": 350, 
+        "width": 1000, 
+        "as_desktop": false, 
+        "min_width": 400, 
+        "position": "center", 
+        "show_in_taskbar": true, 
+        "mac_icon": "icon.icns", 
+        "transparent": false, 
+        "toolbar": false, 
+        "exe_icon": "icon.png"
+    }, 
+    "version": "0.1.0", 
+    "snapshot": "", 
+    "node-main": "js/main.js", 
+    "webkit": {
+        "page-cache": false, 
+        "java": false, 
+        "plugin": true
+    }, 
+    "inject-js-start": "", 
+    "node-remote": "", 
+    "main": "index.html", 
+    "name": "iota"
 }
