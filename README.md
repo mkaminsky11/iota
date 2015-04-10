@@ -5,28 +5,11 @@
 
 ### [download](Download release [here](https://github.com/mkaminsky11/iota/releases)
 
-####Windows
-To build from source, see "All".
-
-####Linux
-To build from source, see "All".
-
-Download release [here](https://github.com/mkaminsky11/iota/releases)
-
-```shell
-tar -zxvf iota_linux_32.tar.gz
-cd iota_linux_32
-cp * /bin
-#to use
-iota
-```
-
 ####Mac
-To build from source, see "All".
 
 Download release [here](https://github.com/mkaminsky11/iota/releases). Then unzip and use as a normal application.
 
-####All
+Or build directly from the source, if you have NW.js installed.
 
 ```shell
 git clone https://github.com/mkaminsky11/iota.git
